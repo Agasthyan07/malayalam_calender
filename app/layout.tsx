@@ -12,6 +12,9 @@ const malayalam = Noto_Sans_Malayalam({ subsets: ['malayalam'] });
 export const metadata: Metadata = {
   title: 'Malayalam Calendar 2026',
   description: 'Daily Malayalam Calendar 2026 with Nakshatram, Tithi, Sunrise, Sunset, and Festivals.',
+  verification: {
+    google: 'aj2mZjhuDIy1N-54FSxc_gHgO5zmQRulc8ftQATVAjg',
+  },
 };
 
 export default function RootLayout({
