@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    const baseUrl = 'https://malayalamcalendar2026.in'; // Updated placeholder
+    const baseUrl = 'https://malayalamcalendar.site';
 
     // Static routes
     const routes = [

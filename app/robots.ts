@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
             allow: '/',
             disallow: '/private/',
         },
-        sitemap: 'https://malayalamcalendar2026.in/sitemap.xml',
+        sitemap: 'https://malayalamcalendar.site/sitemap.xml',
     };
 }

@@ -10,6 +10,7 @@ const inter = Inter({ subsets: ['latin'] });
 const malayalam = Noto_Sans_Malayalam({ subsets: ['malayalam'] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://malayalamcalendar.site'),
   title: 'Malayalam Calendar 2026',
   description: 'Daily Malayalam Calendar 2026 with Nakshatram, Tithi, Sunrise, Sunset, and Festivals.',
   verification: {
