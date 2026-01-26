@@ -1,5 +1,6 @@
 import TodayCard from '@/components/TodayCard';
 import AdSlot from '@/components/AdSlot';
+import DateNavigation from '@/components/DateNavigation';
 import { getDailyData, formatDate } from '@/lib/dateUtils';
 import JsonLd from '@/components/JsonLd';
 import { Metadata } from 'next';
@@ -87,6 +88,10 @@ export default async function TodayPage({ searchParams }: Props) {
             <AdSlot slotId="top-banner" />
 
             <TodayCard data={data} />
+
+            <div className="mt-8">
+                <DateNavigation currentDate={data.date} />
+            </div>
 
             <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 my-8 text-center">
                 <p className="text-lg md:text-xl text-gray-800 leading-relaxed font-malayalam">

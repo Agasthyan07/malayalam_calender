@@ -31,6 +31,7 @@ export default function Header() {
                 <nav className="hidden md:flex gap-6">
                     <Link href="/today" className="text-gray-700 hover:text-red-700 font-medium">Today</Link>
                     <Link href="/calendar/2026" className="text-gray-700 hover:text-red-700 font-medium">2026 Calendar</Link>
+                    <Link href="/rahu-kalam-today" className="text-gray-700 hover:text-red-700 font-medium">Rahu Kalam</Link>
                     <Link href="/festivals" className="text-gray-700 hover:text-red-700 font-medium">Festivals</Link>
                 </nav>
 
@@ -61,6 +62,13 @@ export default function Header() {
                             onClick={closeMenu}
                         >
                             2026 Calendar
+                        </Link>
+                        <Link
+                            href="/rahu-kalam-today"
+                            className="text-gray-700 hover:text-red-700 font-medium px-2 py-1 rounded hover:bg-red-50"
+                            onClick={closeMenu}
+                        >
+                            Rahu Kalam
                         </Link>
                         <Link
                             href="/festivals"

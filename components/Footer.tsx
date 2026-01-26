@@ -7,6 +7,7 @@ export default function Footer() {
                 <div className="flex justify-center gap-6 mb-4 flex-wrap text-sm">
                     <Link href="/privacy-policy" className="hover:text-red-700">Privacy Policy</Link>
                     <Link href="/terms" className="hover:text-red-700">Terms of Service</Link>
+                    <Link href="/rahu-kalam-today" className="hover:text-red-700">Rahu Kalam</Link>
                     <Link href="/disclaimer" className="hover:text-red-700">Disclaimer</Link>
                 </div>
                 <p className="text-sm">© {new Date().getFullYear()} Malayalam Calendar. All rights reserved.</p>
