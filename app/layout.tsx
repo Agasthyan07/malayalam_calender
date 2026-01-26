@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   title: 'Malayalam Calendar 2026',
   description: 'Daily Malayalam Calendar 2026 with Nakshatram, Tithi, Sunrise, Sunset, and Festivals.',
   verification: {
-    google: 'aj2mZjhuDIy1N-54FSxc_gHgO5zmQRulc8ftQATVAjg',
+    google: '9F6rdEd0V_dRvVID9CruxrQQU4InQYqvMpeLP_9zAXg',
   },
 };
 
