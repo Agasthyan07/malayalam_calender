@@ -15,8 +15,8 @@ export default function CalendarGrid({ days }: { days: DailyData[] }) {
 
     return (
         <div className="w-full">
-            <div className="grid grid-cols-7 gap-1 text-center font-bold text-gray-700 bg-gray-50 py-2 rounded-t-lg text-xs md:text-sm">
-                <div className="text-red-600">SUN</div>
+            <div className="grid grid-cols-7 gap-1 text-center font-bold text-gray-700 dark:text-gray-300 bg-gray-50 dark:bg-gray-800 py-2 rounded-t-lg text-xs md:text-sm">
+                <div className="text-red-600 dark:text-red-400">SUN</div>
                 <div>MON</div>
                 <div>TUE</div>
                 <div>WED</div>
@@ -24,7 +24,7 @@ export default function CalendarGrid({ days }: { days: DailyData[] }) {
                 <div>FRI</div>
                 <div>SAT</div>
             </div>
-            <div className="grid grid-cols-7 gap-1 bg-gray-200 border border-gray-200">
+            <div className="grid grid-cols-7 gap-1 bg-gray-200 dark:bg-gray-700 border border-gray-200 dark:border-gray-700">
                 {blanks.map((_, i) => (
                     <div key={`blank-${i}`} className="bg-gray-50 min-h-[80px]"></div>
                 ))}
@@ -38,16 +38,16 @@ export default function CalendarGrid({ days }: { days: DailyData[] }) {
                             key={day.date}
                             className={`
                                 min-h-[60px] md:min-h-[80px] p-0.5 md:p-2 transition relative flex flex-col justify-between group
-                                ${isToday ? 'bg-indigo-50 border-2 border-indigo-500 shadow-sm z-10' : 'bg-white hover:bg-blue-50'}
-                                ${!isToday && isHoliday ? 'bg-red-50' : ''}
+                                ${isToday ? 'bg-indigo-50 dark:bg-indigo-900/30 border-2 border-indigo-500 shadow-sm z-10' : 'bg-white dark:bg-gray-800 hover:bg-blue-50 dark:hover:bg-gray-700'}
+                                ${!isToday && isHoliday ? 'bg-red-50 dark:bg-red-900/20' : ''}
                             `}
                         >
                             <div className="flex justify-between items-start">
-                                <span className={`font-bold text-xs md:text-base ${isToday ? 'text-indigo-700' : 'text-gray-800'} ${!isToday && isHoliday ? 'text-red-700' : ''} group-hover:text-red-700`}>
+                                <span className={`font-bold text-xs md:text-base ${isToday ? 'text-indigo-700 dark:text-indigo-300' : 'text-gray-800 dark:text-gray-200'} ${!isToday && isHoliday ? 'text-red-700 dark:text-red-400' : ''} group-hover:text-red-700 dark:group-hover:text-red-300`}>
                                     {day.date.split('-')[2].replace(/^0/, '')}
                                 </span>
                             </div>
-                            <div className={`text-[9px] md:text-[10px] truncate leading-tight ${isToday ? 'text-indigo-600 font-medium' : 'text-gray-500'}`}>
+                            <div className={`text-[9px] md:text-[10px] truncate leading-tight ${isToday ? 'text-indigo-600 dark:text-indigo-400 font-medium' : 'text-gray-500 dark:text-gray-400'}`}>
                                 {day.nakshatram}
                             </div>
                             {day.festival && (

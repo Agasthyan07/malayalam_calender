@@ -1,9 +1,10 @@
-import { getDailyData, formatDate } from '@/lib/dateUtils';
+import { getDailyData, formatDate, getMonthData } from '@/lib/dateUtils';
 import TodayCard from '@/components/TodayCard';
 import AdSlot from '@/components/AdSlot';
 import DateNavigation from '@/components/DateNavigation';
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
+import CalendarGrid from '@/components/CalendarGrid';
 
 export const revalidate = 3600;
 
@@ -80,10 +81,20 @@ export default async function DatePage({ params }: Props) {
         );
     }
 
+    // Fetch full month data for the calendar grid
+    const [year, month] = targetDate.split('-');
+    const monthData = await getMonthData(year, month);
+
     return (
         <div className="container mx-auto px-4 py-8 max-w-2xl">
             <h1 className="sr-only">Malayalam Calendar - {formatDate(data.date)}</h1>
             <AdSlot slotId="top-banner" />
+
+            <div className="text-center mb-6">
+                <h2 className="text-2xl md:text-3xl font-bold text-gray-800 dark:text-gray-100">
+                    {formatDate(targetDate)} - മലയാളം കലണ്ടർ
+                </h2>
+            </div>
 
             <TodayCard data={data} />
 
@@ -91,10 +102,17 @@ export default async function DatePage({ params }: Props) {
                 <DateNavigation currentDate={data.date} />
             </div>
 
-            <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 my-8 text-center">
-                <p className="text-lg md:text-xl text-gray-800 leading-relaxed font-malayalam">
-                    <span className="font-bold text-red-700">{formatDate(data.date)}</span> (<span className="font-medium">{data.malayalam_date}</span>)
-                    ലെ നക്ഷത്രം <span className="font-bold text-indigo-700">{data.nakshatram}</span> ആണ്.
+            <div className="my-8">
+                <h3 className="text-lg font-bold text-gray-800 dark:text-gray-200 mb-4 px-2 uppercase tracking-wide">
+                    {new Date(parseInt(year), parseInt(month) - 1).toLocaleString('default', { month: 'long', year: 'numeric' })}
+                </h3>
+                <CalendarGrid days={monthData} />
+            </div>
+
+            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 p-6 my-8 text-center">
+                <p className="text-lg md:text-xl text-gray-800 dark:text-gray-200 leading-relaxed font-malayalam">
+                    <span className="font-bold text-red-700 dark:text-red-400">{formatDate(data.date)}</span> (<span className="font-medium text-gray-900 dark:text-gray-100">{data.malayalam_date}</span>)
+                    ലെ നക്ഷത്രം <span className="font-bold text-indigo-700 dark:text-indigo-400">{data.nakshatram}</span> ആണ്.
                 </p>
             </div>
 

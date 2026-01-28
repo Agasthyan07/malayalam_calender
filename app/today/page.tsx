@@ -103,10 +103,10 @@ export default async function TodayPage({ searchParams }: Props) {
 
             {/* Title Section */}
             <div className="text-center mb-6">
-                <h2 className="text-2xl md:text-3xl font-bold text-gray-800">
+                <h2 className="text-2xl md:text-3xl font-bold text-gray-800 dark:text-gray-100">
                     {isToday ? 'ഇന്നത്തെ മലയാളം കലണ്ടർ' : `${formatDate(targetDate)} - മലയാളം കലണ്ടർ`}
                 </h2>
-                <p className="text-gray-600 mt-2">
+                <p className="text-gray-600 dark:text-gray-400 mt-2">
                     {data.malayalam_date}
                 </p>
             </div>
@@ -117,25 +117,25 @@ export default async function TodayPage({ searchParams }: Props) {
                 <DateNavigation currentDate={data.date} />
             </div>
 
-            <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 my-8 text-center">
-                <p className="text-lg md:text-xl text-gray-800 leading-relaxed font-malayalam">
-                    {isToday ? 'ഇന്ന് കേരളത്തിൽ' : <span className="font-bold text-red-700">{formatDate(data.date)}</span>}
-                    {' '}
-                    (<span className="font-medium">{data.malayalam_date}</span>) ആണ്.
-                    {' '}
-                    {isToday ? 'ഇന്നത്തെ' : 'ആ ദിവസത്തെ'} നക്ഷത്രം <span className="font-bold text-indigo-700">{data.nakshatram}</span> ആണ്.
-                    {' '}
-                    സൂര്യോദയം രാവിലെ <span className="font-medium">{data.sunrise}</span>-നും
-                    {' '}
-                    സൂര്യാസ്തമയം വൈകിട്ട് <span className="font-medium">{data.sunset}</span>-നും ആണ്.
-                </p>
-            </div>
-
             <div className="my-8">
-                <h3 className="text-lg font-bold text-gray-800 mb-4 px-2">
-                    {year} {month} Calendar
+                <h3 className="text-lg font-bold text-gray-800 dark:text-gray-200 mb-4 px-2 uppercase tracking-wide">
+                    {new Date(parseInt(year), parseInt(month) - 1).toLocaleString('default', { month: 'long', year: 'numeric' })}
                 </h3>
                 <CalendarGrid days={monthData} />
+            </div>
+
+            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 p-6 my-8 text-center">
+                <p className="text-lg md:text-xl text-gray-800 dark:text-gray-200 leading-relaxed font-malayalam">
+                    {isToday ? 'ഇന്ന് കേരളത്തിൽ' : <span className="font-bold text-red-700 dark:text-red-400">{formatDate(data.date)}</span>}
+                    {' '}
+                    (<span className="font-medium text-gray-900 dark:text-gray-100">{data.malayalam_date}</span>) ആണ്.
+                    {' '}
+                    {isToday ? 'ഇന്നത്തെ' : 'ആ ദിവസത്തെ'} നക്ഷത്രം <span className="font-bold text-indigo-700 dark:text-indigo-400">{data.nakshatram}</span> ആണ്.
+                    {' '}
+                    സൂര്യോദയം രാവിലെ <span className="font-medium text-gray-900 dark:text-gray-100">{data.sunrise}</span>-നും
+                    {' '}
+                    സൂര്യാസ്തമയം വൈകിട്ട് <span className="font-medium text-gray-900 dark:text-gray-100">{data.sunset}</span>-നും ആണ്.
+                </p>
             </div>
 
             <AdSlot slotId="mid-content" />
