@@ -1,9 +1,10 @@
 import TodayCard from '@/components/TodayCard';
 import AdSlot from '@/components/AdSlot';
 import DateNavigation from '@/components/DateNavigation';
-import { getDailyData, formatDate } from '@/lib/dateUtils';
+import { getDailyData, formatDate, getMonthData } from '@/lib/dateUtils';
 import JsonLd from '@/components/JsonLd';
 import { Metadata } from 'next';
+import CalendarGrid from '@/components/CalendarGrid';
 
 export const revalidate = 3600; // Hourly revalidation
 
@@ -15,28 +16,34 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
     const resolvedSearchParams = await searchParams;
     let targetDate = resolvedSearchParams?.date;
 
+    // Calculate "Today" in IST
+    const now = new Date();
+    const options = { timeZone: 'Asia/Kolkata', year: 'numeric', month: '2-digit', day: '2-digit' } as const;
+    const formatter = new Intl.DateTimeFormat('en-CA', options);
+    const todayStr = formatter.format(now); // YYYY-MM-DD
+
     if (!targetDate) {
-        const now = new Date();
-        const options = { timeZone: 'Asia/Kolkata', year: 'numeric', month: '2-digit', day: '2-digit' } as const;
-        const formatter = new Intl.DateTimeFormat('en-CA', options);
-        targetDate = formatter.format(now);
+        targetDate = todayStr;
     }
 
+    const isToday = targetDate === todayStr;
     const data = await getDailyData(targetDate);
 
     if (!data) {
         return {
-            title: 'Malayalam Calendar - Today',
-            description: 'Daily Malayalam Calendar showing Nakshatram, Tithi, and Auspicious timings.',
+            title: 'Malayalam Calendar - Date Not Found',
+            description: 'Daily Malayalam Calendar details not available.',
         };
     }
 
+    const titlePrefix = isToday ? 'Malayalam Date Today' : `Malayalam Date ${formatDate(targetDate)}`;
+
     return {
-        title: `${data.malayalam_date} - Malayalam Date Today | ${data.nakshatram}`,
-        description: `Today's Malayalam date is ${data.malayalam_date}. Nakshatram: ${data.nakshatram}, Tithi: ${data.tithi}. Sunrise: ${data.sunrise}, Rahukalam: ${data.rahukalam}.`,
+        title: `${data.malayalam_date} - ${titlePrefix} | ${data.nakshatram}`,
+        description: `${titlePrefix} is ${data.malayalam_date}. Nakshatram: ${data.nakshatram}, Tithi: ${data.tithi}. Sunrise: ${data.sunrise}, Rahukalam: ${data.rahukalam}.`,
         openGraph: {
-            title: `${data.malayalam_date} - Malayalam Date Today`,
-            description: `Check today's Malayalam date, Nakshatram (${data.nakshatram}), and auspicious timings.`,
+            title: `${data.malayalam_date} - ${titlePrefix}`,
+            description: `Check ${isToday ? "today's" : "the"} Malayalam date, Nakshatram (${data.nakshatram}), and auspicious timings.`,
             type: 'article',
             publishedTime: data.date,
         }
@@ -44,17 +51,20 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
 }
 
 export default async function TodayPage({ searchParams }: Props) {
-    // Determine date: query param OR today (IST)
     const resolvedSearchParams = await searchParams;
     let targetDate = resolvedSearchParams?.date;
 
+    // Calculate "Today" in IST
+    const now = new Date();
+    const options = { timeZone: 'Asia/Kolkata', year: 'numeric', month: '2-digit', day: '2-digit' } as const;
+    const formatter = new Intl.DateTimeFormat('en-CA', options);
+    const todayStr = formatter.format(now);
+
     if (!targetDate || Array.isArray(targetDate)) {
-        const now = new Date();
-        const options = { timeZone: 'Asia/Kolkata', year: 'numeric', month: '2-digit', day: '2-digit' } as const;
-        const formatter = new Intl.DateTimeFormat('en-CA', options);
-        targetDate = formatter.format(now);
+        targetDate = todayStr;
     }
 
+    const isToday = targetDate === todayStr;
     const data = await getDailyData(targetDate);
 
     if (!data) {
@@ -65,6 +75,10 @@ export default async function TodayPage({ searchParams }: Props) {
             </div>
         );
     }
+
+    // Fetch full month data for the calendar grid
+    const [year, month] = targetDate.split('-');
+    const monthData = await getMonthData(year, month);
 
     const jsonLd = {
         '@context': 'https://schema.org',
@@ -87,6 +101,16 @@ export default async function TodayPage({ searchParams }: Props) {
             <h1 className="sr-only">Malayalam Calendar - {data.malayalam_date}</h1>
             <AdSlot slotId="top-banner" />
 
+            {/* Title Section */}
+            <div className="text-center mb-6">
+                <h2 className="text-2xl md:text-3xl font-bold text-gray-800">
+                    {isToday ? 'ഇന്നത്തെ മലയാളം കലണ്ടർ' : `${formatDate(targetDate)} - മലയാളം കലണ്ടർ`}
+                </h2>
+                <p className="text-gray-600 mt-2">
+                    {data.malayalam_date}
+                </p>
+            </div>
+
             <TodayCard data={data} />
 
             <div className="mt-8">
@@ -95,11 +119,23 @@ export default async function TodayPage({ searchParams }: Props) {
 
             <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 my-8 text-center">
                 <p className="text-lg md:text-xl text-gray-800 leading-relaxed font-malayalam">
-                    ഇന്ന് കേരളത്തിൽ <span className="font-bold text-red-700">{formatDate(data.date)}</span> (<span className="font-medium">{data.malayalam_date}</span>) ആണ്.
-                    ഇന്നത്തെ നക്ഷത്രം <span className="font-bold text-indigo-700">{data.nakshatram}</span> ആണ്.
+                    {isToday ? 'ഇന്ന് കേരളത്തിൽ' : <span className="font-bold text-red-700">{formatDate(data.date)}</span>}
+                    {' '}
+                    (<span className="font-medium">{data.malayalam_date}</span>) ആണ്.
+                    {' '}
+                    {isToday ? 'ഇന്നത്തെ' : 'ആ ദിവസത്തെ'} നക്ഷത്രം <span className="font-bold text-indigo-700">{data.nakshatram}</span> ആണ്.
+                    {' '}
                     സൂര്യോദയം രാവിലെ <span className="font-medium">{data.sunrise}</span>-നും
+                    {' '}
                     സൂര്യാസ്തമയം വൈകിട്ട് <span className="font-medium">{data.sunset}</span>-നും ആണ്.
                 </p>
+            </div>
+
+            <div className="my-8">
+                <h3 className="text-lg font-bold text-gray-800 mb-4 px-2">
+                    {year} {month} Calendar
+                </h3>
+                <CalendarGrid days={monthData} />
             </div>
 
             <AdSlot slotId="mid-content" />
