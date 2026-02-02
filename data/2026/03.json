@@ -2,6 +2,7 @@
   {
     "date": "2026-03-01",
     "weekday": "Sunday",
+    "is_holiday": true,
     "malayalam_date": "കുംഭം 16",
     "nakshatram": "ആയില്യം",
     "tithi": "ദ്വാദശി",
@@ -86,6 +87,7 @@
   {
     "date": "2026-03-08",
     "weekday": "Sunday",
+    "is_holiday": true,
     "malayalam_date": "കുംഭം 23",
     "nakshatram": "വിശാഖം",
     "tithi": "ചതുർത്ഥി",
@@ -170,6 +172,7 @@
   {
     "date": "2026-03-15",
     "weekday": "Sunday",
+    "is_holiday": true,
     "malayalam_date": "കുംഭം 30",
     "nakshatram": "അവിട്ടം",
     "tithi": "ഏകാദശി",
@@ -230,6 +233,7 @@
   {
     "date": "2026-03-20",
     "weekday": "Friday",
+    "is_holiday": true,
     "malayalam_date": "മീനം 5",
     "nakshatram": "അശ്വതി",
     "tithi": "പ്രഥമ",
@@ -254,6 +258,7 @@
   {
     "date": "2026-03-22",
     "weekday": "Sunday",
+    "is_holiday": true,
     "malayalam_date": "മീനം 7",
     "nakshatram": "കാർത്തിക",
     "tithi": "തൃതീയ",
@@ -338,6 +343,7 @@
   {
     "date": "2026-03-29",
     "weekday": "Sunday",
+    "is_holiday": true,
     "malayalam_date": "മീനം 14",
     "nakshatram": "മകം",
     "tithi": "ദശമി",

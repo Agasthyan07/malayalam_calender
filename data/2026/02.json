@@ -2,6 +2,7 @@
   {
     "date": "2026-02-01",
     "weekday": "Sunday",
+    "is_holiday": true,
     "malayalam_date": "മകരം 20",
     "nakshatram": "പൂയം",
     "tithi": "ചതുർദ്ദശി",
@@ -86,6 +87,7 @@
   {
     "date": "2026-02-08",
     "weekday": "Sunday",
+    "is_holiday": true,
     "malayalam_date": "മകരം 27",
     "nakshatram": "ചോതി",
     "tithi": "ഷഷ്ടി",
@@ -170,6 +172,7 @@
   {
     "date": "2026-02-15",
     "weekday": "Sunday",
+    "is_holiday": true,
     "malayalam_date": "കുംഭം 2",
     "nakshatram": "തിരുവോണം",
     "tithi": "ത്രയോദശി",
@@ -254,6 +257,7 @@
   {
     "date": "2026-02-22",
     "weekday": "Sunday",
+    "is_holiday": true,
     "malayalam_date": "കുംഭം 9",
     "nakshatram": "ഭരണി",
     "tithi": "പഞ്ചമി",

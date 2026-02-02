@@ -30,7 +30,7 @@ export default function CalendarGrid({ days }: { days: DailyData[] }) {
                 ))}
                 {days.map((day) => {
                     const isToday = day.date === todayStr;
-                    const isHoliday = !!day.festival;
+                    const isHoliday = !!day.is_holiday;
 
                     return (
                         <Link

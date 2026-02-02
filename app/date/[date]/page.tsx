@@ -103,9 +103,9 @@ export default async function DatePage({ params }: Props) {
             </div>
 
             <div className="my-8">
-                <h3 className="text-lg font-bold text-gray-800 dark:text-gray-200 mb-4 px-2 uppercase tracking-wide">
+                <h2 className="text-lg font-bold text-gray-800 dark:text-gray-200 mb-4 px-2 uppercase tracking-wide">
                     {new Date(parseInt(year), parseInt(month) - 1).toLocaleString('default', { month: 'long', year: 'numeric' })}
-                </h3>
+                </h2>
                 <CalendarGrid days={monthData} />
             </div>
 
