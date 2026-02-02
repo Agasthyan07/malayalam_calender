@@ -1,10 +1,16 @@
 import TodayCard from '@/components/TodayCard';
+import Link from 'next/link';
 import AdSlot from '@/components/AdSlot';
 import DateNavigation from '@/components/DateNavigation';
 import { getDailyData, formatDate, getMonthData } from '@/lib/dateUtils';
 import JsonLd from '@/components/JsonLd';
 import { Metadata } from 'next';
 import CalendarGrid from '@/components/CalendarGrid';
+
+async function getGoldRate() {
+    const data = await import('@/data/gold-rate.json');
+    return data.default;
+}
 
 export const revalidate = 3600; // Hourly revalidation
 
@@ -79,6 +85,7 @@ export default async function TodayPage({ searchParams }: Props) {
     // Fetch full month data for the calendar grid
     const [year, month] = targetDate.split('-');
     const monthData = await getMonthData(year, month);
+    const goldRate = await getGoldRate();
 
     const jsonLd = {
         '@context': 'https://schema.org',
@@ -112,6 +119,26 @@ export default async function TodayPage({ searchParams }: Props) {
             </div>
 
             <TodayCard data={data} />
+
+            {/* Gold Rate Widget */}
+            <div className="mt-6 bg-gradient-to-r from-yellow-50 to-white dark:from-yellow-900/10 dark:to-gray-800 rounded-xl border border-yellow-100 dark:border-yellow-900/30 p-4 shadow-sm">
+                <div className="flex justify-between items-center">
+                    <div>
+                        <h3 className="text-yellow-800 dark:text-yellow-500 font-bold text-sm uppercase tracking-wide">
+                            Today's Gold Rate
+                        </h3>
+                        <p className="text-xs text-gray-500 dark:text-gray-400">22 Carat (1 Gram)</p>
+                    </div>
+                    <Link href="/gold-rate" className="flex items-center gap-2 group">
+                        <span className="text-2xl font-black text-gray-900 dark:text-white">
+                            ₹{goldRate.gram22.toLocaleString()}
+                        </span>
+                        <span className="bg-yellow-100 dark:bg-yellow-900/50 text-yellow-700 dark:text-yellow-400 p-1.5 rounded-full group-hover:bg-yellow-200 transition">
+                            →
+                        </span>
+                    </Link>
+                </div>
+            </div>
 
             <div className="mt-8">
                 <DateNavigation currentDate={data.date} />

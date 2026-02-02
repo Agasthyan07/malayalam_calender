@@ -33,6 +33,9 @@ export default function Header() {
                     <Link href="/calendar/2026" className="text-gray-700 hover:text-red-700 font-medium">2026 Calendar</Link>
                     <Link href="/rahu-kalam-today" className="text-gray-700 hover:text-red-700 font-medium">Rahu Kalam</Link>
                     <Link href="/festivals" className="text-gray-700 hover:text-red-700 font-medium">Festivals</Link>
+                    <Link href="/gold-rate" className="text-yellow-700 hover:text-yellow-800 font-bold bg-yellow-50 px-3 py-1 rounded-full text-sm flex items-center gap-1 border border-yellow-200">
+                        <span className="text-lg">💰</span> Rate
+                    </Link>
                 </nav>
 
                 {/* Mobile Menu Button */}
@@ -76,6 +79,13 @@ export default function Header() {
                             onClick={closeMenu}
                         >
                             Festivals
+                        </Link>
+                        <Link
+                            href="/gold-rate"
+                            className="text-yellow-800 font-medium px-2 py-1 rounded hover:bg-yellow-50 flex items-center gap-2"
+                            onClick={closeMenu}
+                        >
+                            <span className="text-lg">💰</span> Gold Rate
                         </Link>
                     </nav>
                 </div>
