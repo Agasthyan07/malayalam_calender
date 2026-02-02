@@ -28,13 +28,13 @@ export default function Header() {
                 </div>
 
                 {/* Desktop Nav */}
-                <nav className="hidden md:flex gap-6">
-                    <Link href="/today" className="text-gray-700 hover:text-red-700 font-medium">Today</Link>
-                    <Link href="/calendar/2026" className="text-gray-700 hover:text-red-700 font-medium">2026 Calendar</Link>
-                    <Link href="/rahu-kalam-today" className="text-gray-700 hover:text-red-700 font-medium">Rahu Kalam</Link>
-                    <Link href="/festivals" className="text-gray-700 hover:text-red-700 font-medium">Festivals</Link>
-                    <Link href="/gold-rate" className="text-yellow-700 hover:text-yellow-800 font-bold bg-yellow-50 px-3 py-1 rounded-full text-sm flex items-center gap-1 border border-yellow-200">
-                        <span className="text-lg">💰</span> Rate
+                <nav className="hidden md:flex gap-2 items-center">
+                    <Link href="/today" className="text-gray-700 hover:text-red-700 hover:bg-red-50 font-medium px-3 py-2 rounded-lg transition-colors">Today</Link>
+                    <Link href="/calendar/2026" className="text-gray-700 hover:text-red-700 hover:bg-red-50 font-medium px-3 py-2 rounded-lg transition-colors">Calendar</Link>
+                    <Link href="/rahu-kalam-today" className="text-gray-700 hover:text-red-700 hover:bg-red-50 font-medium px-3 py-2 rounded-lg transition-colors">Rahu Kalam</Link>
+                    <Link href="/festivals" className="text-gray-700 hover:text-red-700 hover:bg-red-50 font-medium px-3 py-2 rounded-lg transition-colors">Festivals</Link>
+                    <Link href="/gold-rate" className="text-yellow-700 hover:text-yellow-800 font-bold bg-yellow-50 hover:bg-yellow-100 px-4 py-2 rounded-full text-sm flex items-center gap-2 border border-yellow-200 transition-colors ml-2">
+                        <span>💰</span> Rate
                     </Link>
                 </nav>
 
