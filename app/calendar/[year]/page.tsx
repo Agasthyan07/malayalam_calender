@@ -148,3 +148,6 @@ export default async function YearPage({ params }: Props) {
                     </div>
                 </section>
             </div>
+        </div>
+    );
+}
