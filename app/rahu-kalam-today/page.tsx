@@ -6,11 +6,15 @@ import AdSlot from '@/components/AdSlot';
 export const revalidate = 3600; // Hourly revalidation
 
 export const metadata: Metadata = {
-    title: 'Rahu Kalam Today – Timings, Meaning & Day-Wise Schedule',
-    description: 'Check today’s Rahu Kalam time. Avoid this inauspicious period for new ventures. View the complete weekly Rahu Kaalam chart for India.',
+    title: 'Rahu Kalam Today – Daily Timings (Monday to Sunday) | 2026 Chart',
+    description: 'Check accurate Rahu Kalam timings for today. Find daily schedules including Friday Rahukalam, Tuesday Rahukalam, and Sunday Rahukalam times for 2026.',
+    keywords: [
+        'Rahu Kalam Today', 'Rahu Kalam Timings', 'Friday Rahukalam', 'Tuesday Rahukalam',
+        'Sunday Rahukalam', 'Monday Rahukalam', 'Daily Rahu Kalam', 'Rahukalam Chart 2026'
+    ],
     openGraph: {
-        title: 'Rahu Kalam Today – Timings & Schedule',
-        description: 'Avoid Rahu Kalam for important tasks. Check today’s accurate timings.',
+        title: 'Rahu Kalam Today – Daily Timings (Monday to Sunday)',
+        description: 'Avoid inauspicious times. Check exact Rahu Kalam timings for Friday, Tuesday, Sunday, and all days.',
         type: 'article',
     },
 };
@@ -76,6 +80,20 @@ export default async function RahuKalamPage() {
                     It is strictly avoided for starting new ventures, buying property, or auspicious ceremonies like marriages.
                     The timing changes every day based on the weekday and sunrise/sunset times.
                 </p>
+            </section>
+
+            {/* Daily SEO Section */}
+            <section className="bg-white dark:bg-gray-800 rounded-xl p-6 mb-8 border border-gray-100 dark:border-gray-700 shadow-sm">
+                <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Daily Rahu Kalam Timings 2026</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-gray-700 dark:text-gray-300">
+                    <p className="bg-gray-50 dark:bg-gray-700/50 p-3 rounded-lg"><span className="font-semibold text-red-700 dark:text-red-400">Monday Rahukalam:</span> 07:30 AM - 09:00 AM</p>
+                    <p className="bg-gray-50 dark:bg-gray-700/50 p-3 rounded-lg"><span className="font-semibold text-red-700 dark:text-red-400">Tuesday Rahukalam:</span> 03:00 PM - 04:30 PM</p>
+                    <p className="bg-gray-50 dark:bg-gray-700/50 p-3 rounded-lg"><span className="font-semibold text-red-700 dark:text-red-400">Wednesday Rahukalam:</span> 12:00 PM - 01:30 PM</p>
+                    <p className="bg-gray-50 dark:bg-gray-700/50 p-3 rounded-lg"><span className="font-semibold text-red-700 dark:text-red-400">Thursday Rahukalam:</span> 01:30 PM - 03:00 PM</p>
+                    <p className="bg-gray-50 dark:bg-gray-700/50 p-3 rounded-lg"><span className="font-semibold text-red-700 dark:text-red-400">Friday Rahukalam:</span> 10:30 AM - 12:00 PM</p>
+                    <p className="bg-gray-50 dark:bg-gray-700/50 p-3 rounded-lg"><span className="font-semibold text-red-700 dark:text-red-400">Saturday Rahukalam:</span> 09:00 AM - 10:30 AM</p>
+                    <p className="bg-gray-50 dark:bg-gray-700/50 p-3 rounded-lg"><span className="font-semibold text-red-700 dark:text-red-400">Sunday Rahukalam:</span> 04:30 PM - 06:00 PM</p>
+                </div>
             </section>
 
             {/* Weekly Table Section */}
