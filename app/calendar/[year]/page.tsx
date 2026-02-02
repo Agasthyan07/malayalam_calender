@@ -85,6 +85,66 @@ export default async function YearPage({ params }: Props) {
                     </Link>
                 ))}
             </div>
-        </div>
-    );
-}
+
+            {/* SEO & Rich Content Section */}
+            <div className="mt-16 prose prose-indigo dark:prose-invert max-w-none">
+                <section className="bg-white dark:bg-gray-800 rounded-2xl p-8 border border-gray-100 dark:border-gray-700 shadow-sm">
+                    <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+                        About Malayalam Calendar {year} (Kollavarsham 1201 - 1202)
+                    </h2>
+                    <div className="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+                                The <strong>{year} Malayalam Calendar</strong> is an essential guide for Malayalis worldwide, helping track the traditional solar calendar system unique to Kerala.
+                                This year spans across <strong>Kollavarsham 1201</strong> (until mid-August) and <strong>Kollavarsham 1202</strong> (starting from Chingam 1).
+                            </p>
+                            <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                                Our digital calendar provides accurate daily Panchangam details including <strong>Nakshatram</strong> (Star), <strong>Tithi</strong>, <strong>Nalla Samayam</strong>, and <strong>Rahu Kalam</strong> timings calculated specifically for Kerala's longitude and latitude.
+                            </p>
+                        </div>
+                        <div className="bg-gray-50 dark:bg-gray-700/50 rounded-xl p-6">
+                            <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4 mt-0">
+                                Major Kerala Festivals in {year}
+                            </h3>
+                            <ul className="space-y-3 text-sm text-gray-700 dark:text-gray-300 list-none pl-0">
+                                <li className="flex items-center gap-2">
+                                    <span className="w-2 h-2 bg-red-500 rounded-full"></span>
+                                    <span><strong>Vishu</strong>: April 14, {year}</span>
+                                </li>
+                                <li className="flex items-center gap-2">
+                                    <span className="w-2 h-2 bg-red-500 rounded-full"></span>
+                                    <span><strong>Onam (Thiruvonam)</strong>: August 26, {year}</span>
+                                </li>
+                                <li className="flex items-center gap-2">
+                                    <span className="w-2 h-2 bg-red-500 rounded-full"></span>
+                                    <span><strong>Maha Shivaratri</strong>: February 15, {year}</span>
+                                </li>
+                                <li className="flex items-center gap-2">
+                                    <span className="w-2 h-2 bg-red-500 rounded-full"></span>
+                                    <span><strong>Deepavali</strong>: November 8, {year}</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div className="mt-8 pt-8 border-t border-gray-100 dark:border-gray-700">
+                        <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">
+                            Why Use Our Malayalam Panchangam?
+                        </h3>
+                        <div className="grid sm:grid-cols-3 gap-6 text-sm">
+                            <div>
+                                <h4 className="font-bold text-gray-900 dark:text-white mb-2">Accurate Timings</h4>
+                                <p className="text-gray-600 dark:text-gray-400">Sunrise, Sunset, and Rahu Kalam timings adjusted for daily variations.</p>
+                            </div>
+                            <div>
+                                <h4 className="font-bold text-gray-900 dark:text-white mb-2">Festival Reminders</h4>
+                                <p className="text-gray-600 dark:text-gray-400">Never miss important dates like Ekadashi, Pradosham, or Pournami.</p>
+                            </div>
+                            <div>
+                                <h4 className="font-bold text-gray-900 dark:text-white mb-2">Daily Stars</h4>
+                                <p className="text-gray-600 dark:text-gray-400">Instant access to Innathe Nakshatram and Muhoortham guides.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
