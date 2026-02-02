@@ -13,6 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         '/terms',
         '/disclaimer',
         '/rahu-kalam-today',
+        '/contact',
     ].map((route) => ({
         url: `${baseUrl}${route}`,
         lastModified: new Date(),
