@@ -6,8 +6,8 @@ import Footer from '@/components/Footer';
 import GoogleAnalytics from '@/components/GoogleAnalytics';
 import CookieConsent from '@/components/CookieConsent';
 
-const inter = Inter({ subsets: ['latin'] });
-const malayalam = Noto_Sans_Malayalam({ subsets: ['malayalam'] });
+const inter = Inter({ subsets: ['latin'], display: 'swap' });
+const malayalam = Noto_Sans_Malayalam({ subsets: ['malayalam'], display: 'swap' });
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://malayalamcalendar.site'),
