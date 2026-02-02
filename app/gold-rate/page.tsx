@@ -9,9 +9,9 @@ async function getGoldRate() {
 }
 
 export const metadata: Metadata = {
-    title: 'Kerala Gold Rate Today | Live 22ct & 24ct Gold Price Calculator',
-    description: 'Check today\'s Gold Rate in Kerala (22 Carat & 24 Carat). Use our Gold Loan Calculator to find the value of your ornaments in grams and pavans.',
-    keywords: ['Kerala Gold Rate Today', 'Gold price in Kerala', 'Today Gold Rate 22k', 'Gold Calculator Kerala', '1 Pavan Gold Rate'],
+    title: 'Kerala Gold Rate Today - 1 Gram & 1 Pavan Gold Price',
+    description: 'Check today\'s Gold Rate in Kerala for 1 Gram, 1 Pavan (8 Grams), and 10 Grams. Live 22 Carat (916) and 24 Carat gold prices with Gold Loan Calculator.',
+    keywords: ['Kerala Gold Rate Today', '1 Gram Gold Price in Kerala', 'Today Gold Rate 22k', '1 Pavan Gold Rate Today', '24 Carat Gold Rate Kerala'],
 };
 
 export default async function GoldRatePage() {
@@ -34,10 +34,46 @@ export default async function GoldRatePage() {
 
                 <AdSlot slotId="mid-content" />
 
+                {/* Quick Reference Table for SEO */}
+                <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 overflow-hidden">
+                    <div className="bg-gray-50 dark:bg-gray-900/50 px-6 py-4 border-b border-gray-100 dark:border-gray-800">
+                        <h2 className="text-lg font-bold text-gray-800 dark:text-gray-100">
+                            Gold Price in Kerala (Quick Chart)
+                        </h2>
+                    </div>
+                    <table className="w-full text-left">
+                        <thead>
+                            <tr className="border-b border-gray-100 dark:border-gray-800">
+                                <th className="px-6 py-3 text-xs font-semibold text-gray-500 uppercase">Weight</th>
+                                <th className="px-6 py-3 text-xs font-semibold text-gray-500 uppercase">22 Carat (916)</th>
+                                <th className="px-6 py-3 text-xs font-semibold text-gray-500 uppercase">24 Carat (999)</th>
+                            </tr>
+                        </thead>
+                        <tbody className="divide-y divide-gray-100 dark:divide-gray-800">
+                            <tr>
+                                <td className="px-6 py-4 text-sm font-medium text-gray-900 dark:text-white">1 Gram</td>
+                                <td className="px-6 py-4 text-sm text-gray-700 dark:text-gray-300">₹{rate.gram22.toLocaleString()}</td>
+                                <td className="px-6 py-4 text-sm text-gray-700 dark:text-gray-300">₹{rate.gram24.toLocaleString()}</td>
+                            </tr>
+                            <tr>
+                                <td className="px-6 py-4 text-sm font-medium text-gray-900 dark:text-white">8 Grams (1 Pavan)</td>
+                                <td className="px-6 py-4 text-sm text-gray-700 dark:text-gray-300">₹{rate.pavan22.toLocaleString()}</td>
+                                <td className="px-6 py-4 text-sm text-gray-700 dark:text-gray-300">₹{(rate.gram24 * 8).toLocaleString()}</td>
+                            </tr>
+                            <tr>
+                                <td className="px-6 py-4 text-sm font-medium text-gray-900 dark:text-white">10 Grams</td>
+                                <td className="px-6 py-4 text-sm text-gray-700 dark:text-gray-300">₹{(rate.gram22 * 10).toLocaleString()}</td>
+                                <td className="px-6 py-4 text-sm text-gray-700 dark:text-gray-300">₹{(rate.gram24 * 10).toLocaleString()}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
                 {/* Informational Content */}
                 <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 prose prose-yellow dark:prose-invert max-w-none">
-                    <h3>About Gold Rates in Kerala</h3>
+                    <h3>Today's Gold Rate in Kerala</h3>
                     <p>
+                        Searching for the **1 gram gold price in Kerala** or the **current rate for 1 Pavan**?
                         Gold holds significant cultural and financial value in Kerala. The daily gold rate is decided by the
                         <strong> All Kerala Gold and Silver Merchants Association (AKGSMA)</strong> based on international market trends.
                     </p>
