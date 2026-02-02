@@ -19,7 +19,7 @@ export default function ContactPage() {
                 <div className="mt-6">
                     <h2 className="text-xl font-semibold mb-2 text-gray-800 dark:text-gray-200">Email Us</h2>
                     <p className="text-gray-600 dark:text-gray-400">
-                        For general inquiries: <a href="mailto:contact@malayalamcalendar.site" className="text-red-600 hover:underline">contact@malayalamcalendar.site</a>
+                        For general inquiries: <a href="mailto:agasthyan2002@gmail.com" className="text-red-600 hover:underline">agasthyan2002@gmail.com</a>
                     </p>
                 </div>
 
