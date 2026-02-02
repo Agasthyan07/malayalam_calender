@@ -138,6 +138,22 @@ export default async function TodayPage({ searchParams }: Props) {
                 </p>
             </div>
 
+            <div className="bg-red-50 dark:bg-gray-900/50 rounded-xl p-6 my-8 border border-red-100 dark:border-gray-800">
+                <h2 className="text-xl font-bold text-gray-800 dark:text-gray-100 mb-4">
+                    About Malayalam Calendar 2026 & Kollavarsham
+                </h2>
+                <div className="prose prose-sm dark:prose-invert max-w-none text-gray-700 dark:text-gray-300 space-y-3">
+                    <p>
+                        The <strong>Malayalam Calendar</strong>, extensively used in Kerala, is a solar calendar based on the <strong>Kollavarsham</strong> era.
+                        This <strong>2026 Malayalam Calendar</strong> provides accurate daily details compliant with traditional <strong>Malayalam Era</strong> calculations.
+                    </p>
+                    <p>
+                        Our <strong>Malayalam Panchangam</strong> helps you track daily <strong>Nakshatram</strong>, Tithi, and auspicious timings like Nalla Samayam.
+                        Whether you follow the <strong>Manorama</strong> or <strong>Mathrubhumi</strong> calendar styles, our daily date views ensure you stay updated with correct festival dates and <strong>Muhoortham</strong> timings.
+                    </p>
+                </div>
+            </div>
+
             <AdSlot slotId="mid-content" />
         </div>
     );

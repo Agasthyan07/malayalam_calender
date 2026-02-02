@@ -32,7 +32,7 @@
     "sunrise": "06:30",
     "sunset": "18:30",
     "rahukalam": "15:00 - 16:30",
-    "festival": "Attukal Pongala",
+    "festival": "Attukal Pongala, Ayya Vaikunda Swami Jayanthi, Holi, Chettikulangara Bharani",
     "vratham": null
   },
   {
@@ -92,7 +92,7 @@
     "sunrise": "06:30",
     "sunset": "18:30",
     "rahukalam": "16:30 - 18:00",
-    "festival": null,
+    "festival": "Kerala Theyyam Festival Starts",
     "vratham": null
   },
   {
@@ -152,7 +152,7 @@
     "sunrise": "06:30",
     "sunset": "18:30",
     "rahukalam": "10:30 - 12:00",
-    "festival": null,
+    "festival": "Kerala Theyyam Festival Ends",
     "vratham": null
   },
   {
@@ -164,8 +164,8 @@
     "sunrise": "06:30",
     "sunset": "18:30",
     "rahukalam": "09:00 - 10:30",
-    "festival": null,
-    "vratham": null
+    "festival": "Papamochani Ekadashi, Sabarimala Monthly Pooja Begins",
+    "vratham": "Ekadashi"
   },
   {
     "date": "2026-03-15",
@@ -236,7 +236,7 @@
     "sunrise": "06:30",
     "sunset": "18:30",
     "rahukalam": "10:30 - 12:00",
-    "festival": null,
+    "festival": "Id-ul-Fitr (Ramzan)",
     "vratham": null
   },
   {
@@ -260,7 +260,7 @@
     "sunrise": "06:30",
     "sunset": "18:30",
     "rahukalam": "16:30 - 18:00",
-    "festival": null,
+    "festival": "Sabarimala Utsavam Begins",
     "vratham": null
   },
   {
@@ -272,7 +272,7 @@
     "sunrise": "06:30",
     "sunset": "18:30",
     "rahukalam": "07:30 - 09:00",
-    "festival": null,
+    "festival": "Kodiyettu (Dhwajarohan) at Sabarimala",
     "vratham": null
   },
   {
@@ -332,8 +332,8 @@
     "sunrise": "06:30",
     "sunset": "18:30",
     "rahukalam": "09:00 - 10:30",
-    "festival": null,
-    "vratham": null
+    "festival": "Kamada Ekadashi",
+    "vratham": "Ekadashi"
   },
   {
     "date": "2026-03-29",

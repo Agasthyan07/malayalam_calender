@@ -16,6 +16,11 @@ export const metadata: Metadata = {
   verification: {
     google: '9F6rdEd0V_dRvVID9CruxrQQU4InQYqvMpeLP_9zAXg',
   },
+  keywords: [
+    'Malayalam Calendar 2026', 'Kollavarsham 1201', 'Malayalam Era',
+    'Malayalam Panchangam Today', 'Kerala Calendar', 'Malayalam Date',
+    'Daily Malayalam Calendar', 'Nalla Samayam', 'Rahu Kalam'
+  ],
   alternates: {
     canonical: './',
   },
