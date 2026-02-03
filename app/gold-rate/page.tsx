@@ -21,7 +21,11 @@ export const metadata: Metadata = {
         'Today Gold Rate 22k',
         '1 Pavan Gold Rate Today',
         '24 Carat Gold Rate Kerala',
-        'Gold Rate History Kerala'
+        'Gold Rate History Kerala',
+        'today gold rate kerala 1 pavan 916',
+        'kerala gold rate today',
+        'gold rate today in kerala',
+        'today gold rate in kerala'
     ],
 };
 
@@ -72,6 +76,15 @@ export default async function GoldRatePage() {
             </div>
 
             <div className="grid gap-8">
+                {/* Search Intent / Trending Section */}
+                <div className="flex flex-wrap gap-2 justify-center mb-4">
+                    {['Today Gold Rate Kerala 1 Pavan 916', 'Kerala Gold Rate Today', 'Gold Rate Today Kerala', 'Gold Rate Today in Kerala'].map((term) => (
+                        <span key={term} className="text-[10px] uppercase tracking-wider font-semibold text-gray-500 bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded-md">
+                            {term}
+                        </span>
+                    ))}
+                </div>
+
                 {/* Main Calculator */}
                 <GoldCalculator rate={rate} />
 

@@ -127,78 +127,76 @@ export default async function RahuKalamPage() {
                 </p>
             </section>
 
-            </section>
-
             <FAQ items={[
                 {
                     question: "What is Rahu Kalam? (രാഹുകാലം എന്നാൽ എന്താണ്?)",
-                    answer: "Rahu Kalam is an inauspicious period of about 90 minutes every day in Vedic astrology. It is believed to be under the influence of the shadow planet Rahu. \n\nരാഹുകാലം എന്നത് ദിവസവും ഏകദേശം 90 മിനിറ്റ് നീണ്ടുനിൽക്കുന്ന ഒരു അശുഭ സമയമാണ്. ഈ സമയത്ത് ശുഭകാര്യങ്ങൾ തുടങ്ങുന്നത് ഒഴിവാക്കണം. \n\nരാഹു കാൽ (Rahu Kalam) ഏക് അശുഭ് സമയ് ഹൈ ജോ ഹർ ദിൻ ലഗ്‌ഭഗ് 90 മിനട്ട് ഹോതാ ഹൈ. ഇസ് വെല കോയി ഭി ശുഭ് കാം നഹി കർനാ ചാഹിയേ."
+                    answer: "Rahu Kalam is an inauspicious period of about 90 minutes every day in Vedic astrology. It is believed to be under the influence of the shadow planet Rahu. \n\nരാഹുകാലം എന്നത് ദിവസവും ഏകദേശം 90 മിനിറ്റ് നീണ്ടുനിൽക്കുന്ന ഒരു അശുഭ സമയമാണ്. ഈ സമയത്ത് ശുഭകാര്യങ്ങൾ തുടങ്ങുന്നത് ഒഴിവാക്കണം. \n\nराहु काल (Rahu Kalam) एक अशुभ समय है जो हर दिन लगभग 90 मिनट होता है। इस वेला कोई भी शुभ काम नहीं करना चाहिए।"
                 },
                 {
                     question: "Is Rahu Kalam good or bad? (രാഹുകാലം നല്ലതാണോ ചീത്തയാണോ?)",
-                    answer: "Rahu Kalam is considered bad or inauspicious for starting new ventures, marriages, or buying property. However, it is okay for continuing existing work or daily routine activities. \n\nരാഹുകാലം പുതിയ കാര്യങ്ങൾ തുടങ്ങാൻ നല്ലതല്ല. എന്നാൽ നിത്യേനയുള്ള ജോലികൾ ചെയ്യുന്നതിന് തടസ്സമില്ല. \n\nരാഹു കാൽ നയേ കാം ഷുരു കർനേ കേ ലിയേ അച്ഛാ നഹി മാനാ ജാതാ ഹൈ."
+                    answer: "Rahu Kalam is considered bad or inauspicious for starting new ventures, marriages, or buying property. However, it is okay for continuing existing work or daily routine activities. \n\nരാഹുകാലം പുതിയ കാര്യങ്ങൾ തുടങ്ങാൻ നല്ലതല്ല. എന്നാൽ നിത്യേനയുള്ള ജോലികൾ ചെയ്യുന്നതിന് തടസ്സമില്ല. \n\nराहु काल नए काम शुरू करने के लिए अच्छा नहीं माना जाता है।"
                 },
                 {
                     question: "Can we travel during Rahu Kalam? (രാഹുകാലത്തിൽ യാത്ര ചെയ്യാമോ?)",
-                    answer: "It is strictly advised to avoid starting a journey during Rahu Kalam. If you must travel, start before Rahu Kalam begins. \n\nരാഹുകാലത്തിൽ യാത്ര തുടങ്ങുന്നത് ഒഴിവാക്കണം. രാഹുകാലത്തിന് മുൻപ് യാത്ര ആരംഭിക്കുന്നതാണ് ഉചിതം. \n\nരാഹു കാൽ മേ യാത്ര ഷുരു കർനാ മനാ ഹൈ. ആപ്‌കോ ഇസ് സമയ് സേ പഹ്‌ലേ യാത്ര ഷുരു കർണി ചാഹിയേ."
+                    answer: "It is strictly advised to avoid starting a journey during Rahu Kalam. If you must travel, start before Rahu Kalam begins. \n\nരാഹുകാലത്തിൽ യാത്ര തുടങ്ങുന്നത് ഒഴിവാക്കണം. രാഹുകാലത്തിന് മുൻപ് യാത്ര ആരംഭിക്കുന്നതാണ് ഉചിതം. \n\nराहु काल में यात्रा शुरू करना मना है। आपको इस समय से पहले यात्रा शुरू करनी चाहिए।"
                 },
                 {
                     question: "How is Rahu Kalam calculated? (എങ്ങനെയാണ് രാഹുകാലം കണക്കാക്കുന്നത്?)",
-                    answer: "Rahu Kalam is calculated based on sunrise and sunset times. The day (sunrise to sunset) is divided into 8 equal parts, and one specific part is assigned to Rahu depending on the weekday. \n\nസൂര്യോദയവും സൂര്യാസ്തമയവും അടിസ്ഥാനമാക്കിയാണ് രാഹുകാലം കണക്കാക്കുന്നത്. പകലിനെ 8 തുല്യ ഭാഗങ്ങളായി തിരിക്കുന്നു. \n\nസൂര്യാസ്ത് ഔർ സൂര്യോദയ് കേ ആധാർ പർ രാഹു കാൽ കി ഗണന കി ജാതി ഹൈ."
+                    answer: "Rahu Kalam is calculated based on sunrise and sunset times. The day (sunrise to sunset) is divided into 8 equal parts, and one specific part is assigned to Rahu depending on the weekday. \n\nസൂര്യോദയവും സൂര്യാസ്തമയവും അടിസ്ഥാനമാക്കിയാണ് രാഹുകാലം കണക്കാക്കുന്നത്. പകലിനെ 8 തുല്യ ഭാഗങ്ങളായി തിരിക്കുന്നു. \n\nसूर्यास्त और सूर्योदय के आधार पर राहु काल की गणना की जाती है।"
                 },
                 {
                     question: "When is Rahu Kalam on Sunday? (ഞായറാഴ്ച രാഹുകാലം എപ്പോഴാണ്?)",
-                    answer: "On Sundays, Rahu Kalam is usually from 4:30 PM to 6:00 PM. \n\nഞായറാഴ്ച രാഹുകാലം സാധാരണയായി വൈകിട്ട് 4:30 മുതൽ 6:00 വരെയാണ്. \n\nരവിവാർ (Sunday) കോ രാഹു കാൽ ശാം 4:30 സേ 6:00 തക് ഹോതാ ഹൈ."
+                    answer: "On Sundays, Rahu Kalam is usually from 4:30 PM to 6:00 PM. \n\nഞായറാഴ്ച രാഹുകാലം സാധാരണയായി വൈകിട്ട് 4:30 മുതൽ 6:00 വരെയാണ്. \n\nरविवार (Sunday) को राहु काल शाम 4:30 से 6:00 तक होता है।"
                 },
                 {
                     question: "When is Rahu Kalam on Friday? (വെള്ളിയാഴ്ച രാഹുകാലം എപ്പോഴാണ്?)",
-                    answer: "On Fridays, Rahu Kalam is usually from 10:30 AM to 12:00 PM. \n\nവെള്ളിയാഴ്ചകളിൽ രാഹുകാലം രാവിലെ 10:30 മുതൽ 12:00 വരെയാണ്. \n\nശുക്രവാർ (Friday) കോ രാഹു കാൽ സുബഹ് 10:30 സേ 12:00 തക് ഹോതാ ഹൈ."
+                    answer: "On Fridays, Rahu Kalam is usually from 10:30 AM to 12:00 PM. \n\nവെള്ളിയാഴ്ചകളിൽ രാഹുകാലം രാവിലെ 10:30 മുതൽ 12:00 വരെയാണ്. \n\nशुक्रवार (Friday) को राहु काल सुबह 10:30 से 12:00 तक होता है।"
                 },
                 {
                     question: "Can we do Puja during Rahu Kalam? (രാഹുകാലത്തിൽ പൂജ ചെയ്യാമോ?)",
-                    answer: "Rahu Kalam is generally reserved for Durga Puja or worship of Goddess Kali to mitigate the negative effects of Rahu. Other auspicious Pujas are avoided. \n\nരാഹുദോഷം അകറ്റാൻ ദുർഗ്ഗാ പൂജയോ കാളി പൂജയോ രാഹുകാലത്തിൽ ചെയ്യാറുണ്ട്. മറ്റ് ശുഭകരമായ പൂജകൾ ഒഴിവാക്കാറാണ് പതിവ്. \n\nരാഹു കാൽ മേ ദുർഗാ പൂജ യാ കാളി പൂജ കർ സക്തേ ഹൈൻ, ലേകിൻ അന്യ ശുഭ് പൂജ നഹി."
+                    answer: "Rahu Kalam is generally reserved for Durga Puja or worship of Goddess Kali to mitigate the negative effects of Rahu. Other auspicious Pujas are avoided. \n\nരാഹുദോഷം അകറ്റാൻ ദുർഗ്ഗാ പൂജയോ കാളി പൂജയോ രാഹുകാലത്തിൽ ചെയ്യാറുണ്ട്. മറ്റ് ശുഭകരമായ പൂജകൾ ഒഴിവാക്കാറാണ് പതിവ്. \n\nराहु काल में दुर्गा पूजा या काली पूजा कर सकते हैं, लेकिन अन्य शुभ पूजा नहीं।"
                 },
                 {
                     question: "Does Rahu Kalam change every day? (രാഹുകാലം ദിവസവും മാറുമോ?)",
-                    answer: "Yes, the exact time varies slightly depending on the exact time of sunrise and sunset in your location, but the 90-minute slot remains roughly fixed for each weekday. \n\nഅതെ, സൂര്യോദയ സമയം മാറുന്നതനുസരിച്ച് രാഹുകാലത്തിലും ചെറിയ മാറ്റങ്ങൾ വരാം. \n\nഹാൻ, സൂര്യോദയ് കേ സമയ് കേ അനുസാർ ഇസ്‌മേ തോടാ ബദ്ലാവ് ആതാ ഹൈ."
+                    answer: "Yes, the exact time varies slightly depending on the exact time of sunrise and sunset in your location, but the 90-minute slot remains roughly fixed for each weekday. \n\nഅതെ, സൂര്യോദയ സമയം മാറുന്നതനുസരിച്ച് രാഹുകാലത്തിലും ചെറിയ മാറ്റങ്ങൾ വരാം. \n\nहाँ, सूर्योदय के समय के अनुसार इसमें थोड़ा बदलाव आता है।"
                 },
                 {
                     question: "Is Rahu Kalam applicable at night? (രാത്രിയിൽ രാഹുകാലം ഉണ്ടോ?)",
-                    answer: "No, Rahu Kalam is calculated only for the daytime (sunrise to sunset). There is a similar inauspicious time at night but it is rarely followed daily. \n\nഅല്ല, രാഹുകാലം പകൽ സമയത്ത് മാത്രമേ കണക്കാക്കൂ. \n\nനഹി, രാഹു കാൽ സിർഫ് ദിൻ കേ സമയ ലാഗു ഹോതാ ഹൈ."
+                    answer: "No, Rahu Kalam is calculated only for the daytime (sunrise to sunset). There is a similar inauspicious time at night but it is rarely followed daily. \n\nഅല്ല, രാഹുകാലം പകൽ സമയത്ത് മാത്രമേ കണക്കാക്കൂ. \n\nनहीं, राहु काल सिर्फ दिन के समय लागू होता है।"
                 },
                 {
                     question: "What to do if work started before Rahu Kalam? (രാഹുകാലത്തിന് മുൻപ് തുടങ്ങിയ ജോലി തുടരാമോ?)",
-                    answer: "Yes, acts started before Rahu Kalam can be continued during the period. The restriction applies only to STARTING new activities. \n\nഅതെ, രാഹുകാലത്തിന് മുൻപ് തുടങ്ങിയ കാര്യങ്ങൾ തുടരുന്നതിന് തടസ്സമില്ല. പുതിയ കാര്യങ്ങൾ തുടങ്ങുന്നത് മാത്രമാണ് ഒഴിവാക്കേണ്ടത്. \n\nഹാൻ, രാഹു കാൽ സേ പഹ്‌ലേ ഷുരു കിയാ ഗയാ കാം ജാരി രഖ് സക്തേ ഹൈൻ."
+                    answer: "Yes, acts started before Rahu Kalam can be continued during the period. The restriction applies only to STARTING new activities. \n\nഅതെ, രാഹുകാലത്തിന് മുൻപ് തുടങ്ങിയ കാര്യങ്ങൾ തുടരുന്നതിന് തടസ്സമില്ല. പുതിയ കാര്യങ്ങൾ തുടങ്ങുന്നത് മാത്രമാണ് ഒഴിവാക്കേണ്ടത്. \n\nहाँ, राहु काल से पहले शुरू किया गया काम जारी रख सकते हैं।"
                 }
             ]} />
 
             <AdSlot slotId="rahukalam-bottom" />
 
-            {/* Internal Linking / Related Section */ }
-    <section className="mt-8 border-t border-gray-100 dark:border-gray-800 pt-6">
-        <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-100 mb-4">Related Daily Timings</h3>
-        <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
-            <li>
-                <Link href="/today" className="text-indigo-600 dark:text-indigo-400 hover:text-indigo-800 dark:hover:text-indigo-300 hover:underline">
-                    Today Malayalam Calendar
-                </Link>
-            </li>
-            <li>
-                <Link href="/innathe-nakshatram" className="text-indigo-600 dark:text-indigo-400 hover:text-indigo-800 dark:hover:text-indigo-300 hover:underline">
-                    Innathe Nakshatram (Today's Star)
-                </Link>
-            </li>
-            <li>
-                {/* Placeholder for future pages if needed */}
-                <span className="text-gray-400 dark:text-gray-500">Yamagandam Today (Coming Soon)</span>
-            </li>
-            <li>
-                <Link href="/festivals" className="text-indigo-600 dark:text-indigo-400 hover:text-indigo-800 dark:hover:text-indigo-300 hover:underline">
-                    Upcoming Festivals
-                </Link>
-            </li>
-        </ul>
-    </section>
+            {/* Internal Linking / Related Section */}
+            <section className="mt-8 border-t border-gray-100 dark:border-gray-800 pt-6">
+                <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-100 mb-4">Related Daily Timings</h3>
+                <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    <li>
+                        <Link href="/today" className="text-indigo-600 dark:text-indigo-400 hover:text-indigo-800 dark:hover:text-indigo-300 hover:underline">
+                            Today Malayalam Calendar
+                        </Link>
+                    </li>
+                    <li>
+                        <Link href="/innathe-nakshatram" className="text-indigo-600 dark:text-indigo-400 hover:text-indigo-800 dark:hover:text-indigo-300 hover:underline">
+                            Innathe Nakshatram (Today's Star)
+                        </Link>
+                    </li>
+                    <li>
+                        {/* Placeholder for future pages if needed */}
+                        <span className="text-gray-400 dark:text-gray-500">Yamagandam Today (Coming Soon)</span>
+                    </li>
+                    <li>
+                        <Link href="/festivals" className="text-indigo-600 dark:text-indigo-400 hover:text-indigo-800 dark:hover:text-indigo-300 hover:underline">
+                            Upcoming Festivals
+                        </Link>
+                    </li>
+                </ul>
+            </section>
         </div >
     );
 }
