@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import GoldCalculator from '@/components/GoldCalculator';
 import Link from 'next/link';
 import AdSlot from '@/components/AdSlot';
+import GoldHistory from '@/components/GoldHistory';
+import GoldCityRates from '@/components/GoldCityRates';
 
 async function getGoldRate() {
     const data = await import('@/data/gold-rate.json');
@@ -9,22 +11,63 @@ async function getGoldRate() {
 }
 
 export const metadata: Metadata = {
-    title: 'Kerala Gold Rate Today - 1 Gram & 1 Pavan Gold Price',
-    description: 'Check today\'s Gold Rate in Kerala for 1 Gram, 1 Pavan (8 Grams), and 10 Grams. Live 22 Carat (916) and 24 Carat gold prices with Gold Loan Calculator.',
-    keywords: ['Kerala Gold Rate Today', '1 Gram Gold Price in Kerala', 'Today Gold Rate 22k', '1 Pavan Gold Rate Today', '24 Carat Gold Rate Kerala'],
+    title: 'Gold Rate in Kerala Today (Kollam, Kochi) | 1 Gram & 1 Pavan Price',
+    description: 'Live Gold Rate in Kerala today for 1 Gram & 1 Pavan. Check 22K & 24K Gold prices in Kollam, Kochi, Trivandrum, Kozhikode. Historical price trends and calculator.',
+    keywords: [
+        'Kerala Gold Rate Today',
+        'Gold Rate in Kollam',
+        '1 Gram Gold Price in Kerala',
+        'Gold Price in Kochi',
+        'Today Gold Rate 22k',
+        '1 Pavan Gold Rate Today',
+        '24 Carat Gold Rate Kerala',
+        'Gold Rate History Kerala'
+    ],
 };
 
 export default async function GoldRatePage() {
     const rate = await getGoldRate();
+    const todayDate = new Date().toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric' });
+
+    const faqSchema = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [{
+            "@type": "Question",
+            "name": "What is the gold rate in Kollam today?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": `Today's gold rate in Kollam is ₹${rate.gram22.toLocaleString()} for 1 Gram of 22 Carat gold and ₹${rate.gram24.toLocaleString()} for 24 Carat gold. The rate is generally the same across Kerala.`
+            }
+        }, {
+            "@type": "Question",
+            "name": "What is the price of 1 Pavan gold in Kerala?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": `The price of 1 Pavan (8 Grams) of 22 Carat gold in Kerala today is ₹${rate.pavan22.toLocaleString()}.`
+            }
+        }, {
+            "@type": "Question",
+            "name": "Is the gold rate same in all districts of Kerala?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, the All Kerala Gold and Silver Merchants Association (AKGSMA) sets a uniform gold rate for the entire state, including Kollam, Kochi, and Trivandrum. However, making charges may vary between jewellers."
+            }
+        }]
+    };
 
     return (
         <div className="container mx-auto px-4 py-8 max-w-3xl">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+            />
             <div className="flex flex-col items-center mb-8">
                 <h1 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100 text-center mb-2">
                     Kerala Gold Rate Today
                 </h1>
                 <p className="text-gray-600 dark:text-gray-400">
-                    Live Market Price • {new Date().toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric' })}
+                    Live Market Price • {todayDate}
                 </p>
             </div>
 
@@ -67,6 +110,31 @@ export default async function GoldRatePage() {
                             </tr>
                         </tbody>
                     </table>
+                </div>
+
+                {/* City Rates */}
+                <GoldCityRates rate22k={rate.gram22} rate24k={rate.gram24} />
+
+                {/* History Chart */}
+                <GoldHistory />
+
+                {/* FAQ Section */}
+                <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700">
+                    <h2 className="text-xl font-bold text-gray-800 dark:text-gray-100 mb-4">Frequently Asked Questions</h2>
+                    <div className="space-y-4">
+                        <div>
+                            <h3 className="font-semibold text-gray-900 dark:text-white">What is the gold rate in Kollam today?</h3>
+                            <p className="text-gray-600 dark:text-gray-400 text-sm mt-1">
+                                Today's gold rate in Kollam is <strong>₹{rate.gram22.toLocaleString()}</strong> per gram for 22 Carat gold.
+                            </p>
+                        </div>
+                        <div>
+                            <h3 className="font-semibold text-gray-900 dark:text-white">Is the gold price uniform across Kerala?</h3>
+                            <p className="text-gray-600 dark:text-gray-400 text-sm mt-1">
+                                Yes, the gold rate is standardized by AKGSMA across all districts including Kochi, Trivandrum, and Thrissur.
+                            </p>
+                        </div>
+                    </div>
                 </div>
 
                 {/* Informational Content */}
