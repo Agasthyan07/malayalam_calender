@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Script from 'next/script';
 import { Inter, Noto_Sans_Malayalam } from 'next/font/google';
 import './globals.css';
 import Header from '@/components/Header';
@@ -44,6 +45,12 @@ export default function RootLayout({
         </main>
         <Footer />
         <CookieConsent />
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5563933517199081"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );

@@ -1,4 +1,5 @@
 import TodayCard from '@/components/TodayCard';
+import FAQ from '@/components/FAQ';
 import Link from 'next/link';
 import AdSlot from '@/components/AdSlot';
 import DateNavigation from '@/components/DateNavigation';
@@ -180,6 +181,33 @@ export default async function TodayPage({ searchParams }: Props) {
                     </p>
                 </div>
             </div>
+
+            <FAQ items={[
+                {
+                    question: "What is today's Nakshatram in Malayalam Calendar?",
+                    answer: `Today's Nakshatram is ${data.nakshatram}. In the Malayalam calendar, the day starts at sunrise, so the Nakshatram may change during the day.`
+                },
+                {
+                    question: "ഇന്നത്തെ നക്ഷത്രം ഏതാണ്?",
+                    answer: `ഇന്നത്തെ നക്ഷത്രം ${data.nakshatram} ആണ്. മലയാളം കലണ്ടർ പ്രകാരം ദിവസം തുടങ്ങുന്നത് സൂര്യോദയത്തിനാണ്.`
+                },
+                {
+                    question: "What is the Rahu Kalam time today?",
+                    answer: `Today's Rahu Kalam is from ${data.rahukalam}. It is considered an inauspicious time for starting new ventures.`
+                },
+                {
+                    question: "ഇന്നത്തെ രാഹുകാലം എപ്പോഴാണ്?",
+                    answer: `ഇന്നത്തെ രാഹുകാലം ${data.rahukalam} വരെയാണ്. പുതിയ കാര്യങ്ങൾ തുടങ്ങാൻ ഈ സമയം ഒഴിവാക്കുന്നതാണ് ഉചിതം.`
+                },
+                {
+                    question: "How is the Malayalam date calculated?",
+                    answer: "The Malayalam date is calculated based on the solar calendar (Kollavarsham). It follows the position of the sun in the zodiac signs."
+                },
+                {
+                    question: "മലയാളം തീയതി കണക്കാക്കുന്നത് എങ്ങനെയാണ്?",
+                    answer: "കൊല്ലവർഷം എന്നറിയപ്പെടുന്ന സൗര കലണ്ടർ അടിസ്ഥാനമാക്കിയാണ് മലയാളം തീയതി കണക്കാക്കുന്നത്. സൂര്യൻ ഓരോ രാശിയിലും പ്രവേശിക്കുന്നതിനനുസരിച്ചാണ് മാസങ്ങൾ മാറുന്നത്."
+                }
+            ]} />
 
             <AdSlot slotId="mid-content" />
         </div>
