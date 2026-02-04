@@ -7,6 +7,7 @@ interface HistoryData {
 }
 
 const historyData: HistoryData[] = [
+    { date: 'Feb 04, 2026', price22k: 14111, price24k: 15394 },
     { date: 'Feb 03, 2026', price22k: 13890, price24k: 14585 },
     { date: 'Feb 02, 2026', price22k: 14039, price24k: 15316 }, // Using search data for history context
     { date: 'Feb 01, 2026', price22k: 14720, price24k: 16058 },
