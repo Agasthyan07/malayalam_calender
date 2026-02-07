@@ -45,9 +45,16 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
 
     const titlePrefix = isToday ? 'Malayalam Date Today' : `Malayalam Date ${formatDate(targetDate)}`;
 
+    const canonicalUrl = isToday
+        ? 'https://malayalamcalendar.site'
+        : `https://malayalamcalendar.site/date/${formatDate(targetDate)}`;
+
     return {
         title: `${data.malayalam_date} - ${titlePrefix} | ${data.nakshatram}`,
         description: `${titlePrefix} is ${data.malayalam_date}. Nakshatram: ${data.nakshatram}, Tithi: ${data.tithi}. Sunrise: ${data.sunrise}, Rahukalam: ${data.rahukalam}.`,
+        alternates: {
+            canonical: canonicalUrl,
+        },
         openGraph: {
             title: `${data.malayalam_date} - ${titlePrefix}`,
             description: `Check ${isToday ? "today's" : "the"} Malayalam date, Nakshatram (${data.nakshatram}), and auspicious timings.`,
