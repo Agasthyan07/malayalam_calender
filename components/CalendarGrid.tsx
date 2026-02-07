@@ -32,6 +32,8 @@ export default function CalendarGrid({ days }: { days: DailyData[] }) {
                     const isToday = day.date === todayStr;
                     const isHoliday = !!day.is_holiday;
 
+                    const isMalayalamMonthStart = day.malayalam_date.endsWith(' 1');
+
                     return (
                         <Link
                             href={`/today?date=${day.date}`}
@@ -40,6 +42,7 @@ export default function CalendarGrid({ days }: { days: DailyData[] }) {
                                 min-h-[60px] md:min-h-[80px] p-0.5 md:p-2 transition relative flex flex-col justify-between group
                                 ${isToday ? 'bg-indigo-50 dark:bg-indigo-900/30 border-2 border-indigo-500 shadow-sm z-10' : 'bg-white dark:bg-gray-800 hover:bg-blue-50 dark:hover:bg-gray-700'}
                                 ${!isToday && isHoliday ? 'bg-red-50 dark:bg-red-900/20' : ''}
+                                ${isMalayalamMonthStart ? 'ring-1 ring-inset ring-orange-200 dark:ring-orange-800 bg-orange-50/50 dark:bg-orange-900/10' : ''}
                             `}
                         >
                             <div className="flex justify-between items-start">
@@ -47,6 +50,13 @@ export default function CalendarGrid({ days }: { days: DailyData[] }) {
                                     {day.date.split('-')[2].replace(/^0/, '')}
                                 </span>
                             </div>
+
+                            {isMalayalamMonthStart && (
+                                <div className="text-[9px] md:text-[10px] font-bold text-orange-700 dark:text-orange-400 uppercase tracking-tighter leading-none mb-0.5">
+                                    {day.malayalam_date}
+                                </div>
+                            )}
+
                             <div className={`text-[9px] md:text-[10px] truncate leading-tight ${isToday ? 'text-indigo-600 dark:text-indigo-400 font-medium' : 'text-gray-500 dark:text-gray-400'}`}>
                                 {day.nakshatram}
                             </div>

@@ -6,8 +6,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Static routes
     const routes = [
         '',
-        '/today',
         '/calendar/2026',
+        '/calendar-2026',
         '/festivals',
         '/privacy-policy',
         '/terms',
