@@ -6,6 +6,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import GoogleAnalytics from '@/components/GoogleAnalytics';
 import CookieConsent from '@/components/CookieConsent';
+import SiteSchema from '@/components/SiteSchema';
 
 const inter = Inter({ subsets: ['latin'], display: 'swap' });
 const malayalam = Noto_Sans_Malayalam({ subsets: ['malayalam'], display: 'swap' });
@@ -41,6 +42,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} ${malayalam.className} bg-gray-50 text-gray-900 min-h-screen flex flex-col`}>
+        <SiteSchema />
         <GoogleAnalytics />
         <Header />
         <main className="flex-grow">

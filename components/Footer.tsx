@@ -2,17 +2,38 @@ import Link from 'next/link';
 
 export default function Footer() {
     return (
-        <footer className="bg-gray-100 mt-12 py-8 border-t border-gray-200">
-            <div className="container mx-auto px-4 text-center text-gray-600">
-                <div className="flex justify-center gap-6 mb-4 flex-wrap text-sm">
-                    <Link href="/about" className="hover:text-red-700">About Us</Link>
-                    <Link href="/privacy-policy" className="hover:text-red-700">Privacy Policy</Link>
-                    <Link href="/terms" className="hover:text-red-700">Terms of Service</Link>
-                    <Link href="/rahu-kalam-today" className="hover:text-red-700">Rahu Kalam</Link>
-                    <Link href="/disclaimer" className="hover:text-red-700">Disclaimer</Link>
-                    <Link href="/contact" className="hover:text-red-700">Contact</Link>
+        <footer className="bg-gray-100 mt-12 pt-12 pb-8 border-t border-gray-200">
+            <div className="container mx-auto px-4">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 text-center md:text-left">
+                    <div>
+                        <h3 className="font-bold text-gray-900 mb-4">Quick Links</h3>
+                        <div className="flex flex-col gap-2 text-sm text-gray-600">
+                            <Link href="/" className="hover:text-red-700">Today's Calendar</Link>
+                            <Link href="/calendar-2026" className="hover:text-red-700">Full 2026 Calendar</Link>
+                            <Link href="/festivals" className="hover:text-red-700">Kerala Festivals</Link>
+                            <Link href="/gold-rate" className="hover:text-red-700">Gold Rate Today</Link>
+                            <Link href="/rahu-kalam-today" className="hover:text-red-700">Rahu Kalam Times</Link>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 className="font-bold text-gray-900 mb-4">About</h3>
+                        <p className="text-sm text-gray-600 leading-relaxed">
+                            Malayalam Calendar 2026 provides accurate daily Panchangam, Nakshatram, Tithi, and festival details for Malayalis worldwide.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 className="font-bold text-gray-900 mb-4">Legal</h3>
+                        <div className="flex flex-col gap-2 text-sm text-gray-600">
+                            <Link href="/privacy-policy" className="hover:text-red-700">Privacy Policy</Link>
+                            <Link href="/terms" className="hover:text-red-700">Terms of Service</Link>
+                            <Link href="/disclaimer" className="hover:text-red-700">Disclaimer</Link>
+                            <Link href="/contact" className="hover:text-red-700">Contact Us</Link>
+                        </div>
+                    </div>
                 </div>
-                <p className="text-sm">© {new Date().getFullYear()} Malayalam Calendar. All rights reserved.</p>
+                <div className="border-t border-gray-200 pt-8 text-center text-gray-500 text-sm">
+                    <p>© {new Date().getFullYear()} Malayalam Calendar. All rights reserved.</p>
+                </div>
             </div>
         </footer>
     );
