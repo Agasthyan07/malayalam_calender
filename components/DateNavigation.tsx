@@ -45,13 +45,13 @@ export default function DateNavigation({ currentDate }: Props) {
     const isCurrentPageToday = currentDate === realTodayStr;
 
     // Determine URL for "Yesterday" button
-    // If prevDate matches realToday, go to /today, else /date/...
+    // If prevDate matches realToday, go to /, else /date/...
     const prevIsToday = toUrlFormat(prevDate).split('-').reverse().join('-') === realTodayStr;
-    const yesterdayUrl = prevIsToday ? '/today' : `/date/${toUrlFormat(prevDate)}`;
+    const yesterdayUrl = prevIsToday ? '/' : `/date/${toUrlFormat(prevDate)}`;
 
     // Determine URL for "Tomorrow" button
     const nextIsToday = toUrlFormat(nextDate).split('-').reverse().join('-') === realTodayStr;
-    const tomorrowUrl = nextIsToday ? '/today' : `/date/${toUrlFormat(nextDate)}`;
+    const tomorrowUrl = nextIsToday ? '/' : `/date/${toUrlFormat(nextDate)}`;
 
     return (
         <div className="flex flex-col items-center gap-4">
@@ -108,7 +108,7 @@ export default function DateNavigation({ currentDate }: Props) {
             {/* "Go to Today" Button (only if not on Today's page) */}
             {!isCurrentPageToday && (
                 <Link
-                    href="/today"
+                    href="/"
                     className="inline-flex items-center justify-center px-6 py-2 border border-transparent text-sm font-medium rounded-full text-white bg-red-600 hover:bg-red-700 shadow-sm transition-colors"
                 >
                     Go to Today

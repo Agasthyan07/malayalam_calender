@@ -1,0 +1,57 @@
+# Gathered Malayalam Calendar Details 2027
+
+## January 2027 (Dhanu - Makaram 1202)
+
+| Date | Day | Nakshatram | Tithi | Observations |
+|---|---|---|---|---|
+| Jan 1 | Fri | Chithira | Krishna Navami | |
+| Jan 2 | Sat | Chothi | Krishna Dashami | |
+| Jan 3 | Sun | Vishakham | Krishna Ekadashi | Safala Ekadashi |
+| Jan 4 | Mon | Anizham | Krishna Dwadashi | |
+| Jan 5 | Tue | Thriketta | Krishna Trayodashi | Pradosham |
+| Jan 6 | Wed | Thriketta | Krishna Chaturdashi | Pradosham |
+| Jan 7 | Thu | Moolam | Amavasya | Pausha Amavasya |
+| Jan 8 | Fri | Pooradam | Shukla Prathama | |
+| Jan 9 | Sat | Uthradam | Shukla Dwitiya | |
+| Jan 10 | Sun | Thiruvonam | Shukla Tritiya | |
+| Jan 11 | Mon | Avittam | Shukla Chathurthi | |
+| Jan 12 | Tue | Chathayam | Shukla Panchami | |
+| Jan 13 | Wed | Pooruruttathi | Shukla Panchami | |
+| Jan 14 | Thu | Uthrattathi | Shukla Shashti | **Makaravilakku**, Makar Sankranti, Pongal |
+| Jan 15 | Fri | Revathi | Shukla Saptami | **Makaram 1** (Start of Makaram) |
+| Jan 16 | Sat | Aswathi | Shukla Ashtami | |
+| Jan 17 | Sun | Bharani | Shukla Dashami | |
+| Jan 18 | Mon | Karthika | Shukla Ekadashi | Pausha Putrada Ekadashi |
+| Jan 19 | Tue | Rohini | Shukla Dwadashi | |
+| Jan 20 | Wed | Makayiram | Shukla Trayodashi | Pradosham, Sabarimala Season End |
+| Jan 21 | Thu | - | Shukla Chaturdashi | |
+| Jan 22 | Fri | - | Purnima | Pausha Poornima, Thaipusam |
+| Jan 23 | Sat | - | Krishna Prathama | |
+| Jan 24 | Sun | - | Krishna Dwitiya | |
+| Jan 25 | Mon | - | Krishna Tritiya | Sankashti Chathurthi |
+| Jan 26 | Tue | - | Krishna Chathurthi | **Republic Day** |
+| Jan 27 | Wed | - | Krishna Panchami | |
+| Jan 28 | Thu | - | Krishna Shashti | |
+| Jan 29 | Fri | - | Krishna Saptami | |
+| Jan 30 | Sat | - | Krishna Ashtami | |
+| Jan 31 | Sun | - | Krishna Navami | |
+
+## February 2027 Highlights
+
+- **Feb 1 (Mon)**: Nakshatram Jyeshta (Morning), Tithi Krishna Dashami -> Ekadashi.
+- **Feb 2 (Tue)**: Ekadashi (Krishna)
+- **Feb 6 (Sat)**: Amavasya
+- **Feb 15 (Mon)**: Shukla Navami
+- **Feb 17 (Wed)**: Nakshatram Thiruvathira, Tithi Ekadashi -> Dwadashi.
+
+## March 2027 Highlights
+
+- **Mar 1 (Mon)**: Krishna Navami, Nakshatram Jyeshta -> Moola.
+- **Mar 6 (Sat)**: **Maha Shivaratri**
+- **Mar 7 (Sun)**: Amavasya
+- **Mar 14 (Sun)**: Rohini Nakshatra
+- **Mar 15 (Mon)**: Meena Sankranti (Start of Meenam?)
+- **Mar 21 (Sun)**: Purnima
+- **Mar 22 (Mon)**: Panguni Uthiram
+
+*Note: Data gathered from search results (Radiokeralam, AstroSage, DrikPanchang). Exact timings for Nakshatram/Tithi transitions vary by location.*

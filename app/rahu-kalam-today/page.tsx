@@ -177,7 +177,7 @@ export default async function RahuKalamPage() {
                 <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-100 mb-4">Related Daily Timings</h3>
                 <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
                     <li>
-                        <Link href="/today" className="text-indigo-600 dark:text-indigo-400 hover:text-indigo-800 dark:hover:text-indigo-300 hover:underline">
+                        <Link href="/" className="text-indigo-600 dark:text-indigo-400 hover:text-indigo-800 dark:hover:text-indigo-300 hover:underline">
                             Today Malayalam Calendar
                         </Link>
                     </li>

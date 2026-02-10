@@ -3,24 +3,50 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 import { getMonthData, formatDate } from '@/lib/dateUtils';
 import AdSlot from '@/components/AdSlot';
 import Link from 'next/link';
-
 import { Metadata } from 'next';
+import { notFound } from 'next/navigation';
 
-export async function generateStaticParams() {
-    // Generate params for 2026/01
-    return [
-        { year: '2026', month: '01' }
-    ];
-}
+export const revalidate = 3600; // Hourly revalidation
 
 type Props = {
-    params: Promise<{ year: string, month: string }>;
+    params: Promise<{ slug: string }>;
+}
+
+const MONTH_NAMES = [
+    'january', 'february', 'march', 'april', 'may', 'june',
+    'july', 'august', 'september', 'october', 'november', 'december'
+];
+
+function parseSlug(slug: string): { year: string, month: string } | null {
+    // Expected format: malayalam-calendar-{monthName}-{year}
+    // minimal length: malayalam-calendar-may-2026 (26 chars)
+    if (!slug.startsWith('malayalam-calendar-')) return null;
+
+    const parts = slug.replace('malayalam-calendar-', '').split('-');
+    // parts should be [monthName, year]
+    if (parts.length !== 2) return null;
+
+    const [monthName, year] = parts;
+    if (!/^\d{4}$/.test(year)) return null;
+
+    const monthIndex = MONTH_NAMES.indexOf(monthName.toLowerCase());
+    if (monthIndex === -1) return null;
+
+    const month = String(monthIndex + 1).padStart(2, '0');
+    return { year, month };
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-    const { year, month } = await params;
+    const { slug } = await params;
+    const parsed = parseSlug(slug);
 
-    // Month name helper
+    if (!parsed) {
+        return {
+            title: 'Page Not Found',
+        };
+    }
+
+    const { year, month } = parsed;
     const date = new Date(parseInt(year), parseInt(month) - 1, 1);
     const monthName = date.toLocaleString('default', { month: 'long' });
 
@@ -34,15 +60,26 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
             `${monthName} ${year} Nalla Samayam`,
             `Rahu Kalam ${monthName} ${year}`
         ],
+        alternates: {
+            canonical: `https://malayalamcalendar.site/${slug}`,
+        },
         openGraph: {
             title: `${monthName} ${year} Malayalam Calendar`,
             description: `View the complete Malayalam Calendar for ${monthName} ${year} with all daily details.`,
+            url: `https://malayalamcalendar.site/${slug}`,
         }
     };
 }
 
-export default async function MonthPage({ params }: Props) {
-    const { year, month } = await params;
+export default async function MonthPageSEO({ params }: Props) {
+    const { slug } = await params;
+    const parsed = parseSlug(slug);
+
+    if (!parsed) {
+        notFound();
+    }
+
+    const { year, month } = parsed;
     const days = await getMonthData(year, month);
     const festivals = days.filter(d => d.festival);
 
@@ -52,7 +89,7 @@ export default async function MonthPage({ params }: Props) {
 
     const breadcrumbs = [
         { label: `${year} Calendar`, href: `/calendar/${year}` },
-        { label: monthName, href: `/malayalam-calendar-${monthName.toLowerCase()}-${year}` },
+        { label: monthName, href: `/${slug}` }, // Already good
     ];
 
     return (
@@ -62,10 +99,10 @@ export default async function MonthPage({ params }: Props) {
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
                 <div>
                     <h1 className="text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white capitalize mb-2">
-                        {monthName} {year}
+                        {monthName} {year} Malayalam Calendar
                     </h1>
                     <p className="text-gray-600 dark:text-gray-400">
-                        Malayalam Calendar {year} - Daily Panchangam & Festivals
+                        Daily Panchangam, Nakshatram, Tithi & Festivals
                     </p>
                 </div>
                 <Link
@@ -157,4 +194,3 @@ export default async function MonthPage({ params }: Props) {
         </div>
     );
 }
-

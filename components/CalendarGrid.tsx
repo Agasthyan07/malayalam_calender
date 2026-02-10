@@ -1,5 +1,6 @@
 import { DailyData } from '@/types/date';
 import Link from 'next/link';
+import { formatDate } from '@/lib/dateUtils';
 
 const WEEKDAYS = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
@@ -36,7 +37,7 @@ export default function CalendarGrid({ days }: { days: DailyData[] }) {
 
                     return (
                         <Link
-                            href={`/today?date=${day.date}`}
+                            href={isToday ? '/' : `/date/${formatDate(day.date)}`}
                             key={day.date}
                             className={`
                                 min-h-[60px] md:min-h-[80px] p-0.5 md:p-2 transition relative flex flex-col justify-between group

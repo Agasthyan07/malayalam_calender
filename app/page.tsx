@@ -38,33 +38,36 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
 
   if (!data) {
     return {
-      title: 'Malayalam Calendar - Date Not Found',
-      description: 'Daily Malayalam Calendar details not available.',
+      title: 'Malayalam Calendar 2026 - 2027 | Today\'s Date & Panchangam',
+      description: 'Accurate Malayalam Calendar 2026 & 2027. Check today\'s Malayalam date, Nakshatram, Tithi, Rahu Kalam, and Nalla Samayam. Festival dates for Vishu, Onam, and more.',
     };
   }
 
-  const titlePrefix = isToday ? 'Malayalam Date Today' : `Malayalam Date ${formatDate(targetDate)}`;
-
-  // Canonical logic: always self-referencing for root, or specific date for query params
-  // Actually, for root /, the canonical is https://malayalamcalendar.site
-  // If ?date=... is present and NOT today, it should probably canonicalize to /date/[date] to avoid dupes?
-  // The user said: "no need of today path display that in the root correctly becase there is seo issue"
+  const titlePrefix = isToday ? 'Malayalam Calendar Today' : `Malayalam Date ${formatDate(targetDate)}`;
 
   const canonicalUrl = isToday
     ? 'https://malayalamcalendar.site'
     : `https://malayalamcalendar.site/date/${formatDate(targetDate)}`;
 
   return {
-    title: `${data.malayalam_date} - ${titlePrefix} | ${data.nakshatram}`,
-    description: `${titlePrefix} is ${data.malayalam_date}. Nakshatram: ${data.nakshatram}, Tithi: ${data.tithi}. Sunrise: ${data.sunrise}, Rahukalam: ${data.rahukalam}.`,
+    title: `${titlePrefix} | ${data.malayalam_date} | Nakshatram & Nalla Samayam`,
+    description: `Today's Malayalam Date: ${data.malayalam_date}. Nakshatram: ${data.nakshatram}, Tithi: ${data.tithi}. Rahu Kalam: ${data.rahukalam}. Complete Malayalam Calendar ${targetDate.split('-')[0]}.`,
     alternates: {
       canonical: canonicalUrl,
     },
+    keywords: [
+      'Malayalam Calendar 2026',
+      'Malayalam Calendar Today',
+      'Innathe Nakshatram',
+      'Malayalam Date Today',
+      'Kollam Era Calendar',
+      '2027 Malayalam Calendar'
+    ],
     openGraph: {
-      title: `${data.malayalam_date} - ${titlePrefix}`,
-      description: `Check ${isToday ? "today's" : "the"} Malayalam date, Nakshatram (${data.nakshatram}), and auspicious timings.`,
-      type: 'article',
-      publishedTime: data.date,
+      title: `${titlePrefix} - ${data.malayalam_date}`,
+      description: `Check today's Malayalam date, Nakshatram (${data.nakshatram}), and auspicious timings.`,
+      type: 'website',
+      url: canonicalUrl,
     }
   };
 }
@@ -102,15 +105,13 @@ export default async function Home({ searchParams }: Props) {
 
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'Event',
-    name: `Malayalam Date: ${data.malayalam_date}`,
-    startDate: data.date,
-    endDate: data.date,
+    '@type': 'WebPage',
+    name: `Malayalam Calendar ${year} - Today's Panchangam`,
+    datePublished: data.date,
     description: `Daily Malayalam Calendar details for ${data.date}. Nakshatram: ${data.nakshatram}, Tithi: ${data.tithi}.`,
-    eventStatus: 'https://schema.org/EventScheduled',
-    eventAttendanceMode: 'https://schema.org/OnlineEventAttendanceMode',
-    location: {
-      '@type': 'VirtualLocation',
+    isPartOf: {
+      '@type': 'WebSite',
+      name: 'Malayalam Calendar',
       url: 'https://malayalamcalendar.site'
     }
   };
@@ -118,18 +119,20 @@ export default async function Home({ searchParams }: Props) {
   return (
     <div className="container mx-auto px-4 py-8 max-w-2xl">
       <JsonLd data={jsonLd} />
-      <h1 className="sr-only">Malayalam Calendar - {data.malayalam_date}</h1>
-      <AdSlot slotId="top-banner" />
 
-      {/* Title Section */}
+      {/* Visual Hidden H1 for SEO, but we show a nice H2 below. Or better, make the main title H1. */}
+      { /* User said: "titlem, meta , first heading and sytart of first paragrah need seo words correctly placed" */}
+
       <div className="text-center mb-6">
-        <h2 className="text-2xl md:text-3xl font-bold text-gray-800 dark:text-gray-100">
-          {isToday ? 'ഇന്നത്തെ മലയാളം കലണ്ടർ' : `${formatDate(targetDate)} - മലയാളം കലണ്ടർ`}
-        </h2>
-        <p className="text-gray-600 dark:text-gray-400 mt-2">
-          {data.malayalam_date}
+        <h1 className="text-2xl md:text-3xl font-extrabold text-gray-900 dark:text-white mb-2">
+          Malayalam Calendar {year} & Today's Date
+        </h1>
+        <p className="text-gray-600 dark:text-gray-400">
+          Current Malayalam Date: <strong>{data.malayalam_date}</strong> • Nakshatram: <strong>{data.nakshatram}</strong>
         </p>
       </div>
+
+      <AdSlot slotId="top-banner" />
 
       <TodayCard data={data} />
 
@@ -138,7 +141,7 @@ export default async function Home({ searchParams }: Props) {
         <div className="flex justify-between items-center">
           <div>
             <h3 className="text-yellow-800 dark:text-yellow-500 font-bold text-sm uppercase tracking-wide">
-              Today's Gold Rate
+              Today's Gold Rate in Kerala
             </h3>
             <p className="text-xs text-gray-500 dark:text-gray-400">22 Carat (1 Gram)</p>
           </div>
@@ -158,9 +161,14 @@ export default async function Home({ searchParams }: Props) {
       </div>
 
       <div className="my-8">
-        <h3 className="text-lg font-bold text-gray-800 dark:text-gray-200 mb-4 px-2 uppercase tracking-wide">
-          {new Date(parseInt(year), parseInt(month) - 1).toLocaleString('default', { month: 'long', year: 'numeric' })}
-        </h3>
+        <div className="flex items-center justify-between mb-4 px-2">
+          <h2 className="text-lg font-bold text-gray-800 dark:text-gray-200 uppercase tracking-wide">
+            {new Date(parseInt(year), parseInt(month) - 1).toLocaleString('default', { month: 'long', year: 'numeric' })} Calendar
+          </h2>
+          <Link href={`/malayalam-calendar-${new Date(parseInt(year), parseInt(month) - 1).toLocaleString('default', { month: 'long' }).toLowerCase()}-${year}`} className="text-sm font-medium text-indigo-600 dark:text-indigo-400 hover:underline">
+            View Full Month List →
+          </Link>
+        </div>
         <CalendarGrid days={monthData} />
       </div>
 
@@ -180,24 +188,29 @@ export default async function Home({ searchParams }: Props) {
 
       <div className="bg-red-50 dark:bg-gray-900/50 rounded-xl p-6 my-8 border border-red-100 dark:border-gray-800">
         <h2 className="text-xl font-bold text-gray-800 dark:text-gray-100 mb-4">
-          About Malayalam Calendar 2026 & Kollavarsham
+          About Malayalam Calendar {year}
         </h2>
         <div className="prose prose-sm dark:prose-invert max-w-none text-gray-700 dark:text-gray-300 space-y-3">
           <p>
-            The <strong>Malayalam Calendar</strong>, extensively used in Kerala, is a solar calendar based on the <strong>Kollavarsham</strong> era.
-            This <strong>2026 Malayalam Calendar</strong> provides accurate daily details compliant with traditional <strong>Malayalam Era</strong> calculations.
+            The <strong>Malayalam Calendar {year}</strong> is your ultimate guide to the traditional solar calendar (Kollavarsham) followed in Kerala.
+            Whether you are looking for <strong>today's Malayalam date</strong>, <strong>Nakshatram</strong>, or auspicious <strong>Muhoortham</strong>, our calendar provides accurate daily Panchangam details.
           </p>
           <p>
-            Our <strong>Malayalam Panchangam</strong> helps you track daily <strong>Nakshatram</strong>, Tithi, and auspicious timings like Nalla Samayam.
-            Whether you follow the <strong>Manorama</strong> or <strong>Mathrubhumi</strong> calendar styles, our daily date views ensure you stay updated with correct festival dates and <strong>Muhoortham</strong> timings.
+            Stay updated with major festivals like <strong>Vishu</strong>, <strong>Onam</strong>, and <strong>Deepavali</strong>.
+            We provide precise calculations for <strong>Rahu Kalam</strong>, sunrise, and sunset times specific to Kerala's location.
           </p>
+          <div className="mt-4 pt-4 border-t border-red-100 dark:border-gray-800">
+            <p className="font-medium">
+              Check future dates? <Link href="/calendar/2026" className="text-red-700 dark:text-red-400 hover:underline">Malayalam Calendar 2026</Link> • <Link href="/calendar/2027" className="text-red-700 dark:text-red-400 hover:underline">2027 Calendar</Link>
+            </p>
+          </div>
         </div>
       </div>
 
       <FAQ items={[
         {
-          question: "What is today's Nakshatram in Malayalam Calendar?",
-          answer: `Today's Nakshatram is ${data.nakshatram}. In the Malayalam calendar, the day starts at sunrise, so the Nakshatram may change during the day.`
+          question: `What is the Nakshatram today (${data.date})?`,
+          answer: `Today's Nakshatram is ${data.nakshatram}. The Nakshatram changes at a specific time, so check the daily view for exact timings.`
         },
         {
           question: "ഇന്നത്തെ നക്ഷത്രം ഏതാണ്?",
@@ -205,19 +218,11 @@ export default async function Home({ searchParams }: Props) {
         },
         {
           question: "What is the Rahu Kalam time today?",
-          answer: `Today's Rahu Kalam is from ${data.rahukalam}. It is considered an inauspicious time for starting new ventures.`
+          answer: `Today's Rahu Kalam is from ${data.rahukalam}. It is generally advised to avoid starting important activities during this time.`
         },
         {
           question: "ഇന്നത്തെ രാഹുകാലം എപ്പോഴാണ്?",
           answer: `ഇന്നത്തെ രാഹുകാലം ${data.rahukalam} വരെയാണ്. പുതിയ കാര്യങ്ങൾ തുടങ്ങാൻ ഈ സമയം ഒഴിവാക്കുന്നതാണ് ഉചിതം.`
-        },
-        {
-          question: "How is the Malayalam date calculated?",
-          answer: "The Malayalam date is calculated based on the solar calendar (Kollavarsham). It follows the position of the sun in the zodiac signs."
-        },
-        {
-          question: "മലയാളം തീയതി കണക്കാക്കുന്നത് എങ്ങനെയാണ്?",
-          answer: "കൊല്ലവർഷം എന്നറിയപ്പെടുന്ന സൗര കലണ്ടർ അടിസ്ഥാനമാക്കിയാണ് മലയാളം തീയതി കണക്കാക്കുന്നത്. സൂര്യൻ ഓരോ രാശിയിലും പ്രവേശിക്കുന്നതിനനുസരിച്ചാണ് മാസങ്ങൾ മാറുന്നത്."
         }
       ]} />
 
