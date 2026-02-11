@@ -2,13 +2,11 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { Menu, X, Globe } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
+import GoogleTranslate from './GoogleTranslate';
 
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const pathname = usePathname();
-    const isMalayalam = pathname?.startsWith('/ml');
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
@@ -18,34 +16,23 @@ export default function Header() {
         setIsMenuOpen(false);
     };
 
-    const LanguageSwitch = () => (
-        <Link
-            href={isMalayalam ? '/' : '/ml'}
-            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold transition-all ${isMalayalam
-                    ? 'bg-emerald-50 text-emerald-700 border border-emerald-200 hover:bg-emerald-100'
-                    : 'bg-indigo-50 text-indigo-700 border border-indigo-200 hover:bg-indigo-100'
-                }`}
-        >
-            <Globe className="w-3.5 h-3.5" />
-            {isMalayalam ? 'English' : 'മലയാളം'}
-        </Link>
-    );
-
     return (
         <header className="bg-white shadow-sm sticky top-0 z-50">
             <div className="container mx-auto px-4 h-16 flex items-center justify-between relative">
-                <div className="flex flex-col">
-                    <Link href={isMalayalam ? '/ml' : '/'} className="text-2xl font-bold text-red-700 leading-none">
+                <div className="flex flex-col justify-center">
+                    <Link href="/" className="text-xl md:text-2xl font-bold text-red-700 leading-none">
                         Malayalam Calendar
                     </Link>
-                    <span className="text-[10px] text-gray-500 font-medium tracking-wide mt-1">
+                    <span className="hidden md:block text-[10px] text-gray-500 font-medium tracking-wide mt-1">
                         Kerala Time (IST) • Malayalam Calendar
                     </span>
                 </div>
 
                 {/* Desktop Nav */}
                 <nav className="hidden xl:flex gap-2 items-center">
-                    <Link href={isMalayalam ? '/ml' : '/'} className="text-gray-700 hover:text-red-700 hover:bg-red-50 font-medium px-3 py-2 rounded-lg transition-colors">Today</Link>
+                    <Link href="/" className="text-gray-700 hover:text-red-700 hover:bg-red-50 font-medium px-3 py-2 rounded-lg transition-colors">
+                        Today
+                    </Link>
                     <Link href="/calendar/2026" className="text-gray-700 hover:text-red-700 hover:bg-red-50 font-medium px-3 py-2 rounded-lg transition-colors">2026 Calendar</Link>
                     <Link href="/calendar/2027" className="text-gray-700 hover:text-red-700 hover:bg-red-50 font-medium px-3 py-2 rounded-lg transition-colors">2027 Calendar</Link>
                     <Link href="/calendar-2026" className="text-gray-700 hover:text-red-700 hover:bg-red-50 font-medium px-3 py-2 rounded-lg transition-colors">Full View</Link>
@@ -55,13 +42,13 @@ export default function Header() {
                         <span>💰</span> Rate
                     </Link>
                     <div className="ml-2 pl-2 border-l border-gray-200">
-                        <LanguageSwitch />
+                        <GoogleTranslate />
                     </div>
                 </nav>
 
                 {/* Mobile Actions (Language + Menu) */}
-                <div className="flex items-center gap-3 xl:hidden">
-                    <LanguageSwitch />
+                <div className="flex items-center gap-2 xl:hidden">
+                    <GoogleTranslate />
                     <button
                         className="p-2 text-gray-700 hover:bg-gray-100 rounded-md"
                         onClick={toggleMenu}
@@ -74,53 +61,53 @@ export default function Header() {
 
             {/* Mobile Nav Dropdown */}
             {isMenuOpen && (
-                <div className="xl:hidden bg-white border-t border-gray-100 absolute w-full shadow-lg">
-                    <nav className="flex flex-col p-4 space-y-4">
+                <div className="xl:hidden bg-white border-t border-gray-100 absolute w-full shadow-lg h-screen md:h-auto overflow-y-auto pb-20">
+                    <nav className="flex flex-col p-4 space-y-2">
                         <Link
-                            href={isMalayalam ? '/ml' : '/'}
-                            className="text-gray-700 hover:text-red-700 font-medium px-2 py-1 rounded hover:bg-red-50"
+                            href="/"
+                            className="text-gray-700 hover:text-red-700 font-medium px-4 py-3 rounded-lg hover:bg-red-50 bg-gray-50/50"
                             onClick={closeMenu}
                         >
                             Today
                         </Link>
                         <Link
                             href="/calendar/2026"
-                            className="text-gray-700 hover:text-red-700 font-medium px-2 py-1 rounded hover:bg-red-50"
+                            className="text-gray-700 hover:text-red-700 font-medium px-4 py-3 rounded-lg hover:bg-red-50"
                             onClick={closeMenu}
                         >
                             2026 Calendar
                         </Link>
                         <Link
                             href="/calendar/2027"
-                            className="text-gray-700 hover:text-red-700 font-medium px-2 py-1 rounded hover:bg-red-50"
+                            className="text-gray-700 hover:text-red-700 font-medium px-4 py-3 rounded-lg hover:bg-red-50"
                             onClick={closeMenu}
                         >
                             2027 Calendar
                         </Link>
                         <Link
                             href="/calendar-2026"
-                            className="text-gray-700 hover:text-red-700 font-medium px-2 py-1 rounded hover:bg-red-50"
+                            className="text-gray-700 hover:text-red-700 font-medium px-4 py-3 rounded-lg hover:bg-red-50"
                             onClick={closeMenu}
                         >
                             2026 Full View
                         </Link>
                         <Link
                             href="/rahu-kalam-today"
-                            className="text-gray-700 hover:text-red-700 font-medium px-2 py-1 rounded hover:bg-red-50"
+                            className="text-gray-700 hover:text-red-700 font-medium px-4 py-3 rounded-lg hover:bg-red-50"
                             onClick={closeMenu}
                         >
                             Rahu Kalam
                         </Link>
                         <Link
                             href="/festivals"
-                            className="text-gray-700 hover:text-red-700 font-medium px-2 py-1 rounded hover:bg-red-50"
+                            className="text-gray-700 hover:text-red-700 font-medium px-4 py-3 rounded-lg hover:bg-red-50"
                             onClick={closeMenu}
                         >
                             Festivals
                         </Link>
                         <Link
                             href="/gold-rate"
-                            className="text-yellow-800 font-medium px-2 py-1 rounded hover:bg-yellow-50 flex items-center gap-2"
+                            className="text-yellow-800 font-medium px-4 py-3 rounded-lg hover:bg-yellow-50 flex items-center gap-2 bg-yellow-50/50"
                             onClick={closeMenu}
                         >
                             <span className="text-lg">💰</span> Gold Rate

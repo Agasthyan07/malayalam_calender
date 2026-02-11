@@ -37,12 +37,12 @@ export default function CalendarRow({ day }: CalendarRowProps) {
             {/* Right Side: Details */}
             <div className="flex-grow p-4 min-w-0">
                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-2">
-                    <div className="flex items-center gap-2">
+                    <div className="flex flex-wrap items-center gap-2">
                         <span className="font-bold text-lg text-gray-900 dark:text-gray-100">
                             {day.malayalam_date}
                         </span>
                         {day.festival && (
-                            <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200">
+                            <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200 whitespace-normal text-center">
                                 {day.festival}
                             </span>
                         )}
