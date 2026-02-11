@@ -50,12 +50,28 @@ export default function GoogleTranslate() {
         #google_translate_element {
             display: inline-block;
         }
-        .goog-te-gadget-simple {
-            background-color: transparent !important;
-            border: none !important;
-            font-size: 10pt !important;
-            padding: 0 !important;
-        }
+            /* Customize the widget sort of */
+            .goog-te-gadget {
+                font-family: inherit !important;
+                font-size: 0 !important; /* Hide "Powered by Google" */
+            }
+            .goog-te-gadget span {
+                display: none !important; /* Hide "Powered by Google" text */
+            }
+            .goog-te-gadget .goog-te-combo {
+                margin: 0 !important;
+                padding: 4px 8px !important;
+                border: 1px solid #e5e7eb !important;
+                border-radius: 6px !important;
+                font-size: 14px !important;
+                color: #374151 !important;
+                background-color: white !important;
+                cursor: pointer !important;
+                outline: none !important;
+            }
+            #google_translate_element img {
+                display: none !important;
+            }
       `}</style>
         </>
     );
