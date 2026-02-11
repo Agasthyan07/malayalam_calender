@@ -155,14 +155,14 @@ export default async function MonthPageSEO({ params }: Props) {
                                 <Link
                                     href={isToday ? '/' : `/date/${formatDate(day.date)}`}
                                     key={day.date}
-                                    className="group flex items-center p-4 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-0.5"
+                                    className="group flex items-center p-4 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-0.5 h-full"
                                 >
                                     <div className="flex-shrink-0 bg-red-50 dark:bg-red-900/20 text-red-700 dark:text-red-400 font-bold text-xs w-16 h-12 flex flex-col items-center justify-center rounded-lg mr-4 group-hover:bg-red-600 group-hover:text-white transition-colors">
                                         <span className="text-lg leading-none">{day.date.split('-')[2]}</span>
                                         <span className="text-[10px] uppercase">{day.weekday.substring(0, 3)}</span>
                                     </div>
-                                    <div className="flex-grow min-w-0">
-                                        <h3 className="font-bold text-gray-900 dark:text-gray-100 group-hover:text-red-700 dark:group-hover:text-red-400 transition-colors truncate text-sm mb-0.5">
+                                    <div className="flex-grow min-w-0 py-0.5">
+                                        <h3 className="font-bold text-gray-900 dark:text-gray-100 group-hover:text-red-700 dark:group-hover:text-red-400 transition-colors text-sm mb-1 leading-snug break-words whitespace-normal">
                                             {day.festival}
                                         </h3>
                                         <div className="text-xs text-gray-500 dark:text-gray-400">
