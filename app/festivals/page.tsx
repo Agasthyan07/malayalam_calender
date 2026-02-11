@@ -72,14 +72,19 @@ export default async function FestivalsPage() {
                                 <div className="grid gap-4 sm:grid-cols-2">
                                     {monthFestivals.map((day) => {
                                         const isToday = day.date === todayStr;
+                                        // Dynamic link logic
+                                        let linkHref = isToday ? '/' : `/date/${formatDate(day.date)}`;
+                                        if (day.festival?.toLowerCase().includes('vishu')) linkHref = '/vishu-2026-date-kerala';
+                                        if (day.festival?.toLowerCase().includes('onam') && day.festival.includes('Thiruvonam')) linkHref = '/onam-2026-date';
+
                                         return (
                                             <Link
-                                                href={isToday ? '/' : `/date/${formatDate(day.date)}`}
+                                                href={linkHref}
                                                 key={day.date}
-                                                className="group block bg-white rounded-xl p-5 shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.08)] border border-gray-100 transition-all duration-300 hover:-translate-y-1"
+                                                className="group block bg-white dark:bg-gray-800 rounded-xl p-5 shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.08)] border border-gray-100 dark:border-gray-700 transition-all duration-300 hover:-translate-y-1"
                                             >
                                                 <div className="flex items-start justify-between mb-3">
-                                                    <div className="bg-red-50 text-red-700 font-bold text-sm px-3 py-1 rounded-lg">
+                                                    <div className="bg-red-50 dark:bg-red-900/30 text-red-700 dark:text-red-400 font-bold text-sm px-3 py-1 rounded-lg">
                                                         {formatDate(day.date)}
                                                     </div>
                                                     <div className="text-xs font-semibold uppercase tracking-wider text-gray-400">
@@ -87,13 +92,13 @@ export default async function FestivalsPage() {
                                                     </div>
                                                 </div>
 
-                                                <h3 className="font-bold text-lg text-gray-900 group-hover:text-red-700 transition-colors mb-2 line-clamp-2 leading-tight">
+                                                <h3 className="font-bold text-lg text-gray-900 dark:text-white group-hover:text-red-700 dark:group-hover:text-red-400 transition-colors mb-2 line-clamp-2 leading-tight">
                                                     {day.festival}
                                                 </h3>
 
-                                                <div className="flex items-center gap-2 text-sm text-gray-500">
-                                                    <span className="w-1.5 h-1.5 rounded-full bg-gray-300"></span>
-                                                    <span className="font-medium text-gray-600">{day.malayalam_date}</span>
+                                                <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
+                                                    <span className="w-1.5 h-1.5 rounded-full bg-gray-300 dark:bg-gray-600"></span>
+                                                    <span className="font-medium text-gray-600 dark:text-gray-300">{day.malayalam_date}</span>
                                                 </div>
                                             </Link>
                                         );

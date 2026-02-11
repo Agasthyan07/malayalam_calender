@@ -2,9 +2,10 @@ import Link from 'next/link';
 
 type Props = {
     currentDate: string; // YYYY-MM-DD
+    lang?: string;
 };
 
-export default function DateNavigation({ currentDate }: Props) {
+export default function DateNavigation({ currentDate, lang = 'en' }: Props) {
     // Parse input date (YYYY-MM-DD)
     const [year, month, day] = currentDate.split('-').map(Number);
     const dateObj = new Date(year, month - 1, day);
@@ -45,13 +46,36 @@ export default function DateNavigation({ currentDate }: Props) {
     const isCurrentPageToday = currentDate === realTodayStr;
 
     // Determine URL for "Yesterday" button
-    // If prevDate matches realToday, go to /, else /date/...
-    const prevIsToday = toUrlFormat(prevDate).split('-').reverse().join('-') === realTodayStr;
-    const yesterdayUrl = prevIsToday ? '/' : `/date/${toUrlFormat(prevDate)}`;
+    // If prevDate matches realToday, go to / (or /ml), else /date/... (or /ml/date/...)
+    // Simplification: /date/ links for now.
+    // Ideally we'd respect the 'lang' for the destination path, but for now assuming 'en' paths for buttons to keep it simple or user stays in 'ml' if we construct it properly.
+    // Actually, we must link to /ml if lang is ml
+    const basePath = lang === 'ml' ? '/ml' : '';
 
-    // Determine URL for "Tomorrow" button
-    const nextIsToday = toUrlFormat(nextDate).split('-').reverse().join('-') === realTodayStr;
-    const tomorrowUrl = nextIsToday ? '/' : `/date/${toUrlFormat(nextDate)}`;
+    // Logic: if date is today, go to base root. else base/date/dd-mm-yyyy
+    const getLink = (date: Date) => {
+        const dateStr = toUrlFormat(date).split('-').reverse().join('-'); // YYYY-MM-DD
+        if (dateStr === realTodayStr) return `${basePath === '' ? '/' : basePath}`;
+        return `${basePath}/date/${toUrlFormat(date)}`;
+    };
+
+    const yesterdayUrl = getLink(prevDate);
+    const tomorrowUrl = getLink(nextDate);
+    const todayUrl = basePath === '' ? '/' : basePath;
+
+    const labels = lang === 'ml' ? {
+        yesterday: 'ഇന്നലെ',
+        tomorrow: 'നാളെ',
+        today: 'ഇന്ന്',
+        gotoToday: 'ഇന്നത്തേക്ക് പോവുക',
+        selected: 'തിരഞ്ഞെടുത്ത ദിവസം'
+    } : {
+        yesterday: 'Yesterday',
+        tomorrow: 'Tomorrow',
+        today: 'Today',
+        gotoToday: 'Go to Today',
+        selected: 'Selected'
+    };
 
     return (
         <div className="flex flex-col items-center gap-4">
@@ -60,9 +84,9 @@ export default function DateNavigation({ currentDate }: Props) {
                 <Link
                     href={yesterdayUrl}
                     className="group flex flex-col items-center text-gray-600 dark:text-gray-300 hover:text-red-700 dark:hover:text-red-400 transition-colors flex-1"
-                    aria-label={`Yesterday Malayalam Date ${toDisplayFormat(prevDate)}`}
+                    aria-label={`${labels.yesterday} ${toDisplayFormat(prevDate)}`}
                 >
-                    <span className="text-sm md:text-base font-medium mb-1">← Yesterday</span>
+                    <span className="text-sm md:text-base font-medium mb-1">← {labels.yesterday}</span>
                     <span className="text-xs md:text-sm text-gray-500 dark:text-gray-400 group-hover:text-red-600 dark:group-hover:text-red-300 font-mono">
                         {toDisplayFormat(prevDate)}
                     </span>
@@ -74,12 +98,11 @@ export default function DateNavigation({ currentDate }: Props) {
                 {/* Current Page Indicator (Middle) */}
                 <div className="flex flex-col items-center flex-1">
                     <span className={`text-sm md:text-base mb-1 ${isCurrentPageToday ? 'font-bold text-red-800' : 'font-medium text-gray-800'}`}>
-                        {isCurrentPageToday ? 'Today' : toDisplayFormat(dateObj)}
+                        {isCurrentPageToday ? labels.today : toDisplayFormat(dateObj)}
                     </span>
                     {!isCurrentPageToday && (
                         <span className="text-xs md:text-sm text-gray-500 font-mono">
-                            {/* If not today, show detailed date if needed, or just leave blank as main label handles it */}
-                            Selected
+                            {labels.selected}
                         </span>
                     )}
                     {isCurrentPageToday && (
@@ -96,9 +119,9 @@ export default function DateNavigation({ currentDate }: Props) {
                 <Link
                     href={tomorrowUrl}
                     className="group flex flex-col items-center text-gray-600 dark:text-gray-300 hover:text-red-700 dark:hover:text-red-400 transition-colors flex-1"
-                    aria-label={`Tomorrow Malayalam Date ${toDisplayFormat(nextDate)}`}
+                    aria-label={`${labels.tomorrow} ${toDisplayFormat(nextDate)}`}
                 >
-                    <span className="text-sm md:text-base font-medium mb-1">Tomorrow →</span>
+                    <span className="text-sm md:text-base font-medium mb-1">{labels.tomorrow} →</span>
                     <span className="text-xs md:text-sm text-gray-500 dark:text-gray-400 group-hover:text-red-600 dark:group-hover:text-red-300 font-mono">
                         {toDisplayFormat(nextDate)}
                     </span>
@@ -108,10 +131,10 @@ export default function DateNavigation({ currentDate }: Props) {
             {/* "Go to Today" Button (only if not on Today's page) */}
             {!isCurrentPageToday && (
                 <Link
-                    href="/"
+                    href={todayUrl}
                     className="inline-flex items-center justify-center px-6 py-2 border border-transparent text-sm font-medium rounded-full text-white bg-red-600 hover:bg-red-700 shadow-sm transition-colors"
                 >
-                    Go to Today
+                    {labels.gotoToday}
                 </Link>
             )}
         </div>
