@@ -3,50 +3,25 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 import { getMonthData, formatDate } from '@/lib/dateUtils';
 import AdSlot from '@/components/AdSlot';
 import Link from 'next/link';
+
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
-export const revalidate = 3600; // Hourly revalidation
-
-type Props = {
-    params: Promise<{ slug: string }>;
+export async function generateStaticParams() {
+    // Generate params for 2026/01
+    return [
+        { year: '2026', month: '01' }
+    ];
 }
 
-const MONTH_NAMES = [
-    'january', 'february', 'march', 'april', 'may', 'june',
-    'july', 'august', 'september', 'october', 'november', 'december'
-];
-
-function parseSlug(slug: string): { year: string, month: string } | null {
-    // Expected format: malayalam-calendar-{monthName}-{year}
-    // minimal length: malayalam-calendar-may-2026 (26 chars)
-    if (!slug.startsWith('malayalam-calendar-')) return null;
-
-    const parts = slug.replace('malayalam-calendar-', '').split('-');
-    // parts should be [monthName, year]
-    if (parts.length !== 2) return null;
-
-    const [monthName, year] = parts;
-    if (!/^\d{4}$/.test(year)) return null;
-
-    const monthIndex = MONTH_NAMES.indexOf(monthName.toLowerCase());
-    if (monthIndex === -1) return null;
-
-    const month = String(monthIndex + 1).padStart(2, '0');
-    return { year, month };
+type Props = {
+    params: Promise<{ year: string, month: string }>;
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-    const { slug } = await params;
-    const parsed = parseSlug(slug);
+    const { year, month } = await params;
 
-    if (!parsed) {
-        return {
-            title: 'Page Not Found',
-        };
-    }
-
-    const { year, month } = parsed;
+    // Month name helper
     const date = new Date(parseInt(year), parseInt(month) - 1, 1);
     const monthName = date.toLocaleString('default', { month: 'long' });
 
@@ -60,26 +35,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
             `${monthName} ${year} Nalla Samayam`,
             `Rahu Kalam ${monthName} ${year}`
         ],
-        alternates: {
-            canonical: `https://malayalamcalendar.site/${slug}`,
-        },
         openGraph: {
             title: `${monthName} ${year} Malayalam Calendar`,
             description: `View the complete Malayalam Calendar for ${monthName} ${year} with all daily details.`,
-            url: `https://malayalamcalendar.site/${slug}`,
         }
     };
 }
 
-export default async function MonthPageSEO({ params }: Props) {
-    const { slug } = await params;
-    const parsed = parseSlug(slug);
-
-    if (!parsed) {
-        notFound();
-    }
-
-    const { year, month } = parsed;
+export default async function MonthPage({ params }: Props) {
+    const { year, month } = await params;
     const days = await getMonthData(year, month);
 
     if (!days || days.length === 0) {
@@ -93,8 +57,8 @@ export default async function MonthPageSEO({ params }: Props) {
     const monthName = date.toLocaleString('default', { month: 'long' });
 
     const breadcrumbs = [
-        { label: `${year} Calendar`, href: `/malayalam-calendar/${year}` },
-        { label: monthName, href: `/${slug}` }, // Already good
+        { label: `${year} Calendar`, href: `/calendar/${year}` },
+        { label: monthName, href: `/malayalam-calendar-${monthName.toLowerCase()}-${year}` },
     ];
 
     return (
@@ -104,14 +68,14 @@ export default async function MonthPageSEO({ params }: Props) {
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
                 <div>
                     <h1 className="text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white capitalize mb-2">
-                        {monthName} {year} Malayalam Calendar
+                        {monthName} {year}
                     </h1>
                     <p className="text-gray-600 dark:text-gray-400">
-                        Daily Panchangam, Nakshatram, Tithi & Festivals
+                        Malayalam Calendar {year} - Daily Panchangam & Festivals
                     </p>
                 </div>
                 <Link
-                    href={`/malayalam-calendar/${year}`}
+                    href={`/calendar/${year}`}
                     className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-colors"
                 >
                     Back to Year View
@@ -193,3 +157,4 @@ export default async function MonthPageSEO({ params }: Props) {
         </div>
     );
 }
+

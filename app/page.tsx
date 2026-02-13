@@ -221,7 +221,7 @@ export default async function Home({ searchParams }: Props) {
         {/* STEP 5: Month Navigation Description */}
         {/* <!-- SEO IMPROVEMENT START --> */}
         <p className="text-sm text-gray-600 dark:text-gray-400 mt-4 text-center">
-          View the detailed <Link href="/calendar/2026" className="text-indigo-600 hover:underline">Monthly Malayalam Calendar</Link> including festivals, Muhurat timings, Nakshatra details, and public holidays for each month.
+          View the detailed <Link href="/malayalam-calendar/2026" className="text-indigo-600 hover:underline">Monthly Malayalam Calendar</Link> including festivals, Muhurat timings, Nakshatra details, and public holidays for each month.
         </p>
         {/* <!-- SEO IMPROVEMENT END --> */}
       </div>
@@ -246,7 +246,7 @@ export default async function Home({ searchParams }: Props) {
               Used widely for agricultural, religious, and social activities, this calendar is essential for checking the daily <strong>Nakshatram</strong> (Star), <strong>Tithi</strong> (Lunar day), and avoidance times like <strong>Rahu Kalam</strong> (രാഹുകാലം) and <strong>Gulika Kalam</strong>.
             </p>
             <p>
-              Whether you are planning a wedding, a housewarming, or simply checking today's auspicious times, our <Link href="/calendar/2026" className="text-indigo-600 hover:underline">2026 Malayalam Calendar</Link> provides accurate, location-based Panchangam data specifically calculated for Kerala. Tracks major festivals like <Link href="/festivals" className="text-indigo-600 hover:underline">Onam</Link>, Vishu, and temple festivals across the state.
+              Whether you are planning a wedding, a housewarming, or simply checking today's auspicious times, our <Link href="/malayalam-calendar/2026" className="text-indigo-600 hover:underline">2026 Malayalam Calendar</Link> provides accurate, location-based Panchangam data specifically calculated for Kerala. Tracks major festivals like <Link href="/festivals" className="text-indigo-600 hover:underline">Onam</Link>, Vishu, and temple festivals across the state.
             </p>
           </div>
         </section>
