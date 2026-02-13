@@ -9,5 +9,6 @@ export interface DailyData {
   rahukalam: string; // e.g., "15:00 - 16:30"
   festival: string | null;
   vratham: string | null;
+  muhurtham?: string; // e.g., "06:00 AM - 07:30 AM"
   is_holiday?: boolean;
 }

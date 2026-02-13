@@ -10,7 +10,8 @@ export default function TodayCard({ data, showMalayalamLabels = false }: { data:
         sunset: 'അസ്തമയം',
         rahukalam: 'രാഹുകാലം',
         festival: 'വിശേഷം',
-        vratham: 'വ്രതം'
+        vratham: 'വ്രതം',
+        muhurtham: 'മുഹൂർത്തം'
     } : {
         nakshatram: 'Nakshatram',
         tithi: 'Tithi',
@@ -18,7 +19,8 @@ export default function TodayCard({ data, showMalayalamLabels = false }: { data:
         sunset: 'Sunset',
         rahukalam: 'Rahukalam',
         festival: 'FESTIVAL',
-        vratham: 'VRATHAM'
+        vratham: 'VRATHAM',
+        muhurtham: 'MUHURTHAM'
     };
 
     return (
@@ -82,18 +84,24 @@ export default function TodayCard({ data, showMalayalamLabels = false }: { data:
                 </div>
 
                 {/* Festival Notice */}
-                {(data.festival || data.vratham) && (
-                    <div className="bg-amber-50 border border-amber-200 rounded-lg p-3 md:p-4">
+                {(data.festival || data.vratham || data.muhurtham) && (
+                    <div className="bg-amber-50 border border-amber-200 rounded-lg p-3 md:p-4 space-y-2">
                         {data.festival && (
-                            <div className="mb-2 last:mb-0">
-                                <span className="bg-amber-100 text-amber-800 text-[10px] md:text-xs font-bold px-2 py-0.5 rounded mr-2">{labels.festival}</span>
+                            <div className="flex items-start">
+                                <span className="bg-amber-100 text-amber-800 text-[10px] md:text-xs font-bold px-2 py-0.5 rounded mr-2 mt-0.5 shrink-0">{labels.festival}</span>
                                 <span className="font-medium text-sm md:text-base text-amber-900">{data.festival}</span>
                             </div>
                         )}
                         {data.vratham && (
-                            <div className="last:mb-0">
-                                <span className="bg-green-100 text-green-800 text-[10px] md:text-xs font-bold px-2 py-0.5 rounded mr-2">{labels.vratham}</span>
+                            <div className="flex items-start">
+                                <span className="bg-green-100 text-green-800 text-[10px] md:text-xs font-bold px-2 py-0.5 rounded mr-2 mt-0.5 shrink-0">{labels.vratham}</span>
                                 <span className="font-medium text-sm md:text-base text-green-900">{data.vratham}</span>
+                            </div>
+                        )}
+                        {data.muhurtham && (
+                            <div className="flex items-start">
+                                <span className="bg-indigo-100 text-indigo-800 text-[10px] md:text-xs font-bold px-2 py-0.5 rounded mr-2 mt-0.5 shrink-0">{labels.muhurtham}</span>
+                                <span className="font-medium text-sm md:text-base text-indigo-900">{data.muhurtham}</span>
                             </div>
                         )}
                     </div>

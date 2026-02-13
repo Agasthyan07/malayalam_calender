@@ -99,6 +99,39 @@ export default async function DatePage({ params }: Props) {
 
             <TodayCard data={data} />
 
+            {/* Muhurtham & Vratham Details Section */}
+            {(data.muhurtham || data.vratham) && (
+                <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {data.muhurtham && (
+                        <div className="bg-indigo-50 dark:bg-indigo-900/20 border border-indigo-100 dark:border-indigo-800 rounded-xl p-5">
+                            <h3 className="font-bold text-indigo-900 dark:text-indigo-300 mb-2 flex items-center gap-2">
+                                <span className="text-xl">⏱️</span> Muhurtham (മുഹൂർത്തം)
+                            </h3>
+                            <p className="text-indigo-800 dark:text-indigo-200 font-medium text-lg">
+                                {data.muhurtham}
+                            </p>
+                            <p className="text-xs text-indigo-600 dark:text-indigo-400 mt-2">
+                                Most auspicious time for new beginnings.
+                            </p>
+                        </div>
+                    )}
+
+                    {data.vratham && (
+                        <div className="bg-green-50 dark:bg-green-900/20 border border-green-100 dark:border-green-800 rounded-xl p-5">
+                            <h3 className="font-bold text-green-900 dark:text-green-300 mb-2 flex items-center gap-2">
+                                <span className="text-xl">🌿</span> Vratham (വ ്രതം)
+                            </h3>
+                            <p className="text-green-800 dark:text-green-200 font-medium text-lg">
+                                {data.vratham}
+                            </p>
+                            <p className="text-xs text-green-600 dark:text-green-400 mt-2">
+                                Ideal day for fasting and prayers.
+                            </p>
+                        </div>
+                    )}
+                </div>
+            )}
+
             <div className="mt-8">
                 <DateNavigation currentDate={data.date} />
             </div>
