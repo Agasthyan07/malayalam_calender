@@ -57,7 +57,8 @@
     "sunset": "18:22",
     "rahukalam": "07:30 - 09:00",
     "festival": null,
-    "vratham": "Somavara Vratham"
+    "vratham": "Somavara Vratham",
+    "muhurtham": "Marriage (Makayiram)"
   },
   {
     "date": "2026-01-06",
@@ -105,7 +106,8 @@
     "sunset": "18:24",
     "rahukalam": "10:30 - 12:00",
     "festival": null,
-    "vratham": null
+    "vratham": null,
+    "muhurtham": "Marriage (Makam)"
   },
   {
     "date": "2026-01-10",
@@ -117,7 +119,8 @@
     "sunset": "18:24",
     "rahukalam": "09:00 - 10:30",
     "festival": null,
-    "vratham": null
+    "vratham": null,
+    "muhurtham": "Marriage (Makam)"
   },
   {
     "date": "2026-01-11",
@@ -129,7 +132,8 @@
     "sunset": "18:25",
     "rahukalam": "16:30 - 18:00",
     "festival": null,
-    "vratham": null
+    "vratham": null,
+    "muhurtham": "Marriage (Uthram)"
   },
   {
     "date": "2026-01-12",
@@ -141,7 +145,8 @@
     "sunset": "18:25",
     "rahukalam": "07:30 - 09:00",
     "festival": "Swami Vivekananda Jayanti",
-    "vratham": "Sashti Vratham"
+    "vratham": "Sashti Vratham",
+    "muhurtham": "Marriage (Atham)"
   },
   {
     "date": "2026-01-13",
@@ -153,7 +158,8 @@
     "sunset": "18:26",
     "rahukalam": "15:00 - 16:30",
     "festival": null,
-    "vratham": null
+    "vratham": null,
+    "muhurtham": "Marriage (Atham)"
   },
   {
     "date": "2026-01-14",
@@ -165,7 +171,8 @@
     "sunset": "18:26",
     "rahukalam": "12:00 - 13:30",
     "festival": "Makaravilakku",
-    "vratham": "Ekadashi"
+    "vratham": "Ekadashi",
+    "muhurtham": "Marriage (Anuradha)"
   },
   {
     "date": "2026-01-15",
@@ -273,7 +280,8 @@
     "sunset": "18:30",
     "rahukalam": "10:30 - 12:00",
     "festival": null,
-    "vratham": null
+    "vratham": null,
+    "muhurtham": "Marriage (Uttara Bhadrapada)"
   },
   {
     "date": "2026-01-24",
@@ -333,7 +341,8 @@
     "sunset": "18:33",
     "rahukalam": "12:00 - 13:30",
     "festival": null,
-    "vratham": null
+    "vratham": null,
+    "muhurtham": "Marriage (Rohini)"
   },
   {
     "date": "2026-01-29",

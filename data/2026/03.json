@@ -46,7 +46,8 @@
     "sunset": "18:30",
     "rahukalam": "12:00 - 13:30",
     "festival": null,
-    "vratham": null
+    "vratham": null,
+    "muhurtham": "Housewarming (Uttara Phalguni)"
   },
   {
     "date": "2026-03-05",
@@ -58,7 +59,8 @@
     "sunset": "18:30",
     "rahukalam": "13:30 - 15:00",
     "festival": null,
-    "vratham": null
+    "vratham": null,
+    "muhurtham": "Housewarming (Uttara Phalguni)"
   },
   {
     "date": "2026-03-06",
@@ -70,7 +72,8 @@
     "sunset": "18:30",
     "rahukalam": "10:30 - 12:00",
     "festival": null,
-    "vratham": null
+    "vratham": null,
+    "muhurtham": "Housewarming (Chitra)"
   },
   {
     "date": "2026-03-07",
@@ -107,7 +110,8 @@
     "sunset": "18:30",
     "rahukalam": "07:30 - 09:00",
     "festival": null,
-    "vratham": null
+    "vratham": null,
+    "muhurtham": "Housewarming (Anuradha)"
   },
   {
     "date": "2026-03-10",
@@ -119,7 +123,8 @@
     "sunset": "18:30",
     "rahukalam": "15:00 - 16:30",
     "festival": null,
-    "vratham": null
+    "vratham": null,
+    "muhurtham": "Marriage (Anuradha)"
   },
   {
     "date": "2026-03-11",
@@ -155,7 +160,8 @@
     "sunset": "18:30",
     "rahukalam": "10:30 - 12:00",
     "festival": "Kerala Theyyam Festival Ends",
-    "vratham": null
+    "vratham": null,
+    "muhurtham": "Marriage & Housewarming (Uttara Ashadha)"
   },
   {
     "date": "2026-03-14",
@@ -167,7 +173,8 @@
     "sunset": "18:30",
     "rahukalam": "09:00 - 10:30",
     "festival": "Papamochani Ekadashi, Sabarimala Monthly Pooja Begins",
-    "vratham": "Ekadashi"
+    "vratham": "Ekadashi",
+    "muhurtham": "Marriage & Housewarming (Uttara Ashadha)"
   },
   {
     "date": "2026-03-15",
