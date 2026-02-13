@@ -5,6 +5,7 @@ import AdSlot from '@/components/AdSlot';
 import Link from 'next/link';
 
 import { Metadata } from 'next';
+import { notFound } from 'next/navigation';
 
 export async function generateStaticParams() {
     // Generate params for 2026/01
@@ -44,6 +45,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function MonthPage({ params }: Props) {
     const { year, month } = await params;
     const days = await getMonthData(year, month);
+
+    if (!days || days.length === 0) {
+        notFound();
+    }
+
     const festivals = days.filter(d => d.festival);
 
     // Month name helper
@@ -81,15 +87,9 @@ export default async function MonthPage({ params }: Props) {
             {/* Main Calendar List View */}
             <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-100 dark:border-gray-700 overflow-hidden my-6">
                 <div className="divide-y divide-gray-100 dark:divide-gray-800">
-                    {days.length > 0 ? (
-                        days.map((day) => (
-                            <CalendarRow key={day.date} day={day} />
-                        ))
-                    ) : (
-                        <div className="p-8 text-center text-gray-500">
-                            No data available for this month yet.
-                        </div>
-                    )}
+                    {days.map((day) => (
+                        <CalendarRow key={day.date} day={day} />
+                    ))}
                 </div>
             </div>
 
