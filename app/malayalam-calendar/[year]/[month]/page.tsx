@@ -1,4 +1,5 @@
 import CalendarRow from '@/components/CalendarRow';
+import DailyMuhurthamTable from '@/components/DailyMuhurthamTable';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import { getMonthData, formatDate } from '@/lib/dateUtils';
 import AdSlot from '@/components/AdSlot';
@@ -143,6 +144,9 @@ export default async function MonthPage({ params }: Props) {
                     </div>
                 )}
             </div>
+
+            {/* Daily Muhurtham Table */}
+            <DailyMuhurthamTable days={days} title={`Daily Muhurtham in ${monthName} ${year}`} />
 
             <div className="mt-12 prose prose-indigo dark:prose-invert max-w-none">
                 <h3>About {monthName} {year} in Malayalam Calendar</h3>
