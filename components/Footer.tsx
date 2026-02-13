@@ -29,6 +29,7 @@ export default function Footer() {
                             <Link href="/terms" className="hover:text-red-700">Terms of Service</Link>
                             <Link href="/disclaimer" className="hover:text-red-700">Disclaimer</Link>
                             <Link href="/contact" className="hover:text-red-700">Contact Us</Link>
+                            <Link href="/website-map" className="hover:text-red-700">Sitemap</Link>
                         </div>
                     </div>
                 </div>

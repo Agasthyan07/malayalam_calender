@@ -13,7 +13,7 @@ export default function AboutPage() {
 
             <div className="bg-white dark:bg-gray-800 rounded-xl p-8 shadow-sm border border-gray-100 dark:border-gray-700 prose prose-red dark:prose-invert max-w-none">
                 <p className="lead text-lg">
-                    Welcome to <strong>Malayalam Calendar</strong>, your comprehensive digital guide to the traditional Kerala way of timekeeping.
+                    Welcome to <strong>Malayalam Calendar</strong>, the <strong>First Malayalam Interactive Calendar</strong> designed to be your comprehensive digital guide to the traditional Kerala way of timekeeping.
                 </p>
 
                 <h3>Our Mission</h3>
