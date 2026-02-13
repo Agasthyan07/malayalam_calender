@@ -33,9 +33,8 @@ export default function Header() {
                     <Link href="/" className="text-gray-700 hover:text-red-700 hover:bg-red-50 font-medium px-3 py-2 rounded-lg transition-colors">
                         Today
                     </Link>
-                    <Link href="/calendar/2026" className="text-gray-700 hover:text-red-700 hover:bg-red-50 font-medium px-3 py-2 rounded-lg transition-colors">2026 Calendar</Link>
+                    <Link href="/calendar/2026" className="text-gray-700 hover:text-red-700 hover:bg-red-50 font-medium px-3 py-2 rounded-lg transition-colors">Malayalam Calendar 2026</Link>
                     <Link href="/calendar/2027" className="text-gray-700 hover:text-red-700 hover:bg-red-50 font-medium px-3 py-2 rounded-lg transition-colors">2027 Calendar</Link>
-                    <Link href="/calendar-2026" className="text-gray-700 hover:text-red-700 hover:bg-red-50 font-medium px-3 py-2 rounded-lg transition-colors">Full View</Link>
                     <Link href="/rahu-kalam-today" className="text-gray-700 hover:text-red-700 hover:bg-red-50 font-medium px-3 py-2 rounded-lg transition-colors">Rahu Kalam</Link>
                     <Link href="/festivals" className="text-gray-700 hover:text-red-700 hover:bg-red-50 font-medium px-3 py-2 rounded-lg transition-colors">Festivals</Link>
                     <Link href="/gold-rate" className="text-yellow-700 hover:text-yellow-800 font-bold bg-yellow-50 hover:bg-yellow-100 px-4 py-2 rounded-full text-sm flex items-center gap-2 border border-yellow-200 transition-colors ml-2">
@@ -75,7 +74,7 @@ export default function Header() {
                             className="text-gray-700 hover:text-red-700 font-medium px-4 py-3 rounded-lg hover:bg-red-50"
                             onClick={closeMenu}
                         >
-                            2026 Calendar
+                            Malayalam Calendar 2026
                         </Link>
                         <Link
                             href="/calendar/2027"
@@ -83,13 +82,6 @@ export default function Header() {
                             onClick={closeMenu}
                         >
                             2027 Calendar
-                        </Link>
-                        <Link
-                            href="/calendar-2026"
-                            className="text-gray-700 hover:text-red-700 font-medium px-4 py-3 rounded-lg hover:bg-red-50"
-                            onClick={closeMenu}
-                        >
-                            2026 Full View
                         </Link>
                         <Link
                             href="/rahu-kalam-today"

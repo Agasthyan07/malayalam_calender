@@ -9,7 +9,7 @@ export default function Footer() {
                         <h3 className="font-bold text-gray-900 mb-4">Quick Links</h3>
                         <div className="flex flex-col gap-2 text-sm text-gray-600">
                             <Link href="/" className="hover:text-red-700">Today's Calendar</Link>
-                            <Link href="/calendar-2026" className="hover:text-red-700">Full 2026 Calendar</Link>
+                            <Link href="/calendar/2026" className="hover:text-red-700">Malayalam Calendar 2026</Link>
                             <Link href="/calendar/2027" className="hover:text-red-700">2027 Calendar</Link>
                             <Link href="/festivals" className="hover:text-red-700">Kerala Festivals</Link>
                             <Link href="/gold-rate" className="hover:text-red-700">Gold Rate Today</Link>

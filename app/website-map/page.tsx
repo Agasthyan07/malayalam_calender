@@ -17,8 +17,7 @@ export default function SitemapPage() {
                     <h2 className="text-xl font-bold mb-4 text-red-700">Calendars</h2>
                     <ul className="space-y-2 text-gray-600 dark:text-gray-300">
                         <li><Link href="/" className="hover:text-red-600 hover:underline">Today</Link></li>
-                        <li><Link href="/calendar-2026" className="hover:text-red-600 hover:underline">Full 2026 Calendar</Link></li>
-                        <li><Link href="/calendar/2026" className="hover:text-red-600 hover:underline">2026 Monthly View</Link></li>
+                        <li><Link href="/calendar/2026" className="hover:text-red-600 hover:underline">Malayalam Calendar 2026</Link></li>
                         <li><Link href="/calendar/2027" className="hover:text-red-600 hover:underline">2027 Calendar</Link></li>
                     </ul>
                 </div>
