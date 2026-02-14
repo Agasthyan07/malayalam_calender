@@ -12,7 +12,7 @@ export default function Footer() {
                             <Link href="/malayalam-calendar/2026" className="hover:text-red-700">Malayalam Calendar 2026</Link>
                             <Link href="/malayalam-calendar/2027" className="hover:text-red-700">2027 Calendar</Link>
                             <Link href="/festivals" className="hover:text-red-700">Kerala Festivals</Link>
-                            <Link href="/gold-rate" className="hover:text-red-700">Gold Rate Today</Link>
+
                             <Link href="/rahu-kalam-today" className="hover:text-red-700">Rahu Kalam Times</Link>
                         </div>
                     </div>

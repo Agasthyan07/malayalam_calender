@@ -37,9 +37,7 @@ export default function Header() {
                     <Link href="/malayalam-calendar/2027" className="text-gray-700 hover:text-red-700 hover:bg-red-50 font-medium px-3 py-2 rounded-lg transition-colors">2027 Calendar</Link>
                     <Link href="/rahu-kalam-today" className="text-gray-700 hover:text-red-700 hover:bg-red-50 font-medium px-3 py-2 rounded-lg transition-colors">Rahu Kalam</Link>
                     <Link href="/festivals" className="text-gray-700 hover:text-red-700 hover:bg-red-50 font-medium px-3 py-2 rounded-lg transition-colors">Festivals</Link>
-                    <Link href="/gold-rate" className="text-yellow-700 hover:text-yellow-800 font-bold bg-yellow-50 hover:bg-yellow-100 px-4 py-2 rounded-full text-sm flex items-center gap-2 border border-yellow-200 transition-colors ml-2">
-                        <span>💰</span> Rate
-                    </Link>
+
                     <div className="ml-2 pl-2 border-l border-gray-200">
                         <GoogleTranslate />
                     </div>
@@ -97,13 +95,7 @@ export default function Header() {
                         >
                             Festivals
                         </Link>
-                        <Link
-                            href="/gold-rate"
-                            className="text-yellow-800 font-medium px-4 py-3 rounded-lg hover:bg-yellow-50 flex items-center gap-2 bg-yellow-50/50"
-                            onClick={closeMenu}
-                        >
-                            <span className="text-lg">💰</span> Gold Rate
-                        </Link>
+
                     </nav>
                 </div>
             )}

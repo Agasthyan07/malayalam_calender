@@ -74,13 +74,49 @@ export default async function RahuKalamPage() {
             </section>
 
             {/* Explanation Section */}
-            <section className="prose prose-gray dark:prose-invert max-w-none mb-8">
-                <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-3">What is Rahu Kalam?</h2>
-                <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                    Rahu Kalam (or Rahu Kaalam) is a period of about 90 minutes every day that is considered inauspicious in Vedic astrology.
-                    It is strictly avoided for starting new ventures, buying property, or auspicious ceremonies like marriages.
-                    The timing changes every day based on the weekday and sunrise/sunset times.
+            <section className="prose prose-lg dark:prose-invert max-w-none mb-12">
+                <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Understanding Rahu Kalam: The Inauspicious Time</h2>
+                <div className="bg-gray-50 dark:bg-gray-900/50 p-6 rounded-xl border border-gray-100 dark:border-gray-800 mb-6">
+                    <p className="font-semibold text-gray-800 dark:text-gray-200 m-0">
+                        "Rahu Kalam" is essentially a period of 1.5 hours each day that is dedicated to Rahu, the shadow planet of desire and illusion. In Vedic astrology, this time frame is often deemed unsuitable for undertaking any constructive or auspicious work.
+                    </p>
+                </div>
+
+                <h3>The Legend of Rahu</h3>
+                <p>
+                    According to Hindu mythology, Rahu is a severed head of an asura (demon) that swallows the sun causing eclipses. He is considered the king of meteors and represents chaos, mystery, and cruelty.
+                    Since Rahu is a malefic node, the time governed by him—<strong>Rahu Kalam</strong>—is believed to carry a negative energy that can cause failure, delay, or obstacles in any new venture started during this time.
                 </p>
+
+                <h3>How is it Calculated?</h3>
+                <p>
+                    The calculation of Rahu Kalam is based on the breaking of daylight hours (sunrise to sunset) into eight equal segments.
+                    Assuming a standard sunrise at 6:00 AM and sunset at 6:00 PM (12 hours of daylight), each segment lasts for 1 hour and 30 minutes (90 minutes).
+                    Different segments on different days of the week are assigned to Rahu.
+                </p>
+                <ul className="list-disc pl-5">
+                    <li><strong>Mnemonic for Daily Order:</strong> A popular way to remember the order of Rahu Kalam days is the phrase <em>"Mother Saw Father Wearing The Turban Suddenly"</em> (Monday, Saturday, Friday, Wednesday, Thursday, Tuesday, Sunday). However, the actual time slots shift accordingly.</li>
+                    <li><strong>Location Matters:</strong> Since it depends on sunrise and sunset, the exact start and end time will vary by a few minutes depending on whether you are in Kochi, Trivandrum, or Dubai.</li>
+                </ul>
+
+                <h3>Do's and Don'ts During Rahu Kalam</h3>
+                <p>
+                    For those who follow astrological principles strictly, observing Rahu Kalam is a daily ritual. Here are the general guidelines:
+                </p>
+                <h4>What to Avoid (DON'Ts)</h4>
+                <ul>
+                    <li><strong>Starting New Ventures:</strong> Do not open a new business, launch a project, or sign important contracts.</li>
+                    <li><strong>Journeys:</strong> Avoid commencing a long journey (Yatra). If travel is unavoidable, some people eat a pinch of sugar or jaggery before leaving.</li>
+                    <li><strong>Auspicious Ceremonies:</strong> Marriage rituals (Muhurtham), housewarmings (Griha Pravesh), or naming ceremonies form strict 'no-go' activities.</li>
+                    <li><strong>Purchasing Assets:</strong> Buying gold, cars, or property is generally postponed until the period is over.</li>
+                </ul>
+
+                <h4>What is Allowed (DO's)</h4>
+                <ul>
+                    <li><strong>Routine Work:</strong> You can continue doing work that you have already started before the Rahu Kalam began. The restriction is primarily on <em>starting</em> something new.</li>
+                    <li><strong>Worship:</strong> Interestingly, worship of Goddess Durga or Lord Shiva is considered beneficial during this time to ward off the negative effects of Rahu. Lighting a lemon lamp (Narakal) for Durga Devi during Rahu Kalam on Fridays and Tuesdays is a popular remedy in Kerala and Tamil Nadu.</li>
+                    <li><strong>Resting:</strong> It is simply a good time to take a break or finish mundane, non-critical tasks.</li>
+                </ul>
             </section>
 
             {/* Daily SEO Section */}

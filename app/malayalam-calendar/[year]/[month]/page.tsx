@@ -149,13 +149,31 @@ export default async function MonthPage({ params }: Props) {
             <DailyMuhurthamTable days={days} title={`Daily Muhurtham in ${monthName} ${year}`} />
 
             <div className="mt-12 prose prose-indigo dark:prose-invert max-w-none">
-                <h3>About {monthName} {year} in Malayalam Calendar</h3>
+                <h3>Significance of {monthName} {year} in Malayalam Calendar</h3>
                 <p>
-                    {monthName} {year} corresponds to the Malayalam months of <strong>{days[0]?.malayalam_date.split(' ')[0]}</strong> and <strong>{days[days.length - 1]?.malayalam_date.split(' ')[0]}</strong>.
-                    This page offers a comprehensive daily view (Panchangam) enabling you to check the <strong>Nakshatram</strong>, <strong>Tithi</strong>, <strong>Rahu Kalam</strong>, and other auspicious timings for every day of the month.
+                    The month of <strong>{monthName}</strong> holds specific cultural and astrological significance in the Kerala calendar system.
+                    {monthName === 'August' || monthName === 'September' ? (
+                        " This period typically corresponds to the Malayalam month of Chingam, marking the beginning of the New Year (Kollavarsham) and the harvest season. It is a time of joy, prosperity, and the grand celebration of Onam."
+                    ) : monthName === 'April' || monthName === 'May' ? (
+                        " This period usually spans the Malayalam months of Meenam and Medam. The transition into Medam marks 'Vishu', the astronomical New Year, celebrated with the auspicious Vishukkani."
+                    ) : monthName === 'July' || monthName === 'August' ? (
+                        " This period often covers the month of Karkidakam, known as the 'Ramayana Month'. It is a time dedicated to reading the Ramayana, practicing Ayurveda (Karkidaka Chikitsa), and spiritual reflection amidst the heavy monsoon rains."
+                    ) : (
+                        ` In ${monthName}, the sun's position and the corresponding Nakshatras play a vital role in determining auspicious dates for weddings (Vivaha Muhurtham) and house warming ceremonies (Griha Pravesham).`
+                    )}
                 </p>
+
+                <h4>How to Use This Calendar Strategy</h4>
                 <p>
-                    For detailed daily views including Nalla Samayam and sunrise/sunset timings, simply click on any date in the list above.
+                    Our <strong>{monthName} {year} daily view</strong> is designed to help you plan your activities in alignment with traditional values.
+                </p>
+                <ul>
+                    <li><strong>For Weddings & Events:</strong> Look for days where "Nalla Samayam" is abundant and avoid days with "Dur Muhurtham".</li>
+                    <li><strong>For Fasting (Vratam):</strong> Check the <em>Tithi</em>. Ekadashi, Pradosham, and Sashti are key days for fasting.</li>
+                    <li><strong>For Farming/Gardening:</strong> The <em>Njattuvela</em> (Sun's star position) available in our daily details helps in deciding when to plant crops.</li>
+                </ul>
+                <p>
+                    Each day listed above is clickable. By visiting the specific date page, you can access minute-level details including sunrise/sunset times, Gulika Kalam, and the exact ending times of stars and thithis.
                 </p>
             </div>
         </div>

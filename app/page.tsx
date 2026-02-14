@@ -8,10 +8,7 @@ import JsonLd from '@/components/JsonLd';
 import { Metadata } from 'next';
 import CalendarGrid from '@/components/CalendarGrid';
 
-async function getGoldRate() {
-  const data = await import('@/data/gold-rate.json');
-  return data.default;
-}
+
 
 export const revalidate = 3600; // Hourly revalidation
 
@@ -109,7 +106,7 @@ export default async function Home({ searchParams }: Props) {
   // Fetch full month data for the calendar grid
   const [year, month] = targetDate.split('-');
   const monthData = await getMonthData(year, month);
-  const goldRate = await getGoldRate();
+
 
   // STEP 8: Schema Markup
   const jsonLd = {
@@ -184,25 +181,7 @@ export default async function Home({ searchParams }: Props) {
 
       <TodayCard data={data} />
 
-      {/* Gold Rate Widget */}
-      <div className="mt-6 bg-gradient-to-r from-yellow-50 to-white dark:from-yellow-900/10 dark:to-gray-800 rounded-xl border border-yellow-100 dark:border-yellow-900/30 p-4 shadow-sm">
-        <div className="flex justify-between items-center">
-          <div>
-            <h3 className="text-yellow-800 dark:text-yellow-500 font-bold text-sm uppercase tracking-wide">
-              Today's Gold Rate in Kerala
-            </h3>
-            <p className="text-xs text-gray-500 dark:text-gray-400">22 Carat (1 Gram)</p>
-          </div>
-          <Link href="/gold-rate" className="flex items-center gap-2 group">
-            <span className="text-2xl font-black text-gray-900 dark:text-white">
-              ₹{goldRate.gram22.toLocaleString()}
-            </span>
-            <span className="bg-yellow-100 dark:bg-yellow-900/50 text-yellow-700 dark:text-yellow-400 p-1.5 rounded-full group-hover:bg-yellow-200 transition">
-              →
-            </span>
-          </Link>
-        </div>
-      </div>
+
 
       <div className="mt-8">
         <DateNavigation currentDate={data.date} />
@@ -234,19 +213,55 @@ export default async function Home({ searchParams }: Props) {
 
         {/* STEP 3: SEO Intro Section */}
         {/* <!-- SEO IMPROVEMENT START --> */}
-        <section>
-          <h2 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3">
-            What is Malayalam Calendar (മലയാളം കലണ്ടർ)?
+        {/* STEP 3: SEO Intro Section - Enhanced for 500+ words */}
+        {/* <!-- SEO IMPROVEMENT START --> */}
+        <section className="mb-12">
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-6">
+            Comprehensive Guide to Malayalam Calendar 2026 (Kollavarsham 1201-1202)
           </h2>
-          <div className="prose prose-sm dark:prose-invert max-w-none text-gray-700 dark:text-gray-300 space-y-3">
+          <div className="prose prose-lg dark:prose-invert max-w-none text-gray-700 dark:text-gray-300 space-y-4">
             <p>
-              The <strong>Malayalam Calendar</strong> (known locally as <em>Kollavarsham</em> or <em>Kollam Era</em>) is the traditional solar calendar system followed in Kerala, India. Unlike the Gregorian calendar, the Malayalam era calculates dates based on the sun's position while also integrating lunar phases for determination of auspicious timings like <strong>Muhurat</strong> (മുഹൂർത്തം) and festivals.
+              Welcome to the most accurate digital resource for the <strong>Malayalam Calendar 2026</strong>.
+              Deeply rooted in the cultural history of Kerala, the Malayalam Calendar (also known as the <em>Kollavarsham</em> or <em>Kollam Era</em>) is more than just a tool for tracking dates—it is a guide to the rhythm of life for Malayalis.
+              Unlike the Western Gregorian calendar which follows the solar cycle purely for the year count, the Malayalam system is a <strong>Sidereal Solar Calendar</strong>.
+              This means it calculates dates based on the sun's apparent movement through the 12 zodiac signs (Rashi) relative to the fixed stars.
+            </p>
+
+            <h3 className="text-xl font-semibold text-gray-800 dark:text-white mt-6">How to Read Today's Panchangam</h3>
+            <p>
+              Our daily view provides the "Panchangam"—the five essential attributes of the day:
+              <strong> Tithi</strong> (Lunar Day), <strong>Vara</strong> (Weekday), <strong>Nakshatra</strong> (Star), <strong>Yoga</strong>, and <strong>Karana</strong>.
+              Understanding these elements is crucial for finding auspicious times (Muhurtham) for weddings, housewarmings, and new ventures.
+            </p>
+            <ul className="list-disc pl-5 space-y-2">
+              <li>
+                <strong>Nakshatram (Star):</strong> The star constellation the moon is passing through. For example, today's Nakshatram is <strong>{data.nakshatram}</strong>. It determines the nature of the day and is vital for matching horoscopes.
+              </li>
+              <li>
+                <strong>Tithi (Lunar Phase):</strong> Indicates the phase of the moon. Waxing (Shukla Paksha) and waning (Krishna Paksha) phases influence rituals. Today is <strong>{data.tithi}</strong>.
+              </li>
+              <li>
+                <strong>Nalla Samayam:</strong> The "Good Time" of the day, ideal for starting important tasks. Conversely, periods like <em>Rahu Kalam</em> and <em>Yamagandam</em> should be avoided for new beginnings.
+              </li>
+            </ul>
+
+            <h3 className="text-xl font-semibold text-gray-800 dark:text-white mt-6">The Structure of the Malayalam Year</h3>
+            <p>
+              The Malayalam year typically starts in mid-August with the month of <strong>Chingam</strong>.
+              This structure aligns perfectly with the agricultural cycle of Kerala, with Chingam marking the harvest season and the grand festival of <strong>Onam</strong>.
+              The months follow the sun's transit into zodiac signs: <em>Chingam</em> (Leo), <em>Kanni</em> (Virgo), <em>Thulam</em> (Libra), <em>Vrischikam</em> (Scorpio),
+              <em>Dhanu</em> (Sagittarius), <em>Makaram</em> (Capricorn), <em>Kumbham</em> (Aquarius), <em>Meenam</em> (Pisces), <em>Medam</em> (Aries), <em>Edavam</em> (Taurus),
+              <em>Mithunam</em> (Gemini), and <em>Karkidakam</em> (Cancer).
             </p>
             <p>
-              Used widely for agricultural, religious, and social activities, this calendar is essential for checking the daily <strong>Nakshatram</strong> (Star), <strong>Tithi</strong> (Lunar day), and avoidance times like <strong>Rahu Kalam</strong> (രാഹുകാലം) and <strong>Gulika Kalam</strong>.
+              Each month carries its own significance. For instance, <strong>Karkidakam</strong> (July-August) is known as the "Ramayana Month," a period for spiritual reflection and Ayurvedic rejuvenation treatment (Karkidaka Chikitsa), while <strong>Medam</strong> brings the celebration of <strong>Vishu</strong>, the astronomical New Year.
             </p>
+
+            <h3 className="text-xl font-semibold text-gray-800 dark:text-white mt-6">Why Use Our Digital Calendar?</h3>
             <p>
-              Whether you are planning a wedding, a housewarming, or simply checking today's auspicious times, our <Link href="/malayalam-calendar/2026" className="text-indigo-600 hover:underline">2026 Malayalam Calendar</Link> provides accurate, location-based Panchangam data specifically calculated for Kerala. Tracks major festivals like <Link href="/festivals" className="text-indigo-600 hover:underline">Onam</Link>, Vishu, and temple festivals across the state.
+              In the modern age, carrying a printed almanac is not always feasible. Our website brings the precision of traditional calculations to your fingertips.
+              We adjust for the timestamp of Kerala (IST) to ensure that the ending times of Nakshatras and Tithis are accurate to the minute.
+              This helps you plan your day with confidence, ensuring you adhere to traditions irrespective of where you live in the world.
             </p>
           </div>
         </section>

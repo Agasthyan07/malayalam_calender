@@ -45,9 +45,42 @@ export default async function FestivalsPage() {
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
             />
-            <h1 className="text-3xl md:text-4xl font-extrabold mb-10 text-center text-gray-900 dark:text-white tracking-tight">
+            <h1 className="text-3xl md:text-4xl font-extrabold mb-6 text-center text-gray-900 dark:text-white tracking-tight">
                 Festivals <span className="text-red-600">2026</span>
             </h1>
+
+            {/* INTRO CONTENT FOR SEO & USER VALUE */}
+            <div className="bg-white dark:bg-gray-800 rounded-xl p-6 md:p-8 shadow-sm border border-gray-100 dark:border-gray-700 mb-10 prose prose-lg dark:prose-invert max-w-none text-gray-700 dark:text-gray-300">
+                <p className="lead text-xl text-center mb-6">
+                    Discover the vibrant tapestry of Kerala's culture through its festivals.
+                    From the grand spectacle of <strong>Thrissur Pooram</strong> to the nostalgic harvest festival of <strong>Onam</strong>, 2026 promises a year filled with celebration.
+                </p>
+
+                <h2>The Cultural Significance of Kerala Festivals</h2>
+                <p>
+                    Kerala, often referred to as "God's Own Country," is a land where tradition and modernity coexist.
+                    The festivals here are not just religious observances; they are social events that bring together people of all castes, creeds, and communities.
+                    Most festivals in Kerala are determined by the <strong>Malayalam Calendar</strong>, falling on specific <em>Nakshatras</em> (stars) or <em>Tithis</em> (lunar days) in specific Malayalam months.
+                </p>
+
+                <h3>Temple Festivals (Ulsavams)</h3>
+                <p>
+                    The temple festival season in Kerala typically begins with the Kodiyettu (flag hoisting) and culminates in the Arattu (holy bath).
+                    The highlight of these festivals is the presence of caparisoned elephants, traditional percussion advice called <em>Chenda Melam</em> or <em>Panchavadyam</em>, and spectacular fireworks.
+                    Major events like the <strong>Thrissur Pooram</strong> (in the month of Medam) are world-renowned for their pageantry.
+                </p>
+
+                <h3>Harvest Festivals</h3>
+                <p>
+                    Agrarian traditions run deep in Kerala. <strong>Onam</strong>, the state festival, is a harvest festival celebrated in the month of Chingam.
+                    It welcomes the spirit of King Mahabali with floral carpets (Pookkalam) and a grand feast (Sadhya).
+                    Similarly, <strong>Vishu</strong> in local April marks the astronomical new year and the time of sowing seeds.
+                </p>
+
+                <div className="bg-indigo-50 dark:bg-indigo-900/20 p-4 rounded-lg text-sm border-l-4 border-indigo-500">
+                    <strong>Note for Travelers:</strong> If you are planning to visit Kerala in 2026, the best time to witness these festivals is between November and May, which is traditionally considered the festival season.
+                </div>
+            </div>
 
             <div className="space-y-12">
                 {Object.keys(festivalsByMonth).length > 0 ? (

@@ -8,14 +8,14 @@ export default function SiteSchema() {
             "Home",
             "2026 Calendar",
             "Festivals",
-            "Gold Rate",
+
             "Rahu Kalam"
         ],
         "url": [
             "https://malayalamcalendar.site/",
             "https://malayalamcalendar.site/calendar-2026",
             "https://malayalamcalendar.site/festivals",
-            "https://malayalamcalendar.site/gold-rate",
+
             "https://malayalamcalendar.site/rahu-kalam-today"
         ]
     };

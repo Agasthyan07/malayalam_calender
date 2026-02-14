@@ -136,6 +136,51 @@ export default async function DatePage({ params }: Props) {
                 <DateNavigation currentDate={data.date} />
             </div>
 
+            <div className="my-10 bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 p-8 prose prose-indigo dark:prose-invert max-w-none">
+                <h3 className="text-center mb-6">Understanding Today's Panchangam</h3>
+                <p>
+                    The daily view provides a snapshot of the five key elements of the Malayalam Almanac (Panchangam). Understanding these helps in planning your day effectively:
+                </p>
+                <div className="grid md:grid-cols-2 gap-8 not-prose">
+                    <div>
+                        <h4 className="font-bold text-gray-900 dark:text-white mb-2">1. Nakshatram (Star)</h4>
+                        <p className="text-sm text-gray-600 dark:text-gray-400">
+                            The star occupied by the Moon at a given time. It determines the nature of the day.
+                            <strong>{data.nakshatram}</strong> is today's ruling star.
+                        </p>
+                    </div>
+                    <div>
+                        <h4 className="font-bold text-gray-900 dark:text-white mb-2">2. Tithi (Lunar Day)</h4>
+                        <p className="text-sm text-gray-600 dark:text-gray-400">
+                            The angular distance between the Sun and the Moon. It is crucial for rituals and fasting (Vratam).
+                            <strong>{data.tithi}</strong> indicates the phase of the moon.
+                        </p>
+                    </div>
+                    <div>
+                        <h4 className="font-bold text-gray-900 dark:text-white mb-2">3. Nithya Yoga</h4>
+                        <p className="text-sm text-gray-600 dark:text-gray-400">
+                            Calculated from the sum of the longitudes of the Sun and Moon. It affects the auspiciousness of the day, helping to choose the right time for activities.
+                        </p>
+                    </div>
+                    <div>
+                        <h4 className="font-bold text-gray-900 dark:text-white mb-2">4. Karana</h4>
+                        <p className="text-sm text-gray-600 dark:text-gray-400">
+                            Half of a Tithi. It is used to determine the suitability of specific actions like travel or starting a business.
+                        </p>
+                    </div>
+                </div>
+
+                <h4>Rahu Kalam & Gulika Kalam</h4>
+                <p>
+                    <strong>Rahu Kalam</strong> ({data.rahukalam}) is considered inauspicious for starting new ventures, while
+                    <strong>Gulika Kalam</strong> is believed to be good for starting activities that you want to repeat (like building a house or saving money).
+                </p>
+
+                <p className="text-sm italic mt-4 text-center text-gray-500">
+                    * The timings provided are based on the standard time for Kerala, India. Small variations may occur depending on your exact latitude and longitude.
+                </p>
+            </div>
+
             <div className="my-8">
                 <h2 className="text-lg font-bold text-gray-800 dark:text-gray-200 mb-4 px-2 uppercase tracking-wide">
                     {new Date(parseInt(year), parseInt(month) - 1).toLocaleString('default', { month: 'long', year: 'numeric' })}

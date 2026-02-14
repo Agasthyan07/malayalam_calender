@@ -85,8 +85,28 @@ export default function OnamPage() {
                 <AdSlot slotId="top-banner" />
 
                 <div className="prose prose-lg dark:prose-invert max-w-none text-gray-700 dark:text-gray-300">
+                    <p className="lead text-xl text-gray-800 dark:text-gray-200 font-medium">
+                        <strong>Onam</strong> (ഓണം) is not just a festival; it is an emotion for Malayalis. It is the biggest festival of Kerala, celebrated with immense joy and enthusiasm, transcending the boundaries of religion and caste.
+                        It marks the season of plenty, the harvest of the rice crop, and is dedicated to the memory of the legendary King Mahabali.
+                    </p>
+
+                    <h2>The Legend of King Mahabali</h2>
                     <p>
-                        **Onam** (ഓണം) is the biggest festival of Kerala, celebrated with immense joy and enthusiasm. It marks the season of plenty and is dedicated to the memory of the legendary King Mahabali. The celebrations typically last for 10 days, starting from **Atham** and culminating in **Thiruvonam**.
+                        The core mythical significance of Onam revolves around <strong>King Mahabali</strong> (Maveli), an Asura king who once ruled Kerala.
+                        According to folklore, his reign was a golden era. There was no theft, no lies, and no poverty. Everyone was equal and happy.
+                        <em>(Maveli Naadu Vaneedum Kaalam, Manushayarellarum Onnu Pole...)</em>
+                    </p>
+                    <p>
+                        However, the Gods (Devas) became jealous of his popularity and approached Lord Vishnu for help. Vishnu took the avatar of a small Brahmin boy, <strong>Vamana</strong>, and visited Mahabali.
+                        He asked for three paces of land. The generous king granted the wish. Vamana then grew to cosmic proportions, covering the earth and sky with two steps.
+                        For the third step, Mahabali offered his own head. Impressed by his devotion and truthfulness, Vishnu granted him a boon:
+                        he could visit his beloved subjects once every year. **Onam** is the day of his annual return.
+                    </p>
+
+                    <h2>The Cultural Evolution</h2>
+                    <p>
+                        Historically, Onam has been celebrated for centuries. References to Onam can be found in Sangam literature and ancient temple inscriptions (like the Thiruvalla inscription dating back to 861 AD).
+                        Over time, it evolved from a temple-based celebration to a domestic and social festival. Today, it is promoted by the government as 'Tourism Week', showcasing Kerala's art forms to the world.
                     </p>
 
                     <h2 className="text-2xl font-bold text-gray-900 dark:text-white mt-8 mb-4">10 Days of Onam 2026</h2>

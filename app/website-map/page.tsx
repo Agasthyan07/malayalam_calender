@@ -36,7 +36,7 @@ export default function SitemapPage() {
                 <div>
                     <h2 className="text-xl font-bold mb-4 text-red-700">Tools</h2>
                     <ul className="space-y-2 text-gray-600 dark:text-gray-300">
-                        <li><Link href="/gold-rate" className="hover:text-red-600 hover:underline">Today's Gold Rate</Link></li>
+
                         <li><Link href="/rahu-kalam-today" className="hover:text-red-600 hover:underline">Rahu Kalam Today</Link></li>
                         <li><Link href="/inathe-nakshatram" className="hover:text-red-600 hover:underline">Today's Nakshatram</Link></li>
                     </ul>

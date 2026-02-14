@@ -70,7 +70,7 @@ export default function VishuPage() {
                         Vishu 2026 Date Kerala
                     </h1>
                     <p className="text-xl text-gray-600 dark:text-gray-300">
-                        Celebrating the Malayalam New Year & Harvest Festival
+                        Malayalam New Year & The Festival of Lights
                     </p>
                     <div className="mt-6 inline-block bg-yellow-50 dark:bg-yellow-900/30 border border-yellow-100 dark:border-yellow-800 rounded-xl p-4">
                         <p className="text-sm uppercase tracking-wide text-yellow-800 dark:text-yellow-500 font-bold mb-1">
@@ -85,13 +85,39 @@ export default function VishuPage() {
                 <AdSlot slotId="top-banner" />
 
                 <div className="prose prose-lg dark:prose-invert max-w-none text-gray-700 dark:text-gray-300">
-                    <p>
-                        **Vishu** (വിഷു) is one of the most important festivals in Kerala, marking the astronomical New Year and the sun's transit into the zodiac sign of *Medam* (Aries). It signifies prominence to new beginnings, prosperity, and the hope of a bountiful year ahead.
+                    <p className="lead text-xl text-gray-800 dark:text-gray-200 font-medium">
+                        <strong>Vishu</strong> (വിഷു) signifies the sun's transit into the Zodiac sign of Aries (Medam Rashi). It is celebrated as the astronomical New Year in Kerala and marks the beginning of the agricultural year.
+                        The word 'Vishu' in Sanskrit means 'equal', symbolizing the vernal equinox where day and night are roughly equal.
                     </p>
 
-                    <h2 className="text-2xl font-bold text-gray-900 dark:text-white mt-8 mb-4">Vishukkani Muhurat 2026</h2>
+                    <h2>The Tradition of Vishukkani</h2>
                     <p>
-                        The most significant ritual of Vishu is the **Vishukkani** (the first sight of the year). It is believed that what one sees first on Vishu morning determines the fortune for the entire year.
+                        The most important ritual of the day is <strong>Vishukkani</strong>—literally meaning "the first thing seen on Vishu".
+                        The belief is that seeing auspicious items as soon as one wakes up on Vishu morning determines the prosperity of the coming year.
+                    </p>
+                    <p>
+                        The <em>Kani</em> is arranged the previous night in an <em>Uruli</em> (bell metal vessel) and typically includes:
+                    </p>
+                    <ul>
+                        <li><strong>Kanikonna:</strong> Golden shower flowers (Cassia fistula), symbolizing wealth.</li>
+                        <li><strong>Raw rice and paddy:</strong> Representing food security.</li>
+                        <li><strong>Gold coins and currency:</strong> Signifying prosperity.</li>
+                        <li><strong>Cucumber, Jackfruit, Mango:</strong> Seasonal fruits representing abundance.</li>
+                        <li><strong>Valkannadi:</strong> A mirror to see oneself amidst this abundance, realizing that divinity is within.</li>
+                    </ul>
+
+                    <h2>Vishu Kaineettam and Other Customs</h2>
+                    <p>
+                        After viewing the Kani, the elders of the family give small amounts of money to younger members, known as <strong>Vishu Kaineettam</strong>.
+                        This tradition symbolizes the sharing of wealth and blessings.
+                        The day is also celebrated with a grand feast (Sadhya) utilizing seasonal produce like mangoes (Mambazha Pulissery) and jackfruit (Chakka Pradhaman).
+                        In northern Kerala, fireworks (Vishu Padakkam) are an integral part of the celebration.
+                    </p>
+
+                    <h3>Astronomical Significance</h3>
+                    <p>
+                        Vishu is not just a cultural festival but an astronomical event. It marks the sun's entry into the first zodiac sign, Mesha (Aries).
+                        While the official Malayalam Era new year starts in Chingam (August/September), Vishu represents the solar new year and is celebrated with similar significance across India (Baisakhi in Punjab, Puthandu in Tamil Nadu, Bihu in Assam).
                     </p>
                     <div className="bg-indigo-50 dark:bg-gray-800 p-6 rounded-xl border-l-4 border-indigo-500 my-6">
                         <h3 className="text-lg font-bold text-indigo-900 dark:text-indigo-300 mb-2">Best Time for Vishukkani</h3>
