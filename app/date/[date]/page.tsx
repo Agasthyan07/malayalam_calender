@@ -46,7 +46,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return {
         title: `${data.malayalam_date} - ${formatDate(data.date)} | Malayalam Calendar`,
         description: `Malayalam date for ${formatDate(data.date)} is ${data.malayalam_date}. Nakshatram: ${data.nakshatram}, Tithi: ${data.tithi}.`,
-
+        alternates: {
+            canonical: `https://malayalamcalendar.site/date/${formatDate(targetDate)}`,
+        },
         openGraph: {
             title: `${data.malayalam_date} - ${formatDate(data.date)}`,
             description: `Check the Malayalam date and details for ${formatDate(data.date)}.`,

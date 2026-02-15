@@ -23,9 +23,7 @@ export const metadata: Metadata = {
     'Malayalam Panchangam Today', 'Kerala Calendar', 'Malayalam Date',
     'Daily Malayalam Calendar', 'Nalla Samayam', 'Rahu Kalam'
   ],
-  alternates: {
-    canonical: './',
-  },
+
   icons: {
     icon: '/icon.png',
   },

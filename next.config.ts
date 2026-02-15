@@ -4,11 +4,7 @@ const nextConfig: NextConfig = {
   trailingSlash: false,
   async redirects() {
     return [
-      {
-        source: '/today',
-        destination: '/',
-        permanent: true,
-      },
+
       { source: '/calendar/:year(\\d{4})', destination: '/malayalam-calendar/:year', permanent: true },
       // 2026 Redirects
       { source: '/calendar/2026/01', destination: '/malayalam-calendar-january-2026', permanent: true },

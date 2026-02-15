@@ -1,5 +1,8 @@
 export const metadata = {
     title: 'Privacy Policy - Malayalam Calendar',
+    alternates: {
+        canonical: 'https://malayalamcalendar.site/privacy-policy',
+    },
 };
 
 export default function PrivacyPolicy() {

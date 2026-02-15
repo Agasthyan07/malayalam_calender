@@ -1,5 +1,8 @@
 export const metadata = {
     title: 'Terms of Service - Malayalam Calendar',
+    alternates: {
+        canonical: 'https://malayalamcalendar.site/terms',
+    },
 };
 
 export default function Terms() {

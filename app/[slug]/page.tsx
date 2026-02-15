@@ -3,6 +3,8 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 import { getMonthData, formatDate } from '@/lib/dateUtils';
 import AdSlot from '@/components/AdSlot';
 import Link from 'next/link';
+import RahuKalamTable from '@/components/RahuKalamTable';
+import DownloadableCalendar from '@/components/DownloadableCalendar';
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
@@ -131,6 +133,8 @@ export default async function MonthPageSEO({ params }: Props) {
 
             <AdSlot slotId={`month-bottom-${month}`} />
 
+            <DownloadableCalendar year={year} monthName={monthName} />
+
             {/* Festivals Section */}
             <div className="mt-12">
                 <div className="flex items-center gap-3 mb-6">
@@ -179,6 +183,10 @@ export default async function MonthPageSEO({ params }: Props) {
                     </div>
                 )}
             </div>
+
+
+
+            <RahuKalamTable days={days} title={`Rahu Kalam Timings - ${monthName} ${year}`} />
 
             <div className="mt-12 prose prose-indigo dark:prose-invert max-w-none">
                 <h3>About {monthName} {year} in Malayalam Calendar</h3>

@@ -18,6 +18,9 @@ export const metadata: Metadata = {
         description: 'Avoid inauspicious times. Check exact Rahu Kalam timings for Friday, Tuesday, Sunday, and all days.',
         type: 'article',
     },
+    alternates: {
+        canonical: 'https://malayalamcalendar.site/rahu-kalam-today',
+    },
 };
 
 export default async function RahuKalamPage() {

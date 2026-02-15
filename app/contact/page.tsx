@@ -3,6 +3,9 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
     title: 'Contact Us - Malayalam Calendar',
     description: 'Contact us for any queries regarding Malayalam Calendar 2026.',
+    alternates: {
+        canonical: 'https://malayalamcalendar.site/contact',
+    },
 };
 
 export default function ContactPage() {

@@ -1,5 +1,8 @@
 export const metadata = {
     title: 'Disclaimer - Malayalam Calendar',
+    alternates: {
+        canonical: 'https://malayalamcalendar.site/disclaimer',
+    },
 };
 
 export default function Disclaimer() {

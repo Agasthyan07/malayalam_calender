@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
             `Rahu Kalam ${year}`
         ],
         alternates: {
-            canonical: `https://malayalamcalendar.site/calendar/${year}`,
+            canonical: `https://malayalamcalendar.site/malayalam-calendar/${year}`,
         }
     };
 }
