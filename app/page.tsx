@@ -192,7 +192,7 @@ export default async function Home({ searchParams }: Props) {
         <DateNavigation currentDate={data.date} />
       </div>
 
-      <div className="my-8">
+      <div className="my-8" id="calendar-scroll">
         <div className="flex items-center justify-between mb-4 px-2">
           <h2 className="text-lg font-bold text-gray-800 dark:text-gray-200 uppercase tracking-wide">
             {new Date(parseInt(year), parseInt(month) - 1).toLocaleString('default', { month: 'long', year: 'numeric' })} Calendar
