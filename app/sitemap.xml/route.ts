@@ -52,14 +52,23 @@ export async function GET() {
     const monthRoutes2027: Route[] = months.map((month, index) => {
         const date = new Date(2027, index, 1);
         const monthName = date.toLocaleString('default', { month: 'long' }).toLowerCase();
-        return {
+
+        // Only January 2027 image exists currently
+        const isJan2027 = month === '01';
+
+        const route: Route = {
             url: `${baseUrl}/malayalam-calendar-${monthName}-2027`,
             lastModified: new Date().toISOString(),
             changeFrequency: 'weekly',
-            priority: '0.7',
-            image: `${baseUrl}/calendar-images/2027/malayalam-calendar-2027-${monthName}.png`,
-            imageTitle: `Malayalam Calendar 2027 ${monthName}`,
+            priority: isJan2027 ? '1.0' : '0.7',
         };
+
+        if (isJan2027) {
+            route.image = `${baseUrl}/calendar-images/2027/malayalam-calendar-2027-${monthName}.png`;
+            route.imageTitle = `Malayalam Calendar 2027 ${monthName}`;
+        }
+
+        return route;
     });
 
     const allRoutes = [...staticUrls, ...monthRoutes2026, ...monthRoutes2027];
