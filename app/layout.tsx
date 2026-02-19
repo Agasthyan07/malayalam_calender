@@ -21,7 +21,9 @@ export const metadata: Metadata = {
   keywords: [
     'Malayalam Calendar 2026', 'Kollavarsham 1201', 'Malayalam Era',
     'Malayalam Panchangam Today', 'Kerala Calendar', 'Malayalam Date',
-    'Daily Malayalam Calendar', 'Nalla Samayam', 'Rahu Kalam'
+    'Daily Malayalam Calendar', 'Nalla Samayam', 'Rahu Kalam',
+    'Download Malayalam Calendar 2026', 'Malayalam Calendar PDF Download', 'Download Calendar',
+    'Printable Malayalam Calendar'
   ],
 
   icons: {

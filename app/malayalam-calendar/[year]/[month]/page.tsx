@@ -6,6 +6,7 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 import { getMonthData, formatDate } from '@/lib/dateUtils';
 import AdSlot from '@/components/AdSlot';
 import Link from 'next/link';
+import JsonLd from '@/components/JsonLd';
 
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
@@ -64,8 +65,23 @@ export default async function MonthPage({ params }: Props) {
         { label: monthName, href: `/malayalam-calendar-${monthName.toLowerCase()}-${year}` },
     ];
 
+    const jsonLd = {
+        '@context': 'https://schema.org',
+        '@type': 'ImageObject',
+        'contentUrl': `https://malayalamcalendar.site/calendar-images/${year}/malayalam-calendar-${year}-${monthName.toLowerCase()}.png`,
+        'license': 'https://malayalamcalendar.site/terms',
+        'acquireLicensePage': 'https://malayalamcalendar.site/contact',
+        'creditText': 'MalayalamCalendar.site',
+        'creator': {
+            '@type': 'Organization',
+            'name': 'Malayalam Calendar'
+        },
+        'copyrightNotice': `© ${year} Malayalam Calendar`
+    };
+
     return (
         <div className="container mx-auto px-4 py-8 max-w-4xl">
+            <JsonLd data={jsonLd} />
             <Breadcrumbs items={breadcrumbs} />
 
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">

@@ -1,5 +1,6 @@
 export const metadata = {
     title: 'Terms of Service - Malayalam Calendar',
+    description: 'Terms of Service for using and downloading content from Malayalam Calendar 2026 website.',
     alternates: {
         canonical: 'https://malayalamcalendar.site/terms',
     },

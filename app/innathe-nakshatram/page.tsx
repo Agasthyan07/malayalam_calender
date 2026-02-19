@@ -15,7 +15,8 @@ export const metadata: Metadata = {
         'Punartham', 'Pooyam', 'Ayilyam', 'Makam', 'Pooram', 'Uthram',
         'Atham', 'Chithira', 'Chothi', 'Vishakam', 'Anizham', 'Thrikketta',
         'Moolam', 'Pooradam', 'Uthradam', 'Thiruvonam', 'Avittam', 'Chathayam',
-        'Pooruruttathi', 'Uthrattathi', 'Revathi'
+        'Pooruruttathi', 'Uthrattathi', 'Revathi',
+        'Download Nakshatra Finder', 'Malayalam Calendar Download'
     ]
 };
 

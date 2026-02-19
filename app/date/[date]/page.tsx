@@ -44,8 +44,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     }
 
     return {
-        title: `${data.malayalam_date} - ${formatDate(data.date)} | Malayalam Calendar`,
-        description: `Malayalam date for ${formatDate(data.date)} is ${data.malayalam_date}. Nakshatram: ${data.nakshatram}, Tithi: ${data.tithi}.`,
+        title: `${data.malayalam_date} - ${formatDate(data.date)} | Download Malayalam Calendar`,
+        description: `Malayalam date for ${formatDate(data.date)} is ${data.malayalam_date}. Nakshatram: ${data.nakshatram}, Tithi: ${data.tithi}. Download daily calendar details.`,
         alternates: {
             canonical: `https://malayalamcalendar.site/date/${formatDate(targetDate)}`,
         },

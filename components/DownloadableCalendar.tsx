@@ -40,13 +40,13 @@ export default function DownloadableCalendar({ year, monthName }: Props) {
             <div className="relative max-w-4xl mx-auto mb-8 shadow-2xl rounded-xl overflow-hidden border-4 border-white dark:border-gray-600 bg-gray-100">
                 <Image
                     src={imagePath}
-                    alt={`Download Malayalam Calendar ${monthName} ${year} - High Quality Printable Image with Nakshatram and Festivals`}
+                    alt={`Download Malayalam Calendar ${monthName} ${year} Image - High Quality Printable Monthly Planner with Nakshatram, Tithi, Rahu Kalam & Festivals for Kerala`}
                     width={1200}
                     height={850}
                     className="w-full h-auto object-contain"
                     onError={() => setImageError(true)}
                     priority={false}
-                    title={`Malayalam Calendar ${monthName} ${year} Printable HD`}
+                    title={`Download ${monthName} ${year} Malayalam Calendar Image (HD)`}
                 />
             </div>
 

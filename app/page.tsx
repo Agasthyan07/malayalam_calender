@@ -40,8 +40,8 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
 
   if (!data) {
     return {
-      title: `Malayalam Calendar 2026 – Today’s Date ${titleDate}, Nakshatram & Rahu Kalam (Kerala)`,
-      description: 'Check Malayalam Calendar 2026 with today’s Nakshatram, Rahu Kalam, Panchangam, festival dates, Muhurat timings and Kerala public holidays. Updated daily.',
+      title: `Malayalam Calendar 2026 – Today’s Date ${titleDate}, Nakshatram & Download`,
+      description: 'Check Malayalam Calendar 2026 with today’s Nakshatram, Rahu Kalam, Panchangam & Festival dates. Free Download Printable Malayalam Calendar 2026 PDF.',
     };
   }
 
@@ -51,8 +51,8 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
 
   // STEP 1: Improved Meta Tags
   return {
-    title: `Malayalam Calendar 2026 – Today’s Date ${titleDate}, Nakshatram & Rahu Kalam (Kerala)`,
-    description: 'Check Malayalam Calendar 2026 with today’s Nakshatram, Rahu Kalam, Panchangam, festival dates, Muhurat timings and Kerala public holidays. Updated daily.',
+    title: `Malayalam Calendar 2026 – Today’s Date ${titleDate}, Nakshatram & Download`,
+    description: 'Check Malayalam Calendar 2026 with today’s Nakshatram, Rahu Kalam, Panchangam & Festival dates. Free Download Printable Malayalam Calendar 2026 PDF.',
     alternates: {
       canonical: canonicalUrl,
     },
@@ -62,6 +62,9 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
       'Rahu Kalam Today',
       'Malayalam Panchangam',
       'Kerala Calendar',
+      'Download Malayalam Calendar',
+      'Malayalam Calendar 2026 PDF',
+      'Printable Calendar Kerala',
       'മലയാളം കലണ്ടർ 2026',
       'ഇന്ന് നക്ഷത്രം',
       'രാഹുകാലം',
@@ -162,7 +165,7 @@ export default async function Home({ searchParams }: Props) {
       {/* STEP 2: Improve H1 Structure - Single H1 */}
       <div className="text-center mb-6">
         <h1 className="text-2xl md:text-3xl font-extrabold text-gray-900 dark:text-white mb-2 leading-tight">
-          Malayalam Calendar – Today’s Date, Nakshatram & Rahu Kalam (Kerala)
+          Malayalam Calendar – Today’s Date, Nakshatram & Free Download
         </h1>
         <p className="text-gray-600 dark:text-gray-400">
           Current Malayalam Date: <strong>{data.malayalam_date}</strong> • Nakshatram: <strong>{data.nakshatram}</strong>
@@ -200,7 +203,7 @@ export default async function Home({ searchParams }: Props) {
         {/* STEP 5: Month Navigation Description */}
         {/* <!-- SEO IMPROVEMENT START --> */}
         <p className="text-sm text-gray-600 dark:text-gray-400 mt-4 text-center">
-          View the detailed <Link href="/malayalam-calendar/2026" className="text-indigo-600 hover:underline">Monthly Malayalam Calendar</Link> including festivals, Muhurat timings, Nakshatra details, and public holidays for each month.
+          View and <Link href="/malayalam-calendar/2026" className="text-indigo-600 hover:underline font-medium">Download the detailed Monthly Malayalam Calendar</Link> including festivals, Muhurat timings, Nakshatra details, and public holidays.
         </p>
         {/* <!-- SEO IMPROVEMENT END --> */}
       </div>

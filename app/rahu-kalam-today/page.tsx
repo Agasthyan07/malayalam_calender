@@ -11,7 +11,8 @@ export const metadata: Metadata = {
     description: 'Check accurate Rahu Kalam timings for today. Find daily schedules including Friday Rahukalam, Tuesday Rahukalam, and Sunday Rahukalam times for 2026.',
     keywords: [
         'Rahu Kalam Today', 'Rahu Kalam Timings', 'Friday Rahukalam', 'Tuesday Rahukalam',
-        'Sunday Rahukalam', 'Monday Rahukalam', 'Daily Rahu Kalam', 'Rahukalam Chart 2026'
+        'Sunday Rahukalam', 'Monday Rahukalam', 'Daily Rahu Kalam', 'Rahukalam Chart 2026',
+        'Download Rahu Kalam Chart', 'Malayalam Calendar PDF Download'
     ],
     openGraph: {
         title: 'Rahu Kalam Today – Daily Timings (Monday to Sunday)',
