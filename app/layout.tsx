@@ -7,13 +7,14 @@ import Footer from '@/components/Footer';
 import GoogleAnalytics from '@/components/GoogleAnalytics';
 import CookieConsent from '@/components/CookieConsent';
 import SiteSchema from '@/components/SiteSchema';
+import ServiceWorkerRegister from '@/components/ServiceWorkerRegister';
 
 const inter = Inter({ subsets: ['latin'], display: 'swap' });
 const malayalam = Noto_Sans_Malayalam({ subsets: ['malayalam'], display: 'swap' });
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://malayalamcalendar.site'),
-  title: 'Malayalam Calendar 2026',
+  title: 'Malayalam Calendar 2026 (മലയാളം കലണ്ടർ)',
   description: 'Daily Malayalam Calendar 2026 with Nakshatram, Tithi, Sunrise, Sunset, and Festivals.',
   verification: {
     google: '9F6rdEd0V_dRvVID9CruxrQQU4InQYqvMpeLP_9zAXg',
@@ -25,9 +26,15 @@ export const metadata: Metadata = {
     'Download Malayalam Calendar 2026', 'Malayalam Calendar PDF Download', 'Download Calendar',
     'Printable Malayalam Calendar'
   ],
-
+  manifest: '/manifest.json',
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'default',
+    title: 'Malayalam Calendar',
+  },
   icons: {
     icon: '/icon.png',
+    apple: '/icon.png',
   },
   other: {
     'google-adsense-account': 'ca-pub-5563933517199081',
@@ -51,6 +58,7 @@ export default function RootLayout({
         </main>
         <Footer />
         <CookieConsent />
+        <ServiceWorkerRegister />
         <Script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5563933517199081"

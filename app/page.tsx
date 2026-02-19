@@ -1,10 +1,12 @@
 import TodayCard from '@/components/TodayCard';
+import TodaysDetails from '@/components/TodaysDetails';
 import FAQ from '@/components/FAQ';
 import Link from 'next/link';
 import AdSlot from '@/components/AdSlot';
 import DateNavigation from '@/components/DateNavigation';
 import { getDailyData, formatDate, getMonthData } from '@/lib/dateUtils';
 import JsonLd from '@/components/JsonLd';
+import DatasetSchema from '@/components/DatasetSchema';
 import { Metadata } from 'next';
 import CalendarGrid from '@/components/CalendarGrid';
 
@@ -161,15 +163,15 @@ export default async function Home({ searchParams }: Props) {
   return (
     <div className="container mx-auto px-4 py-8 max-w-2xl">
       <JsonLd data={jsonLd} />
+      <DatasetSchema />
 
       {/* STEP 2: Improve H1 Structure - Single H1 */}
       <div className="text-center mb-6">
         <h1 className="text-2xl md:text-3xl font-extrabold text-gray-900 dark:text-white mb-2 leading-tight">
           Malayalam Calendar – Today’s Date, Nakshatram & Free Download
         </h1>
-        <p className="text-gray-600 dark:text-gray-400">
-          Current Malayalam Date: <strong>{data.malayalam_date}</strong> • Nakshatram: <strong>{data.nakshatram}</strong>
-        </p>
+        {/* AEO: Direct Answer Box */}
+        <TodaysDetails data={data} />
       </div>
 
       <AdSlot slotId="top-banner" />
