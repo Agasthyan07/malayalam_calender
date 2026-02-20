@@ -12,11 +12,11 @@ interface Route {
 }
 
 export async function GET() {
-    // Static routes
+    // Static routes – each URL must be unique and canonical
     const staticRoutes: { path: string; freq: Route['changeFrequency']; priority: string }[] = [
         { path: '', freq: 'daily', priority: '1.0' },
+        // Year pages
         { path: '/malayalam-calendar/2026', freq: 'weekly', priority: '0.9' },
-        { path: '/malayalam-calendar-2026', freq: 'monthly', priority: '0.8' },
         { path: '/malayalam-calendar/2027', freq: 'weekly', priority: '0.8' },
         // Dedicated feature pages
         { path: '/marriage-muhurtham-2026', freq: 'monthly', priority: '0.9' },
@@ -54,7 +54,7 @@ export async function GET() {
         return {
             url: `${baseUrl}/malayalam-calendar-${monthName}-2026`,
             lastModified: new Date().toISOString(),
-            changeFrequency: 'weekly',
+            changeFrequency: 'weekly' as Route['changeFrequency'],
             priority: '0.7',
             image: `${baseUrl}/calendar-images/2026/malayalam-calendar-2026-${monthName}.png`,
             imageTitle: `Malayalam Calendar 2026 ${monthName}`,
@@ -64,15 +64,13 @@ export async function GET() {
     const monthRoutes2027: Route[] = months.map((month, index) => {
         const date = new Date(2027, index, 1);
         const monthName = date.toLocaleString('default', { month: 'long' }).toLowerCase();
-
-        // Only January 2027 image exists currently
         const isJan2027 = month === '01';
 
         const route: Route = {
             url: `${baseUrl}/malayalam-calendar-${monthName}-2027`,
             lastModified: new Date().toISOString(),
             changeFrequency: 'weekly',
-            priority: isJan2027 ? '1.0' : '0.7',
+            priority: '0.7', // normalised – year page /malayalam-calendar/2027 already has 0.8
         };
 
         if (isJan2027) {
