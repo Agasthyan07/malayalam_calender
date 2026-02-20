@@ -1,6 +1,9 @@
 import Link from 'next/link';
 import AdSlot from '@/components/AdSlot';
 import Breadcrumbs from '@/components/Breadcrumbs';
+import CalendarGrid from '@/components/CalendarGrid';
+import { getYearData } from '@/lib/dateUtils';
+
 
 import { Metadata } from 'next';
 
@@ -36,13 +39,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function YearPage({ params }: Props) {
     const { year } = await params;
 
+    const yearData = await getYearData(year);
+
     const months = Array.from({ length: 12 }, (_, i) => {
+        const monthNum = (i + 1).toString().padStart(2, '0');
         const date = new Date(parseInt(year), i, 1);
         return {
             slug: (i + 1).toString().padStart(2, '0'),
-            name: date.toLocaleString('default', { month: 'long' })
+            name: date.toLocaleString('default', { month: 'long' }),
+            days: yearData.filter(d => d.date.startsWith(`${year}-${monthNum}`))
         };
     });
+
 
     const jsonLd = {
         '@context': 'https://schema.org',
@@ -85,34 +93,30 @@ export default async function YearPage({ params }: Props) {
 
             <AdSlot slotId="year-top" />
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 my-8">
-                {months.map((m) => {
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 my-8">
+                {months.map((m, index) => {
                     const monthNameLower = m.name.toLowerCase();
                     return (
-                        <Link
-                            key={m.slug}
-                            href={`/malayalam-calendar-${monthNameLower}-${year}`}
-                            className="group relative bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 block"
-                        >
-                            <div className="flex items-center justify-between">
-                                <div>
-                                    <span className="text-2xl font-bold text-gray-900 dark:text-white block mb-1 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
-                                        {m.name}
-                                    </span>
-                                    <span className="text-sm text-gray-500 dark:text-gray-400 font-medium group-hover:text-gray-700 dark:group-hover:text-gray-300">
-                                        View Full Month
-                                    </span>
-                                </div>
-                                <div className="w-12 h-12 bg-gray-50 dark:bg-gray-700 rounded-full flex items-center justify-center text-gray-400 group-hover:bg-indigo-50 dark:group-hover:bg-indigo-900/30 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-all">
-                                    <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                                    </svg>
-                                </div>
+                        <div key={m.slug} id={monthNameLower} className="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 overflow-hidden flex flex-col">
+                            <div className="bg-gray-50 dark:bg-gray-900/50 p-4 border-b border-gray-100 dark:border-gray-800 flex justify-between items-center">
+                                <h2 className="text-xl font-bold text-gray-800 dark:text-gray-100 uppercase tracking-wide">
+                                    {m.name} {year}
+                                </h2>
+                                <Link
+                                    href={`/malayalam-calendar-${monthNameLower}-${year}`}
+                                    className="text-xs font-semibold text-indigo-600 dark:text-indigo-400 hover:underline"
+                                >
+                                    View Details →
+                                </Link>
                             </div>
-                        </Link>
+                            <div className="p-2 flex-grow">
+                                <CalendarGrid days={m.days} />
+                            </div>
+                        </div>
                     );
                 })}
             </div>
+
 
             {/* SEO & Rich Content Section */}
             <div className="mt-16 prose prose-indigo dark:prose-invert max-w-none">

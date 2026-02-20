@@ -13,24 +13,36 @@ interface Route {
 
 export async function GET() {
     // Static routes
-    const routes = [
-        '',
-        '/calendar/2026',
-        '/calendar-2026',
-        '/calendar/2027',
-        '/festivals',
-        '/privacy-policy',
-        '/terms',
-        '/disclaimer',
-        '/rahu-kalam-today',
-        '/contact',
+    const staticRoutes: { path: string; freq: Route['changeFrequency']; priority: string }[] = [
+        { path: '', freq: 'daily', priority: '1.0' },
+        { path: '/malayalam-calendar/2026', freq: 'weekly', priority: '0.9' },
+        { path: '/malayalam-calendar-2026', freq: 'monthly', priority: '0.8' },
+        { path: '/malayalam-calendar/2027', freq: 'weekly', priority: '0.8' },
+        // Dedicated feature pages
+        { path: '/marriage-muhurtham-2026', freq: 'monthly', priority: '0.9' },
+        { path: '/ekadashi-2026', freq: 'monthly', priority: '0.9' },
+        { path: '/weekly-calendar', freq: 'daily', priority: '0.8' },
+        { path: '/innathe-nakshatram', freq: 'daily', priority: '0.8' },
+        { path: '/rahu-kalam-today', freq: 'daily', priority: '0.8' },
+        { path: '/vratham-today', freq: 'daily', priority: '0.7' },
+        // Festival pages
+        { path: '/festivals', freq: 'monthly', priority: '0.8' },
+        { path: '/vishu-2026-date-kerala', freq: 'monthly', priority: '0.8' },
+        { path: '/onam-2026-date', freq: 'monthly', priority: '0.8' },
+        // Info pages
+        { path: '/about', freq: 'yearly', priority: '0.5' },
+        { path: '/website-map', freq: 'monthly', priority: '0.5' },
+        { path: '/contact', freq: 'yearly', priority: '0.4' },
+        { path: '/privacy-policy', freq: 'yearly', priority: '0.3' },
+        { path: '/terms', freq: 'yearly', priority: '0.3' },
+        { path: '/disclaimer', freq: 'yearly', priority: '0.3' },
     ];
 
-    const staticUrls: Route[] = routes.map((route) => ({
-        url: `${baseUrl}${route}`,
+    const staticUrls: Route[] = staticRoutes.map(({ path, freq, priority }) => ({
+        url: `${baseUrl}${path}`,
         lastModified: new Date().toISOString(),
-        changeFrequency: 'daily',
-        priority: route === '' ? '1.0' : '0.8',
+        changeFrequency: freq,
+        priority,
     }));
 
     // Generate routes for all 12 months of 2026 and 2027

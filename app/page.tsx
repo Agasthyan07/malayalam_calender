@@ -1,18 +1,14 @@
 import TodayCard from '@/components/TodayCard';
-import TodaysDetails from '@/components/TodaysDetails';
 import FAQ from '@/components/FAQ';
 import Link from 'next/link';
 import AdSlot from '@/components/AdSlot';
-import DateNavigation from '@/components/DateNavigation';
-import { getDailyData, formatDate, getMonthData } from '@/lib/dateUtils';
+import { getDailyData, formatDate, getMonthData, getYearData } from '@/lib/dateUtils';
 import JsonLd from '@/components/JsonLd';
 import DatasetSchema from '@/components/DatasetSchema';
 import { Metadata } from 'next';
 import CalendarGrid from '@/components/CalendarGrid';
 
-
-
-export const revalidate = 3600; // Hourly revalidation
+export const revalidate = 3600;
 
 type Props = {
   searchParams: Promise<{ date?: string }>;
@@ -22,60 +18,45 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
   const resolvedSearchParams = await searchParams;
   let targetDate = resolvedSearchParams?.date;
 
-  // Calculate "Today" in IST
   const now = new Date();
   const options = { timeZone: 'Asia/Kolkata', year: 'numeric', month: '2-digit', day: '2-digit' } as const;
   const formatter = new Intl.DateTimeFormat('en-CA', options);
-  const todayStr = formatter.format(now); // YYYY-MM-DD
+  const todayStr = formatter.format(now);
 
-  if (!targetDate) {
-    targetDate = todayStr;
-  }
-
+  if (!targetDate) targetDate = todayStr;
   const isToday = targetDate === todayStr;
   const data = await getDailyData(targetDate);
-
-  // Format date for title: "February 11, 2026"
-  const [y, m, d] = targetDate.split('-').map(Number);
-  const dateObj = new Date(y, m - 1, d);
-  const titleDate = dateObj.toLocaleDateString('en-US', { day: 'numeric', month: 'long', year: 'numeric' });
-
-  if (!data) {
-    return {
-      title: `Malayalam Calendar 2026 – Today’s Date ${titleDate}, Nakshatram & Download`,
-      description: 'Check Malayalam Calendar 2026 with today’s Nakshatram, Rahu Kalam, Panchangam & Festival dates. Free Download Printable Malayalam Calendar 2026 PDF.',
-    };
-  }
 
   const canonicalUrl = isToday
     ? 'https://malayalamcalendar.site'
     : `https://malayalamcalendar.site/date/${formatDate(targetDate)}`;
 
-  // STEP 1: Improved Meta Tags
   return {
-    title: `Malayalam Calendar 2026 – Today’s Date ${titleDate}, Nakshatram & Download`,
-    description: 'Check Malayalam Calendar 2026 with today’s Nakshatram, Rahu Kalam, Panchangam & Festival dates. Free Download Printable Malayalam Calendar 2026 PDF.',
-    alternates: {
-      canonical: canonicalUrl,
-    },
+    title: 'Malayalam Calendar 2026 – Today Date, Monthly & PDF Download',
+    description: 'Check Malayalam Calendar 2026 with today\'s Malayalam date, Panchangam, Nakshatra, Kerala festivals, weekly calendar & free PDF download.',
+    alternates: { canonical: canonicalUrl },
     keywords: [
       'Malayalam Calendar 2026',
-      'Today Nakshatram',
+      'Malayalam Calendar Today',
+      'Today Malayalam Date',
+      'Malayalam Panchangam Today',
+      'Nakshatra Today Kerala',
+      'Malayalam Calendar PDF Download',
+      'Printable Malayalam Calendar 2026',
+      'Kerala Festival Calendar 2026',
+      'Malayalam Monthly Calendar',
+      'Kollavarsham 1201 1202',
+      'Kerala Calendar 2026 PDF',
+      'Malayalam Calendar 2026 PDF download',
       'Rahu Kalam Today',
-      'Malayalam Panchangam',
-      'Kerala Calendar',
-      'Download Malayalam Calendar',
-      'Malayalam Calendar 2026 PDF',
-      'Printable Calendar Kerala',
       'മലയാളം കലണ്ടർ 2026',
       'ഇന്ന് നക്ഷത്രം',
-      'രാഹുകാലം',
-      'മുഹൂർത്തം',
-      'കൊല്ലവർഷം'
     ],
     openGraph: {
-      title: `Malayalam Calendar 2026 – Today’s Date ${titleDate}, Nakshatram & Rahu Kalam (Kerala)`,
-      description: `Today's Malayalam Date: ${data.malayalam_date}. Nakshatram: ${data.nakshatram}. Check Rahu Kalam & Festvals.`,
+      title: 'Malayalam Calendar 2026 – Today Date, Monthly & PDF Download',
+      description: data
+        ? `Today's Malayalam Date: ${data.malayalam_date}. Nakshatram: ${data.nakshatram}. Check Rahu Kalam, Panchangam & Festivals.`
+        : 'Malayalam Calendar 2026 with daily Panchangam, Nakshatra, Kerala festivals & free PDF download.',
       type: 'website',
       url: canonicalUrl,
     }
@@ -86,15 +67,12 @@ export default async function Home({ searchParams }: Props) {
   const resolvedSearchParams = await searchParams;
   let targetDate = resolvedSearchParams?.date;
 
-  // Calculate "Today" in IST
   const now = new Date();
   const options = { timeZone: 'Asia/Kolkata', year: 'numeric', month: '2-digit', day: '2-digit' } as const;
   const formatter = new Intl.DateTimeFormat('en-CA', options);
   const todayStr = formatter.format(now);
 
-  if (!targetDate || Array.isArray(targetDate)) {
-    targetDate = todayStr;
-  }
+  if (!targetDate || Array.isArray(targetDate)) targetDate = todayStr;
 
   const isToday = targetDate === todayStr;
   const data = await getDailyData(targetDate);
@@ -108,12 +86,45 @@ export default async function Home({ searchParams }: Props) {
     );
   }
 
-  // Fetch full month data for the calendar grid
   const [year, month] = targetDate.split('-');
   const monthData = await getMonthData(year, month);
 
+  const currentMonthName = new Date(parseInt(year), parseInt(month) - 1).toLocaleString('default', { month: 'long' });
+  const currentMonthSlug = `/malayalam-calendar-${currentMonthName.toLowerCase()}-${year}`;
 
-  // STEP 8: Schema Markup
+  const MONTHS_2026 = [
+    { name: 'January', slug: 'malayalam-calendar-january-2026', ml: 'ജനുവരി' },
+    { name: 'February', slug: 'malayalam-calendar-february-2026', ml: 'ഫെബ്രുവരി' },
+    { name: 'March', slug: 'malayalam-calendar-march-2026', ml: 'മാർച്ച്' },
+    { name: 'April', slug: 'malayalam-calendar-april-2026', ml: 'ഏപ്രിൽ' },
+    { name: 'May', slug: 'malayalam-calendar-may-2026', ml: 'മേയ്' },
+    { name: 'June', slug: 'malayalam-calendar-june-2026', ml: 'ജൂൺ' },
+    { name: 'July', slug: 'malayalam-calendar-july-2026', ml: 'ജൂലൈ' },
+    { name: 'August', slug: 'malayalam-calendar-august-2026', ml: 'ഓഗസ്റ്റ്' },
+    { name: 'September', slug: 'malayalam-calendar-september-2026', ml: 'സെപ്തംബർ' },
+    { name: 'October', slug: 'malayalam-calendar-october-2026', ml: 'ഒക്ടോബർ' },
+    { name: 'November', slug: 'malayalam-calendar-november-2026', ml: 'നവംബർ' },
+    { name: 'December', slug: 'malayalam-calendar-december-2026', ml: 'ഡിസംബർ' },
+  ];
+
+  // Dynamic Date Info Logic
+  const fullDateEnglish = new Date(targetDate).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+
+  // Extract Malayalam Month Name (e.g., from "Kumbham 8, 1201")
+  const malDateParts = data.malayalam_date.split(', '); // ["Kumbham 8", "1201"]
+  const malMonthPart = malDateParts[0]; // "Kumbham 8"
+  const malMonthName = malMonthPart.split(' ')[0]; // "Kumbham"
+
+  // Find start date of this Malayalam month
+  const yearData = await getYearData(year); // Fetch full year data
+  const startOfMalMonth = yearData.find(d => d.malayalam_date.startsWith(`${malMonthName} 1,`));
+
+  let malMonthStartText = '';
+  if (startOfMalMonth) {
+    const startEnglishDate = new Date(startOfMalMonth.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric' });
+    malMonthStartText = `Malayalam month ${malMonthName} 1, ${year} falls on ${startEnglishDate}.`;
+  }
+
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
@@ -123,245 +134,489 @@ export default async function Home({ searchParams }: Props) {
         'url': 'https://malayalamcalendar.site',
         'name': 'Malayalam Calendar',
         'description': 'Kerala\'s most accurate daily Malayalam Calendar, Panchangam, and Festival guide.',
-        'inLanguage': 'en-IN'
+        'inLanguage': 'en-IN',
+        'potentialAction': {
+          '@type': 'SearchAction',
+          'target': 'https://malayalamcalendar.site/?date={search_term_string}',
+          'query-input': 'required name=search_term_string'
+        }
       },
       {
         '@type': 'Organization',
         '@id': 'https://malayalamcalendar.site/#organization',
         'name': 'Malayalam Calendar Site',
         'url': 'https://malayalamcalendar.site',
-        'logo': {
-          '@type': 'ImageObject',
-          'url': 'https://malayalamcalendar.site/icon.png'
-        }
+        'logo': { '@type': 'ImageObject', 'url': 'https://malayalamcalendar.site/icon.png' }
       },
       {
         '@type': 'WebPage',
         '@id': 'https://malayalamcalendar.site/#webpage',
         'url': 'https://malayalamcalendar.site',
-        'name': `Malayalam Calendar ${year} - Today's Panchangam`,
+        'name': `Malayalam Calendar 2026 – Today's Date, Monthly & PDF Download`,
         'datePublished': data.date,
         'description': `Daily Malayalam Calendar details for ${data.date}. Nakshatram: ${data.nakshatram}, Tithi: ${data.tithi}.`,
-        'isPartOf': {
-          '@id': 'https://malayalamcalendar.site/#website'
-        },
-        'breadcrumb': {
-          '@type': 'BreadcrumbList',
-          'itemListElement': [
-            {
-              '@type': 'ListItem',
-              'position': 1,
-              'name': 'Home',
-              'item': 'https://malayalamcalendar.site'
-            }
-          ]
-        }
+        'isPartOf': { '@id': 'https://malayalamcalendar.site/#website' },
+      },
+      {
+        '@type': 'FAQPage',
+        'mainEntity': [
+          { '@type': 'Question', 'name': 'What is Malayalam Calendar 2026?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'The Malayalam Calendar 2026, based on Kollavarsham, spans Malayalam years 1201–1202. It is a solar calendar used in Kerala for religious, agricultural, and cultural purposes.' } },
+          { '@type': 'Question', 'name': 'What is today\'s Malayalam date?', 'acceptedAnswer': { '@type': 'Answer', 'text': `Today's Malayalam date is ${data.malayalam_date}. The Nakshatram (star) today is ${data.nakshatram} and Tithi is ${data.tithi}.` } },
+          { '@type': 'Question', 'name': 'When is Vishu 2026?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'Vishu 2026 falls on April 14, 2026, marking the sun\'s transit into Medam (Aries). It is celebrated as the astronomical New Year in Kerala.' } },
+          { '@type': 'Question', 'name': 'When is Onam 2026?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'Onam 2026 Thiruvonam falls on August 26, 2026. It is the biggest harvest festival of Kerala, celebrated in the Malayalam month of Chingam.' } },
+        ]
       }
     ]
   };
 
   return (
-    <div className="container mx-auto px-4 py-8 max-w-2xl">
+    <div className="container mx-auto px-4 py-6 max-w-5xl">
       <JsonLd data={jsonLd} />
       <DatasetSchema />
 
-      {/* STEP 2: Improve H1 Structure - Single H1 */}
-      <div className="text-center mb-6">
-        <h1 className="text-2xl md:text-3xl font-extrabold text-gray-900 dark:text-white mb-2 leading-tight">
-          Malayalam Calendar – Today’s Date, Nakshatram & Free Download
+      {/* ══════════════════════════════════════
+          SECTION 1: HERO
+          ══════════════════════════════════════ */}
+      <section className="text-center mb-10 py-8 px-4 bg-gradient-to-br from-red-700 via-red-600 to-orange-500 rounded-2xl text-white shadow-xl">
+        <h1 className="text-2xl md:text-4xl font-extrabold leading-tight mb-4 drop-shadow">
+          Malayalam Calendar 2026 – Today&apos;s Date, Monthly &amp; Yearly PDF Download
         </h1>
-        {/* AEO: Direct Answer Box */}
-        <TodaysDetails data={data} />
-      </div>
+        <p className="text-red-100 text-sm md:text-base max-w-2xl mx-auto leading-relaxed mb-6">
+          <strong className="text-white">Malayalam Calendar</strong> or <strong className="text-white">kolla varsham (കൊല്ലവർഷം)</strong> is the traditional Kerala calendar.
+          The calendar below shows English &amp; Malayalam dates, nakshatram, tithi and daily panchangam for <strong className="text-white">{currentMonthName}, {year}</strong>.
+        </p>
+        <div className="flex flex-wrap justify-center gap-3">
+          <Link
+            href="#pdf-download"
+            className="inline-flex items-center gap-2 bg-white text-red-700 font-bold px-6 py-3 rounded-full shadow-md hover:shadow-lg hover:bg-red-50 transition-all text-sm md:text-base"
+          >
+            📥 Download 2026 PDF
+          </Link>
+          <Link
+            href="#today-panchangam"
+            className="inline-flex items-center gap-2 bg-red-800 text-white font-bold px-6 py-3 rounded-full shadow-md hover:shadow-lg hover:bg-red-900 transition-all border border-red-400 text-sm md:text-base"
+          >
+            📅 Today&apos;s Malayalam Date
+          </Link>
+        </div>
+      </section>
 
       <AdSlot slotId="top-banner" />
 
-      {/* STEP 4: Daily Panchang - Description kept minimal/integrated as section header if needed, but per user request "below card" logic applies to heavy text.
-          We keep the card prominent. */}
-      {/* <!-- SEO IMPROVEMENT START --> */}
-      <p className="text-sm text-center text-gray-500 dark:text-gray-400 mb-2">
-        Today's Malayalam date, Nakshatram, Rahu Kalam, Yamagandam, and Gulika Kalam for Kerala.
-      </p>
-      {/* <!-- SEO IMPROVEMENT END --> */}
-
-      <TodayCard data={data} />
-
-
-
-      <div className="mt-8">
-        <DateNavigation currentDate={data.date} />
-      </div>
-
-      <div className="my-8" id="calendar-scroll">
-        <div className="flex items-center justify-between mb-4 px-2">
-          <h2 className="text-lg font-bold text-gray-800 dark:text-gray-200 uppercase tracking-wide">
-            {new Date(parseInt(year), parseInt(month) - 1).toLocaleString('default', { month: 'long', year: 'numeric' })} Calendar
+      {/* ══════════════════════════════════════
+          SECTION 2: TODAY MALAYALAM DATE & PANCHANGAM
+          ══════════════════════════════════════ */}
+      <section id="today-panchangam" className="mb-10 scroll-mt-20">
+        <div className="flex items-center gap-3 mb-4">
+          <span className="w-1 h-8 bg-red-600 rounded-full"></span>
+          <h2 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white">
+            Today Malayalam Date &amp; Panchangam
           </h2>
-          <Link href={`/malayalam-calendar-${new Date(parseInt(year), parseInt(month) - 1).toLocaleString('default', { month: 'long' }).toLowerCase()}-${year}`} className="text-sm font-medium text-indigo-600 dark:text-indigo-400 hover:underline">
-            View Full Month List →
-          </Link>
         </div>
-        <CalendarGrid days={monthData} />
-        {/* STEP 5: Month Navigation Description */}
-        {/* <!-- SEO IMPROVEMENT START --> */}
-        <p className="text-sm text-gray-600 dark:text-gray-400 mt-4 text-center">
-          View and <Link href="/malayalam-calendar/2026" className="text-indigo-600 hover:underline font-medium">Download the detailed Monthly Malayalam Calendar</Link> including festivals, Muhurat timings, Nakshatra details, and public holidays.
+        <p className="text-sm text-gray-500 dark:text-gray-400 mb-5 ml-4">
+          <em>Malayalam calendar today · Today Malayalam date · Malayalam panchangam today · Nakshatra today Kerala</em>
         </p>
-        {/* <!-- SEO IMPROVEMENT END --> */}
-      </div>
 
-      {/* =========================================
-          SEO CONTENT SECTION (Moved to Bottom)
-          ========================================= */}
-
-      <div className="space-y-8 mt-12 bg-white dark:bg-gray-800/50 p-4 md:p-6 rounded-2xl border border-gray-100 dark:border-gray-700">
-
-        {/* STEP 3: SEO Intro Section */}
-        {/* <!-- SEO IMPROVEMENT START --> */}
-        {/* STEP 3: SEO Intro Section - Enhanced for 500+ words */}
-        {/* <!-- SEO IMPROVEMENT START --> */}
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-6">
-            Comprehensive Guide to Malayalam Calendar 2026 (Kollavarsham 1201-1202)
-          </h2>
-          <div className="prose prose-lg dark:prose-invert max-w-none text-gray-700 dark:text-gray-300 space-y-4">
-            <p>
-              Welcome to the most accurate digital resource for the <strong>Malayalam Calendar 2026</strong>.
-              Deeply rooted in the cultural history of Kerala, the Malayalam Calendar (also known as the <em>Kollavarsham</em> or <em>Kollam Era</em>) is more than just a tool for tracking dates—it is a guide to the rhythm of life for Malayalis.
-              Unlike the Western Gregorian calendar which follows the solar cycle purely for the year count, the Malayalam system is a <strong>Sidereal Solar Calendar</strong>.
-              This means it calculates dates based on the sun's apparent movement through the 12 zodiac signs (Rashi) relative to the fixed stars.
-            </p>
-
-            <h3 className="text-xl font-semibold text-gray-800 dark:text-white mt-6">How to Read Today's Panchangam</h3>
-            <p>
-              Our daily view provides the "Panchangam"—the five essential attributes of the day:
-              <strong> Tithi</strong> (Lunar Day), <strong>Vara</strong> (Weekday), <strong>Nakshatra</strong> (Star), <strong>Yoga</strong>, and <strong>Karana</strong>.
-              Understanding these elements is crucial for finding auspicious times (Muhurtham) for weddings, housewarmings, and new ventures.
-            </p>
-            <ul className="list-disc pl-5 space-y-2">
-              <li>
-                <strong>Nakshatram (Star):</strong> The star constellation the moon is passing through. For example, today's Nakshatram is <strong>{data.nakshatram}</strong>. It determines the nature of the day and is vital for matching horoscopes.
-              </li>
-              <li>
-                <strong>Tithi (Lunar Phase):</strong> Indicates the phase of the moon. Waxing (Shukla Paksha) and waning (Krishna Paksha) phases influence rituals. Today is <strong>{data.tithi}</strong>.
-              </li>
-              <li>
-                <strong>Nalla Samayam:</strong> The "Good Time" of the day, ideal for starting important tasks. Conversely, periods like <em>Rahu Kalam</em> and <em>Yamagandam</em> should be avoided for new beginnings.
-              </li>
-            </ul>
-
-            <h3 className="text-xl font-semibold text-gray-800 dark:text-white mt-6">The Structure of the Malayalam Year</h3>
-            <p>
-              The Malayalam year typically starts in mid-August with the month of <strong>Chingam</strong>.
-              This structure aligns perfectly with the agricultural cycle of Kerala, with Chingam marking the harvest season and the grand festival of <strong>Onam</strong>.
-              The months follow the sun's transit into zodiac signs: <em>Chingam</em> (Leo), <em>Kanni</em> (Virgo), <em>Thulam</em> (Libra), <em>Vrischikam</em> (Scorpio),
-              <em>Dhanu</em> (Sagittarius), <em>Makaram</em> (Capricorn), <em>Kumbham</em> (Aquarius), <em>Meenam</em> (Pisces), <em>Medam</em> (Aries), <em>Edavam</em> (Taurus),
-              <em>Mithunam</em> (Gemini), and <em>Karkidakam</em> (Cancer).
-            </p>
-            <p>
-              Each month carries its own significance. For instance, <strong>Karkidakam</strong> (July-August) is known as the "Ramayana Month," a period for spiritual reflection and Ayurvedic rejuvenation treatment (Karkidaka Chikitsa), while <strong>Medam</strong> brings the celebration of <strong>Vishu</strong>, the astronomical New Year.
-            </p>
-
-            <h3 className="text-xl font-semibold text-gray-800 dark:text-white mt-6">Why Use Our Digital Calendar?</h3>
-            <p>
-              In the modern age, carrying a printed almanac is not always feasible. Our website brings the precision of traditional calculations to your fingertips.
-              We adjust for the timestamp of Kerala (IST) to ensure that the ending times of Nakshatras and Tithis are accurate to the minute.
-              This helps you plan your day with confidence, ensuring you adhere to traditions irrespective of where you live in the world.
-            </p>
-          </div>
-        </section>
-        {/* <!-- SEO IMPROVEMENT END --> */}
-
-        {/* STEP 6: Festival Highlight Section */}
-        {/* <!-- SEO IMPROVEMENT START --> */}
-        <section className="pt-6 border-t border-gray-100 dark:border-gray-700">
-          <h2 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-4">
-            Major Festivals in Malayalam Calendar 2026
-          </h2>
-          <div className="grid grid-cols-1 gap-4">
-            <div className="bg-orange-50 dark:bg-orange-900/20 p-4 rounded-lg border border-orange-100 dark:border-orange-900/30">
-              <h3 className="font-bold text-orange-800 dark:text-orange-400 mb-1">Vishu 2026 (വിഷു)</h3>
-              <p className="text-sm text-gray-700 dark:text-gray-300">
-                Marking the Malayali New Year, Vishu involves the traditional 'Vishukkani' and is celebrated in the month of Medam.
-                <Link href="/vishu-2026-date-kerala" className="ml-1 text-orange-700 hover:underline text-xs font-semibold">Check Date →</Link>
-              </p>
-            </div>
-
-            <div className="bg-yellow-50 dark:bg-yellow-900/20 p-4 rounded-lg border border-yellow-100 dark:border-yellow-900/30">
-              <h3 className="font-bold text-yellow-800 dark:text-yellow-400 mb-1">Onam 2026 (ഓണം)</h3>
-              <p className="text-sm text-gray-700 dark:text-gray-300">
-                The harvest festival of Kerala celebrating the return of King Mahabali. Thiruvonam is the most important day.
-                <Link href="/onam-2026-date" className="ml-1 text-yellow-700 hover:underline text-xs font-semibold">See Onam Dates →</Link>
-              </p>
-            </div>
-
-            <div className="bg-purple-50 dark:bg-purple-900/20 p-4 rounded-lg border border-purple-100 dark:border-purple-900/30">
-              <h3 className="font-bold text-purple-800 dark:text-purple-400 mb-1">Mahashivratri & Deepavali</h3>
-              <p className="text-sm text-gray-700 dark:text-gray-300">
-                Important religious observances. Shivratri is dedicated to Lord Shiva, while Deepavali is the festival of lights.
-                <Link href="/festivals" className="ml-1 text-purple-700 hover:underline text-xs font-semibold">All Festivals →</Link>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
+          {/* Left: TodayCard with all Panchangam details */}
+          <div className="flex flex-col gap-4">
+            <TodayCard data={data} />
+            <div className="bg-orange-50 dark:bg-orange-900/10 border border-orange-100 dark:border-orange-900/30 rounded-lg p-4 text-sm text-gray-700 dark:text-gray-300">
+              <p>
+                Today is <strong>{fullDateEnglish}</strong> and Malayalam date is <strong>{data.malayalam_date}</strong>.
+                {' '}{malMonthStartText}
               </p>
             </div>
           </div>
-        </section>
-        {/* <!-- SEO IMPROVEMENT END --> */}
 
-        {/* Existing Dynamic Footer Text Logic (Improved) */}
-        <div className="pt-6 border-t border-gray-100 dark:border-gray-700 text-center">
-          <p className="text-lg md:text-xl text-gray-800 dark:text-gray-200 leading-relaxed font-malayalam">
-            {isToday ? 'ഇന്ന് കേരളത്തിൽ' : <span className="font-bold text-red-700 dark:text-red-400">{formatDate(data.date)}</span>}
-            {' '}
-            (<span className="font-medium text-gray-900 dark:text-gray-100">{data.malayalam_date}</span>) ആണ്.
-            {' '}
-            {isToday ? 'ഇന്നത്തെ' : 'ആ ദിവസത്തെ'} നക്ഷത്രം <span className="font-bold text-indigo-700 dark:text-indigo-400">{data.nakshatram}</span> ആണ്.
-            {' '}
-            സൂര്യോദയം രാവിലെ <span className="font-medium text-gray-900 dark:text-gray-100">{data.sunrise}</span>-നും
-            {' '}
-            സൂര്യാസ്തമയം വൈകിട്ട് <span className="font-medium text-gray-900 dark:text-gray-100">{data.sunset}</span>-നും ആണ്.
+          {/* Right: Current month calendar grid */}
+          <div className="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 overflow-hidden">
+            <div className="flex items-center justify-between px-4 py-3 bg-gray-50 dark:bg-gray-900/50 border-b border-gray-100 dark:border-gray-700">
+              <p className="text-sm font-bold text-gray-800 dark:text-gray-200 uppercase tracking-wide">
+                {currentMonthName} {year}
+              </p>
+              <Link href={currentMonthSlug} className="text-xs font-semibold text-indigo-600 dark:text-indigo-400 hover:underline">
+                Full Month View →
+              </Link>
+            </div>
+            <div className="p-2">
+              <CalendarGrid days={monthData} />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════
+          SECTION 3: MONTHLY CALENDAR GRID
+          ══════════════════════════════════════ */}
+      <section className="mb-10">
+        <div className="flex items-center gap-3 mb-4">
+          <span className="w-1 h-8 bg-indigo-600 rounded-full"></span>
+          <h2 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white">
+            Malayalam Monthly Calendar 2026
+          </h2>
+        </div>
+        <p className="text-sm text-gray-500 dark:text-gray-400 mb-5 italic ml-4">
+          Malayalam monthly calendar · Monthly Panchangam 2026
+        </p>
+
+        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-3 mb-8">
+          {MONTHS_2026.map((m, i) => (
+            <Link
+              key={m.slug}
+              href={`/${m.slug}`}
+              className="group flex flex-col items-center justify-center p-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl hover:border-indigo-400 hover:shadow-md hover:-translate-y-0.5 transition-all text-center"
+            >
+              <span className="text-xs font-bold text-indigo-600 dark:text-indigo-400 mb-1">{(i + 1).toString().padStart(2, '0')}</span>
+              <span className="font-bold text-gray-800 dark:text-gray-100 text-xs group-hover:text-indigo-700 dark:group-hover:text-indigo-300">{m.name}</span>
+              <span className="text-[10px] text-gray-500 dark:text-gray-400 font-malayalam">{m.ml}</span>
+              <span className="text-[10px] text-gray-400 mt-1">2026</span>
+            </Link>
+          ))}
+        </div>
+
+        <div className="prose dark:prose-invert max-w-none text-sm text-gray-600 dark:text-gray-300 leading-relaxed bg-indigo-50 dark:bg-indigo-900/20 rounded-xl p-5 border border-indigo-100 dark:border-indigo-800">
+          <p>
+            The <strong>Malayalam Monthly Calendar 2026</strong> is organized according to the traditional Kerala solar calendar system.
+            Each month in the Malayalam calendar begins with a <strong>Sankramam</strong>—the sun&apos;s transit into a new zodiac sign.
+            This event marks the start of a new Malayalam month, and its timing varies each year based on astronomical calculations.
+          </p>
+          <p className="mt-3">
+            The year 2026 opens with <strong>Makaram</strong> (mid-January), when winter sets in across Kerala with cooler temperatures and clear skies.
+            <strong> Kumbham</strong> and <strong>Meenam</strong> (February–March) bring the pre-summer harvest.
+            <strong> Medam</strong> (April) is the month of <strong>Vishu</strong>—the astronomical New Year—celebrated with the auspicious
+            Vishukkani ritual. The monsoon arrives with <strong>Mithunam</strong> and <strong>Karkidakam</strong> (June–July),
+            the latter being the sacred Ramayana Month. <strong>Chingam</strong> (August) marks the most celebrated season:
+            the beginning of <strong>Kollavarsham 1202</strong> and the grand harvest festival of <strong>Onam</strong>.
+            Each month&apos;s Panchangam details—Nakshatram, Tithi, Rahu Kalam—can be found on the dedicated monthly pages linked above.
           </p>
         </div>
-
-      </div>
-
-      {/* STEP 7: FAQ Section */}
-      {/* <!-- SEO IMPROVEMENT START --> */}
-      <FAQ items={[
-        {
-          question: "What is Malayalam Calendar?",
-          answer: "The Malayalam Calendar, or Kolla Varsham, is a solar calendar used in Kerala for agricultural, religious, and social events. It determines dates based on the sun's transit into zodiac signs."
-        },
-        {
-          question: "When does Malayalam year 1202 start?",
-          answer: "The Malayalam year changes in the month of Chingam (mid-August to mid-September). Kollavarsham 1202 is expected to begin in August 2026."
-        },
-        {
-          question: "What is Nakshatram today in Kerala?",
-          answer: `Today's Nakshatram in Kerala is ${data.nakshatram}. The star may change at a specific time during the day, so please check the daily Panchangam view for exact ending times.`
-        },
-        {
-          question: "What is Rahu Kalam?",
-          answer: `Rahu Kalam (രാഹുകാലം) is an inauspicious time period of the day (approx 1.5 hours) derived from planetary positions. Today's Rahu Kalam is ${data.rahukalam}.`
-        },
-        {
-          question: "How is Malayalam calendar calculated?",
-          answer: "It is calculated based on the position of the Sun (Solar Calendar). The year begins when the Sun enters Leo (Simha Rashi). Months are named after the zodiac sign the Sun is transiting."
-        },
-        {
-          question: "When is Vishu 2026?",
-          answer: "Vishu typically falls on April 14th or 15th, marking the sun's transit into Aries (Medam). Check our 2026 April calendar for the exact date."
-        },
-        {
-          question: "When is Onam 2026?",
-          answer: "Onam is celebrated in the month of Chingam. The main day, Thiruvonam, usually falls in August or September. See the Festivals section for precise 2026 dates."
-        },
-        {
-          question: "What is Marriage Muhurat?",
-          answer: "Marriage Muhurat (Vivaha Muhurtham) is an auspicious time slot chosen based on Nakshatra matches and planetary positions to ensure a prosperous married life."
-        }
-      ]} />
-      {/* <!-- SEO IMPROVEMENT END --> */}
+      </section>
 
       <AdSlot slotId="mid-content" />
+
+      {/* ══════════════════════════════════════
+          SECTION 4: PDF DOWNLOAD
+          ══════════════════════════════════════ */}
+      <section id="pdf-download" className="mb-10 scroll-mt-20 bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-gray-800 rounded-2xl p-6 border border-gray-200 dark:border-gray-700">
+        <div className="flex items-center gap-3 mb-4">
+          <span className="w-1 h-8 bg-green-600 rounded-full"></span>
+          <h2 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white">
+            Download Malayalam Calendar 2026 PDF (Free)
+          </h2>
+        </div>
+        <p className="text-sm text-gray-500 dark:text-gray-400 mb-5 italic">
+          Malayalam calendar 2026 PDF download · Printable Malayalam calendar 2026 · Kerala calendar 2026 PDF
+        </p>
+
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+          {[
+            { icon: '📄', label: 'Yearly PDF', desc: 'Full year 2026', href: '/malayalam-calendar/2026' },
+            { icon: '📅', label: 'Monthly PDF', desc: 'Each month separately', href: currentMonthSlug },
+            { icon: '🔄', label: 'Landscape', desc: 'Wide format view', href: '/malayalam-calendar/2026' },
+            { icon: '🖼️', label: 'High Resolution', desc: 'HD quality image', href: '/malayalam-calendar/2026' },
+          ].map((item) => (
+            <Link
+              key={item.label}
+              href={item.href}
+              className="group flex flex-col items-center text-center p-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl hover:border-green-400 hover:shadow-md transition-all"
+            >
+              <span className="text-3xl mb-2">{item.icon}</span>
+              <span className="font-bold text-gray-800 dark:text-gray-100 text-sm group-hover:text-green-700 dark:group-hover:text-green-400">{item.label}</span>
+              <span className="text-xs text-gray-500 mt-1">{item.desc}</span>
+            </Link>
+          ))}
+        </div>
+
+        <div className="prose dark:prose-invert max-w-none text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+          <p>
+            Our <strong>Malayalam Calendar 2026 PDF</strong> is the most comprehensive free download for Keralites worldwide.
+            The <strong>printable Malayalam calendar 2026</strong> includes all 12 months with daily Nakshatram, Tithi, Rahu Kalam,
+            and Kerala public holidays. The <strong>Kerala calendar 2026 PDF</strong> is formatted in A4 size for easy printing at home or office.
+            Whether you need a <strong>yearly PDF</strong> for planning the whole year, a <strong>landscape version</strong> for your desktop,
+            or a <strong>high-resolution image</strong> for digital use, we have you covered. Each monthly page highlights major festivals
+            like Vishu, Onam, and Shivaratri in red, making it easy to plan ahead. The calendar follows IST (Indian Standard Time)
+            and is accurate for all of Kerala.
+          </p>
+        </div>
+        <div className="mt-4 flex justify-center">
+          <Link
+            href="/malayalam-calendar/2026"
+            className="inline-flex items-center gap-2 bg-green-600 text-white font-bold px-8 py-3 rounded-full shadow hover:bg-green-700 transition-colors"
+          >
+            📥 View &amp; Download Malayalam Calendar 2026
+          </Link>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════
+          SECTION 5: WEEKLY CALENDAR (SECRET WEAPON)
+          ══════════════════════════════════════ */}
+      {/* ══════════════════════════════════════
+          SECTION 5: WEEKLY CALENDAR (SECRET WEAPON)
+          ══════════════════════════════════════ */}
+      <section className="mb-10 bg-gradient-to-r from-purple-50 to-violet-50 dark:from-purple-900/20 dark:to-violet-900/20 rounded-2xl p-6 border border-purple-100 dark:border-purple-800">
+        <div className="flex items-center gap-3 mb-3">
+          <span className="w-1 h-8 bg-purple-600 rounded-full"></span>
+          <h2 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white">
+            Malayalam Weekly Calendar &amp; Panchangam 2026
+          </h2>
+        </div>
+        <p className="text-sm text-gray-600 dark:text-gray-400 mb-5 leading-relaxed">
+          Plan your week according to the traditional Kerala Panchangam. Know the best days for
+          <strong> Muhurat</strong> (auspicious timings), <strong>Vrats</strong> (fasting days), and <strong>festivals</strong>
+          in advance. Our weekly view helps you align daily activities with Nakshatram, Tithi, and Rahu Kalam timings.
+        </p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <Link
+            href="/weekly-calendar"
+            className="group flex items-center gap-4 p-4 bg-white dark:bg-gray-800 rounded-xl border border-purple-200 dark:border-purple-700 hover:shadow-md hover:border-purple-400 transition-all"
+          >
+            <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900/40 rounded-xl flex items-center justify-center text-2xl flex-shrink-0">
+              📆
+            </div>
+            <div>
+              <p className="font-bold text-gray-900 dark:text-white text-sm group-hover:text-purple-700 dark:group-hover:text-purple-300">This Week Malayalam Calendar</p>
+              <p className="text-xs text-gray-500 dark:text-gray-400">View this week&apos;s Nakshatram & Panchangam</p>
+            </div>
+          </Link>
+          <Link
+            href={`/weekly-calendar?date=${(() => {
+              const d = new Date();
+              d.setDate(d.getDate() + 7);
+              return d.toISOString().split('T')[0];
+            })()}`}
+            className="group flex items-center gap-4 p-4 bg-white dark:bg-gray-800 rounded-xl border border-purple-200 dark:border-purple-700 hover:shadow-md hover:border-purple-400 transition-all"
+          >
+            <div className="w-12 h-12 bg-violet-100 dark:bg-violet-900/40 rounded-xl flex items-center justify-center text-2xl flex-shrink-0">
+              🔮
+            </div>
+            <div>
+              <p className="font-bold text-gray-900 dark:text-white text-sm group-hover:text-purple-700 dark:group-hover:text-purple-300">Next Week Panchangam</p>
+              <p className="text-xs text-gray-500 dark:text-gray-400">Plan ahead with next week&apos;s calendar</p>
+            </div>
+          </Link>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════
+          SECTION 6: KERALA FESTIVALS 2026
+          ══════════════════════════════════════ */}
+      <section className="mb-10">
+        <div className="flex items-center gap-3 mb-4">
+          <span className="w-1 h-8 bg-orange-500 rounded-full"></span>
+          <h2 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white">
+            Kerala Festival Calendar 2026
+          </h2>
+        </div>
+        <p className="text-sm text-gray-600 dark:text-gray-300 mb-5 leading-relaxed ml-4">
+          Festivals are the heart of Kerala culture. The Malayalam Calendar 2026 is the definitive guide for
+          planning Vishu celebrations, Onam preparations, Shivaratri fasting, Ekadashi observances, and
+          choosing the most auspicious Marriage Muhurat for your family events.
+        </p>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {[
+            {
+              icon: '🌸', title: 'Vishu 2026', date: 'April 14, 2026',
+              desc: 'Astronomical New Year of Kerala. Celebrated with Vishukkani, Vishukaineetam & fireworks.',
+              href: '/vishu-2026-date-kerala', color: 'orange'
+            },
+            {
+              icon: '🎊', title: 'Onam 2026', date: 'August 26, 2026',
+              desc: 'Grand harvest festival. Thiruvonam is the most auspicious day of the 10-day celebration.',
+              href: '/onam-2026-date', color: 'yellow'
+            },
+            {
+              icon: '🔱', title: 'Maha Shivaratri 2026', date: 'February 2026',
+              desc: 'Night-long worship of Lord Shiva. Observed with fasting and temple visits across Kerala.',
+              href: '/festivals', color: 'blue'
+            },
+            {
+              icon: '🌙', title: 'Ekadashi 2026', date: 'Monthly',
+              desc: 'The sacred 11th day of each lunar fortnight. Observed with fasting and prayers to Lord Vishnu.',
+              href: '/ekadashi-2026', color: 'green'
+            },
+            {
+              icon: '💍', title: 'Marriage Muhurat 2026', date: 'Multiple Dates',
+              desc: 'Best auspicious dates for weddings (Vivaha Muhurtham) in 2026 based on Nakshatram & Tithi.',
+              href: '/marriage-muhurtham-2026', color: 'pink'
+            },
+            {
+              icon: '🎆', title: 'All Kerala Festivals', date: '2026 Full List',
+              desc: 'Complete list of all Kerala public holidays, temple festivals, and religious observances.',
+              href: '/festivals', color: 'red'
+            },
+          ].map((fest) => (
+            <Link
+              key={fest.title}
+              href={fest.href}
+              className="group flex flex-col p-4 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 hover:shadow-lg hover:-translate-y-0.5 transition-all"
+            >
+              <div className="flex items-center gap-3 mb-3">
+                <span className="text-2xl">{fest.icon}</span>
+                <div>
+                  <h3 className="font-bold text-gray-900 dark:text-white text-sm group-hover:text-red-600 dark:group-hover:text-red-400 transition-colors">{fest.title}</h3>
+                  <p className="text-xs font-semibold text-red-600 dark:text-red-400">{fest.date}</p>
+                </div>
+              </div>
+              <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed flex-grow">{fest.desc}</p>
+              <span className="text-xs text-indigo-600 dark:text-indigo-400 mt-3 font-semibold group-hover:underline">View Details →</span>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════
+          SECTION 7: ABOUT MALAYALAM CALENDAR
+          ══════════════════════════════════════ */}
+      <section className="mb-10 bg-gray-50 dark:bg-gray-800/60 rounded-2xl p-6 border border-gray-200 dark:border-gray-700">
+        <div className="flex items-center gap-3 mb-4">
+          <span className="w-1 h-8 bg-teal-600 rounded-full"></span>
+          <h2 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white">
+            What is Malayalam Calendar (Kollavarsham)?
+          </h2>
+        </div>
+
+        <div className="prose prose-sm dark:prose-invert max-w-none text-gray-700 dark:text-gray-300 leading-relaxed space-y-4">
+          <p>
+            The <strong>Malayalam Calendar</strong>, also known as the <strong>Kollavarsham</strong> or <strong>Kollam Era</strong>,
+            is a solar calendar that originated in <strong>825 AD</strong> in the ancient port city of Kollam (Quilon), Kerala.
+            Unlike the Gregorian calendar, Kollavarsham is a <strong>sidereal solar calendar</strong>—dates are calculated based on
+            the sun's transit through the 12 zodiac signs (Rashi) relative to fixed stars, making it astronomically precise.
+            It is extensively used in Kerala temples, homes, and astrology for fixing auspicious dates (Muhurtham),
+            conducting horoscope matching (Jathakam), and observing religious fasts (Vrats).
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 not-prose">
+            <div>
+              <h3 className="font-bold text-gray-900 dark:text-white mb-3 text-base">Key Facts</h3>
+              <ul className="space-y-2">
+                {[
+                  ['📅', 'Founded', '825 AD in Kollam, Kerala'],
+                  ['☀️', 'Type', 'Sidereal Solar Calendar'],
+                  ['📆', 'Months', '12 Malayalam months'],
+                  ['🗓️', '2026 Year', 'Kollavarsham 1201–1202'],
+                  ['🏛️', 'Used in', 'Temples, homes, astrology across Kerala'],
+                ].map(([icon, label, val]) => (
+                  <li key={label} className="flex items-start gap-2 text-sm text-gray-700 dark:text-gray-300">
+                    <span>{icon}</span>
+                    <span><strong className="text-gray-900 dark:text-white">{label}:</strong> {val}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="font-bold text-gray-900 dark:text-white mb-3 text-base">12 Malayalam Months</h3>
+              <div className="grid grid-cols-2 gap-1.5">
+                {[
+                  ['Chingam', 'Aug–Sep'], ['Kanni', 'Sep–Oct'], ['Thulam', 'Oct–Nov'],
+                  ['Vrischikam', 'Nov–Dec'], ['Dhanu', 'Dec–Jan'], ['Makaram', 'Jan–Feb'],
+                  ['Kumbham', 'Feb–Mar'], ['Meenam', 'Mar–Apr'], ['Medam', 'Apr–May'],
+                  ['Edavam', 'May–Jun'], ['Mithunam', 'Jun–Jul'], ['Karkidakam', 'Jul–Aug'],
+                ].map(([ml, en]) => (
+                  <div key={ml} className="flex items-center justify-between bg-white dark:bg-gray-700/50 rounded-lg px-2.5 py-1.5 text-xs border border-gray-100 dark:border-gray-700">
+                    <span className="font-semibold text-gray-800 dark:text-gray-200">{ml}</span>
+                    <span className="text-gray-400">{en}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════
+          SECTION 8: FAQ
+          ══════════════════════════════════════ */}
+      <section className="mb-10">
+        <div className="flex items-center gap-3 mb-4">
+          <span className="w-1 h-8 bg-yellow-500 rounded-full"></span>
+          <h2 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white">
+            Frequently Asked Questions – Malayalam Calendar 2026
+          </h2>
+        </div>
+        <FAQ items={[
+          {
+            question: 'What is Malayalam Calendar 2026?',
+            answer: 'The Malayalam Calendar 2026 is based on Kollavarsham, a traditional solar calendar of Kerala spanning Malayalam years 1201–1202. It is used for tracking festivals, auspicious dates, Nakshatram, and religious observances.'
+          },
+          {
+            question: 'What is today\'s Malayalam date?',
+            answer: `Today's Malayalam date is ${data.malayalam_date}. Today's Nakshatram is ${data.nakshatram} and Tithi is ${data.tithi}. Rahu Kalam is ${data.rahukalam}.`
+          },
+          {
+            question: 'When does Malayalam year 1201 start?',
+            answer: 'Kollavarsham 1201 began in August 2025 with the start of the Malayalam month Chingam. The year 1202 begins in August 2026.'
+          },
+          {
+            question: 'How to download Malayalam Calendar 2026 PDF?',
+            answer: 'You can download the Malayalam Calendar 2026 PDF for free from our website. Visit the yearly calendar page and use the download button to get the printable A4 PDF version.'
+          },
+          {
+            question: 'When is Vishu 2026?',
+            answer: 'Vishu 2026 falls on April 14, 2026. It marks the sun\'s transit into Medam (Aries) and is celebrated as the astronomical New Year with the Vishukkani ritual.'
+          },
+          {
+            question: 'When is Onam 2026?',
+            answer: 'Onam 2026 Thiruvonam falls on August 26, 2026. The 10-day Onam celebrations start from Atham. It is the biggest festival of Kerala celebrated in the Malayalam month of Chingam.'
+          },
+          {
+            question: 'What is the difference between Malayalam and Hindu calendar?',
+            answer: 'The Malayalam Calendar (Kollavarsham) is a purely solar calendar based on the sun\'s position. The Hindu calendar (Panchang) is a lunisolar calendar blending solar years with lunar months. While both track Nakshatram and Tithi, the Malayalam system is more regionally specific to Kerala.'
+          },
+          {
+            question: 'What is Nakshatram today in Kerala?',
+            answer: `Today's Nakshatram in Kerala is ${data.nakshatram}. The Nakshatram may change at a specific time during the day. Visit the daily Panchangam for exact star ending times.`
+          },
+        ]} />
+      </section>
+
+      {/* ══════════════════════════════════════
+          SECTION 9: POPULAR PAGES (INTERNAL LINK FOOTER)
+          ══════════════════════════════════════ */}
+      <section className="mb-6 bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl p-6 text-white">
+        <h2 className="text-lg font-bold mb-4 text-gray-100">
+          📚 Popular Malayalam Calendar Pages
+        </h2>
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3">
+          {[
+            { label: 'Calendar 2025', href: '/malayalam-calendar/2025', icon: '📅' },
+            { label: 'Calendar 2027', href: '/malayalam-calendar/2027', icon: '📅' },
+            { label: 'Panchangam Today', href: '/', icon: '🌟' },
+            { label: 'Wedding Muhurat', href: '/festivals', icon: '💍' },
+            { label: 'Ekadashi 2026', href: '/festivals', icon: '🌙' },
+            { label: 'Public Holidays', href: '/festivals', icon: '🎆' },
+          ].map((p) => (
+            <Link
+              key={p.href + p.label}
+              href={p.href}
+              className="flex flex-col items-center text-center p-3 bg-white/10 hover:bg-white/20 rounded-xl transition-colors border border-white/10 hover:border-white/30"
+            >
+              <span className="text-xl mb-1">{p.icon}</span>
+              <span className="text-xs font-semibold text-gray-200">{p.label}</span>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* Malayalam Language Summary */}
+      <div className="pt-4 border-t border-gray-100 dark:border-gray-700 text-center">
+        <p className="text-base md:text-lg text-gray-800 dark:text-gray-200 leading-relaxed font-malayalam">
+          {isToday ? 'ഇന്ന് കേരളത്തിൽ' : <span className="font-bold text-red-700 dark:text-red-400">{formatDate(data.date)}</span>}
+          {' '}
+          (<span className="font-medium text-gray-900 dark:text-gray-100">{data.malayalam_date}</span>) ആണ്.
+          {' '}
+          {isToday ? 'ഇന്നത്തെ' : 'ആ ദിവസത്തെ'} നക്ഷത്രം <span className="font-bold text-indigo-700 dark:text-indigo-400">{data.nakshatram}</span> ആണ്.
+          {' '}
+          സൂര്യോദയം <span className="font-medium">{data.sunrise}</span>-നും
+          {' '}
+          സൂര്യാസ്തമയം <span className="font-medium">{data.sunset}</span>-നും ആണ്.
+        </p>
+      </div>
+
+      <AdSlot slotId="bottom-banner" />
     </div>
   );
 }

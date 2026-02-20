@@ -47,3 +47,19 @@ export function formatDate(dateStr: string): string {
     const [year, month, day] = dateStr.split('-');
     return `${day}-${month}-${year}`;
 }
+
+export async function getWeekData(startDateStr: string): Promise<DailyData[]> {
+    const startDate = new Date(startDateStr);
+    const weekData: DailyData[] = [];
+
+    for (let i = 0; i < 7; i++) {
+        const currentDate = new Date(startDate);
+        currentDate.setDate(startDate.getDate() + i);
+        const dateStr = currentDate.toISOString().split('T')[0];
+        const data = await getDailyData(dateStr);
+        if (data) {
+            weekData.push(data);
+        }
+    }
+    return weekData;
+}
