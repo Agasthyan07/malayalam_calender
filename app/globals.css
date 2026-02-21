@@ -19,7 +19,7 @@
   --color-foreground: var(--foreground);
 
   /* Wire up the Next.js font CSS variables from layout.tsx */
-  --font-sans:    var(--font-inter, ui-sans-serif, system-ui, sans-serif);
+  --font-sans: var(--font-inter, ui-sans-serif, system-ui, sans-serif);
   --font-malayalam: var(--font-malayalam, 'Noto Sans Malayalam', sans-serif);
 }
 
@@ -45,4 +45,19 @@ html {
   outline: 2px solid #1d4ed8;
   outline-offset: 2px;
   border-radius: 4px;
+}
+
+/* ── Hide Google Translate Tooltips & Highlight ────────────────── */
+#goog-gt-tt,
+.goog-te-balloon-frame,
+.VIpgJd-Zvi9od-aZ2wEe-wOHMyf,
+.VIpgJd-Zvi9od-ORHb-OEVmcd,
+.VIpgJd-Zvi9od-vH1Gmc-OEVmcd {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+.goog-text-highlight {
+  background-color: transparent !important;
+  box-shadow: none !important;
 }
