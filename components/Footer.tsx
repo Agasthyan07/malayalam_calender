@@ -33,7 +33,7 @@ export default function Footer() {
                         </div>
                     </div>
                 </div>
-                <div className="border-t border-gray-200 pt-8 text-center text-gray-500 text-sm">
+                <div className="border-t border-gray-200 pt-8 text-center text-gray-600 text-sm">
                     <p>© {new Date().getFullYear()} Malayalam Calendar. All rights reserved.</p>
                 </div>
             </div>

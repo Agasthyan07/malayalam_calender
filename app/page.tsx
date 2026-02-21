@@ -269,8 +269,8 @@ export default async function Home({ searchParams }: Props) {
             >
               <span className="text-xs font-bold text-indigo-600 dark:text-indigo-400 mb-1">{(i + 1).toString().padStart(2, '0')}</span>
               <span className="font-bold text-gray-800 dark:text-gray-100 text-xs group-hover:text-indigo-700 dark:group-hover:text-indigo-300">{m.name}</span>
-              <span className="text-[10px] text-gray-500 dark:text-gray-400 font-malayalam">{m.ml}</span>
-              <span className="text-[10px] text-gray-400 mt-1">2026</span>
+              <span className="text-[10px] text-gray-600 dark:text-gray-400 font-malayalam">{m.ml}</span>
+              <span className="text-[10px] text-gray-500 mt-1">2026</span>
             </Link>
           ))}
         </div>
@@ -518,7 +518,7 @@ export default async function Home({ searchParams }: Props) {
                 ].map(([ml, en]) => (
                   <div key={ml} className="flex items-center justify-between bg-white dark:bg-gray-700/50 rounded-lg px-2.5 py-1.5 text-xs border border-gray-100 dark:border-gray-700">
                     <span className="font-semibold text-gray-800 dark:text-gray-200">{ml}</span>
-                    <span className="text-gray-400">{en}</span>
+                    <span className="text-gray-600 dark:text-gray-400">{en}</span>
                   </div>
                 ))}
               </div>
