@@ -1,15 +1,9 @@
 @import "tailwindcss";
 
+/* ── CSS Custom Properties ─────────────────────────────────────── */
 :root {
   --background: #ffffff;
   --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -19,8 +13,36 @@
   }
 }
 
+/* ── Tailwind v4 Theme ─────────────────────────────────────────── */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  /* Wire up the Next.js font CSS variables from layout.tsx */
+  --font-sans:    var(--font-inter, ui-sans-serif, system-ui, sans-serif);
+  --font-malayalam: var(--font-malayalam, 'Noto Sans Malayalam', sans-serif);
+}
+
+/* ── Base styles ───────────────────────────────────────────────── */
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+}
+
+/* Malayalam script utility */
+.font-malayalam {
+  font-family: var(--font-malayalam);
+}
+
+/* ── Ensure scrollbar gutter to prevent CLS on overflow ────────── */
+html {
+  scrollbar-gutter: stable;
+}
+
+/* ── Focus-visible for keyboard accessibility (pass a11y audit) ── */
+:focus-visible {
+  outline: 2px solid #1d4ed8;
+  outline-offset: 2px;
+  border-radius: 4px;
 }

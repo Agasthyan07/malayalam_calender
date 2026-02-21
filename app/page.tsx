@@ -213,7 +213,7 @@ export default async function Home({ searchParams }: Props) {
             Today Malayalam Date &amp; Panchangam
           </h2>
         </div>
-        <p className="text-sm text-gray-500 dark:text-gray-400 mb-5 ml-4">
+        <p className="text-sm text-gray-600 dark:text-gray-300 mb-5 ml-4">
           <em>Malayalam calendar today · Today Malayalam date · Malayalam panchangam today · Nakshatra today Kerala</em>
         </p>
 
@@ -256,7 +256,7 @@ export default async function Home({ searchParams }: Props) {
             Malayalam Monthly Calendar 2026
           </h2>
         </div>
-        <p className="text-sm text-gray-500 dark:text-gray-400 mb-5 italic ml-4">
+        <p className="text-sm text-gray-600 dark:text-gray-300 mb-5 italic ml-4">
           Malayalam monthly calendar · Monthly Panchangam 2026
         </p>
 
@@ -265,7 +265,7 @@ export default async function Home({ searchParams }: Props) {
             <Link
               key={m.slug}
               href={`/${m.slug}`}
-              className="group flex flex-col items-center justify-center p-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl hover:border-indigo-400 hover:shadow-md hover:-translate-y-0.5 transition-all text-center"
+              className="group flex flex-col items-center justify-center p-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl hover:border-indigo-400 hover:shadow-md hover:-translate-y-0.5 transition-all text-center" aria-label={`View ${m.name} 2026 Malayalam Calendar`}
             >
               <span className="text-xs font-bold text-indigo-600 dark:text-indigo-400 mb-1">{(i + 1).toString().padStart(2, '0')}</span>
               <span className="font-bold text-gray-800 dark:text-gray-100 text-xs group-hover:text-indigo-700 dark:group-hover:text-indigo-300">{m.name}</span>
@@ -305,7 +305,7 @@ export default async function Home({ searchParams }: Props) {
             Download Malayalam Calendar 2026 PDF (Free)
           </h2>
         </div>
-        <p className="text-sm text-gray-500 dark:text-gray-400 mb-5 italic">
+        <p className="text-sm text-gray-600 dark:text-gray-300 mb-5 italic">
           Malayalam calendar 2026 PDF download · Printable Malayalam calendar 2026 · Kerala calendar 2026 PDF
         </p>
 
