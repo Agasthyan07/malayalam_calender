@@ -40,7 +40,7 @@ export async function GET() {
 
     const staticUrls: Route[] = staticRoutes.map(({ path, freq, priority }) => ({
         url: `${baseUrl}${path}`,
-        lastModified: new Date().toISOString(),
+        lastModified: new Date().toISOString().split('T')[0],
         changeFrequency: freq,
         priority,
     }));
@@ -53,7 +53,7 @@ export async function GET() {
         const monthName = date.toLocaleString('default', { month: 'long' }).toLowerCase();
         return {
             url: `${baseUrl}/malayalam-calendar-${monthName}-2026`,
-            lastModified: new Date().toISOString(),
+            lastModified: new Date().toISOString().split('T')[0],
             changeFrequency: 'weekly' as Route['changeFrequency'],
             priority: '0.7',
             image: `${baseUrl}/calendar-images/2026/malayalam-calendar-2026-${monthName}.png`,
@@ -68,7 +68,7 @@ export async function GET() {
 
         const route: Route = {
             url: `${baseUrl}/malayalam-calendar-${monthName}-2027`,
-            lastModified: new Date().toISOString(),
+            lastModified: new Date().toISOString().split('T')[0],
             changeFrequency: 'weekly',
             priority: '0.7', // normalised – year page /malayalam-calendar/2027 already has 0.8
         };

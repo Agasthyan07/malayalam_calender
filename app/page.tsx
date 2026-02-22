@@ -178,6 +178,13 @@ export default async function Home({ searchParams }: Props) {
           SECTION 1: HERO
           ══════════════════════════════════════ */}
       <section className="text-center mb-10 py-8 px-4 bg-gradient-to-br from-red-700 via-red-600 to-orange-500 rounded-2xl text-white shadow-xl">
+        <div className="flex justify-center mb-6">
+          <span className="bg-red-800/40 border border-red-500/30 text-red-100 text-xs px-3 py-1 rounded-full flex items-center gap-1.5">
+            <span className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse"></span>
+            Last Updated: {fullDateEnglish} (Live Data)
+          </span>
+        </div>
+
         <h1 className="text-2xl md:text-4xl font-extrabold leading-tight mb-4 drop-shadow">
           Malayalam Calendar 2026 – Today&apos;s Date, Monthly &amp; Yearly PDF Download
         </h1>
