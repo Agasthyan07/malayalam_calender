@@ -10,7 +10,8 @@
     "sunset": "18:30",
     "rahukalam": "16:30 - 18:00",
     "festival": null,
-    "vratham": null
+    "vratham": null,
+    "muhurtham": null
   },
   {
     "date": "2026-03-02",
@@ -22,7 +23,8 @@
     "sunset": "18:30",
     "rahukalam": "07:30 - 09:00",
     "festival": null,
-    "vratham": null
+    "vratham": null,
+    "muhurtham": null
   },
   {
     "date": "2026-03-03",
@@ -34,7 +36,8 @@
     "sunset": "18:30",
     "rahukalam": "15:00 - 16:30",
     "festival": "Attukal Pongala, Ayya Vaikunda Swami Jayanthi, Holi, Chettikulangara Bharani",
-    "vratham": null
+    "vratham": null,
+    "muhurtham": null
   },
   {
     "date": "2026-03-04",
@@ -47,7 +50,7 @@
     "rahukalam": "12:00 - 13:30",
     "festival": null,
     "vratham": null,
-    "muhurtham": "Housewarming (Uttara Phalguni)"
+    "muhurtham": null
   },
   {
     "date": "2026-03-05",
@@ -60,7 +63,7 @@
     "rahukalam": "13:30 - 15:00",
     "festival": null,
     "vratham": null,
-    "muhurtham": "Housewarming (Uttara Phalguni)"
+    "muhurtham": null
   },
   {
     "date": "2026-03-06",
@@ -73,7 +76,7 @@
     "rahukalam": "10:30 - 12:00",
     "festival": null,
     "vratham": null,
-    "muhurtham": "Housewarming (Chitra)"
+    "muhurtham": null
   },
   {
     "date": "2026-03-07",
@@ -85,7 +88,8 @@
     "sunset": "18:30",
     "rahukalam": "09:00 - 10:30",
     "festival": null,
-    "vratham": null
+    "vratham": null,
+    "muhurtham": "Vivaha Muhurtham: 10:52 PM to Next Day 07:12 AM"
   },
   {
     "date": "2026-03-08",
@@ -98,7 +102,8 @@
     "sunset": "18:30",
     "rahukalam": "16:30 - 18:00",
     "festival": "Kerala Theyyam Festival Starts",
-    "vratham": null
+    "vratham": null,
+    "muhurtham": "Vivaha Muhurtham: 07:12 AM to 08:48 PM"
   },
   {
     "date": "2026-03-09",
@@ -111,7 +116,7 @@
     "rahukalam": "07:30 - 09:00",
     "festival": null,
     "vratham": null,
-    "muhurtham": "Housewarming (Anuradha)"
+    "muhurtham": null
   },
   {
     "date": "2026-03-10",
@@ -124,7 +129,7 @@
     "rahukalam": "15:00 - 16:30",
     "festival": null,
     "vratham": null,
-    "muhurtham": "Marriage (Anuradha)"
+    "muhurtham": "Vivaha Muhurtham: 07:10 AM to 10:43 AM"
   },
   {
     "date": "2026-03-11",
@@ -136,7 +141,8 @@
     "sunset": "18:30",
     "rahukalam": "12:00 - 13:30",
     "festival": null,
-    "vratham": null
+    "vratham": null,
+    "muhurtham": null
   },
   {
     "date": "2026-03-12",
@@ -148,7 +154,8 @@
     "sunset": "18:30",
     "rahukalam": "13:30 - 15:00",
     "festival": null,
-    "vratham": null
+    "vratham": null,
+    "muhurtham": "Vivaha Muhurtham: 08:26 AM to 03:48 PM"
   },
   {
     "date": "2026-03-13",
@@ -161,7 +168,7 @@
     "rahukalam": "10:30 - 12:00",
     "festival": "Kerala Theyyam Festival Ends",
     "vratham": null,
-    "muhurtham": "Marriage & Housewarming (Uttara Ashadha)"
+    "muhurtham": null
   },
   {
     "date": "2026-03-14",
@@ -174,7 +181,7 @@
     "rahukalam": "09:00 - 10:30",
     "festival": "Papamochani Ekadashi, Sabarimala Monthly Pooja Begins",
     "vratham": "Ekadashi",
-    "muhurtham": "Marriage & Housewarming (Uttara Ashadha)"
+    "muhurtham": "Vivaha Muhurtham: 06:36 PM to Next Day 07:06 AM"
   },
   {
     "date": "2026-03-15",
@@ -187,7 +194,8 @@
     "sunset": "18:30",
     "rahukalam": "16:30 - 18:00",
     "festival": null,
-    "vratham": null
+    "vratham": null,
+    "muhurtham": "Vivaha Muhurtham: 07:06 AM to 02:31 PM"
   },
   {
     "date": "2026-03-16",
@@ -199,7 +207,8 @@
     "sunset": "18:30",
     "rahukalam": "07:30 - 09:00",
     "festival": null,
-    "vratham": null
+    "vratham": null,
+    "muhurtham": "Vivaha Muhurtham: 05:26 PM to Next Day 07:04 AM"
   },
   {
     "date": "2026-03-17",
@@ -211,7 +220,8 @@
     "sunset": "18:30",
     "rahukalam": "15:00 - 16:30",
     "festival": null,
-    "vratham": null
+    "vratham": null,
+    "muhurtham": "Vivaha Muhurtham: 07:04 AM to 08:00 PM"
   },
   {
     "date": "2026-03-18",
@@ -223,7 +233,8 @@
     "sunset": "18:30",
     "rahukalam": "12:00 - 13:30",
     "festival": null,
-    "vratham": null
+    "vratham": null,
+    "muhurtham": null
   },
   {
     "date": "2026-03-19",
@@ -235,7 +246,8 @@
     "sunset": "18:30",
     "rahukalam": "13:30 - 15:00",
     "festival": null,
-    "vratham": null
+    "vratham": null,
+    "muhurtham": null
   },
   {
     "date": "2026-03-20",
@@ -248,7 +260,8 @@
     "sunset": "18:30",
     "rahukalam": "10:30 - 12:00",
     "festival": "Id-ul-Fitr (Ramzan)",
-    "vratham": null
+    "vratham": null,
+    "muhurtham": null
   },
   {
     "date": "2026-03-21",
@@ -260,7 +273,8 @@
     "sunset": "18:30",
     "rahukalam": "09:00 - 10:30",
     "festival": null,
-    "vratham": null
+    "vratham": null,
+    "muhurtham": null
   },
   {
     "date": "2026-03-22",
@@ -273,7 +287,8 @@
     "sunset": "18:30",
     "rahukalam": "16:30 - 18:00",
     "festival": "Sabarimala Utsavam Begins",
-    "vratham": null
+    "vratham": null,
+    "muhurtham": "Vivaha Muhurtham: 09:08 PM to Next Day 06:58 AM"
   },
   {
     "date": "2026-03-23",
@@ -285,7 +300,8 @@
     "sunset": "18:30",
     "rahukalam": "07:30 - 09:00",
     "festival": "Kodiyettu (Dhwajarohan) at Sabarimala",
-    "vratham": null
+    "vratham": null,
+    "muhurtham": "Vivaha Muhurtham: 06:58 AM to 12:50 AM"
   },
   {
     "date": "2026-03-24",
@@ -297,7 +313,8 @@
     "sunset": "18:30",
     "rahukalam": "15:00 - 16:30",
     "festival": null,
-    "vratham": null
+    "vratham": null,
+    "muhurtham": null
   },
   {
     "date": "2026-03-25",
@@ -309,7 +326,8 @@
     "sunset": "18:30",
     "rahukalam": "12:00 - 13:30",
     "festival": null,
-    "vratham": null
+    "vratham": null,
+    "muhurtham": null
   },
   {
     "date": "2026-03-26",
@@ -321,7 +339,8 @@
     "sunset": "18:30",
     "rahukalam": "13:30 - 15:00",
     "festival": null,
-    "vratham": null
+    "vratham": null,
+    "muhurtham": null
   },
   {
     "date": "2026-03-27",
@@ -333,7 +352,8 @@
     "sunset": "18:30",
     "rahukalam": "10:30 - 12:00",
     "festival": null,
-    "vratham": null
+    "vratham": null,
+    "muhurtham": "Vivaha Muhurtham: 08:31 AM to Next Day 06:53 AM"
   },
   {
     "date": "2026-03-28",
@@ -345,7 +365,8 @@
     "sunset": "18:30",
     "rahukalam": "09:00 - 10:30",
     "festival": "Kamada Ekadashi",
-    "vratham": "Ekadashi"
+    "vratham": "Ekadashi",
+    "muhurtham": "Vivaha Muhurtham: 06:53 AM to 11:14 PM"
   },
   {
     "date": "2026-03-29",
@@ -358,7 +379,8 @@
     "sunset": "18:30",
     "rahukalam": "16:30 - 18:00",
     "festival": null,
-    "vratham": null
+    "vratham": null,
+    "muhurtham": null
   },
   {
     "date": "2026-03-30",
@@ -370,7 +392,8 @@
     "sunset": "18:30",
     "rahukalam": "07:30 - 09:00",
     "festival": null,
-    "vratham": null
+    "vratham": null,
+    "muhurtham": null
   },
   {
     "date": "2026-03-31",
@@ -382,6 +405,7 @@
     "sunset": "18:30",
     "rahukalam": "15:00 - 16:30",
     "festival": null,
-    "vratham": null
+    "vratham": null,
+    "muhurtham": null
   }
 ]

@@ -10,7 +10,8 @@
     "sunset": "18:30",
     "rahukalam": "16:30 - 18:00",
     "festival": "Thaipooyam, Pradosh Vrat, Magha Purnima",
-    "vratham": "Pradosh Vrat"
+    "vratham": "Pradosh Vrat",
+    "muhurtham": null
   },
   {
     "date": "2026-02-02",
@@ -23,7 +24,7 @@
     "rahukalam": "07:30 - 09:00",
     "festival": null,
     "vratham": null,
-    "muhurtham": "Marriage (Magha)"
+    "muhurtham": null
   },
   {
     "date": "2026-02-03",
@@ -36,7 +37,7 @@
     "rahukalam": "15:00 - 16:30",
     "festival": null,
     "vratham": null,
-    "muhurtham": "Marriage (Magha)"
+    "muhurtham": null
   },
   {
     "date": "2026-02-04",
@@ -48,7 +49,8 @@
     "sunset": "18:30",
     "rahukalam": "12:00 - 13:30",
     "festival": null,
-    "vratham": null
+    "vratham": null,
+    "muhurtham": null
   },
   {
     "date": "2026-02-05",
@@ -61,7 +63,7 @@
     "rahukalam": "13:30 - 15:00",
     "festival": "Sankashti Chaturthi",
     "vratham": "Sankashti Chaturthi",
-    "muhurtham": "Marriage (Hasta)"
+    "muhurtham": null
   },
   {
     "date": "2026-02-06",
@@ -74,7 +76,7 @@
     "rahukalam": "10:30 - 12:00",
     "festival": null,
     "vratham": null,
-    "muhurtham": "Marriage (Hasta), Housewarming (Chitra)"
+    "muhurtham": null
   },
   {
     "date": "2026-02-07",
@@ -86,7 +88,8 @@
     "sunset": "18:30",
     "rahukalam": "09:00 - 10:30",
     "festival": null,
-    "vratham": null
+    "vratham": null,
+    "muhurtham": null
   },
   {
     "date": "2026-02-08",
@@ -100,7 +103,7 @@
     "rahukalam": "16:30 - 18:00",
     "festival": null,
     "vratham": null,
-    "muhurtham": "Marriage (Swati)"
+    "muhurtham": null
   },
   {
     "date": "2026-02-09",
@@ -112,7 +115,8 @@
     "sunset": "18:30",
     "rahukalam": "07:30 - 09:00",
     "festival": null,
-    "vratham": null
+    "vratham": null,
+    "muhurtham": null
   },
   {
     "date": "2026-02-10",
@@ -124,7 +128,8 @@
     "sunset": "18:30",
     "rahukalam": "15:00 - 16:30",
     "festival": null,
-    "vratham": null
+    "vratham": null,
+    "muhurtham": null
   },
   {
     "date": "2026-02-11",
@@ -137,7 +142,7 @@
     "rahukalam": "12:00 - 13:30",
     "festival": null,
     "vratham": null,
-    "muhurtham": "Housewarming (Anuradha)"
+    "muhurtham": null
   },
   {
     "date": "2026-02-12",
@@ -150,7 +155,7 @@
     "rahukalam": "13:30 - 15:00",
     "festival": "Vijaya Ekadashi, Sabarimala Monthly Pooja Begins",
     "vratham": "Ekadashi",
-    "muhurtham": "Marriage (Moola)"
+    "muhurtham": null
   },
   {
     "date": "2026-02-13",
@@ -163,7 +168,7 @@
     "rahukalam": "10:30 - 12:00",
     "festival": null,
     "vratham": null,
-    "muhurtham": "Marriage (Moola)"
+    "muhurtham": null
   },
   {
     "date": "2026-02-14",
@@ -175,7 +180,8 @@
     "sunset": "18:30",
     "rahukalam": "09:00 - 10:30",
     "festival": null,
-    "vratham": null
+    "vratham": null,
+    "muhurtham": null
   },
   {
     "date": "2026-02-15",
@@ -188,7 +194,8 @@
     "sunset": "18:30",
     "rahukalam": "16:30 - 18:00",
     "festival": "Maha Shivaratri",
-    "vratham": "Shivaratri Vrat"
+    "vratham": "Shivaratri Vrat",
+    "muhurtham": null
   },
   {
     "date": "2026-02-16",
@@ -200,7 +207,8 @@
     "sunset": "18:30",
     "rahukalam": "07:30 - 09:00",
     "festival": null,
-    "vratham": null
+    "vratham": null,
+    "muhurtham": null
   },
   {
     "date": "2026-02-17",
@@ -213,7 +221,7 @@
     "rahukalam": "15:00 - 16:30",
     "festival": null,
     "vratham": null,
-    "muhurtham": "Marriage (Uthradam, 09:30 AM - Next Day)"
+    "muhurtham": "Vivaha Muhurtham: 09:30 AM to Next Day 07:27 AM"
   },
   {
     "date": "2026-02-18",
@@ -226,7 +234,7 @@
     "rahukalam": "12:00 - 13:30",
     "festival": null,
     "vratham": null,
-    "muhurtham": "Marriage (Uthradam, 07:27 AM - 12:36 PM)"
+    "muhurtham": "Vivaha Muhurtham: 07:27 AM to 12:36 PM"
   },
   {
     "date": "2026-02-19",
@@ -239,7 +247,7 @@
     "rahukalam": "13:30 - 15:00",
     "festival": "Pariyanampetta Pooram",
     "vratham": null,
-    "muhurtham": "Marriage & Housewarming (Uttara Bhadrapada)"
+    "muhurtham": null
   },
   {
     "date": "2026-02-20",
@@ -252,7 +260,7 @@
     "rahukalam": "10:30 - 12:00",
     "festival": "Pariyanampetta Pooram",
     "vratham": null,
-    "muhurtham": "Marriage & Housewarming (Uttara Bhadrapada)"
+    "muhurtham": null
   },
   {
     "date": "2026-02-21",
@@ -265,7 +273,7 @@
     "rahukalam": "09:00 - 10:30",
     "festival": null,
     "vratham": null,
-    "muhurtham": "Marriage & Housewarming (Revati)"
+    "muhurtham": null
   },
   {
     "date": "2026-02-22",
@@ -279,7 +287,7 @@
     "rahukalam": "16:30 - 18:00",
     "festival": "Kuttikkol Thampuratty Theyyam Begins",
     "vratham": null,
-    "muhurtham": "Marriage (Uthrattathi, 09:04 PM - Next Day)"
+    "muhurtham": "Vivaha Muhurtham: 09:04 PM to Next Day 07:23 AM"
   },
   {
     "date": "2026-02-23",
@@ -292,7 +300,7 @@
     "rahukalam": "07:30 - 09:00",
     "festival": "Kuttikkol Thampuratty Theyyam",
     "vratham": null,
-    "muhurtham": "Marriage (Uthrattathi, 07:23 AM - 10:20 AM)"
+    "muhurtham": "Vivaha Muhurtham: 07:23 AM to 10:20 AM"
   },
   {
     "date": "2026-02-24",
@@ -304,7 +312,8 @@
     "sunset": "18:30",
     "rahukalam": "15:00 - 16:30",
     "festival": "Kuttikkol Thampuratty Theyyam",
-    "vratham": null
+    "vratham": null,
+    "muhurtham": null
   },
   {
     "date": "2026-02-25",
@@ -317,7 +326,7 @@
     "rahukalam": "12:00 - 13:30",
     "festival": "Uthralikavu Pooram, Kuttikkol Thampuratty Theyyam",
     "vratham": null,
-    "muhurtham": "Marriage & Housewarming (Mrigashirsha)"
+    "muhurtham": null
   },
   {
     "date": "2026-02-26",
@@ -330,7 +339,7 @@
     "rahukalam": "13:30 - 15:00",
     "festival": "Kuttikkol Thampuratty Theyyam",
     "vratham": null,
-    "muhurtham": "Marriage & Housewarming (Mrigashirsha)"
+    "muhurtham": null
   },
   {
     "date": "2026-02-27",
@@ -343,7 +352,7 @@
     "rahukalam": "10:30 - 12:00",
     "festival": "Amalaki Ekadashi, Kuttikkol Thampuratty Theyyam Ends",
     "vratham": "Ekadashi",
-    "muhurtham": "Marriage (Rohini, 06:39 PM - Next Day)"
+    "muhurtham": "Vivaha Muhurtham: 06:39 PM to Next Day 07:19 AM"
   },
   {
     "date": "2026-02-28",
@@ -356,6 +365,6 @@
     "rahukalam": "09:00 - 10:30",
     "festival": null,
     "vratham": null,
-    "muhurtham": "Marriage (Rohini, 07:19 AM - 05:08 PM)"
+    "muhurtham": "Vivaha Muhurtham: 07:19 AM to 05:08 PM"
   }
 ]

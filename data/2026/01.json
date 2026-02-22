@@ -9,7 +9,8 @@
     "sunset": "18:20",
     "rahukalam": "13:30 - 15:00",
     "festival": "New Year",
-    "vratham": null
+    "vratham": null,
+    "muhurtham": null
   },
   {
     "date": "2026-01-02",
@@ -21,7 +22,8 @@
     "sunset": "18:20",
     "rahukalam": "10:30 - 12:00",
     "festival": null,
-    "vratham": null
+    "vratham": null,
+    "muhurtham": null
   },
   {
     "date": "2026-01-03",
@@ -33,7 +35,8 @@
     "sunset": "18:21",
     "rahukalam": "09:00 - 10:30",
     "festival": null,
-    "vratham": null
+    "vratham": null,
+    "muhurtham": null
   },
   {
     "date": "2026-01-04",
@@ -45,7 +48,8 @@
     "sunset": "18:21",
     "rahukalam": "16:30 - 18:00",
     "festival": null,
-    "vratham": null
+    "vratham": null,
+    "muhurtham": null
   },
   {
     "date": "2026-01-05",
@@ -58,7 +62,7 @@
     "rahukalam": "07:30 - 09:00",
     "festival": null,
     "vratham": "Somavara Vratham",
-    "muhurtham": "Marriage (Makayiram)"
+    "muhurtham": "Vivaha Muhurtham: 09:11 AM to Next Day 04:25 AM"
   },
   {
     "date": "2026-01-06",
@@ -70,7 +74,8 @@
     "sunset": "18:22",
     "rahukalam": "15:00 - 16:30",
     "festival": null,
-    "vratham": null
+    "vratham": null,
+    "muhurtham": null
   },
   {
     "date": "2026-01-07",
@@ -82,7 +87,8 @@
     "sunset": "18:23",
     "rahukalam": "12:00 - 13:30",
     "festival": null,
-    "vratham": null
+    "vratham": null,
+    "muhurtham": null
   },
   {
     "date": "2026-01-08",
@@ -94,7 +100,8 @@
     "sunset": "18:23",
     "rahukalam": "13:30 - 15:00",
     "festival": null,
-    "vratham": null
+    "vratham": null,
+    "muhurtham": null
   },
   {
     "date": "2026-01-09",
@@ -107,7 +114,7 @@
     "rahukalam": "10:30 - 12:00",
     "festival": null,
     "vratham": null,
-    "muhurtham": "Marriage (Makam)"
+    "muhurtham": "Vivaha Muhurtham: 02:01 AM to Next Day 07:41 AM"
   },
   {
     "date": "2026-01-10",
@@ -120,7 +127,7 @@
     "rahukalam": "09:00 - 10:30",
     "festival": null,
     "vratham": null,
-    "muhurtham": "Marriage (Makam)"
+    "muhurtham": "Vivaha Muhurtham: 07:41 AM to 02:55 PM"
   },
   {
     "date": "2026-01-11",
@@ -133,7 +140,7 @@
     "rahukalam": "16:30 - 18:00",
     "festival": null,
     "vratham": null,
-    "muhurtham": "Marriage (Uthram)"
+    "muhurtham": "Vivaha Muhurtham: 06:42 AM to Next Day 07:41 AM"
   },
   {
     "date": "2026-01-12",
@@ -146,7 +153,7 @@
     "rahukalam": "07:30 - 09:00",
     "festival": "Swami Vivekananda Jayanti",
     "vratham": "Sashti Vratham",
-    "muhurtham": "Marriage (Atham)"
+    "muhurtham": "Vivaha Muhurtham: 03:56 AM to Next Day 07:41 AM"
   },
   {
     "date": "2026-01-13",
@@ -159,7 +166,7 @@
     "rahukalam": "15:00 - 16:30",
     "festival": null,
     "vratham": null,
-    "muhurtham": "Marriage (Atham)"
+    "muhurtham": "Vivaha Muhurtham: 07:41 AM to 01:52 PM"
   },
   {
     "date": "2026-01-14",
@@ -172,7 +179,7 @@
     "rahukalam": "12:00 - 13:30",
     "festival": "Makaravilakku",
     "vratham": "Ekadashi",
-    "muhurtham": "Marriage (Anuradha)"
+    "muhurtham": "Vivaha Muhurtham: 01:28 PM to 11:57 PM"
   },
   {
     "date": "2026-01-15",
@@ -184,7 +191,8 @@
     "sunset": "18:27",
     "rahukalam": "13:30 - 15:00",
     "festival": null,
-    "vratham": null
+    "vratham": null,
+    "muhurtham": null
   },
   {
     "date": "2026-01-16",
@@ -196,7 +204,8 @@
     "sunset": "18:27",
     "rahukalam": "10:30 - 12:00",
     "festival": null,
-    "vratham": "Pradosham"
+    "vratham": "Pradosham",
+    "muhurtham": null
   },
   {
     "date": "2026-01-17",
@@ -208,7 +217,8 @@
     "sunset": "18:27",
     "rahukalam": "09:00 - 10:30",
     "festival": null,
-    "vratham": null
+    "vratham": null,
+    "muhurtham": null
   },
   {
     "date": "2026-01-18",
@@ -220,7 +230,8 @@
     "sunset": "18:28",
     "rahukalam": "16:30 - 18:00",
     "festival": null,
-    "vratham": null
+    "vratham": null,
+    "muhurtham": null
   },
   {
     "date": "2026-01-19",
@@ -232,7 +243,8 @@
     "sunset": "18:28",
     "rahukalam": "07:30 - 09:00",
     "festival": null,
-    "vratham": null
+    "vratham": null,
+    "muhurtham": null
   },
   {
     "date": "2026-01-20",
@@ -244,7 +256,8 @@
     "sunset": "18:29",
     "rahukalam": "15:00 - 16:30",
     "festival": null,
-    "vratham": null
+    "vratham": null,
+    "muhurtham": null
   },
   {
     "date": "2026-01-21",
@@ -256,7 +269,8 @@
     "sunset": "18:29",
     "rahukalam": "12:00 - 13:30",
     "festival": null,
-    "vratham": null
+    "vratham": null,
+    "muhurtham": null
   },
   {
     "date": "2026-01-22",
@@ -268,7 +282,8 @@
     "sunset": "18:30",
     "rahukalam": "13:30 - 15:00",
     "festival": null,
-    "vratham": null
+    "vratham": null,
+    "muhurtham": null
   },
   {
     "date": "2026-01-23",
@@ -281,7 +296,7 @@
     "rahukalam": "10:30 - 12:00",
     "festival": null,
     "vratham": null,
-    "muhurtham": "Marriage (Uttara Bhadrapada)"
+    "muhurtham": null
   },
   {
     "date": "2026-01-24",
@@ -293,7 +308,8 @@
     "sunset": "18:31",
     "rahukalam": "09:00 - 10:30",
     "festival": null,
-    "vratham": "Sashti"
+    "vratham": "Sashti",
+    "muhurtham": null
   },
   {
     "date": "2026-01-25",
@@ -305,7 +321,8 @@
     "sunset": "18:31",
     "rahukalam": "16:30 - 18:00",
     "festival": "Republic Day Eve",
-    "vratham": null
+    "vratham": null,
+    "muhurtham": null
   },
   {
     "date": "2026-01-26",
@@ -317,7 +334,8 @@
     "sunset": "18:32",
     "rahukalam": "07:30 - 09:00",
     "festival": "Republic Day",
-    "vratham": null
+    "vratham": null,
+    "muhurtham": null
   },
   {
     "date": "2026-01-27",
@@ -329,7 +347,8 @@
     "sunset": "18:32",
     "rahukalam": "15:00 - 16:30",
     "festival": null,
-    "vratham": null
+    "vratham": null,
+    "muhurtham": null
   },
   {
     "date": "2026-01-28",
@@ -342,7 +361,7 @@
     "rahukalam": "12:00 - 13:30",
     "festival": null,
     "vratham": null,
-    "muhurtham": "Marriage (Rohini)"
+    "muhurtham": null
   },
   {
     "date": "2026-01-29",
@@ -354,7 +373,8 @@
     "sunset": "18:33",
     "rahukalam": "13:30 - 15:00",
     "festival": null,
-    "vratham": "Ekadashi"
+    "vratham": "Ekadashi",
+    "muhurtham": null
   },
   {
     "date": "2026-01-30",
@@ -366,7 +386,8 @@
     "sunset": "18:34",
     "rahukalam": "10:30 - 12:00",
     "festival": "Martyrs' Day",
-    "vratham": null
+    "vratham": null,
+    "muhurtham": null
   },
   {
     "date": "2026-01-31",
@@ -378,6 +399,7 @@
     "sunset": "18:34",
     "rahukalam": "09:00 - 10:30",
     "festival": null,
-    "vratham": "Pradosham"
+    "vratham": "Pradosham",
+    "muhurtham": null
   }
 ]

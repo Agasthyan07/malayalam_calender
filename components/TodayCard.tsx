@@ -1,6 +1,6 @@
 import { DailyData } from '@/types/date';
 import { formatDate } from '@/lib/dateUtils';
-import { Sunrise, Sunset, Star, Calendar } from 'lucide-react';
+import { Sunrise, Sunset, Star, Calendar, Moon } from 'lucide-react';
 
 export default function TodayCard({ data, showMalayalamLabels = false }: { data: DailyData; showMalayalamLabels?: boolean }) {
     const labels = showMalayalamLabels ? {
@@ -11,7 +11,8 @@ export default function TodayCard({ data, showMalayalamLabels = false }: { data:
         rahukalam: 'രാഹുകാലം',
         festival: 'വിശേഷം',
         vratham: 'വ്രതം',
-        muhurtham: 'മുഹൂർത്തം'
+        muhurtham: 'മുഹൂർത്തം',
+        islamicFormat: 'ml-IN'
     } : {
         nakshatram: 'Nakshatram',
         tithi: 'Tithi',
@@ -20,18 +21,40 @@ export default function TodayCard({ data, showMalayalamLabels = false }: { data:
         rahukalam: 'Rahukalam',
         festival: 'FESTIVAL',
         vratham: 'VRATHAM',
-        muhurtham: 'MUHURTHAM'
+        muhurtham: 'MUHURTHAM',
+        islamicFormat: 'en-GB'
     };
+
+    // Calculate Islamic Date using standard Intl.DateTimeFormat
+    const dateObj = new Date(data.date);
+    let islamicDateStr = '';
+    try {
+        const islamicFormatter = new Intl.DateTimeFormat(labels.islamicFormat, {
+            day: 'numeric',
+            month: 'long',
+            year: 'numeric',
+            calendar: 'islamic-civil'
+        });
+        islamicDateStr = islamicFormatter.format(dateObj);
+    } catch (e) {
+        console.error("Failed to format Islamic date", e);
+    }
 
     return (
         <div className="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 max-w-md mx-auto">
             {/* Header with Date */}
-            <div className="bg-red-700 text-white p-4 md:p-6 text-center">
+            <div className="bg-red-700 text-white p-4 md:p-6 text-center space-y-1">
                 <h2 className="text-xs md:text-sm font-medium opacity-90 uppercase tracking-wider">
                     {/* Weekday is usually in English in data, kept as is or could be mapped if needed, but data.weekday is string */}
                     {data.weekday}, {formatDate(data.date)}
                 </h2>
-                <h1 className="text-3xl md:text-4xl font-bold mt-2">{data.malayalam_date}</h1>
+                <h1 className="text-3xl md:text-5xl font-bold mt-2">{data.malayalam_date}</h1>
+                {islamicDateStr && (
+                    <div className="flex items-center justify-center gap-1.5 pt-2 text-red-100 opacity-90 text-xs md:text-sm font-medium">
+                        <Moon className="w-3 h-3 md:w-3.5 md:h-3.5" />
+                        <span>{islamicDateStr}</span>
+                    </div>
+                )}
             </div>
 
             <div className="p-4 md:p-6 space-y-4 md:space-y-6">
