@@ -110,14 +110,15 @@ export default async function Home({ searchParams }: Props) {
   // Dynamic Date Info Logic
   const fullDateEnglish = new Date(targetDate).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
 
-  // Extract Malayalam Month Name (e.g., from "Kumbham 8, 1201")
-  const malDateParts = data.malayalam_date.split(', '); // ["Kumbham 8", "1201"]
-  const malMonthPart = malDateParts[0]; // "Kumbham 8"
-  const malMonthName = malMonthPart.split(' ')[0]; // "Kumbham"
+  // Extract Malayalam Month Name (e.g., from "മകരം 20")
+  const malDateParts = data.malayalam_date.split(', '); // ["മകരം 20"] or ["മകരം 20", "1201"] if year exists
+  const malMonthPart = malDateParts[0]; // "മകരം 20"
+  const malMonthName = malMonthPart.split(' ')[0]; // "മകരം"
 
   // Find start date of this Malayalam month
   const yearData = await getYearData(year); // Fetch full year data
-  const startOfMalMonth = yearData.find(d => d.malayalam_date.startsWith(`${malMonthName} 1,`));
+  // The start date in JSON is like "മകരം 1" or "മകരം 1, 1201", so we check for both.
+  const startOfMalMonth = yearData.find(d => d.malayalam_date === `${malMonthName} 1` || d.malayalam_date.startsWith(`${malMonthName} 1,`));
 
   let malMonthStartText = '';
   if (startOfMalMonth) {
