@@ -195,7 +195,9 @@ export default async function Home({ searchParams }: Props) {
         </p>
         <div className="flex flex-wrap justify-center gap-3">
           <Link
-            href="#pdf-download"
+            href="/calendar-pdf/2026_pdf/kerala-govt-offical-calendar-2026.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-white text-red-700 font-bold px-6 py-3 rounded-full shadow-md hover:shadow-lg hover:bg-red-50 transition-all text-sm md:text-base"
           >
             📥 Download 2026 PDF
@@ -319,10 +321,10 @@ export default async function Home({ searchParams }: Props) {
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
           {[
-            { icon: '📄', label: 'Yearly PDF', desc: 'Full year 2026', href: '/malayalam-calendar/2026' },
+            { icon: '📄', label: 'Yearly PDF', desc: 'Full year 2026', href: '/calendar-pdf/2026_pdf/kerala-govt-offical-calendar-2026.pdf' },
             { icon: '📅', label: 'Monthly PDF', desc: 'Each month separately', href: currentMonthSlug },
-            { icon: '🔄', label: 'Landscape', desc: 'Wide format view', href: '/malayalam-calendar/2026' },
-            { icon: '🖼️', label: 'High Resolution', desc: 'HD quality image', href: '/malayalam-calendar/2026' },
+            { icon: '🔄', label: 'Landscape', desc: 'Wide format view', href: '/calendar-pdf/2026_pdf/kerala-govt-offical-calendar-2026.pdf' },
+            { icon: '🖼️', label: 'High Resolution', desc: 'HD quality image', href: '/calendar-pdf/2026_pdf/kerala-govt-offical-calendar-2026.pdf' },
           ].map((item) => (
             <Link
               key={item.label}
@@ -349,10 +351,12 @@ export default async function Home({ searchParams }: Props) {
         </div>
         <div className="mt-4 flex justify-center">
           <Link
-            href="/malayalam-calendar/2026"
+            href="/calendar-pdf/2026_pdf/kerala-govt-offical-calendar-2026.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-green-600 text-white font-bold px-8 py-3 rounded-full shadow hover:bg-green-700 transition-colors"
           >
-            📥 View &amp; Download Malayalam Calendar 2026
+            📥 Download Malayalam Calendar 2026 PDF
           </Link>
         </div>
       </section>
