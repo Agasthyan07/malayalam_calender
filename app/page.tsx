@@ -28,9 +28,9 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
   const isToday = targetDate === todayStr;
   const data = await getDailyData(targetDate);
 
-  const canonicalUrl = isToday
-    ? 'https://malayalamcalendar.site/'
-    : `https://malayalamcalendar.site/date/${formatDate(targetDate)}`;
+  // The homepage is ALWAYS canonical at the root URL.
+  // When ?date= param is used, it's still the same page – not a duplicate.
+  const canonicalUrl = 'https://malayalamcalendar.site/';
 
   return {
     title: 'Malayalam Calendar 2026 – Today Date, Monthly & PDF Download',
