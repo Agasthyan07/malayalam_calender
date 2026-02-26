@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import Breadcrumbs from '@/components/Breadcrumbs';
 
 export const metadata: Metadata = {
     title: 'Contact Us - Malayalam Calendar',
@@ -11,6 +12,7 @@ export const metadata: Metadata = {
 export default function ContactPage() {
     return (
         <div className="container mx-auto px-4 py-8 max-w-3xl">
+            <Breadcrumbs items={[{ label: 'Contact Us', href: '/contact' }]} />
             <h1 className="text-3xl font-bold mb-6 text-gray-900 dark:text-white">Contact Us</h1>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">

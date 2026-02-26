@@ -24,7 +24,7 @@ export async function GET() {
         { path: '/weekly-calendar', freq: 'daily', priority: '0.8' },
         { path: '/innathe-nakshatram', freq: 'daily', priority: '0.8' },
         { path: '/rahu-kalam-today', freq: 'daily', priority: '0.8' },
-        { path: '/vratham-today', freq: 'daily', priority: '0.7' },
+        { path: '/namaz-times-kerala', freq: 'daily', priority: '0.8' },
         // Festival pages
         { path: '/festivals', freq: 'monthly', priority: '0.8' },
         { path: '/vishu-2026-date-kerala', freq: 'monthly', priority: '0.8' },

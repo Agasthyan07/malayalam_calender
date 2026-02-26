@@ -7,6 +7,7 @@ import JsonLd from '@/components/JsonLd';
 import DatasetSchema from '@/components/DatasetSchema';
 import { Metadata } from 'next';
 import CalendarGrid from '@/components/CalendarGrid';
+import IslamicPrayerTimes from '@/components/IslamicPrayerTimes';
 
 export const revalidate = 3600;
 
@@ -28,7 +29,7 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
   const data = await getDailyData(targetDate);
 
   const canonicalUrl = isToday
-    ? 'https://malayalamcalendar.site'
+    ? 'https://malayalamcalendar.site/'
     : `https://malayalamcalendar.site/date/${formatDate(targetDate)}`;
 
   return {
@@ -237,6 +238,7 @@ export default async function Home({ searchParams }: Props) {
                 {' '}{malMonthStartText}
               </p>
             </div>
+            <IslamicPrayerTimes />
           </div>
 
           {/* Right: Current month calendar grid */}
@@ -255,6 +257,8 @@ export default async function Home({ searchParams }: Props) {
           </div>
         </div>
       </section>
+
+
 
       {/* ══════════════════════════════════════
           SECTION 3: MONTHLY CALENDAR GRID

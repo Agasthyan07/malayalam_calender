@@ -1,14 +1,19 @@
 import type { Metadata } from 'next';
 import AdSlot from '@/components/AdSlot';
+import Breadcrumbs from '@/components/Breadcrumbs';
 
 export const metadata: Metadata = {
     title: 'About Us - Malayalam Calendar 2026',
     description: 'Learn more about Malayalam Calendar, our mission to preserve Kerala culture through technology, and the team behind this digital panchangam.',
+    alternates: {
+        canonical: 'https://malayalamcalendar.site/about',
+    },
 };
 
 export default function AboutPage() {
     return (
         <div className="container mx-auto px-4 py-8 max-w-3xl">
+            <Breadcrumbs items={[{ label: 'About Us', href: '/about' }]} />
             <h1 className="text-3xl font-bold mb-6 text-gray-900 dark:text-gray-100">About Us</h1>
 
             <div className="bg-white dark:bg-gray-800 rounded-xl p-8 shadow-sm border border-gray-100 dark:border-gray-700 prose prose-red dark:prose-invert max-w-none">

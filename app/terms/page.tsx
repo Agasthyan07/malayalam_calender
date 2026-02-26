@@ -1,3 +1,5 @@
+import Breadcrumbs from '@/components/Breadcrumbs';
+
 export const metadata = {
     title: 'Terms of Service - Malayalam Calendar',
     description: 'Terms of Service for using and downloading content from Malayalam Calendar 2026 website.',
@@ -9,6 +11,7 @@ export const metadata = {
 export default function Terms() {
     return (
         <div className="container mx-auto px-4 py-8 max-w-4xl">
+            <Breadcrumbs items={[{ label: 'Terms of Service', href: '/terms' }]} />
             <h1 className="text-3xl md:text-4xl font-bold mb-8 text-gray-900 dark:text-gray-100">Terms of Service</h1>
 
             <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 md:p-8 shadow-sm border border-gray-100 dark:border-gray-700 prose prose-lg dark:prose-invert max-w-none text-gray-700 dark:text-gray-300">

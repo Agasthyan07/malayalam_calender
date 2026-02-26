@@ -5,6 +5,7 @@ import DateNavigation from '@/components/DateNavigation';
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import CalendarGrid from '@/components/CalendarGrid';
+import Breadcrumbs from '@/components/Breadcrumbs';
 
 export const revalidate = 3600;
 
@@ -90,14 +91,17 @@ export default async function DatePage({ params }: Props) {
 
     return (
         <div className="container mx-auto px-4 py-8 max-w-2xl">
-            <h1 className="sr-only">Malayalam Calendar - {formatDate(data.date)}</h1>
-            <AdSlot slotId="top-banner" />
-
+            <Breadcrumbs items={[
+                { label: 'Calendar', href: '/malayalam-calendar/2026' },
+                { label: formatDate(targetDate), href: `/date/${formatDate(targetDate)}` }
+            ]} />
             <div className="text-center mb-6">
-                <h2 className="text-2xl md:text-3xl font-bold text-gray-800 dark:text-gray-100">
+                <h1 className="text-2xl md:text-3xl font-bold text-gray-800 dark:text-gray-100">
                     {formatDate(targetDate)} - മലയാളം കലണ്ടർ
-                </h2>
+                </h1>
             </div>
+
+            <AdSlot slotId="top-banner" />
 
             <TodayCard data={data} />
 

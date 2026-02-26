@@ -3,6 +3,7 @@ import Link from 'next/link';
 import JsonLd from '@/components/JsonLd';
 import AdSlot from '@/components/AdSlot';
 import FAQ from '@/components/FAQ';
+import Breadcrumbs from '@/components/Breadcrumbs';
 
 export const metadata: Metadata = {
     title: 'Vishu 2026 Date Kerala – Vishukkani Muhurat & Malayalam New Year',
@@ -33,18 +34,30 @@ export default function VishuPage() {
         '@context': 'https://schema.org',
         '@type': 'Event',
         name: 'Vishu 2026',
-        startDate: '2026-04-14',
-        endDate: '2026-04-14',
+        startDate: '2026-04-14T00:00:00+05:30',
+        endDate: '2026-04-14T23:59:59+05:30',
         eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
         eventStatus: 'https://schema.org/EventScheduled',
+        isAccessibleForFree: true,
+        image: [
+            'https://malayalamcalendar.site/icon-192x192.png',
+            'https://malayalamcalendar.site/icon-512x512.png'
+        ],
         location: {
             '@type': 'Place',
-            name: 'Kerala, India',
+            name: 'Kerala',
             address: {
                 '@type': 'PostalAddress',
                 addressRegion: 'Kerala',
-                addressCountry: 'IN'
+                addressCountry: 'India'
             }
+        },
+        offers: {
+            '@type': 'Offer',
+            price: 0,
+            priceCurrency: 'INR',
+            availability: 'https://schema.org/InStock',
+            url: 'https://malayalamcalendar.site/vishu-2026-date-kerala'
         },
         description: 'Vishu is the traditional Malayali New Year festival celebrated in Kerala.',
         organizer: {
@@ -58,11 +71,10 @@ export default function VishuPage() {
         <div className="container mx-auto px-4 py-8 max-w-3xl">
             <JsonLd data={jsonLd} />
 
-            <nav className="text-sm mb-6 text-gray-500">
-                <Link href="/" className="hover:text-indigo-600">Home</Link> &gt;
-                <Link href="/festivals" className="hover:text-indigo-600 mx-1">Festivals</Link> &gt;
-                <span className="text-gray-900 font-medium mx-1">Vishu 2026</span>
-            </nav>
+            <Breadcrumbs items={[
+                { label: 'Festivals', href: '/festivals' },
+                { label: 'Vishu 2026', href: '/vishu-2026-date-kerala' }
+            ]} />
 
             <article>
                 <header className="mb-8 text-center">

@@ -1,6 +1,7 @@
 import { getYearData, formatDate } from '@/lib/dateUtils';
 import Link from 'next/link';
 import { DailyData } from '@/types/date';
+import Breadcrumbs from '@/components/Breadcrumbs';
 
 const MONTH_NAMES = [
     'January', 'February', 'March', 'April', 'May', 'June',
@@ -28,15 +29,43 @@ export default async function FestivalsPage() {
         description: 'Complete list of festivals and holidays in Kerala for the year 2026.',
         startDate: '2026-01-01',
         endDate: '2026-12-31',
-        event: festivals.map(f => ({
-            '@type': 'Event',
-            name: f.festival,
-            startDate: f.date,
-            location: {
-                '@type': 'Place',
-                name: 'Kerala, India'
-            }
-        }))
+        event: festivals.map(f => {
+            const isoDate = f.date.split('T')[0];
+            return {
+                '@type': 'Event',
+                name: f.festival,
+                startDate: `${isoDate}T00:00:00+05:30`,
+                endDate: `${isoDate}T23:59:59+05:30`,
+                eventStatus: 'https://schema.org/EventScheduled',
+                eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+                isAccessibleForFree: true,
+                image: [
+                    'https://malayalamcalendar.site/icon-192x192.png',
+                    'https://malayalamcalendar.site/icon-512x512.png'
+                ],
+                location: {
+                    '@type': 'Place',
+                    name: 'Kerala',
+                    address: {
+                        '@type': 'PostalAddress',
+                        addressRegion: 'Kerala',
+                        addressCountry: 'India'
+                    }
+                },
+                offers: {
+                    '@type': 'Offer',
+                    price: 0,
+                    priceCurrency: 'INR',
+                    availability: 'https://schema.org/InStock',
+                    url: 'https://malayalamcalendar.site/festivals'
+                },
+                organizer: {
+                    '@type': 'Organization',
+                    name: 'Malayalam Calendar',
+                    url: 'https://malayalamcalendar.site'
+                }
+            };
+        })
     };
 
     return (
@@ -45,6 +74,7 @@ export default async function FestivalsPage() {
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
             />
+            <Breadcrumbs items={[{ label: 'Festivals 2026', href: '/festivals' }]} />
             <h1 className="text-3xl md:text-4xl font-extrabold mb-6 text-center text-gray-900 dark:text-white tracking-tight">
                 Festivals <span className="text-red-600">2026</span>
             </h1>

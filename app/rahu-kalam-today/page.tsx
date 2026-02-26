@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { getDailyData, formatDate } from '@/lib/dateUtils';
 import AdSlot from '@/components/AdSlot';
 import FAQ from '@/components/FAQ';
+import Breadcrumbs from '@/components/Breadcrumbs';
 
 export const revalidate = 3600; // Hourly revalidation
 
@@ -51,10 +52,7 @@ export default async function RahuKalamPage() {
 
     return (
         <div className="container mx-auto px-4 py-8 max-w-3xl">
-            {/* Breadcrumb / Navigation helper */}
-            <div className="text-sm text-gray-500 dark:text-gray-400 mb-4">
-                <Link href="/" className="hover:underline">Home</Link> &gt; <span>Rahu Kalam Today</span>
-            </div>
+            <Breadcrumbs items={[{ label: 'Rahu Kalam Today', href: '/rahu-kalam-today' }]} />
 
             <h1 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-6">
                 Rahu Kalam Today – Timings, Meaning & Day-Wise Schedule

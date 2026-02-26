@@ -2,6 +2,7 @@ import { getYearData, formatDate } from '@/lib/dateUtils';
 import Link from 'next/link';
 import AdSlot from '@/components/AdSlot';
 import { Metadata } from 'next';
+import Breadcrumbs from '@/components/Breadcrumbs';
 
 export const revalidate = 3600;
 
@@ -36,8 +37,55 @@ export default async function EkadashiPage() {
         'July', 'August', 'September', 'October', 'November', 'December'
     ];
 
+    const eventSchemas = ekadashiDays.map(day => {
+        const isoDate = day.date.split('T')[0];
+        return {
+            '@type': 'Event',
+            name: `Ekadashi Vratam - ${isoDate}`,
+            description: 'Auspicious Ekadashi day for fasting and Vishnu worship according to the Malayalam Calendar.',
+            startDate: `${isoDate}T00:00:00+05:30`,
+            endDate: `${isoDate}T23:59:59+05:30`,
+            eventStatus: 'https://schema.org/EventScheduled',
+            eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+            isAccessibleForFree: true,
+            image: [
+                'https://malayalamcalendar.site/icon-192x192.png',
+                'https://malayalamcalendar.site/icon-512x512.png'
+            ],
+            location: {
+                '@type': 'Place',
+                name: 'Kerala',
+                address: {
+                    '@type': 'PostalAddress',
+                    addressRegion: 'Kerala',
+                    addressCountry: 'India'
+                }
+            },
+            offers: {
+                '@type': 'Offer',
+                price: 0,
+                priceCurrency: 'INR',
+                availability: 'https://schema.org/InStock',
+                url: 'https://malayalamcalendar.site/ekadashi-2026'
+            },
+            organizer: {
+                '@type': 'Organization',
+                name: 'Malayalam Calendar',
+                url: 'https://malayalamcalendar.site'
+            }
+        };
+    });
+
+    const graphSchema = {
+        '@context': 'https://schema.org',
+        '@graph': eventSchemas
+    };
+
     return (
         <div className="container mx-auto px-4 py-8 max-w-4xl">
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(graphSchema) }} />
+
+            <Breadcrumbs items={[{ label: 'Ekadashi 2026', href: '/ekadashi-2026' }]} />
             <h1 className="text-3xl md:text-4xl font-extrabold text-center text-gray-900 dark:text-white mb-6">
                 Ekadashi Vratam Dates 2026 (Kerala)
             </h1>

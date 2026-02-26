@@ -3,6 +3,7 @@ import Link from 'next/link';
 import AdSlot from '@/components/AdSlot';
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
+import Breadcrumbs from '@/components/Breadcrumbs';
 
 export const revalidate = 3600;
 
@@ -27,7 +28,7 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
         title: `Malayalam Weekly Calendar (${startStr} to ${endStr}) | Panchangam`,
         description: `View the weekly Malayalam calendar and Panchangam from ${startStr} to ${endStr}. Check Nakshatram, Tithi, Rahu Kalam, and auspicious timings for the week.`,
         alternates: {
-            canonical: `https://malayalamcalendar.site/weekly-calendar?date=${weekStart.toISOString().split('T')[0]}`,
+            canonical: 'https://malayalamcalendar.site/weekly-calendar',
         },
     };
 }
@@ -73,6 +74,7 @@ export default async function WeeklyCalendarPage({ searchParams }: Props) {
 
     return (
         <div className="container mx-auto px-4 py-8 max-w-6xl">
+            <Breadcrumbs items={[{ label: 'Weekly Calendar', href: '/weekly-calendar' }]} />
             <h1 className="text-3xl font-extrabold text-center text-gray-900 dark:text-white mb-2">
                 Malayalam Weekly Calendar & Panchangam
             </h1>

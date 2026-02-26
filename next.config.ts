@@ -80,6 +80,13 @@ const nextConfig: NextConfig = {
   // ── URL Redirects (unchanged) ────────────────────────────────────
   async redirects() {
     return [
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'www.malayalamcalendar.site' }],
+        destination: 'https://malayalamcalendar.site/:path*',
+        permanent: true,
+      },
+      { source: '/today', destination: '/', permanent: true },
       { source: '/calendar/:year(\\d{4})', destination: '/malayalam-calendar/:year', permanent: true },
       // 2026 Redirects
       { source: '/calendar/2026/01', destination: '/malayalam-calendar-january-2026', permanent: true },

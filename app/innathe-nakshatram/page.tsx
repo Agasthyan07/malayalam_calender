@@ -3,12 +3,16 @@ import Link from 'next/link';
 import { getDailyData, formatDate } from '@/lib/dateUtils';
 import AdSlot from '@/components/AdSlot';
 import FAQ from '@/components/FAQ';
+import Breadcrumbs from '@/components/Breadcrumbs';
 
 export const revalidate = 3600; // Hourly revalidation
 
 export const metadata: Metadata = {
     title: 'Innathe Nakshatram – Today\'s Star in Malayalam Calendar | 27 Stars List',
     description: 'Check Innathe Nakshatram (Today\'s Star). Read detailed predictions and characteristics of the 27 birth stars (Ashwathi to Revathi) in Malayalam astrology.',
+    alternates: {
+        canonical: 'https://malayalamcalendar.site/innathe-nakshatram',
+    },
     keywords: [
         'Innathe Nakshatram', 'Today Nakshatra Malayalam', 'Today Star',
         'Ashwathi', 'Bharani', 'Karthika', 'Rohini', 'Makayiram', 'Thiruvathira',
@@ -36,9 +40,7 @@ export default async function InnatheNakshatramPage() {
 
     return (
         <div className="container mx-auto px-4 py-8 max-w-4xl">
-            <div className="text-sm text-gray-500 dark:text-gray-400 mb-4">
-                <Link href="/" className="hover:underline">Home</Link> &gt; <span>Innathe Nakshatram</span>
-            </div>
+            <Breadcrumbs items={[{ label: 'Innathe Nakshatram', href: '/innathe-nakshatram' }]} />
 
             <h1 className="text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white mb-6">
                 Innathe Nakshatram – Today's Star & Complete Guide
