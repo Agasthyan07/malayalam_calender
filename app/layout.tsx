@@ -28,7 +28,7 @@ const malayalam = Noto_Sans_Malayalam({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://malayalamcalendar.site'),
+  metadataBase: new URL('https://www.malayalamcalendar.site'),
   title: 'Malayalam Calendar 2026 (മലയാളം കലണ്ടർ)',
   description: 'Daily Malayalam Calendar 2026 with Nakshatram, Tithi, Sunrise, Sunset, and Festivals.',
   verification: {

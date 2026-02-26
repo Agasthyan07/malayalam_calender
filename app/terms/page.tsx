@@ -4,7 +4,7 @@ export const metadata = {
     title: 'Terms of Service - Malayalam Calendar',
     description: 'Terms of Service for using and downloading content from Malayalam Calendar 2026 website.',
     alternates: {
-        canonical: 'https://malayalamcalendar.site/terms',
+        canonical: 'https://www.malayalamcalendar.site/terms',
     },
 };
 
@@ -22,7 +22,7 @@ export default function Terms() {
 
                 <h2>1. Acceptance of Terms</h2>
                 <p>
-                    By accessing and using this website (https://malayalamcalendar.site), you accept and agree to be bound by the terms and provision of this agreement.
+                    By accessing and using this website (https://www.malayalamcalendar.site), you accept and agree to be bound by the terms and provision of this agreement.
                     In addition, when using this websites particular services, you shall be subject to any posted guidelines or rules applicable to such services.
                     Any participation in this service will constitute acceptance of this agreement. If you do not agree to abide by the above, please do not use this service.
                 </p>

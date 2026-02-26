@@ -136,12 +136,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
             `Rahu Kalam ${monthName} ${year}`
         ],
         alternates: {
-            canonical: `https://malayalamcalendar.site/${slug}`,
+            canonical: `https://www.malayalamcalendar.site/${slug}`,
         },
         openGraph: {
             title: `${monthName} ${year} Malayalam Calendar`,
             description: `View the ${year} Malayalam Calendar for ${monthName} with daily Nakshatram and festival details.`,
-            url: `https://malayalamcalendar.site/${slug}`,
+            url: `https://www.malayalamcalendar.site/${slug}`,
         }
     };
 }

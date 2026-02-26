@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
             allow: '/',
             disallow: '/private/',
         },
-        sitemap: 'https://malayalamcalendar.site/sitemap.xml',
+        sitemap: 'https://www.malayalamcalendar.site/sitemap.xml',
     };
 }

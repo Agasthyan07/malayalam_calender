@@ -37,7 +37,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
             `Rahu Kalam ${year}`
         ],
         alternates: {
-            canonical: `https://malayalamcalendar.site/malayalam-calendar/${year}`,
+            canonical: `https://www.malayalamcalendar.site/malayalam-calendar/${year}`,
         }
     };
 }
@@ -63,11 +63,11 @@ export default async function YearPage({ params }: Props) {
         '@type': 'CollectionPage',
         name: `${year} Malayalam Calendar`,
         description: `Complete Malayalam Calendar for the year ${year}.`,
-        url: `https://malayalamcalendar.site/malayalam-calendar/${year}`,
+        url: `https://www.malayalamcalendar.site/malayalam-calendar/${year}`,
         hasPart: months.map(m => ({
             '@type': 'WebPage',
             name: `${m.name} ${year}`,
-            url: `https://malayalamcalendar.site/malayalam-calendar-${m.name.toLowerCase()}-${year}`
+            url: `https://www.malayalamcalendar.site/malayalam-calendar-${m.name.toLowerCase()}-${year}`
         }))
     };
 

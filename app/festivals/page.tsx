@@ -40,8 +40,8 @@ export default async function FestivalsPage() {
                 eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
                 isAccessibleForFree: true,
                 image: [
-                    'https://malayalamcalendar.site/icon-192x192.png',
-                    'https://malayalamcalendar.site/icon-512x512.png'
+                    'https://www.malayalamcalendar.site/icon-192x192.png',
+                    'https://www.malayalamcalendar.site/icon-512x512.png'
                 ],
                 location: {
                     '@type': 'Place',
@@ -57,12 +57,12 @@ export default async function FestivalsPage() {
                     price: 0,
                     priceCurrency: 'INR',
                     availability: 'https://schema.org/InStock',
-                    url: 'https://malayalamcalendar.site/festivals'
+                    url: 'https://www.malayalamcalendar.site/festivals'
                 },
                 organizer: {
                     '@type': 'Organization',
                     name: 'Malayalam Calendar',
-                    url: 'https://malayalamcalendar.site'
+                    url: 'https://www.malayalamcalendar.site'
                 }
             };
         })

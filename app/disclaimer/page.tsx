@@ -3,7 +3,7 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 export const metadata = {
     title: 'Disclaimer - Malayalam Calendar',
     alternates: {
-        canonical: 'https://malayalamcalendar.site/disclaimer',
+        canonical: 'https://www.malayalamcalendar.site/disclaimer',
     },
 };
 

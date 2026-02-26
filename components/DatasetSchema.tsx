@@ -6,7 +6,7 @@ export default function DatasetSchema() {
         '@type': 'Dataset',
         'name': 'Malayalam Calendar 2026 Data',
         'description': 'Comprehensive daily Malayalam Calendar data for the year 2026, including Nakshatram, Tithi, Rahu Kalam, and Festival dates.',
-        'url': 'https://malayalamcalendar.site/calendar-2026',
+        'url': 'https://www.malayalamcalendar.site/calendar-2026',
         'keywords': [
             'Malayalam Calendar 2026',
             'Kollavarsham 1201',
@@ -16,13 +16,13 @@ export default function DatasetSchema() {
         'creator': {
             '@type': 'Organization',
             'name': 'Malayalam Calendar Site',
-            'url': 'https://malayalamcalendar.site'
+            'url': 'https://www.malayalamcalendar.site'
         },
         'distribution': [
             {
                 '@type': 'DataDownload',
                 'encodingFormat': 'application/pdf',
-                'contentUrl': 'https://malayalamcalendar.site/calendar-2026-printable.pdf'
+                'contentUrl': 'https://www.malayalamcalendar.site/calendar-2026-printable.pdf'
             }
         ],
         'temporalCoverage': '2026-01-01/2026-12-31'

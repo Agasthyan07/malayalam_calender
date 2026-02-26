@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     description: 'Complete list of Ekadashi dates in 2026 for Kerala. Find Vaikunta Ekadashi, Guruvayur Ekadashi, and all monthly Ekadashi Vratam dates with timings.',
     keywords: ['Ekadashi 2026 Kerala', 'Ekadashi Dates 2026', 'Vaikunta Ekadashi 2026', 'Guruvayur Ekadashi 2026', 'Malayalam Calendar Ekadashi List'],
     alternates: {
-        canonical: 'https://malayalamcalendar.site/ekadashi-2026',
+        canonical: 'https://www.malayalamcalendar.site/ekadashi-2026',
     },
 };
 
@@ -49,8 +49,8 @@ export default async function EkadashiPage() {
             eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
             isAccessibleForFree: true,
             image: [
-                'https://malayalamcalendar.site/icon-192x192.png',
-                'https://malayalamcalendar.site/icon-512x512.png'
+                'https://www.malayalamcalendar.site/icon-192x192.png',
+                'https://www.malayalamcalendar.site/icon-512x512.png'
             ],
             location: {
                 '@type': 'Place',
@@ -66,12 +66,12 @@ export default async function EkadashiPage() {
                 price: 0,
                 priceCurrency: 'INR',
                 availability: 'https://schema.org/InStock',
-                url: 'https://malayalamcalendar.site/ekadashi-2026'
+                url: 'https://www.malayalamcalendar.site/ekadashi-2026'
             },
             organizer: {
                 '@type': 'Organization',
                 name: 'Malayalam Calendar',
-                url: 'https://malayalamcalendar.site'
+                url: 'https://www.malayalamcalendar.site'
             }
         };
     });

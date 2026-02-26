@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 
-const baseUrl = 'https://malayalamcalendar.site';
+const baseUrl = 'https://www.malayalamcalendar.site';
 
 interface Route {
     url: string;

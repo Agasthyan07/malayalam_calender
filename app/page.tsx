@@ -30,7 +30,7 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
 
   // The homepage is ALWAYS canonical at the root URL.
   // When ?date= param is used, it's still the same page – not a duplicate.
-  const canonicalUrl = 'https://malayalamcalendar.site/';
+  const canonicalUrl = 'https://www.malayalamcalendar.site/';
 
   return {
     title: 'Malayalam Calendar 2026 – Today Date, Monthly & PDF Download',
@@ -132,32 +132,32 @@ export default async function Home({ searchParams }: Props) {
     '@graph': [
       {
         '@type': 'WebSite',
-        '@id': 'https://malayalamcalendar.site/#website',
-        'url': 'https://malayalamcalendar.site',
+        '@id': 'https://www.malayalamcalendar.site/#website',
+        'url': 'https://www.malayalamcalendar.site',
         'name': 'Malayalam Calendar',
         'description': 'Kerala\'s most accurate daily Malayalam Calendar, Panchangam, and Festival guide.',
         'inLanguage': 'en-IN',
         'potentialAction': {
           '@type': 'SearchAction',
-          'target': 'https://malayalamcalendar.site/?date={search_term_string}',
+          'target': 'https://www.malayalamcalendar.site/?date={search_term_string}',
           'query-input': 'required name=search_term_string'
         }
       },
       {
         '@type': 'Organization',
-        '@id': 'https://malayalamcalendar.site/#organization',
+        '@id': 'https://www.malayalamcalendar.site/#organization',
         'name': 'Malayalam Calendar Site',
-        'url': 'https://malayalamcalendar.site',
-        'logo': { '@type': 'ImageObject', 'url': 'https://malayalamcalendar.site/icon.png' }
+        'url': 'https://www.malayalamcalendar.site',
+        'logo': { '@type': 'ImageObject', 'url': 'https://www.malayalamcalendar.site/icon.png' }
       },
       {
         '@type': 'WebPage',
-        '@id': 'https://malayalamcalendar.site/#webpage',
-        'url': 'https://malayalamcalendar.site',
+        '@id': 'https://www.malayalamcalendar.site/#webpage',
+        'url': 'https://www.malayalamcalendar.site',
         'name': `Malayalam Calendar 2026 – Today's Date, Monthly & PDF Download`,
         'datePublished': data.date,
         'description': `Daily Malayalam Calendar details for ${data.date}. Nakshatram: ${data.nakshatram}, Tithi: ${data.tithi}.`,
-        'isPartOf': { '@id': 'https://malayalamcalendar.site/#website' },
+        'isPartOf': { '@id': 'https://www.malayalamcalendar.site/#website' },
       },
       {
         '@type': 'FAQPage',

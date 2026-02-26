@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     title: 'Innathe Nakshatram – Today\'s Star in Malayalam Calendar | 27 Stars List',
     description: 'Check Innathe Nakshatram (Today\'s Star). Read detailed predictions and characteristics of the 27 birth stars (Ashwathi to Revathi) in Malayalam astrology.',
     alternates: {
-        canonical: 'https://malayalamcalendar.site/innathe-nakshatram',
+        canonical: 'https://www.malayalamcalendar.site/innathe-nakshatram',
     },
     keywords: [
         'Innathe Nakshatram', 'Today Nakshatra Malayalam', 'Today Star',

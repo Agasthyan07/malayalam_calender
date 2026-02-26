@@ -21,7 +21,7 @@ export const metadata: Metadata = {
         type: 'article',
     },
     alternates: {
-        canonical: 'https://malayalamcalendar.site/rahu-kalam-today',
+        canonical: 'https://www.malayalamcalendar.site/rahu-kalam-today',
     },
 };
 

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     description: 'Complete list of auspicious Marriage Muhurtham dates in 2026 for Kerala (Vivaha Muhurtham). Check best wedding dates based on Nakshatra and Tithi.',
     keywords: ['Marriage Muhurtham 2026', 'Vivaha Muhurtham 2026', 'Kerala Wedding Dates 2026', 'Malayalam Calendar Marriage Dates', 'Hindu Marriage Dates 2026 Kerala'],
     alternates: {
-        canonical: 'https://malayalamcalendar.site/marriage-muhurtham-2026',
+        canonical: 'https://www.malayalamcalendar.site/marriage-muhurtham-2026',
     },
 };
 
@@ -54,8 +54,8 @@ export default async function MarriageMuhurthamPage() {
             eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
             isAccessibleForFree: true,
             image: [
-                'https://malayalamcalendar.site/icon-192x192.png',
-                'https://malayalamcalendar.site/icon-512x512.png'
+                'https://www.malayalamcalendar.site/icon-192x192.png',
+                'https://www.malayalamcalendar.site/icon-512x512.png'
             ],
             location: {
                 '@type': 'Place',
@@ -71,12 +71,12 @@ export default async function MarriageMuhurthamPage() {
                 price: 0,
                 priceCurrency: 'INR',
                 availability: 'https://schema.org/InStock',
-                url: 'https://malayalamcalendar.site/marriage-muhurtham-2026'
+                url: 'https://www.malayalamcalendar.site/marriage-muhurtham-2026'
             },
             organizer: {
                 '@type': 'Organization',
                 name: 'Malayalam Calendar',
-                url: 'https://malayalamcalendar.site'
+                url: 'https://www.malayalamcalendar.site'
             }
         };
     });

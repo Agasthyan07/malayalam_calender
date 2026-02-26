@@ -3,7 +3,7 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 export const metadata = {
     title: 'Privacy Policy - Malayalam Calendar',
     alternates: {
-        canonical: 'https://malayalamcalendar.site/privacy-policy',
+        canonical: 'https://www.malayalamcalendar.site/privacy-policy',
     },
 };
 
@@ -21,7 +21,7 @@ export default function PrivacyPolicy() {
 
                 <h2>1. Introduction</h2>
                 <p>
-                    Welcome to <strong>Malayalam Calendar</strong> (accessible from <a href="https://malayalamcalendar.site">https://malayalamcalendar.site</a>).
+                    Welcome to <strong>Malayalam Calendar</strong> (accessible from <a href="https://www.malayalamcalendar.site">https://www.malayalamcalendar.site</a>).
                     We are committed to respecting your privacy and protecting any personal information you may share with us.
                     This Privacy Policy document contains detailed information about the types of information that is collected and recorded by Malayalam Calendar and how we use it.
                 </p>

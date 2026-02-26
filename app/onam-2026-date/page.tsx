@@ -18,12 +18,12 @@ export const metadata: Metadata = {
         'തിരുവോണം തീയതി'
     ],
     alternates: {
-        canonical: 'https://malayalamcalendar.site/onam-2026-date',
+        canonical: 'https://www.malayalamcalendar.site/onam-2026-date',
     },
     openGraph: {
         title: 'Onam 2026 Date – Thiruvonam Festival Kerala',
         description: 'Celebrate the harvest festival of Kerala. Check Onam 2026 dates.',
-        url: 'https://malayalamcalendar.site/onam-2026-date',
+        url: 'https://www.malayalamcalendar.site/onam-2026-date',
         type: 'article',
         publishedTime: '2026-08-26T00:00:00+05:30',
     }
@@ -40,8 +40,8 @@ export default function OnamPage() {
         eventStatus: 'https://schema.org/EventScheduled',
         isAccessibleForFree: true,
         image: [
-            'https://malayalamcalendar.site/icon-192x192.png',
-            'https://malayalamcalendar.site/icon-512x512.png'
+            'https://www.malayalamcalendar.site/icon-192x192.png',
+            'https://www.malayalamcalendar.site/icon-512x512.png'
         ],
         location: {
             '@type': 'Place',
@@ -57,13 +57,13 @@ export default function OnamPage() {
             price: 0,
             priceCurrency: 'INR',
             availability: 'https://schema.org/InStock',
-            url: 'https://malayalamcalendar.site/onam-2026-date'
+            url: 'https://www.malayalamcalendar.site/onam-2026-date'
         },
         description: 'Onam is the harvest festival of Kerala celebrating the return of King Mahabali.',
         organizer: {
             '@type': 'Organization',
             name: 'Malayalam Calendar',
-            url: 'https://malayalamcalendar.site'
+            url: 'https://www.malayalamcalendar.site'
         }
     };
 

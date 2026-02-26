@@ -18,12 +18,12 @@ export const metadata: Metadata = {
         'When is Vishu 2026'
     ],
     alternates: {
-        canonical: 'https://malayalamcalendar.site/vishu-2026-date-kerala',
+        canonical: 'https://www.malayalamcalendar.site/vishu-2026-date-kerala',
     },
     openGraph: {
         title: 'Vishu 2026 Date Kerala – Vishukkani Muhurat',
         description: 'Celebrating the Malayali New Year. Check Vishu 2026 date and auspicious times.',
-        url: 'https://malayalamcalendar.site/vishu-2026-date-kerala',
+        url: 'https://www.malayalamcalendar.site/vishu-2026-date-kerala',
         type: 'article',
         publishedTime: '2026-04-14T00:00:00+05:30',
     }
@@ -40,8 +40,8 @@ export default function VishuPage() {
         eventStatus: 'https://schema.org/EventScheduled',
         isAccessibleForFree: true,
         image: [
-            'https://malayalamcalendar.site/icon-192x192.png',
-            'https://malayalamcalendar.site/icon-512x512.png'
+            'https://www.malayalamcalendar.site/icon-192x192.png',
+            'https://www.malayalamcalendar.site/icon-512x512.png'
         ],
         location: {
             '@type': 'Place',
@@ -57,13 +57,13 @@ export default function VishuPage() {
             price: 0,
             priceCurrency: 'INR',
             availability: 'https://schema.org/InStock',
-            url: 'https://malayalamcalendar.site/vishu-2026-date-kerala'
+            url: 'https://www.malayalamcalendar.site/vishu-2026-date-kerala'
         },
         description: 'Vishu is the traditional Malayali New Year festival celebrated in Kerala.',
         organizer: {
             '@type': 'Organization',
             name: 'Malayalam Calendar',
-            url: 'https://malayalamcalendar.site'
+            url: 'https://www.malayalamcalendar.site'
         }
     };
 

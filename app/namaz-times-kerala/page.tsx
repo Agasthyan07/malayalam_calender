@@ -18,13 +18,13 @@ export const metadata: Metadata = {
         'نماز وقت كيرالا'
     ],
     alternates: {
-        canonical: 'https://malayalamcalendar.site/namaz-times-kerala',
+        canonical: 'https://www.malayalamcalendar.site/namaz-times-kerala',
     },
     openGraph: {
         title: 'Namaz Times Kerala – Daily Prayer Times 2026',
         description: 'Check accurate Fajr, Dhuhr, Asr, Maghrib & Isha prayer timings for all districts of Kerala.',
         type: 'website',
-        url: 'https://malayalamcalendar.site/namaz-times-kerala',
+        url: 'https://www.malayalamcalendar.site/namaz-times-kerala',
     },
 };
 
@@ -88,7 +88,7 @@ function buildEventSchemas(todayISO: string, times: typeof MONTHLY_TIMES[number]
         const pad = (n: number) => n.toString().padStart(2, '0');
         return {
             '@type': 'Event',
-            '@id': `https://malayalamcalendar.site/namaz-times-kerala#${key}-${todayISO}`,
+            '@id': `https://www.malayalamcalendar.site/namaz-times-kerala#${key}-${todayISO}`,
             name: `${name} – Kerala ${todayISO}`,
             description,
             startDate: `${todayISO}T${times[key]}:00+05:30`,
@@ -97,8 +97,8 @@ function buildEventSchemas(todayISO: string, times: typeof MONTHLY_TIMES[number]
             eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
             isAccessibleForFree: true,
             image: [
-                'https://malayalamcalendar.site/icon-192x192.png',
-                'https://malayalamcalendar.site/icon-512x512.png'
+                'https://www.malayalamcalendar.site/icon-192x192.png',
+                'https://www.malayalamcalendar.site/icon-512x512.png'
             ],
             location: KERALA_LOCATION,
             offers: {
@@ -106,14 +106,14 @@ function buildEventSchemas(todayISO: string, times: typeof MONTHLY_TIMES[number]
                 price: 0,
                 priceCurrency: 'INR',
                 availability: 'https://schema.org/InStock',
-                url: 'https://malayalamcalendar.site/namaz-times-kerala'
+                url: 'https://www.malayalamcalendar.site/namaz-times-kerala'
             },
             organizer: {
                 '@type': 'Organization',
                 name: 'Malayalam Calendar',
-                url: 'https://malayalamcalendar.site',
+                url: 'https://www.malayalamcalendar.site',
             },
-            url: 'https://malayalamcalendar.site/namaz-times-kerala',
+            url: 'https://www.malayalamcalendar.site/namaz-times-kerala',
             inLanguage: 'en-IN',
             audience: { '@type': 'Audience', audienceType: 'Muslim community in Kerala' },
         };
@@ -125,7 +125,7 @@ const datasetSchema = {
     '@type': 'Dataset',
     name: 'Kerala Namaz (Prayer) Times 2026',
     description: 'Monthly Islamic prayer times (Salah timings) for Kerala, India covering Fajr, Dhuhr, Asr, Maghrib, and Isha.',
-    url: 'https://malayalamcalendar.site/namaz-times-kerala',
+    url: 'https://www.malayalamcalendar.site/namaz-times-kerala',
     temporalCoverage: '2026',
     spatialCoverage: KERALA_LOCATION,
 };

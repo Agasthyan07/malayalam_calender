@@ -6,7 +6,7 @@ export const metadata: Metadata = {
     title: 'About Us - Malayalam Calendar 2026',
     description: 'Learn more about Malayalam Calendar, our mission to preserve Kerala culture through technology, and the team behind this digital panchangam.',
     alternates: {
-        canonical: 'https://malayalamcalendar.site/about',
+        canonical: 'https://www.malayalamcalendar.site/about',
     },
 };
 

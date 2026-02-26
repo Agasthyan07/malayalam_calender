@@ -28,7 +28,7 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
         title: `Malayalam Weekly Calendar (${startStr} to ${endStr}) | Panchangam`,
         description: `View the weekly Malayalam calendar and Panchangam from ${startStr} to ${endStr}. Check Nakshatram, Tithi, Rahu Kalam, and auspicious timings for the week.`,
         alternates: {
-            canonical: 'https://malayalamcalendar.site/weekly-calendar',
+            canonical: 'https://www.malayalamcalendar.site/weekly-calendar',
         },
     };
 }

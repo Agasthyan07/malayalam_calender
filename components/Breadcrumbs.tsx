@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-const BASE_URL = 'https://malayalamcalendar.site';
+const BASE_URL = 'https://www.malayalamcalendar.site';
 
 interface BreadcrumbItem {
     label: string;
