@@ -8,16 +8,19 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 export const revalidate = 3600; // Hourly revalidation
 
 export const metadata: Metadata = {
-    title: 'Rahu Kalam Today – Daily Timings (Monday to Sunday) | 2026 Chart',
-    description: 'Check accurate Rahu Kalam timings for today. Find daily schedules including Friday Rahukalam, Tuesday Rahukalam, and Sunday Rahukalam times for 2026.',
+    title: 'Rahukalam Today – Exact Rahukalam Timings Today & Yamagandam | 2026',
+    description: 'Check accurate rahukalam today timings. Find daily rahukalam timings today, rahu kaal tomorrow, and today yamagandam schedules for Kerala. Get exact rahukalam malayalam timings.',
     keywords: [
+        'rahukalam today', 'rahukalam', 'today rahukalam', 'rahukalam timings today',
+        'rahu kaal tomorrow', 'rahu kalam and yamagandam today', 'today yamagandam',
+        'rahukalam today kerala', 'rahu kalam today in kerala', 'rahukalam malayalam',
         'Rahu Kalam Today', 'Rahu Kalam Timings', 'Friday Rahukalam', 'Tuesday Rahukalam',
         'Sunday Rahukalam', 'Monday Rahukalam', 'Daily Rahu Kalam', 'Rahukalam Chart 2026',
         'Download Rahu Kalam Chart', 'Malayalam Calendar PDF Download'
     ],
     openGraph: {
-        title: 'Rahu Kalam Today – Daily Timings (Monday to Sunday)',
-        description: 'Avoid inauspicious times. Check exact Rahu Kalam timings for Friday, Tuesday, Sunday, and all days.',
+        title: 'Rahukalam Today – Exact Rahukalam Timings Today',
+        description: 'Avoid inauspicious times. Check exact rahukalam today timings for Kerala, including today yamagandam and rahu kaal tomorrow.',
         type: 'article',
     },
     alternates: {
@@ -52,10 +55,10 @@ export default async function RahuKalamPage() {
 
     return (
         <div className="container mx-auto px-4 py-8 max-w-3xl">
-            <Breadcrumbs items={[{ label: 'Rahu Kalam Today', href: '/rahu-kalam-today' }]} />
+            <Breadcrumbs items={[{ label: 'Rahukalam Today', href: '/rahu-kalam-today' }]} />
 
             <h1 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                Rahu Kalam Today – Timings, Meaning & Day-Wise Schedule
+                Rahukalam Today – Exact Rahukalam Timings Today & Yamagandam
             </h1>
 
             <AdSlot slotId="rahukalam-top" />
@@ -65,7 +68,7 @@ export default async function RahuKalamPage() {
                 <p className="text-gray-600 dark:text-gray-300 font-medium mb-1">{displayDate} | {weekday}</p>
 
                 <div className="my-4">
-                    <p className="text-sm text-gray-500 dark:text-gray-400 uppercase tracking-widest font-semibold">TODAY'S RAHU KALAM</p>
+                    <h2 className="text-sm text-gray-500 dark:text-gray-400 uppercase tracking-widest font-semibold m-0">TODAY RAHUKALAM</h2>
                     <p className="text-3xl md:text-4xl font-bold text-red-700 dark:text-red-400 mt-2">{rahuKalam}</p>
                 </div>
 
@@ -77,10 +80,10 @@ export default async function RahuKalamPage() {
 
             {/* Explanation Section */}
             <section className="prose prose-lg dark:prose-invert max-w-none mb-12">
-                <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Understanding Rahu Kalam: The Inauspicious Time</h2>
+                <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">What is Rahukalam? (രാഹുകാലം)</h2>
                 <div className="bg-gray-50 dark:bg-gray-900/50 p-6 rounded-xl border border-gray-100 dark:border-gray-800 mb-6">
                     <p className="font-semibold text-gray-800 dark:text-gray-200 m-0">
-                        "Rahu Kalam" is essentially a period of 1.5 hours each day that is dedicated to Rahu, the shadow planet of desire and illusion. In Vedic astrology, this time frame is often deemed unsuitable for undertaking any constructive or auspicious work.
+                        <strong>Today rahukalam</strong> is essentially a period of 1.5 hours each day that is dedicated to Rahu, the shadow planet of desire and illusion. Knowing the accurate <strong>rahukalam today kerala</strong> time is important because, in Vedic astrology (and specifically in <strong>rahukalam malayalam</strong> traditions), this time frame is deemed unsuitable for undertaking any constructive or auspicious work. People also frequently check <strong>rahu kalam and yamagandam today</strong> to plan their daily schedules effectively.
                     </p>
                 </div>
 
@@ -123,7 +126,10 @@ export default async function RahuKalamPage() {
 
             {/* Daily SEO Section */}
             <section className="bg-white dark:bg-gray-800 rounded-xl p-6 mb-8 border border-gray-100 dark:border-gray-700 shadow-sm">
-                <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Daily Rahu Kalam Timings 2026</h2>
+                <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Rahukalam Timings Today, Rahu Kaal Tomorrow & Today Yamagandam</h2>
+                <p className="mb-4 text-sm text-gray-700 dark:text-gray-300">
+                    Whether you are looking for <strong>rahu kalam today in kerala</strong> or planning ahead for <strong>rahu kaal tomorrow</strong>, here is the standard schedule. Please note that <strong>today yamagandam</strong> times follow a different schedule but are equally important to check for daily planning alongside <strong>rahukalam</strong>.
+                </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-gray-700 dark:text-gray-300">
                     <p className="bg-gray-50 dark:bg-gray-700/50 p-3 rounded-lg"><span className="font-semibold text-red-700 dark:text-red-400">Monday Rahukalam:</span> 07:30 AM - 09:00 AM</p>
                     <p className="bg-gray-50 dark:bg-gray-700/50 p-3 rounded-lg"><span className="font-semibold text-red-700 dark:text-red-400">Tuesday Rahukalam:</span> 03:00 PM - 04:30 PM</p>
@@ -135,9 +141,26 @@ export default async function RahuKalamPage() {
                 </div>
             </section>
 
+            {/* Yamagandam Section */}
+            <section className="bg-orange-50 dark:bg-orange-900/20 rounded-xl p-6 mb-8 border border-orange-100 dark:border-orange-800 shadow-sm">
+                <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Today Yamagandam (യമഗണ്ഡം)</h2>
+                <p className="mb-4 text-sm text-gray-700 dark:text-gray-300">
+                    Just like Rahukalam, Yamagandam is another inauspicious period of 1.5 hours in the day. Many people look for <strong>rahu kalam and yamagandam today</strong> together because both times are generally avoided for new and auspicious endeavors. Checking <strong>today yamagandam</strong> along with <strong>rahukalam timings today</strong> ensures you have completely planned your day adhering to astrological traditions.
+                </p>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-gray-700 dark:text-gray-300 mt-4">
+                    <p className="bg-white dark:bg-gray-800 p-3 rounded-lg border border-gray-100 dark:border-gray-700"><span className="font-semibold text-orange-700 dark:text-orange-400">Sunday Yamagandam:</span> 12:00 PM - 01:30 PM</p>
+                    <p className="bg-white dark:bg-gray-800 p-3 rounded-lg border border-gray-100 dark:border-gray-700"><span className="font-semibold text-orange-700 dark:text-orange-400">Monday Yamagandam:</span> 10:30 AM - 12:00 PM</p>
+                    <p className="bg-white dark:bg-gray-800 p-3 rounded-lg border border-gray-100 dark:border-gray-700"><span className="font-semibold text-orange-700 dark:text-orange-400">Tuesday Yamagandam:</span> 09:00 AM - 10:30 AM</p>
+                    <p className="bg-white dark:bg-gray-800 p-3 rounded-lg border border-gray-100 dark:border-gray-700"><span className="font-semibold text-orange-700 dark:text-orange-400">Wednesday Yamagandam:</span> 07:30 AM - 09:00 AM</p>
+                    <p className="bg-white dark:bg-gray-800 p-3 rounded-lg border border-gray-100 dark:border-gray-700"><span className="font-semibold text-orange-700 dark:text-orange-400">Thursday Yamagandam:</span> 06:00 AM - 07:30 AM</p>
+                    <p className="bg-white dark:bg-gray-800 p-3 rounded-lg border border-gray-100 dark:border-gray-700"><span className="font-semibold text-orange-700 dark:text-orange-400">Friday Yamagandam:</span> 03:00 PM - 04:30 PM</p>
+                    <p className="bg-white dark:bg-gray-800 p-3 rounded-lg border border-gray-100 dark:border-gray-700"><span className="font-semibold text-orange-700 dark:text-orange-400">Saturday Yamagandam:</span> 01:30 PM - 03:00 PM</p>
+                </div>
+            </section>
+
             {/* Weekly Table Section */}
             <section className="mb-8">
-                <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-4">Rahu Kalam Weekly Schedule</h2>
+                <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-4">Rahukalam Weekly Schedule</h2>
                 <div className="overflow-x-auto">
                     <table className="w-full text-left border-collapse bg-white dark:bg-gray-800 shadow-sm rounded-lg overflow-hidden">
                         <thead className="bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300">
@@ -226,7 +249,7 @@ export default async function RahuKalamPage() {
                     </li>
                     <li>
                         {/* Placeholder for future pages if needed */}
-                        <span className="text-gray-400 dark:text-gray-500">Yamagandam Today (Coming Soon)</span>
+                        <span className="text-gray-400 dark:text-gray-500">Today Yamagandam (Coming Soon)</span>
                     </li>
                     <li>
                         <Link href="/festivals" className="text-indigo-600 dark:text-indigo-400 hover:text-indigo-800 dark:hover:text-indigo-300 hover:underline">

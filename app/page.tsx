@@ -158,15 +158,6 @@ export default async function Home({ searchParams }: Props) {
         'datePublished': data.date,
         'description': `Daily Malayalam Calendar details for ${data.date}. Nakshatram: ${data.nakshatram}, Tithi: ${data.tithi}.`,
         'isPartOf': { '@id': 'https://www.malayalamcalendar.site/#website' },
-      },
-      {
-        '@type': 'FAQPage',
-        'mainEntity': [
-          { '@type': 'Question', 'name': 'What is Malayalam Calendar 2026?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'The Malayalam Calendar 2026, based on Kollavarsham, spans Malayalam years 1201–1202. It is a solar calendar used in Kerala for religious, agricultural, and cultural purposes.' } },
-          { '@type': 'Question', 'name': 'What is today\'s Malayalam date?', 'acceptedAnswer': { '@type': 'Answer', 'text': `Today's Malayalam date is ${data.malayalam_date}. The Nakshatram (star) today is ${data.nakshatram} and Tithi is ${data.tithi}.` } },
-          { '@type': 'Question', 'name': 'When is Vishu 2026?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'Vishu 2026 falls on April 14, 2026, marking the sun\'s transit into Medam (Aries). It is celebrated as the astronomical New Year in Kerala.' } },
-          { '@type': 'Question', 'name': 'When is Onam 2026?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'Onam 2026 Thiruvonam falls on August 26, 2026. It is the biggest harvest festival of Kerala, celebrated in the Malayalam month of Chingam.' } },
-        ]
       }
     ]
   };
@@ -225,13 +216,18 @@ export default async function Home({ searchParams }: Props) {
           </h2>
         </div>
         <p className="text-sm text-gray-600 dark:text-gray-300 mb-5 ml-4">
-          <em>Malayalam calendar today · Today Malayalam date · Malayalam panchangam today · Nakshatra today Kerala</em>
+          <em>Malayalam calendar today · Today Malayalam date · <Link href="/rahu-kalam-today" className="hover:text-red-600 hover:underline">today rahukalam</Link> · Malayalam panchangam today · Nakshatra today Kerala</em>
         </p>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
           {/* Left: TodayCard with all Panchangam details */}
           <div className="flex flex-col gap-4">
             <TodayCard data={data} />
+            <div className="w-full flex">
+              <Link href="/rahu-kalam-today" className="w-full text-center bg-red-50 dark:bg-red-900/20 hover:bg-red-100 dark:hover:bg-red-900/40 text-red-700 dark:text-red-400 font-semibold py-2.5 px-4 rounded-lg border border-red-200 dark:border-red-800 text-sm transition-colors">
+                Check Exact Rahukalam Timings Today & Yamagandam →
+              </Link>
+            </div>
             <div className="bg-orange-50 dark:bg-orange-900/10 border border-orange-100 dark:border-orange-900/30 rounded-lg p-4 text-sm text-gray-700 dark:text-gray-300">
               <p>
                 Today is <strong>{fullDateEnglish}</strong> and Malayalam date is <strong>{data.malayalam_date}</strong>.
@@ -547,13 +543,7 @@ export default async function Home({ searchParams }: Props) {
           SECTION 8: FAQ
           ══════════════════════════════════════ */}
       <section className="mb-10">
-        <div className="flex items-center gap-3 mb-4">
-          <span className="w-1 h-8 bg-yellow-500 rounded-full"></span>
-          <h2 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white">
-            Frequently Asked Questions – Malayalam Calendar 2026
-          </h2>
-        </div>
-        <FAQ items={[
+        <FAQ title="Frequently Asked Questions – Malayalam Calendar 2026" items={[
           {
             question: 'What is Malayalam Calendar 2026?',
             answer: 'The Malayalam Calendar 2026 is based on Kollavarsham, a traditional solar calendar of Kerala spanning Malayalam years 1201–1202. It is used for tracking festivals, auspicious dates, Nakshatram, and religious observances.'
@@ -563,12 +553,12 @@ export default async function Home({ searchParams }: Props) {
             answer: `Today's Malayalam date is ${data.malayalam_date}. Today's Nakshatram is ${data.nakshatram} and Tithi is ${data.tithi}. Rahu Kalam is ${data.rahukalam}.`
           },
           {
-            question: 'When does Malayalam year 1201 start?',
-            answer: 'Kollavarsham 1201 began in August 2025 with the start of the Malayalam month Chingam. The year 1202 begins in August 2026.'
+            question: 'When does Malayalam year 1202 start?',
+            answer: 'Kollavarsham 1202 begins on August 17, 2026 with the start of the Malayalam month Chingam.'
           },
           {
             question: 'How to download Malayalam Calendar 2026 PDF?',
-            answer: 'You can download the Malayalam Calendar 2026 PDF for free from our website. Visit the yearly calendar page and use the download button to get the printable A4 PDF version.'
+            answer: 'You can download the Malayalam Calendar 2026 PDF for free from our website. Click the download button on the homepage to get the printable A4 PDF version.'
           },
           {
             question: 'When is Vishu 2026?',
@@ -584,7 +574,7 @@ export default async function Home({ searchParams }: Props) {
           },
           {
             question: 'What is Nakshatram today in Kerala?',
-            answer: `Today's Nakshatram in Kerala is ${data.nakshatram}. The Nakshatram may change at a specific time during the day. Visit the daily Panchangam for exact star ending times.`
+            answer: `Today's Nakshatram in Kerala is ${data.nakshatram}. Visit the homepage daily for accurate Nakshatram and Panchangam details.`
           },
         ]} />
       </section>
@@ -601,6 +591,7 @@ export default async function Home({ searchParams }: Props) {
             { label: 'Calendar 2025', href: '/malayalam-calendar/2025', icon: '📅' },
             { label: 'Calendar 2027', href: '/malayalam-calendar/2027', icon: '📅' },
             { label: 'Panchangam Today', href: '/', icon: '🌟' },
+            { label: 'Rahukalam Today', href: '/rahu-kalam-today', icon: '⏱️' },
             { label: 'Wedding Muhurat', href: '/festivals', icon: '💍' },
             { label: 'Ekadashi 2026', href: '/festivals', icon: '🌙' },
             { label: 'Public Holidays', href: '/festivals', icon: '🎆' },

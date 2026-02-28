@@ -10,9 +10,10 @@ type FAQItem = {
 
 type FAQProps = {
     items: FAQItem[];
+    title?: string;
 };
 
-export default function FAQ({ items }: FAQProps) {
+export default function FAQ({ items, title }: FAQProps) {
     const [openIndex, setOpenIndex] = useState<number | null>(0);
 
     const toggleAccordion = (index: number) => {
@@ -36,7 +37,7 @@ export default function FAQ({ items }: FAQProps) {
         <section className="my-8">
             <JsonLd data={jsonLd} />
             <h2 className="text-xl font-bold text-gray-800 dark:text-gray-200 mb-6 px-2">
-                Frequently Asked Questions
+                {title || 'Frequently Asked Questions'}
             </h2>
             <div className="space-y-4">
                 {items.map((item, index) => (
