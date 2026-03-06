@@ -33,11 +33,12 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
   const canonicalUrl = 'https://www.malayalamcalendar.site/';
 
   return {
-    title: 'Malayalam Calendar 2026 – Today Date, Monthly & PDF Download',
-    description: 'Check Malayalam Calendar 2026 with today\'s Malayalam date, Panchangam, Nakshatra, Kerala festivals, weekly calendar & free PDF download.',
+    title: 'Malayalam Calendar 2026 & 2027 – Today Date, Monthly & PDF Download',
+    description: 'View Malayalam Calendar 2026 and 2027 online with daily Panchangam, Nakshatram, Tithi, festivals and Kerala holidays. Explore the interactive calendar and download printable Malayalam calendar PDF.',
     alternates: { canonical: canonicalUrl },
     keywords: [
       'Malayalam Calendar 2026',
+      'Malayalam Calendar 2027',
       'Malayalam Calendar Today',
       'Today Malayalam Date',
       'Malayalam Panchangam Today',
@@ -57,7 +58,7 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
       title: 'Malayalam Calendar 2026 – Today Date, Monthly & PDF Download',
       description: data
         ? `Today's Malayalam Date: ${data.malayalam_date}. Nakshatram: ${data.nakshatram}. Check Rahu Kalam, Panchangam & Festivals.`
-        : 'Malayalam Calendar 2026 with daily Panchangam, Nakshatra, Kerala festivals & free PDF download.',
+        : 'View Malayalam Calendar 2026 and 2027 online with daily Panchangam, Nakshatram, Tithi, festivals and Kerala holidays. Explore the interactive calendar and download printable Malayalam calendar PDF.',
       type: 'website',
       url: canonicalUrl,
     }
@@ -179,11 +180,10 @@ export default async function Home({ searchParams }: Props) {
         </div>
 
         <h1 className="text-2xl md:text-4xl font-extrabold leading-tight mb-4 drop-shadow">
-          Malayalam Calendar 2026 – Today&apos;s Date, Monthly &amp; Yearly PDF Download
+          Malayalam Calendar 2026 &amp; 2027 Online  Panchangam, Kerala Holidays &amp; PDF Calendar
         </h1>
         <p className="text-red-100 text-sm md:text-base max-w-2xl mx-auto leading-relaxed mb-6">
-          <strong className="text-white">Malayalam Calendar</strong> or <strong className="text-white">kolla varsham (കൊല്ലവർഷം)</strong> is the traditional Kerala calendar.
-          The calendar below shows English &amp; Malayalam dates, nakshatram, tithi and daily panchangam for <strong className="text-white">{currentMonthName}, {year}</strong>.
+          Explore the Malayalam Calendar 2026 and 2027 online with daily Panchangam details, Nakshatram, Tithi, festivals, and Kerala government holidays. View the interactive calendar or download the printable Malayalam calendar PDF for easy reference.
         </p>
         <div className="flex flex-wrap justify-center gap-3">
           <Link
@@ -267,7 +267,7 @@ export default async function Home({ searchParams }: Props) {
           </h2>
         </div>
         <p className="text-sm text-gray-600 dark:text-gray-300 mb-5 italic ml-4">
-          Malayalam monthly calendar · Monthly Panchangam 2026
+          Malayalam monthly calendar
         </p>
 
         <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-3 mb-8">
@@ -287,18 +287,10 @@ export default async function Home({ searchParams }: Props) {
 
         <div className="prose dark:prose-invert max-w-none text-sm text-gray-600 dark:text-gray-300 leading-relaxed bg-indigo-50 dark:bg-indigo-900/20 rounded-xl p-5 border border-indigo-100 dark:border-indigo-800">
           <p>
-            The <strong>Malayalam Monthly Calendar 2026</strong> is organized according to the traditional Kerala solar calendar system.
-            Each month in the Malayalam calendar begins with a <strong>Sankramam</strong>—the sun&apos;s transit into a new zodiac sign.
-            This event marks the start of a new Malayalam month, and its timing varies each year based on astronomical calculations.
+            The Malayalam Calendar is the traditional calendar followed in Kerala for determining festivals, religious observances, and daily panchangam details. It shows both Malayalam and English dates along with important information such as Nakshatram, Tithi, Rahu Kalam, sunrise and sunset timings. This online calendar helps users easily check daily panchangam details, festival dates, and Kerala holidays in one place.
           </p>
           <p className="mt-3">
-            The year 2026 opens with <strong>Makaram</strong> (mid-January), when winter sets in across Kerala with cooler temperatures and clear skies.
-            <strong> Kumbham</strong> and <strong>Meenam</strong> (February–March) bring the pre-summer harvest.
-            <strong> Medam</strong> (April) is the month of <strong>Vishu</strong>—the astronomical New Year—celebrated with the auspicious
-            Vishukkani ritual. The monsoon arrives with <strong>Mithunam</strong> and <strong>Karkidakam</strong> (June–July),
-            the latter being the sacred Ramayana Month. <strong>Chingam</strong> (August) marks the most celebrated season:
-            the beginning of <strong>Kollavarsham 1202</strong> and the grand harvest festival of <strong>Onam</strong>.
-            Each month&apos;s Panchangam details—Nakshatram, Tithi, Rahu Kalam—can be found on the dedicated monthly pages linked above.
+            On malayalamcalendar.site, you can explore the Malayalam Calendar online with an interactive monthly view and clear day-wise details. The website also provides a printable Malayalam calendar PDF for convenient offline use. Whether you want to check festival dates, plan important events, or simply follow the traditional Kerala calendar, the online calendar makes it simple and accessible.
           </p>
         </div>
       </section>
@@ -340,13 +332,7 @@ export default async function Home({ searchParams }: Props) {
 
         <div className="prose dark:prose-invert max-w-none text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
           <p>
-            Our <strong>Malayalam Calendar 2026 PDF</strong> is the most comprehensive free download for Keralites worldwide.
-            The <strong>printable Malayalam calendar 2026</strong> includes all 12 months with daily Nakshatram, Tithi, Rahu Kalam,
-            and Kerala public holidays. The <strong>Kerala calendar 2026 PDF</strong> is formatted in A4 size for easy printing at home or office.
-            Whether you need a <strong>yearly PDF</strong> for planning the whole year, a <strong>landscape version</strong> for your desktop,
-            or a <strong>high-resolution image</strong> for digital use, we have you covered. Each monthly page highlights major festivals
-            like Vishu, Onam, and Shivaratri in red, making it easy to plan ahead. The calendar follows IST (Indian Standard Time)
-            and is accurate for all of Kerala.
+            Get the Malayalam Calendar 2026 PDF in a clear and printable format. The calendar is available as a free download and includes all months with important daily details such as Nakshatram, Tithi, Rahu Kalam, and major Kerala holidays.
           </p>
         </div>
         <div className="mt-4 flex justify-center">
@@ -492,12 +478,10 @@ export default async function Home({ searchParams }: Props) {
 
         <div className="prose prose-sm dark:prose-invert max-w-none text-gray-700 dark:text-gray-300 leading-relaxed space-y-4">
           <p>
-            The <strong>Malayalam Calendar</strong>, also known as the <strong>Kollavarsham</strong> or <strong>Kollam Era</strong>,
-            is a solar calendar that originated in <strong>825 AD</strong> in the ancient port city of Kollam (Quilon), Kerala.
-            Unlike the Gregorian calendar, Kollavarsham is a <strong>sidereal solar calendar</strong>—dates are calculated based on
-            the sun's transit through the 12 zodiac signs (Rashi) relative to fixed stars, making it astronomically precise.
-            It is extensively used in Kerala temples, homes, and astrology for fixing auspicious dates (Muhurtham),
-            conducting horoscope matching (Jathakam), and observing religious fasts (Vrats).
+            The Malayalam Calendar, also known as Kollavarsham, is the traditional calendar followed in the Indian state of Kerala. It began in 825 AD in the historic port city of Kollam (Quilon) and is widely used for determining religious festivals, temple rituals, and cultural events.
+          </p>
+          <p>
+            Malayalam calendar is based on a solar system that tracks the movement of the sun through the twelve zodiac signs. Each Malayalam month begins with Sankramam, the moment when the sun enters a new zodiac sign. Because of this astronomical basis, the calendar plays an important role in astrology, selecting auspicious timings (Muhurtham), horoscope matching, and observing traditional fasts and festivals.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 not-prose">
@@ -540,42 +524,54 @@ export default async function Home({ searchParams }: Props) {
       </section>
 
       {/* ══════════════════════════════════════
+          SECTION 7.5: POPULAR MALAYALAM CALENDARS
+          ══════════════════════════════════════ */}
+      <section className="mb-10 bg-white dark:bg-gray-800 rounded-2xl p-6 border border-gray-200 dark:border-gray-700 shadow-sm">
+        <div className="flex items-center gap-3 mb-4">
+          <span className="w-1 h-8 bg-pink-600 rounded-full"></span>
+          <h2 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white">
+            Popular Malayalam Calendars
+          </h2>
+        </div>
+
+        <div className="prose prose-sm dark:prose-invert max-w-none text-gray-700 dark:text-gray-300 leading-relaxed space-y-4">
+          <p>
+            Several printed calendars are widely used across Kerala for tracking festival dates, holidays, and daily panchangam details. Some of the most popular ones include the Malayala Manorama Calendar, Mathrubhumi Calendar, Deepika Calendar, and Kerala Kaumudi Calendar. In addition, the Kerala Government publishes an official calendar each year listing public and government holidays.
+          </p>
+          <p>
+            Many of these calendars are also available in digital and PDF formats, allowing users to easily access them online.
+          </p>
+          <p>
+            Online calendar platforms provide detailed day-to-day information such as Nakshatram, sunrise and sunset timings, Rahu Kalam, Muhurtham, and other panchangam details for multiple years.
+          </p>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════
           SECTION 8: FAQ
           ══════════════════════════════════════ */}
       <section className="mb-10">
-        <FAQ title="Frequently Asked Questions – Malayalam Calendar 2026" items={[
+        <FAQ title="Frequently Asked Questions – Malayalam Calendar" items={[
           {
-            question: 'What is Malayalam Calendar 2026?',
-            answer: 'The Malayalam Calendar 2026 is based on Kollavarsham, a traditional solar calendar of Kerala spanning Malayalam years 1201–1202. It is used for tracking festivals, auspicious dates, Nakshatram, and religious observances.'
+            question: 'What is the Malayalam Calendar and how is it used?',
+            answer: 'The Malayalam Calendar, also known as Kollavarsham, is a traditional solar calendar originating in Kerala in 825 AD. It precisely tracks the sun\'s movement through the zodiac signs to determine the exact length and start of each month. Keralites use it extensively for finding auspicious timings (Muhurtham), matching horoscopes, and determining dates for important religious festivals and observances.'
           },
           {
-            question: 'What is today\'s Malayalam date?',
-            answer: `Today's Malayalam date is ${data.malayalam_date}. Today's Nakshatram is ${data.nakshatram} and Tithi is ${data.tithi}. Rahu Kalam is ${data.rahukalam}.`
+            question: 'Can I download the Malayalam Calendar for offline use?',
+            answer: 'Yes, you can easily download a complete and clear printable PDF version of the Malayalam Calendar for 2026 and 2027 directly from our website. Our free PDF calendar includes all twelve months along with daily details like Nakshatram, Tithi, and Rahu Kalam timings. It is formatted perfectly for A4 printing so you can keep a physical copy at your home or office.'
           },
           {
-            question: 'When does Malayalam year 1202 start?',
-            answer: 'Kollavarsham 1202 begins on August 17, 2026 with the start of the Malayalam month Chingam.'
+            question: 'How does the Malayalam Calendar differ from the English calendar?',
+            answer: 'The English (Gregorian) calendar is a tropical solar calendar where months always have fixed lengths and start dates regardless of astronomical events. In contrast, the Malayalam Calendar is a sidereal solar calendar based on precise astronomical calculations. Each Malayalam month begins only at the exact moment (Sankramam) when the sun transits into a new zodiac constellation, causing the number of days in a month to vary slightly each year.'
           },
           {
-            question: 'How to download Malayalam Calendar 2026 PDF?',
-            answer: 'You can download the Malayalam Calendar 2026 PDF for free from our website. Click the download button on the homepage to get the printable A4 PDF version.'
+            question: 'How can I find Today\'s Nakshatram in Malayalam?',
+            answer: 'You can easily find Today\'s Nakshatram in Malayalam along with the daily Panchangam details on our homepage. We update the calendar live every day so you always have the most accurate and precise astrological information. This allows you to plan your daily activities, rituals, and auspicious events according to traditional beliefs.'
           },
           {
-            question: 'When is Vishu 2026?',
-            answer: 'Vishu 2026 falls on April 14, 2026. It marks the sun\'s transit into Medam (Aries) and is celebrated as the astronomical New Year with the Vishukkani ritual.'
-          },
-          {
-            question: 'When is Onam 2026?',
-            answer: 'Onam 2026 Thiruvonam falls on August 26, 2026. The 10-day Onam celebrations start from Atham. It is the biggest festival of Kerala celebrated in the Malayalam month of Chingam.'
-          },
-          {
-            question: 'What is the difference between Malayalam and Hindu calendar?',
-            answer: 'The Malayalam Calendar (Kollavarsham) is a purely solar calendar based on the sun\'s position. The Hindu calendar (Panchang) is a lunisolar calendar blending solar years with lunar months. While both track Nakshatram and Tithi, the Malayalam system is more regionally specific to Kerala.'
-          },
-          {
-            question: 'What is Nakshatram today in Kerala?',
-            answer: `Today's Nakshatram in Kerala is ${data.nakshatram}. Visit the homepage daily for accurate Nakshatram and Panchangam details.`
-          },
+            question: 'What is the exact time for Rahu Kalam today in Kollam?',
+            answer: 'To check the exact time for Rahu Kalam today in Kollam (or anywhere in Kerala), simply refer to the daily details section on our interactive calendar. We calculate Rahu Kalam based on accurate local sunrise and sunset timings, ensuring you can completely avoid starting important tasks during these inauspicious hours. Our tools make it simple to track Yamagandam and Gulika Kalam as well.'
+          }
         ]} />
       </section>
 
