@@ -229,26 +229,53 @@ export default async function YearPage({ params }: Props) {
 
                         <div className="space-y-8 text-gray-700 dark:text-gray-300 leading-relaxed">
                             <div>
-                                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">History of the Malayalam Calendar (Kollavarsham)</h3>
+                                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">Origin of Kollavarsham (Malayalam Era)</h3>
+                                <p className="mb-3">
+                                    The <strong>Kollavarsham</strong> or Malayalam Era is a deeply historical calendar system that originated in 825 AD in the grand port city of Kollam (Quilon), located in southern Kerala. For centuries, this sophisticated calendar has been the foundation for agricultural planning, temple rituals, and cultural celebrations across the region.
+                                </p>
                                 <p>
-                                    The <strong>Kollavarsham</strong> or Malayalam Era is believed to have originated in 825 AD in the port city of Kollam (Quilon), Kerala.
-                                    Historical records, including the <em>Shri Shankaracharya</em> traditions and royal edicts of the Venad Kingdom, point to its creation to standardize timekeeping across different principalities in Kerala.
-                                    The calendar was established by a royal decree during a grand assembly of scholars and astronomers at Kollam. Since then, it has deeply intertwined with Kerala's temple festivals, agricultural cycles, and cultural life.
+                                    Historical records, including traditions linked to <em>Shri Shankaracharya</em> and the royal edicts of the Venad Kingdom, suggest it was created during a grand assembly of brilliant astronomers and scholars. At the time, different principalities in Kerala were using scattered regional calendars. The introduction of Kollavarsham successfully standardized timekeeping, uniting the cultural and religious fabric of the state. Today, every traditional Hindu home in Kerala relies heavily on the Malayalam calendar for planning daily life.
                                 </p>
                             </div>
 
                             <div>
-                                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">How is the Malayalam Calendar Calculated?</h3>
+                                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">Understanding the Sidereal Solar System</h3>
+                                <p className="mb-3">
+                                    Unlike the standard Gregorian (English) calendar which is purely a tropical solar calendar, or the regular Hindu Panchang which is often lunisolar, the Malayalam calendar is a remarkably precise <strong>Sidereal Solar Calendar</strong>.
+                                </p>
+                                <p className="mb-3">
+                                    This means its months are calculated based on the actual time it takes the Earth to orbit the Sun relative to fixed, distant stars (the Zodiac constellations or <em>Rashis</em>). A brand-new Malayalam month begins at the exact, mathematically calculated moment the Sun transits into a new constellation—an event known as <em>Sankramam</em> or <em>Sankranthi</em>.
+                                </p>
                                 <p>
-                                    Unlike calendars based on lunar cycles, the Malayalam calendar is a <strong>Sidereal Solar Calendar</strong>.
-                                    This means it calculates months based on the actual time it takes the Earth to orbit the Sun relative to fixed stars (the Zodiac or <em>Rashi</em>).
-                                    A new Malayalam month begins at the exact moment the Sun transits (Sankramam) into a new constellation.
-                                    For example, the month of <em>Chingam</em> begins when the Sun enters the <em>Simha</em> (Leo) constellation. Because the Earth's orbit is elliptical, Malayalam months vary in length between 28 and 32 days.
+                                    For example, the highly auspicious month of <em>Chingam</em> begins precisely when the Sun enters the <em>Simha</em> (Leo) constellation. Because the Earth's orbit around the Sun is elliptical rather than perfectly circular, the Sun appears to move at varying speeds. As a direct result, Malayalam months do not have a fixed number of days; they can vary naturally between 28 and 32 days without the need for an artificial "leap year" correction.
                                 </p>
                             </div>
 
                             <div>
-                                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">Difference Between English (Gregorian) and Malayalam Calendars</h3>
+                                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">The Importance of Daily Panchangam Details</h3>
+                                <p className="mb-3">
+                                    The true utility of the Malayalam Calendar {year} lies in its daily <strong>Panchangam</strong>—the five vital attributes of traditional Hindu astrology. Our online calendar provides meticulous daily updates for:
+                                </p>
+                                <ul className="list-disc pl-5 mb-3 space-y-2">
+                                    <li><strong>Nakshatram (Birth Star)</strong>: Crucial for marking birthdays, fixing naming ceremonies, and conducting Jathakam (horoscope) matching before marriages.</li>
+                                    <li><strong>Tithi (Lunar Day)</strong>: Determines the exactly dates for observing sacred Vratams (fasts) such as Ekadashi, Pradosham, and Sashti.</li>
+                                    <li><strong>Rahu Kalam & Yamagandam</strong>: Highly specific, inauspicious time windows during the day when embarking on new ventures, signing contracts, or traveling should be strictly avoided.</li>
+                                    <li><strong>Muhurtham (Nalla Samayam)</strong>: Hand-picked, auspicious windows optimized for starting new beginnings, whether it's opening a business or buying a vehicle.</li>
+                                </ul>
+                                <p>
+                                    By using these specific astrological markers, families ensure their important lifecycle events are perfectly aligned with favorable cosmic energies.
+                                </p>
+                            </div>
+
+                            <div>
+                                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">How the {year} Calendar Transitions</h3>
+                                <p>
+                                    A unique feature of the Malayalam yearly cycle is that a Gregorian year (like {year}) always bridges two distinct Malayalam years (Kollavarsham eras). The first half of {year}, from January (Makaram) through mid-August (Karkidakam), falls within <strong>Kollavarsham 1201</strong>. Then, upon the arrival of the sun in Leo around August 17th, the new year of <strong>Kollavarsham 1202</strong> officially commences, marked by the arrival of the month of Chingam and the joyous harvest festival of Onam.
+                                </p>
+                            </div>
+
+                            <div>
+                                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">Differences: English vs. Malayalam Calendars</h3>
                                 <div className="overflow-x-auto mt-4">
                                     <table className="min-w-full text-left border-collapse border border-gray-200 dark:border-gray-700">
                                         <thead>
@@ -260,24 +287,24 @@ export default async function YearPage({ params }: Props) {
                                         </thead>
                                         <tbody>
                                             <tr className="bg-white dark:bg-gray-900">
-                                                <td className="p-3 border border-gray-200 dark:border-gray-700 font-semibold">Base Concept</td>
-                                                <td className="p-3 border border-gray-200 dark:border-gray-700">Tropical Solar (Matches seasons purely on solstices/equinoxes)</td>
-                                                <td className="p-3 border border-gray-200 dark:border-gray-700">Sidereal Solar (Matches Sun's position relative to stars)</td>
+                                                <td className="p-3 border border-gray-200 dark:border-gray-700 font-semibold">Astronomy Base</td>
+                                                <td className="p-3 border border-gray-200 dark:border-gray-700">Tropical Solar (Follows seasons directly via solstices/equinoxes)</td>
+                                                <td className="p-3 border border-gray-200 dark:border-gray-700">Sidereal Solar (Tracks Sun's transit relative to fixed zodiac constellations)</td>
                                             </tr>
                                             <tr className="bg-gray-50 dark:bg-gray-800">
-                                                <td className="p-3 border border-gray-200 dark:border-gray-700 font-semibold">Month Start</td>
-                                                <td className="p-3 border border-gray-200 dark:border-gray-700">Fixed at midnight of the 1st of every month</td>
-                                                <td className="p-3 border border-gray-200 dark:border-gray-700">Variable based on the exact minute of Sankramam (Sun transit)</td>
+                                                <td className="p-3 border border-gray-200 dark:border-gray-700 font-semibold">Month Start (Day 1)</td>
+                                                <td className="p-3 border border-gray-200 dark:border-gray-700">Arbitrarily fixed at midnight on the 1st of every month</td>
+                                                <td className="p-3 border border-gray-200 dark:border-gray-700">Dynamically variable; begins precisely at the minute of Sankramam (Sun transit)</td>
                                             </tr>
                                             <tr className="bg-white dark:bg-gray-900">
                                                 <td className="p-3 border border-gray-200 dark:border-gray-700 font-semibold">Leap Years</td>
-                                                <td className="p-3 border border-gray-200 dark:border-gray-700">Uses a 29-day February every 4 years</td>
-                                                <td className="p-3 border border-gray-200 dark:border-gray-700">No leap years needed; precise astronomical calculations keep it aligned</td>
+                                                <td className="p-3 border border-gray-200 dark:border-gray-700">Requires an artificial 29-day February every 4 years to remain calibrated</td>
+                                                <td className="p-3 border border-gray-200 dark:border-gray-700">Self-calibrating; precise astrological calculations eliminate the need for leap years</td>
                                             </tr>
                                             <tr className="bg-gray-50 dark:bg-gray-800">
-                                                <td className="p-3 border border-gray-200 dark:border-gray-700 font-semibold">Start of Year</td>
+                                                <td className="p-3 border border-gray-200 dark:border-gray-700 font-semibold">Start of the New Year</td>
                                                 <td className="p-3 border border-gray-200 dark:border-gray-700">January 1st</td>
-                                                <td className="p-3 border border-gray-200 dark:border-gray-700">Chingam 1 (Mid-August)</td>
+                                                <td className="p-3 border border-gray-200 dark:border-gray-700">Chingam 1 (Usually mid-August)</td>
                                             </tr>
                                         </tbody>
                                     </table>
