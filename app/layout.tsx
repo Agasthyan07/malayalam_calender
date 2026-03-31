@@ -41,6 +41,21 @@ export const metadata: Metadata = {
     'Download Malayalam Calendar 2026', 'Malayalam Calendar PDF Download', 'Download Calendar',
     'Printable Malayalam Calendar',
   ],
+  alternates: {
+    canonical: 'https://www.malayalamcalendar.site',
+    languages: {
+      'en-IN': '/',
+      'ml-IN': '/',
+    },
+  },
+  openGraph: {
+    title: 'Malayalam Calendar 2026 & 2027 – Daily Panchangam, Festivals & PDF',
+    description: 'Check today\'s Malayalam date, Nakshatram, Tithi, festivals, and Kerala holidays. Download free printable 2026 Malayalam Calendar PDF.',
+    url: 'https://www.malayalamcalendar.site',
+    siteName: 'Malayalam Calendar',
+    images: [{ url: '/icon.png', width: 512, height: 512 }],
+    type: 'website',
+  },
   manifest: '/manifest.json',
   appleWebApp: {
     capable: true,

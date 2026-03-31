@@ -61,7 +61,7 @@ export default function DailyMuhurthamTable({ days, title = "Daily Muhurtham" }:
                                     className={`hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors ${isToday ? 'bg-indigo-50/50 dark:bg-indigo-900/10' : ''}`}
                                 >
                                     <td className="p-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
-                                        <Link href={`/date/${formatDate(day.date)}`} className="hover:text-indigo-600 hover:underline">
+                                        <Link prefetch={false} href={`/date/${formatDate(day.date)}`} className="hover:text-indigo-600 hover:underline">
                                             {day.date.split('-')[2]}
                                             <span className="md:hidden ml-1 text-gray-500 font-normal">
                                                 ({day.weekday.substring(0, 3)})

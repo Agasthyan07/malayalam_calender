@@ -64,7 +64,7 @@ export default async function WeeklyCalendarPage({ searchParams }: Props) {
             <div className="container mx-auto px-4 py-8 text-center max-w-4xl">
                 <h1 className="text-2xl font-bold text-gray-800 dark:text-gray-200">Data Not Available</h1>
                 <p className="mt-2 text-gray-600">Calendar data for this week is not yet available.</p>
-                <Link href="/" className="text-indigo-600 hover:underline mt-4 inline-block">Back to Home</Link>
+                <Link prefetch={false} href="/" className="text-indigo-600 hover:underline mt-4 inline-block">Back to Home</Link>
             </div>
         );
     }
@@ -83,13 +83,13 @@ export default async function WeeklyCalendarPage({ searchParams }: Props) {
             </p>
 
             <div className="flex justify-between items-center mb-6">
-                <Link
+                <Link prefetch={false}
                     href={`/weekly-calendar?date=${prevWeekStr}`}
                     className="bg-white dark:bg-gray-800 text-indigo-600 dark:text-indigo-400 px-4 py-2 rounded-lg border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 font-medium transition-colors"
                 >
                     ← Previous Week
                 </Link>
-                <Link
+                <Link prefetch={false}
                     href={`/weekly-calendar?date=${nextWeekStr}`}
                     className="bg-white dark:bg-gray-800 text-indigo-600 dark:text-indigo-400 px-4 py-2 rounded-lg border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 font-medium transition-colors"
                 >
@@ -139,7 +139,7 @@ export default async function WeeklyCalendarPage({ searchParams }: Props) {
             </div>
 
             <div className="mt-8 text-center">
-                <Link href="/" className="text-indigo-600 hover:underline">Back to Home</Link>
+                <Link prefetch={false} href="/" className="text-indigo-600 hover:underline">Back to Home</Link>
             </div>
 
             <AdSlot slotId="bottom-banner" />

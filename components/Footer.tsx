@@ -8,12 +8,12 @@ export default function Footer() {
                     <div>
                         <h3 className="font-bold text-gray-900 mb-4">Quick Links</h3>
                         <div className="flex flex-col gap-2 text-sm text-gray-600">
-                            <Link href="/" className="hover:text-red-700">Today's Calendar</Link>
-                            <Link href="/malayalam-calendar/2026" className="hover:text-red-700">Malayalam Calendar 2026</Link>
-                            <Link href="/malayalam-calendar/2027" className="hover:text-red-700">2027 Calendar</Link>
-                            <Link href="/festivals" className="hover:text-red-700">Kerala Festivals</Link>
-
-                            <Link href="/rahu-kalam-today" className="hover:text-red-700">Rahu Kalam Times</Link>
+                            <Link prefetch={false} href="/" className="hover:text-red-700">Today's Calendar</Link>
+                            <Link prefetch={false} href="/malayalam-calendar/2026" className="hover:text-red-700">Malayalam Calendar 2026</Link>
+                            <Link prefetch={false} href="/malayalam-calendar/2027" className="hover:text-red-700">2027 Calendar</Link>
+                            <Link prefetch={false} href="/festivals" className="hover:text-red-700">Kerala Festivals</Link>
+                            <Link prefetch={false} href="/kollavarsham-malayalam-era" className="hover:text-red-700">Kollavarsham Era</Link>
+                            <Link prefetch={false} href="/rahu-kalam-today" className="hover:text-red-700">Rahu Kalam Times</Link>
                         </div>
                     </div>
                     <div>
@@ -25,11 +25,11 @@ export default function Footer() {
                     <div>
                         <h3 className="font-bold text-gray-900 mb-4">Legal</h3>
                         <div className="flex flex-col gap-2 text-sm text-gray-600">
-                            <Link href="/privacy-policy" className="hover:text-red-700">Privacy Policy</Link>
-                            <Link href="/terms" className="hover:text-red-700">Terms of Service</Link>
-                            <Link href="/disclaimer" className="hover:text-red-700">Disclaimer</Link>
-                            <Link href="/contact" className="hover:text-red-700">Contact Us</Link>
-                            <Link href="/website-map" className="hover:text-red-700">Sitemap</Link>
+                            <Link prefetch={false} href="/privacy-policy" className="hover:text-red-700">Privacy Policy</Link>
+                            <Link prefetch={false} href="/terms" className="hover:text-red-700">Terms of Service</Link>
+                            <Link prefetch={false} href="/disclaimer" className="hover:text-red-700">Disclaimer</Link>
+                            <Link prefetch={false} href="/contact" className="hover:text-red-700">Contact Us</Link>
+                            <Link prefetch={false} href="/website-map" className="hover:text-red-700">Sitemap</Link>
                         </div>
                     </div>
                 </div>

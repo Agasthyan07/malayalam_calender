@@ -75,7 +75,7 @@ export default function IslamicPrayerTimes() {
                 </div>
                 <div className="text-right">
                     {hijriDate && <p className="text-white text-xs font-medium">{hijriDate}</p>}
-                    <Link href="/namaz-times-kerala" className="text-emerald-200 text-[10px] hover:text-white underline">
+                    <Link prefetch={false} href="/namaz-times-kerala" className="text-emerald-200 text-[10px] hover:text-white underline">
                         Full details →
                     </Link>
                 </div>
@@ -123,7 +123,7 @@ export default function IslamicPrayerTimes() {
                 <p className="text-[10px] text-gray-400 dark:text-gray-500">
                     ⚠️ Approx. times for central Kerala
                 </p>
-                <Link href="/namaz-times-kerala" className="text-[10px] text-emerald-600 dark:text-emerald-400 hover:underline font-medium">
+                <Link prefetch={false} href="/namaz-times-kerala" className="text-[10px] text-emerald-600 dark:text-emerald-400 hover:underline font-medium">
                     Monthly schedule →
                 </Link>
             </div>

@@ -20,7 +20,7 @@ export default function Header() {
         <header className="bg-white shadow-sm sticky top-0 z-50">
             <div className="container mx-auto px-4 h-16 flex items-center justify-between relative">
                 <div className="flex flex-col justify-center">
-                    <Link href="/" className="text-xl md:text-2xl font-bold text-red-700 leading-none">
+                    <Link prefetch={false} href="/" className="text-xl md:text-2xl font-bold text-red-700 leading-none">
                         Malayalam Calendar
                     </Link>
                     <span className="hidden md:block text-[10px] text-gray-500 font-medium tracking-wide mt-1">
@@ -30,13 +30,13 @@ export default function Header() {
 
                 {/* Desktop Nav */}
                 <nav className="hidden xl:flex gap-2 items-center">
-                    <Link href="/" className="text-gray-700 hover:text-red-700 hover:bg-red-50 font-medium px-3 py-2 rounded-lg transition-colors">
+                    <Link prefetch={false} href="/" className="text-gray-700 hover:text-red-700 hover:bg-red-50 font-medium px-3 py-2 rounded-lg transition-colors">
                         Today
                     </Link>
-                    <Link href="/malayalam-calendar/2026" className="text-gray-700 hover:text-red-700 hover:bg-red-50 font-medium px-3 py-2 rounded-lg transition-colors">Malayalam Calendar 2026</Link>
-                    <Link href="/malayalam-calendar/2027" className="text-gray-700 hover:text-red-700 hover:bg-red-50 font-medium px-3 py-2 rounded-lg transition-colors">2027 Calendar</Link>
-                    <Link href="/rahu-kalam-today" className="text-gray-700 hover:text-red-700 hover:bg-red-50 font-medium px-3 py-2 rounded-lg transition-colors">Rahu Kalam</Link>
-                    <Link href="/festivals" className="text-gray-700 hover:text-red-700 hover:bg-red-50 font-medium px-3 py-2 rounded-lg transition-colors">Festivals</Link>
+                    <Link prefetch={false} href="/malayalam-calendar/2026" className="text-gray-700 hover:text-red-700 hover:bg-red-50 font-medium px-3 py-2 rounded-lg transition-colors">Malayalam Calendar 2026</Link>
+                    <Link prefetch={false} href="/malayalam-calendar/2027" className="text-gray-700 hover:text-red-700 hover:bg-red-50 font-medium px-3 py-2 rounded-lg transition-colors">2027 Calendar</Link>
+                    <Link prefetch={false} href="/rahu-kalam-today" className="text-gray-700 hover:text-red-700 hover:bg-red-50 font-medium px-3 py-2 rounded-lg transition-colors">Rahu Kalam</Link>
+                    <Link prefetch={false} href="/festivals" className="text-gray-700 hover:text-red-700 hover:bg-red-50 font-medium px-3 py-2 rounded-lg transition-colors">Festivals</Link>
 
                     <div className="ml-2 pl-2 border-l border-gray-200">
                         <GoogleTranslate />
@@ -60,35 +60,35 @@ export default function Header() {
             {isMenuOpen && (
                 <div className="xl:hidden bg-white border-t border-gray-100 absolute w-full shadow-lg h-screen md:h-auto overflow-y-auto pb-20">
                     <nav className="flex flex-col p-4 space-y-2">
-                        <Link
+                        <Link prefetch={false}
                             href="/"
                             className="text-gray-700 hover:text-red-700 font-medium px-4 py-3 rounded-lg hover:bg-red-50 bg-gray-50/50"
                             onClick={closeMenu}
                         >
                             Today
                         </Link>
-                        <Link
+                        <Link prefetch={false}
                             href="/malayalam-calendar/2026"
                             className="text-gray-700 hover:text-red-700 font-medium px-4 py-3 rounded-lg hover:bg-red-50"
                             onClick={closeMenu}
                         >
                             Malayalam Calendar 2026
                         </Link>
-                        <Link
+                        <Link prefetch={false}
                             href="/malayalam-calendar/2027"
                             className="text-gray-700 hover:text-red-700 font-medium px-4 py-3 rounded-lg hover:bg-red-50"
                             onClick={closeMenu}
                         >
                             2027 Calendar
                         </Link>
-                        <Link
+                        <Link prefetch={false}
                             href="/rahu-kalam-today"
                             className="text-gray-700 hover:text-red-700 font-medium px-4 py-3 rounded-lg hover:bg-red-50"
                             onClick={closeMenu}
                         >
                             Rahu Kalam
                         </Link>
-                        <Link
+                        <Link prefetch={false}
                             href="/festivals"
                             className="text-gray-700 hover:text-red-700 font-medium px-4 py-3 rounded-lg hover:bg-red-50"
                             onClick={closeMenu}

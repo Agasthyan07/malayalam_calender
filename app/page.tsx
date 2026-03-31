@@ -4,7 +4,7 @@ import Link from 'next/link';
 import AdSlot from '@/components/AdSlot';
 import { getDailyData, formatDate, getMonthData, getYearData } from '@/lib/dateUtils';
 import JsonLd from '@/components/JsonLd';
-import DatasetSchema from '@/components/DatasetSchema';
+
 import { Metadata } from 'next';
 import CalendarGrid from '@/components/CalendarGrid';
 import IslamicPrayerTimes from '@/components/IslamicPrayerTimes';
@@ -166,7 +166,7 @@ export default async function Home({ searchParams }: Props) {
   return (
     <div className="container mx-auto px-4 py-6 max-w-5xl">
       <JsonLd data={jsonLd} />
-      <DatasetSchema />
+
 
       {/* ══════════════════════════════════════
           SECTION 1: HERO
@@ -179,14 +179,17 @@ export default async function Home({ searchParams }: Props) {
           </span>
         </div>
 
-        <h1 className="text-2xl md:text-4xl font-extrabold leading-tight mb-4 drop-shadow">
-          Malayalam Calendar 2026 &amp; 2027 Online  Panchangam, Kerala Holidays &amp; PDF Calendar
+        <h1 className="text-3xl md:text-5xl font-extrabold leading-tight mb-2 drop-shadow">
+          Malayalam Calendar 2026
         </h1>
+        <h2 className="text-lg md:text-2xl font-semibold mb-4 text-red-50 drop-shadow-sm">
+          Daily Panchangam, Kerala Holidays & PDF Calendar
+        </h2>
         <p className="text-red-100 text-sm md:text-base max-w-2xl mx-auto leading-relaxed mb-6">
           Explore the Malayalam Calendar 2026 and 2027 online with daily Panchangam details, Nakshatram, Tithi, festivals, and Kerala government holidays. View the interactive calendar or download the printable Malayalam calendar PDF for easy reference.
         </p>
         <div className="flex flex-wrap justify-center gap-3">
-          <Link
+          <Link prefetch={false}
             href="/calendar-pdf/2026_pdf/kerala-govt-official-calendar-2026.pdf"
             target="_blank"
             rel="noopener noreferrer"
@@ -194,7 +197,7 @@ export default async function Home({ searchParams }: Props) {
           >
             📥 Download 2026 PDF
           </Link>
-          <Link
+          <Link prefetch={false}
             href="#today-panchangam"
             className="inline-flex items-center gap-2 bg-red-800 text-white font-bold px-6 py-3 rounded-full shadow-md hover:shadow-lg hover:bg-red-900 transition-all border border-red-400 text-sm md:text-base"
           >
@@ -216,7 +219,7 @@ export default async function Home({ searchParams }: Props) {
           </h2>
         </div>
         <p className="text-sm text-gray-600 dark:text-gray-300 mb-5 ml-4">
-          <em>Malayalam calendar today · Today Malayalam date · <Link href="/rahu-kalam-today" className="hover:text-red-600 hover:underline">today rahukalam</Link> · Malayalam panchangam today · Nakshatra today Kerala</em>
+          <em>Malayalam calendar today · Today Malayalam date · <Link prefetch={false} href="/rahu-kalam-today" className="hover:text-red-600 hover:underline">today rahukalam</Link> · Malayalam panchangam today · Nakshatra today Kerala</em>
         </p>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
@@ -224,14 +227,16 @@ export default async function Home({ searchParams }: Props) {
           <div className="flex flex-col gap-4">
             <TodayCard data={data} />
             <div className="w-full flex">
-              <Link href="/rahu-kalam-today" className="w-full text-center bg-red-50 dark:bg-red-900/20 hover:bg-red-100 dark:hover:bg-red-900/40 text-red-700 dark:text-red-400 font-semibold py-2.5 px-4 rounded-lg border border-red-200 dark:border-red-800 text-sm transition-colors">
+              <Link prefetch={false} href="/rahu-kalam-today" className="w-full text-center bg-red-50 dark:bg-red-900/20 hover:bg-red-100 dark:hover:bg-red-900/40 text-red-700 dark:text-red-400 font-semibold py-2.5 px-4 rounded-lg border border-red-200 dark:border-red-800 text-sm transition-colors">
                 Check Exact Rahukalam Timings Today & Yamagandam →
               </Link>
             </div>
             <div className="bg-orange-50 dark:bg-orange-900/10 border border-orange-100 dark:border-orange-900/30 rounded-lg p-4 text-sm text-gray-700 dark:text-gray-300">
-              <p>
-                Today is <strong>{fullDateEnglish}</strong> and Malayalam date is <strong>{data.malayalam_date}</strong>.
-                {' '}{malMonthStartText}
+              <p className="text-lg font-bold text-gray-900 dark:text-gray-100 mb-2">
+                Today is <strong className="text-2xl text-red-600 dark:text-red-400">{fullDateEnglish}</strong>
+              </p>
+              <p className="text-sm text-gray-600 dark:text-gray-400">
+                Malayalam date: <strong>{data.malayalam_date}</strong>. {malMonthStartText}
               </p>
             </div>
             <IslamicPrayerTimes />
@@ -243,7 +248,7 @@ export default async function Home({ searchParams }: Props) {
               <p className="text-sm font-bold text-gray-800 dark:text-gray-200 uppercase tracking-wide">
                 {currentMonthName} {year}
               </p>
-              <Link href={currentMonthSlug} className="text-xs font-semibold text-indigo-600 dark:text-indigo-400 hover:underline">
+              <Link prefetch={false} href={currentMonthSlug} className="text-xs font-semibold text-indigo-600 dark:text-indigo-400 hover:underline">
                 Full Month View →
               </Link>
             </div>
@@ -272,7 +277,7 @@ export default async function Home({ searchParams }: Props) {
 
         <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-3 mb-8">
           {MONTHS_2026.map((m, i) => (
-            <Link
+            <Link prefetch={false}
               key={m.slug}
               href={`/${m.slug}`}
               className="group flex flex-col items-center justify-center p-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl hover:border-indigo-400 hover:shadow-md hover:-translate-y-0.5 transition-all text-center" aria-label={`View ${m.name} 2026 Malayalam Calendar`}
@@ -318,7 +323,7 @@ export default async function Home({ searchParams }: Props) {
             { icon: '🔄', label: 'Landscape', desc: 'Wide format view', href: '/calendar-pdf/2026_pdf/kerala-govt-official-calendar-2026.pdf' },
             { icon: '🖼️', label: 'High Resolution', desc: 'HD quality image', href: '/calendar-pdf/2026_pdf/kerala-govt-official-calendar-2026.pdf' },
           ].map((item) => (
-            <Link
+            <Link prefetch={false}
               key={item.label}
               href={item.href}
               className="group flex flex-col items-center text-center p-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl hover:border-green-400 hover:shadow-md transition-all"
@@ -336,7 +341,7 @@ export default async function Home({ searchParams }: Props) {
           </p>
         </div>
         <div className="mt-4 flex justify-center">
-          <Link
+          <Link prefetch={false}
             href="/calendar-pdf/2026_pdf/kerala-govt-official-calendar-2026.pdf"
             target="_blank"
             rel="noopener noreferrer"
@@ -366,7 +371,7 @@ export default async function Home({ searchParams }: Props) {
           in advance. Our weekly view helps you align daily activities with Nakshatram, Tithi, and Rahu Kalam timings.
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <Link
+          <Link prefetch={false}
             href="/weekly-calendar"
             className="group flex items-center gap-4 p-4 bg-white dark:bg-gray-800 rounded-xl border border-purple-200 dark:border-purple-700 hover:shadow-md hover:border-purple-400 transition-all"
           >
@@ -378,7 +383,7 @@ export default async function Home({ searchParams }: Props) {
               <p className="text-xs text-gray-500 dark:text-gray-400">View this week&apos;s Nakshatram & Panchangam</p>
             </div>
           </Link>
-          <Link
+          <Link prefetch={false}
             href={`/weekly-calendar?date=${(() => {
               const d = new Date();
               d.setDate(d.getDate() + 7);
@@ -446,7 +451,7 @@ export default async function Home({ searchParams }: Props) {
               href: '/festivals', color: 'red'
             },
           ].map((fest) => (
-            <Link
+            <Link prefetch={false}
               key={fest.title}
               href={fest.href}
               className="group flex flex-col p-4 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 hover:shadow-lg hover:-translate-y-0.5 transition-all"
@@ -592,7 +597,7 @@ export default async function Home({ searchParams }: Props) {
             { label: 'Ekadashi 2026', href: '/festivals', icon: '🌙' },
             { label: 'Public Holidays', href: '/festivals', icon: '🎆' },
           ].map((p) => (
-            <Link
+            <Link prefetch={false}
               key={p.href + p.label}
               href={p.href}
               className="flex flex-col items-center text-center p-3 bg-white/10 hover:bg-white/20 rounded-xl transition-colors border border-white/10 hover:border-white/30"

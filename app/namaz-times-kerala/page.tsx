@@ -354,7 +354,7 @@ export default async function NamazTimesPage() {
                         { href: '/malayalam-calendar/2026', label: 'Malayalam Calendar 2026' },
                     ].map(l => (
                         <li key={l.href}>
-                            <Link href={l.href} className="text-indigo-600 dark:text-indigo-400 hover:underline">
+                            <Link prefetch={false} href={l.href} className="text-indigo-600 dark:text-indigo-400 hover:underline">
                                 {l.label}
                             </Link>
                         </li>

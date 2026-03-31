@@ -68,7 +68,7 @@ export default function ContactPage() {
                         <div className="bg-white dark:bg-gray-800 rounded-lg p-5 shadow-sm border border-gray-100 dark:border-gray-700">
                             <h3 className="font-bold text-gray-800 dark:text-gray-200 mb-2">Can I download the calendar as a PDF?</h3>
                             <p className="text-sm text-gray-600 dark:text-gray-400">
-                                Currently, we do not offer a downloadable PDF version. However, our website is fully responsive and works offline on many mobile devices if added to the home screen.
+                                Yes! You can download the Malayalam Calendar 2026 as a free PDF from our homepage. We provide a high-quality, printable PDF that includes all months with daily Panchangam details. Our website is also fully responsive and works offline on many mobile devices if added to the home screen.
                             </p>
                         </div>
 

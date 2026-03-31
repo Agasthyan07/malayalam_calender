@@ -43,12 +43,13 @@ export default function TodayCard({ data, showMalayalamLabels = false }: { data:
     return (
         <div className="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 max-w-md mx-auto">
             {/* Header with Date */}
-            <div className="bg-red-700 text-white p-4 md:p-6 text-center space-y-1">
-                <h2 className="text-xs md:text-sm font-medium opacity-90 uppercase tracking-wider">
-                    {/* Weekday is usually in English in data, kept as is or could be mapped if needed, but data.weekday is string */}
+            <div className="bg-red-700 text-white p-4 md:p-6 text-center space-y-2">
+                <h1 className="text-3xl md:text-4xl font-bold tracking-tight">
                     {data.weekday}, {formatDate(data.date)}
+                </h1>
+                <h2 className="text-lg md:text-xl font-medium text-red-100">
+                    {data.malayalam_date}
                 </h2>
-                <h1 className="text-3xl md:text-5xl font-bold mt-2">{data.malayalam_date}</h1>
                 {islamicDateStr && (
                     <div className="flex items-center justify-center gap-1.5 pt-2 text-red-100 opacity-90 text-xs md:text-sm font-medium">
                         <Moon className="w-3 h-3 md:w-3.5 md:h-3.5" />

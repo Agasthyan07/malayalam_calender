@@ -98,13 +98,13 @@ export default async function YearPage({ params }: Props) {
                     navigate through the months below to find accurate daily <strong>Nakshatram</strong>, <strong>Tithi</strong>, <strong>Rahu Kalam</strong>, and <strong>Nalla Samayam</strong> timings calculated for Kerala.
                 </p>
                 <div className="mt-6 flex flex-wrap justify-center gap-4">
-                    <Link
+                    <Link prefetch={false}
                         href="#download-section"
                         className="inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-6 py-2.5 rounded-full transition-colors shadow-sm"
                     >
                         📥 Download Calendar PDF
                     </Link>
-                    <Link
+                    <Link prefetch={false}
                         href="#months-grid"
                         className="inline-flex items-center gap-2 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 hover:bg-gray-50 dark:hover:bg-gray-700 border border-gray-200 dark:border-gray-700 font-semibold px-6 py-2.5 rounded-full transition-colors shadow-sm"
                     >
@@ -130,7 +130,7 @@ export default async function YearPage({ params }: Props) {
                                         <h2 className="text-xl font-bold text-gray-800 dark:text-gray-100 uppercase tracking-wide">
                                             {m.name} {year}
                                         </h2>
-                                        <Link
+                                        <Link prefetch={false}
                                             href={`/malayalam-calendar-${monthNameLower}-${year}`}
                                             className="text-xs font-semibold text-indigo-600 dark:text-indigo-400 hover:underline"
                                         >
@@ -220,7 +220,7 @@ export default async function YearPage({ params }: Props) {
                                 <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6 text-sm">
                                     Get the complete 12-month spreadsheet with {year}'s Kerala Government holidays, bank holidays, and festival markers included.
                                 </p>
-                                <Link href={`/calendar-pdf/${year}_pdf/kerala-govt-official-calendar-${year}.pdf`} target="_blank" rel="noopener noreferrer" className="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-8 rounded-lg shadow-md transition-all">
+                                <Link prefetch={false} href={`/calendar-pdf/${year}_pdf/kerala-govt-official-calendar-${year}.pdf`} target="_blank" rel="noopener noreferrer" className="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-8 rounded-lg shadow-md transition-all">
                                     Download {year} PDF
                                 </Link>
                             </div>
@@ -316,7 +316,7 @@ export default async function YearPage({ params }: Props) {
                             <ul className="space-y-2 text-sm">
                                 {months.map((m) => (
                                     <li key={m.slug}>
-                                        <Link
+                                        <Link prefetch={false}
                                             href={`#${m.name.toLowerCase()}`}
                                             className="text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 font-medium transition-colors block py-1"
                                         >
@@ -333,13 +333,13 @@ export default async function YearPage({ params }: Props) {
                                 <span>⚡</span> Quick Links
                             </h3>
                             <div className="space-y-3">
-                                <Link href="/innathe-nakshatram" className="block bg-white dark:bg-gray-800 hover:bg-indigo-600 hover:text-white dark:hover:bg-indigo-600 text-gray-800 dark:text-gray-100 font-semibold px-4 py-3 rounded-xl shadow-sm transition-all text-sm text-center">
+                                <Link prefetch={false} href="/innathe-nakshatram" className="block bg-white dark:bg-gray-800 hover:bg-indigo-600 hover:text-white dark:hover:bg-indigo-600 text-gray-800 dark:text-gray-100 font-semibold px-4 py-3 rounded-xl shadow-sm transition-all text-sm text-center">
                                     Today's Nakshatra
                                 </Link>
-                                <Link href={`/marriage-muhurtham-${year}`} className="block bg-white dark:bg-gray-800 hover:bg-indigo-600 hover:text-white dark:hover:bg-indigo-600 text-gray-800 dark:text-gray-100 font-semibold px-4 py-3 rounded-xl shadow-sm transition-all text-sm text-center">
+                                <Link prefetch={false} href={`/marriage-muhurtham-${year}`} className="block bg-white dark:bg-gray-800 hover:bg-indigo-600 hover:text-white dark:hover:bg-indigo-600 text-gray-800 dark:text-gray-100 font-semibold px-4 py-3 rounded-xl shadow-sm transition-all text-sm text-center">
                                     Marriage Muhurtham
                                 </Link>
-                                <Link href={`/malayalam-calendar/${parseInt(year) - 1}`} className="block bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 font-medium px-4 py-3 rounded-xl shadow-sm transition-all text-sm text-center border border-gray-200 dark:border-gray-700">
+                                <Link prefetch={false} href={`/malayalam-calendar/${parseInt(year) - 1}`} className="block bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 font-medium px-4 py-3 rounded-xl shadow-sm transition-all text-sm text-center border border-gray-200 dark:border-gray-700">
                                     Archive: {parseInt(year) - 1} Calendar
                                 </Link>
                             </div>

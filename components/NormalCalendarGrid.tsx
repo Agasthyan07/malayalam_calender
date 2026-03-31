@@ -5,7 +5,7 @@ interface NormalCalendarGridProps {
   month: number; // 0-indexed (0 = January)
 }
 
-export const NormalCalendarGrid: React.FC<NormalCalendarGridProps> = ({ year, month }) => {
+const NormalCalendarGrid: React.FC<NormalCalendarGridProps> = ({ year, month }) => {
   // Get first day of month (0 = Sunday)
   const firstDay = new Date(year, month, 1).getDay();
   // Number of days in month
@@ -50,3 +50,5 @@ export const NormalCalendarGrid: React.FC<NormalCalendarGridProps> = ({ year, mo
     </div>
   );
 };
+
+export default NormalCalendarGrid;

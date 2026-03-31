@@ -1,7 +1,27 @@
+import { Metadata } from 'next';
 import { getYearData, formatDate } from '@/lib/dateUtils';
 import Link from 'next/link';
 import { DailyData } from '@/types/date';
 import Breadcrumbs from '@/components/Breadcrumbs';
+
+export const metadata: Metadata = {
+    title: 'Kerala Festival Calendar 2026 – Complete List of Festivals, Holidays & Observances',
+    description: 'Complete list of Kerala festivals and public holidays in 2026. Find dates for Vishu, Onam, Maha Shivaratri, Thrissur Pooram, Ekadashi, and all important religious observances in the Malayalam Calendar.',
+    keywords: [
+        'Kerala Festivals 2026', 'Kerala Holidays 2026', 'Malayalam Calendar Festivals',
+        'Vishu 2026', 'Onam 2026', 'Thrissur Pooram 2026', 'Maha Shivaratri 2026',
+        'Kerala Public Holidays', 'Festival Calendar Kerala', 'Hindu Festivals Kerala 2026',
+    ],
+    alternates: {
+        canonical: 'https://www.malayalamcalendar.site/festivals',
+    },
+    openGraph: {
+        title: 'Kerala Festival Calendar 2026 – All Festivals & Holidays',
+        description: 'Complete month-wise list of Kerala festivals, temple festivals, and public holidays for 2026.',
+        url: 'https://www.malayalamcalendar.site/festivals',
+        type: 'website',
+    },
+};
 
 const MONTH_NAMES = [
     'January', 'February', 'March', 'April', 'May', 'June',

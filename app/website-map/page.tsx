@@ -16,9 +16,9 @@ export default function SitemapPage() {
                 <div>
                     <h2 className="text-xl font-bold mb-4 text-red-700">Calendars</h2>
                     <ul className="space-y-2 text-gray-600 dark:text-gray-300">
-                        <li><Link href="/" className="hover:text-red-600 hover:underline">Today</Link></li>
-                        <li><Link href="/malayalam-calendar/2026" className="hover:text-red-600 hover:underline">Malayalam Calendar 2026</Link></li>
-                        <li><Link href="/malayalam-calendar/2027" className="hover:text-red-600 hover:underline">2027 Calendar</Link></li>
+                        <li><Link prefetch={false} href="/" className="hover:text-red-600 hover:underline">Today</Link></li>
+                        <li><Link prefetch={false} href="/malayalam-calendar/2026" className="hover:text-red-600 hover:underline">Malayalam Calendar 2026</Link></li>
+                        <li><Link prefetch={false} href="/malayalam-calendar/2027" className="hover:text-red-600 hover:underline">2027 Calendar</Link></li>
                     </ul>
                 </div>
 
@@ -26,9 +26,9 @@ export default function SitemapPage() {
                 <div>
                     <h2 className="text-xl font-bold mb-4 text-red-700">Events & Festivals</h2>
                     <ul className="space-y-2 text-gray-600 dark:text-gray-300">
-                        <li><Link href="/festivals" className="hover:text-red-600 hover:underline">All Kerala Festivals</Link></li>
-                        <li><Link href="/onam-2026-date" className="hover:text-red-600 hover:underline">Onam 2026 Date</Link></li>
-                        <li><Link href="/vishu-2026-date-kerala" className="hover:text-red-600 hover:underline">Vishu 2026 Date</Link></li>
+                        <li><Link prefetch={false} href="/festivals" className="hover:text-red-600 hover:underline">All Kerala Festivals</Link></li>
+                        <li><Link prefetch={false} href="/onam-2026-date" className="hover:text-red-600 hover:underline">Onam 2026 Date</Link></li>
+                        <li><Link prefetch={false} href="/vishu-2026-date-kerala" className="hover:text-red-600 hover:underline">Vishu 2026 Date</Link></li>
                     </ul>
                 </div>
 
@@ -37,8 +37,8 @@ export default function SitemapPage() {
                     <h2 className="text-xl font-bold mb-4 text-red-700">Tools</h2>
                     <ul className="space-y-2 text-gray-600 dark:text-gray-300">
 
-                        <li><Link href="/rahu-kalam-today" className="hover:text-red-600 hover:underline">Rahu Kalam Today</Link></li>
-                        <li><Link href="/inathe-nakshatram" className="hover:text-red-600 hover:underline">Today's Nakshatram</Link></li>
+                        <li><Link prefetch={false} href="/rahu-kalam-today" className="hover:text-red-600 hover:underline">Rahu Kalam Today</Link></li>
+                        <li><Link prefetch={false} href="/inathe-nakshatram" className="hover:text-red-600 hover:underline">Today's Nakshatram</Link></li>
                     </ul>
                 </div>
 
@@ -46,11 +46,11 @@ export default function SitemapPage() {
                 <div>
                     <h2 className="text-xl font-bold mb-4 text-red-700">Information</h2>
                     <ul className="space-y-2 text-gray-600 dark:text-gray-300">
-                        <li><Link href="/about" className="hover:text-red-600 hover:underline">About Us</Link></li>
-                        <li><Link href="/contact" className="hover:text-red-600 hover:underline">Contact Us</Link></li>
-                        <li><Link href="/privacy-policy" className="hover:text-red-600 hover:underline">Privacy Policy</Link></li>
-                        <li><Link href="/terms" className="hover:text-red-600 hover:underline">Terms of Service</Link></li>
-                        <li><Link href="/disclaimer" className="hover:text-red-600 hover:underline">Disclaimer</Link></li>
+                        <li><Link prefetch={false} href="/about" className="hover:text-red-600 hover:underline">About Us</Link></li>
+                        <li><Link prefetch={false} href="/contact" className="hover:text-red-600 hover:underline">Contact Us</Link></li>
+                        <li><Link prefetch={false} href="/privacy-policy" className="hover:text-red-600 hover:underline">Privacy Policy</Link></li>
+                        <li><Link prefetch={false} href="/terms" className="hover:text-red-600 hover:underline">Terms of Service</Link></li>
+                        <li><Link prefetch={false} href="/disclaimer" className="hover:text-red-600 hover:underline">Disclaimer</Link></li>
                     </ul>
                 </div>
             </div>

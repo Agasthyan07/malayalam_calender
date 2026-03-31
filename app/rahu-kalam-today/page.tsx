@@ -238,12 +238,12 @@ export default async function RahuKalamPage() {
                 <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-100 mb-4">Related Daily Timings</h3>
                 <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
                     <li>
-                        <Link href="/" className="text-indigo-600 dark:text-indigo-400 hover:text-indigo-800 dark:hover:text-indigo-300 hover:underline">
+                        <Link prefetch={false} href="/" className="text-indigo-600 dark:text-indigo-400 hover:text-indigo-800 dark:hover:text-indigo-300 hover:underline">
                             Today Malayalam Calendar
                         </Link>
                     </li>
                     <li>
-                        <Link href="/innathe-nakshatram" className="text-indigo-600 dark:text-indigo-400 hover:text-indigo-800 dark:hover:text-indigo-300 hover:underline">
+                        <Link prefetch={false} href="/innathe-nakshatram" className="text-indigo-600 dark:text-indigo-400 hover:text-indigo-800 dark:hover:text-indigo-300 hover:underline">
                             Innathe Nakshatram (Today's Star)
                         </Link>
                     </li>
@@ -252,7 +252,7 @@ export default async function RahuKalamPage() {
                         <span className="text-gray-400 dark:text-gray-500">Today Yamagandam (Coming Soon)</span>
                     </li>
                     <li>
-                        <Link href="/festivals" className="text-indigo-600 dark:text-indigo-400 hover:text-indigo-800 dark:hover:text-indigo-300 hover:underline">
+                        <Link prefetch={false} href="/festivals" className="text-indigo-600 dark:text-indigo-400 hover:text-indigo-800 dark:hover:text-indigo-300 hover:underline">
                             Upcoming Festivals
                         </Link>
                     </li>

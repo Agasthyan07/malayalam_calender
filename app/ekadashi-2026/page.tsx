@@ -171,7 +171,7 @@ export default async function EkadashiPage() {
                                                     {day.nakshatram}
                                                 </td>
                                                 <td className="px-6 py-4 text-center whitespace-nowrap">
-                                                    <Link
+                                                    <Link prefetch={false}
                                                         href={`/date/${formatDate(day.date)}`}
                                                         className="inline-flex items-center gap-1.5 text-xs font-semibold bg-indigo-50 dark:bg-indigo-900/40 text-indigo-700 dark:text-indigo-400 hover:bg-indigo-100 dark:hover:bg-indigo-900/60 px-3 py-1.5 rounded-full transition-colors"
                                                     >
@@ -199,7 +199,7 @@ export default async function EkadashiPage() {
             </div>
 
             <div className="mt-8 text-center">
-                <Link href="/" className="inline-flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                <Link prefetch={false} href="/" className="inline-flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
                     <span>← Back to Malayalam Calendar Home</span>
                 </Link>
             </div>

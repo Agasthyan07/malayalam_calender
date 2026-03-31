@@ -222,15 +222,15 @@ export default async function MonthPageSEO({ params }: Props) {
                 {/* STEP 3 & 6: SEO Intro with Links */}
                 <div className="prose prose-lg dark:prose-invert max-w-none text-gray-600 dark:text-gray-300">
                     <p>
-                        <strong>{monthName} {year}</strong> in the <Link href="/" className="text-indigo-600 hover:underline">Malayalam Calendar</Link> corresponds
+                        <strong>{monthName} {year}</strong> in the <Link prefetch={false} href="/" className="text-indigo-600 hover:underline">Malayalam Calendar</Link> corresponds
                         to the months of <strong>{info.malayalamMonths}</strong> in Kollavarsham <strong>{info.kollavarshamYear}</strong>.
                         This month includes important festivals{festivals.length > 0 ? ` like ${festivals.slice(0, 3).map(f => f.festival).join(', ')}` : ''},
                         along with daily Panchangam details such as Nakshatram, Tithi, and Rahu Kalam timings.
                     </p>
                     <p>
                         The <strong>{monthName} {year} Malayalam calendar</strong> helps devotees and families in Kerala plan religious observances, temple visits,
-                        <Link href="/marriage-muhurtham-2026" className="text-indigo-600 hover:underline"> wedding muhurtham dates</Link>, and
-                        <Link href="/ekadashi-2026" className="text-indigo-600 hover:underline"> fasting days (Ekadashi)</Link>.
+                        <Link prefetch={false} href="/marriage-muhurtham-2026" className="text-indigo-600 hover:underline"> wedding muhurtham dates</Link>, and
+                        <Link prefetch={false} href="/ekadashi-2026" className="text-indigo-600 hover:underline"> fasting days (Ekadashi)</Link>.
                         Each day’s Panchangam provides accurate Rahu Kalam timings, auspicious muhurtham, and Nakshatra details as per Kerala time (IST).
                     </p>
                     <p className="text-sm italic mt-2">
@@ -282,7 +282,7 @@ export default async function MonthPageSEO({ params }: Props) {
                             const isToday = day.date === todayStr;
 
                             return (
-                                <Link
+                                <Link prefetch={false}
                                     href={isToday ? '/' : `/date/${formatDate(day.date)}`}
                                     key={day.date}
                                     className="group flex items-center p-4 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-0.5 h-full"

@@ -29,7 +29,8 @@ export async function GET() {
         { path: '/festivals', freq: 'monthly', priority: '0.8' },
         { path: '/vishu-2026-date-kerala', freq: 'monthly', priority: '0.8' },
         { path: '/onam-2026-date', freq: 'monthly', priority: '0.8' },
-        // Info pages
+        // Info/Article pages
+        { path: '/kollavarsham-malayalam-era', freq: 'monthly', priority: '0.8' },
         { path: '/about', freq: 'yearly', priority: '0.5' },
         { path: '/website-map', freq: 'monthly', priority: '0.5' },
         { path: '/contact', freq: 'yearly', priority: '0.4' },

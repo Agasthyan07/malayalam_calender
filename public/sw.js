@@ -1,7 +1,6 @@
-const CACHE_NAME = 'malayalam-calendar-v1';
+const CACHE_NAME = 'malayalam-calendar-v2';
 
 const PRECACHE_ASSETS = [
-    '/',
     '/icon.png',
     '/manifest.json'
 ];
@@ -31,33 +30,51 @@ self.addEventListener('activate', (event) => {
 self.addEventListener('fetch', (event) => {
     if (event.request.method !== 'GET') return;
 
-    event.respondWith(
-        caches.match(event.request).then((cachedResponse) => {
-            // Return cached response if found
-            if (cachedResponse) {
-                return cachedResponse;
-            }
+    const url = new URL(event.request.url);
 
-            // Otherwise fetch from network
-            return fetch(event.request).then((networkResponse) => {
-                // Build a clone of the response since it can only be consumed once
-                const responseClone = networkResponse.clone();
+    // Only handle same-origin requests
+    if (url.origin !== self.location.origin) return;
 
-                // Check if we received a valid response
-                if (!networkResponse || networkResponse.status !== 200 || networkResponse.type !== 'basic') {
-                    return networkResponse;
-                }
+    // Static assets (JS, CSS, images, fonts) → Cache-First
+    if (
+        url.pathname.startsWith('/_next/static/') ||
+        url.pathname.match(/\.(png|jpg|jpeg|webp|avif|svg|ico|woff|woff2|css|js)$/)
+    ) {
+        event.respondWith(
+            caches.match(event.request).then((cachedResponse) => {
+                if (cachedResponse) return cachedResponse;
 
-                // Cache the response
-                caches.open(CACHE_NAME).then((cache) => {
-                    // Only cache same-origin requests
-                    if (event.request.url.startsWith(self.location.origin)) {
-                        cache.put(event.request, responseClone);
+                return fetch(event.request).then((networkResponse) => {
+                    if (networkResponse && networkResponse.status === 200) {
+                        const clone = networkResponse.clone();
+                        caches.open(CACHE_NAME).then((cache) => {
+                            cache.put(event.request, clone);
+                        });
                     }
+                    return networkResponse;
                 });
+            })
+        );
+        return;
+    }
 
+    // HTML pages & API routes → Network-First (critical for SEO / Google Bot)
+    // This ensures crawlers always see fresh content
+    event.respondWith(
+        fetch(event.request)
+            .then((networkResponse) => {
+                // Cache a copy of successful HTML responses for offline fallback
+                if (networkResponse && networkResponse.status === 200) {
+                    const clone = networkResponse.clone();
+                    caches.open(CACHE_NAME).then((cache) => {
+                        cache.put(event.request, clone);
+                    });
+                }
                 return networkResponse;
-            });
-        })
+            })
+            .catch(() => {
+                // Offline fallback: serve from cache
+                return caches.match(event.request);
+            })
     );
 });

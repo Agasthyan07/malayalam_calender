@@ -131,7 +131,7 @@ export default async function MarriageMuhurthamPage() {
                                                     </div>
                                                 </div>
                                             </div>
-                                            <Link
+                                            <Link prefetch={false}
                                                 href={`/date/${formatDate(day.date)}`}
                                                 className="text-sm font-semibold text-indigo-600 dark:text-indigo-400 hover:underline whitespace-nowrap"
                                             >
@@ -157,7 +157,7 @@ export default async function MarriageMuhurthamPage() {
             </div>
 
             <div className="mt-8 text-center">
-                <Link href="/" className="inline-flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                <Link prefetch={false} href="/" className="inline-flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
                     <span>← Back to Malayalam Calendar Home</span>
                 </Link>
             </div>

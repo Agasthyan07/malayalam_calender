@@ -209,7 +209,7 @@ export default function OnamPage() {
 
             <div className="mt-10 pt-6 border-t border-gray-100 dark:border-gray-800 text-center">
                 <p className="text-gray-600 dark:text-gray-400">
-                    Check other major festivals: <Link href="/vishu-2026-date-kerala" className="text-indigo-600 font-medium hover:underline">Vishu 2026</Link> • <Link href="/festivals" className="text-indigo-600 font-medium hover:underline">All Festivals</Link>
+                    Check other major festivals: <Link prefetch={false} href="/vishu-2026-date-kerala" className="text-indigo-600 font-medium hover:underline">Vishu 2026</Link> • <Link prefetch={false} href="/festivals" className="text-indigo-600 font-medium hover:underline">All Festivals</Link>
                 </p>
             </div>
         </div>

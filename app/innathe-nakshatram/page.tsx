@@ -86,40 +86,124 @@ export default async function InnatheNakshatramPage() {
                 <div className="grid md:grid-cols-2 gap-6 not-prose my-8">
                     <div className="bg-white dark:bg-gray-800 p-6 rounded-xl border border-gray-100 dark:border-gray-700 shadow-sm">
                         <h4 className="font-bold text-lg text-indigo-600 dark:text-indigo-400 mb-3">1. Ashwathi (Ashwini)</h4>
-                        <p className="text-sm">The first star, representing speed and vitality. Symbolized by a horse's head. People born here are energetic, pioneers, and swift in action.</p>
+                        <p className="text-sm">The first star, representing speed and vitality. Symbolized by a horse's head. Ruled by Ketu and deity Ashwini Kumaras. People born here are energetic, pioneers, and swift in action.</p>
                     </div>
                     <div className="bg-white dark:bg-gray-800 p-6 rounded-xl border border-gray-100 dark:border-gray-700 shadow-sm">
                         <h4 className="font-bold text-lg text-indigo-600 dark:text-indigo-400 mb-3">2. Bharani</h4>
-                        <p className="text-sm">Symbolized by the Yoni. It represents fertility, struggle, and eventual creation. It is considered an Ugra (fierce) star.</p>
+                        <p className="text-sm">Symbolized by the Yoni. Ruled by Venus and deity Yama. It represents fertility, struggle, and eventual creation. It is considered an Ugra (fierce) star, suitable for bold actions.</p>
                     </div>
                     <div className="bg-white dark:bg-gray-800 p-6 rounded-xl border border-gray-100 dark:border-gray-700 shadow-sm">
                         <h4 className="font-bold text-lg text-indigo-600 dark:text-indigo-400 mb-3">3. Karthika (Krittika)</h4>
-                        <p className="text-sm">The star of fire, ruled by the Sun. It represents purification, cutting ties with the old, and is symbolized by a knife or flame.</p>
+                        <p className="text-sm">The star of fire, ruled by the Sun. Deity is Agni. It represents purification, cutting ties with the old, and is symbolized by a knife or flame. Strong willpower and determination.</p>
                     </div>
                     <div className="bg-white dark:bg-gray-800 p-6 rounded-xl border border-gray-100 dark:border-gray-700 shadow-sm">
                         <h4 className="font-bold text-lg text-indigo-600 dark:text-indigo-400 mb-3">4. Rohini</h4>
-                        <p className="text-sm">The red star, associated with growth and creativity. Lord Krishna was born in this star. It is considered very auspicious for agriculture.</p>
+                        <p className="text-sm">The red star, ruled by the Moon. Deity is Brahma. Associated with growth, beauty, and creativity. Lord Krishna was born in this star. Very auspicious for agriculture and new beginnings.</p>
                     </div>
                     <div className="bg-white dark:bg-gray-800 p-6 rounded-xl border border-gray-100 dark:border-gray-700 shadow-sm">
                         <h4 className="font-bold text-lg text-indigo-600 dark:text-indigo-400 mb-3">5. Makayiram (Mrigashira)</h4>
-                        <p className="text-sm">Symbolized by a deer's head. It represents searching, curiosity, and gentleness. Good for travel and research.</p>
+                        <p className="text-sm">Symbolized by a deer's head. Ruled by Mars, deity is Soma (Moon God). It represents searching, curiosity, and gentleness. Good for travel, research, and exploration.</p>
                     </div>
                     <div className="bg-white dark:bg-gray-800 p-6 rounded-xl border border-gray-100 dark:border-gray-700 shadow-sm">
                         <h4 className="font-bold text-lg text-indigo-600 dark:text-indigo-400 mb-3">6. Thiruvathira (Ardra)</h4>
-                        <p className="text-sm">Ruled by Rudra (Shiva). It signifies storms and transformation. It is the star of Lord Shiva and is celebrated in the month of Dhanu.</p>
+                        <p className="text-sm">Ruled by Rahu, deity is Rudra (Shiva). It signifies storms, transformation, and intellectual depth. The star of Lord Shiva, celebrated with Thiruvathira festival in the month of Dhanu.</p>
+                    </div>
+                    <div className="bg-white dark:bg-gray-800 p-6 rounded-xl border border-gray-100 dark:border-gray-700 shadow-sm">
+                        <h4 className="font-bold text-lg text-indigo-600 dark:text-indigo-400 mb-3">7. Punartham (Punarvasu)</h4>
+                        <p className="text-sm">Symbolized by a quiver of arrows. Ruled by Jupiter, deity is Aditi (mother of gods). Represents renewal, return to origin, and restoration. Lord Rama was born under this star.</p>
+                    </div>
+                    <div className="bg-white dark:bg-gray-800 p-6 rounded-xl border border-gray-100 dark:border-gray-700 shadow-sm">
+                        <h4 className="font-bold text-lg text-indigo-600 dark:text-indigo-400 mb-3">8. Pooyam (Pushya)</h4>
+                        <p className="text-sm">Considered the most auspicious of all 27 stars. Ruled by Saturn, deity is Brihaspati. Symbolized by a flower and a cow's udder. Represents nourishment, prosperity, and spiritual growth.</p>
+                    </div>
+                    <div className="bg-white dark:bg-gray-800 p-6 rounded-xl border border-gray-100 dark:border-gray-700 shadow-sm">
+                        <h4 className="font-bold text-lg text-indigo-600 dark:text-indigo-400 mb-3">9. Ayilyam (Ashlesha)</h4>
+                        <p className="text-sm">Symbolized by a coiled serpent. Ruled by Mercury, deity is Nagas (serpent gods). Represents mysticism, intuition, and hidden wisdom. People born here are deeply perceptive and strategic.</p>
+                    </div>
+                    <div className="bg-white dark:bg-gray-800 p-6 rounded-xl border border-gray-100 dark:border-gray-700 shadow-sm">
+                        <h4 className="font-bold text-lg text-indigo-600 dark:text-indigo-400 mb-3">10. Makam (Magha)</h4>
+                        <p className="text-sm">Symbolized by a royal throne. Ruled by Ketu, deity is Pitris (ancestors). Represents power, authority, and ancestral heritage. People born here are natural leaders with a regal bearing.</p>
+                    </div>
+                    <div className="bg-white dark:bg-gray-800 p-6 rounded-xl border border-gray-100 dark:border-gray-700 shadow-sm">
+                        <h4 className="font-bold text-lg text-indigo-600 dark:text-indigo-400 mb-3">11. Pooram (Purva Phalguni)</h4>
+                        <p className="text-sm">Symbolized by a hammock or bed. Ruled by Venus, deity is Bhaga. Represents relaxation, enjoyment, love, and creative expression. Excellent for marriage and partnerships.</p>
+                    </div>
+                    <div className="bg-white dark:bg-gray-800 p-6 rounded-xl border border-gray-100 dark:border-gray-700 shadow-sm">
+                        <h4 className="font-bold text-lg text-indigo-600 dark:text-indigo-400 mb-3">12. Uthram (Uttara Phalguni)</h4>
+                        <p className="text-sm">Symbolized by a bed or fig tree. Ruled by the Sun, deity is Aryaman. Represents generosity, patronage, and friendship. One of the most favorable stars for weddings in Kerala tradition.</p>
+                    </div>
+                    <div className="bg-white dark:bg-gray-800 p-6 rounded-xl border border-gray-100 dark:border-gray-700 shadow-sm">
+                        <h4 className="font-bold text-lg text-indigo-600 dark:text-indigo-400 mb-3">13. Atham (Hasta)</h4>
+                        <p className="text-sm">Symbolized by a hand or fist. Ruled by the Moon, deity is Savitar (Sun God). Represents skill, craftsmanship, and dexterity. The famous Onam festival begins on Atham day.</p>
+                    </div>
+                    <div className="bg-white dark:bg-gray-800 p-6 rounded-xl border border-gray-100 dark:border-gray-700 shadow-sm">
+                        <h4 className="font-bold text-lg text-indigo-600 dark:text-indigo-400 mb-3">14. Chithira (Chitra)</h4>
+                        <p className="text-sm">Symbolized by a bright jewel or pearl. Ruled by Mars, deity is Vishwakarma (divine architect). Represents beauty, elegance, and artistic creation. People born here have excellent aesthetic sense.</p>
+                    </div>
+                    <div className="bg-white dark:bg-gray-800 p-6 rounded-xl border border-gray-100 dark:border-gray-700 shadow-sm">
+                        <h4 className="font-bold text-lg text-indigo-600 dark:text-indigo-400 mb-3">15. Chothi (Swati)</h4>
+                        <p className="text-sm">Symbolized by a young plant swaying in the wind. Ruled by Rahu, deity is Vayu (wind god). Represents independence, flexibility, and self-starting ability. Known for creating great entrepreneurs.</p>
+                    </div>
+                    <div className="bg-white dark:bg-gray-800 p-6 rounded-xl border border-gray-100 dark:border-gray-700 shadow-sm">
+                        <h4 className="font-bold text-lg text-indigo-600 dark:text-indigo-400 mb-3">16. Vishakam (Vishakha)</h4>
+                        <p className="text-sm">Symbolized by a triumphal arch or potter's wheel. Ruled by Jupiter, deities are Indra and Agni. Represents determination, goal-setting, and single-minded pursuit. Excellent for overcoming obstacles.</p>
+                    </div>
+                    <div className="bg-white dark:bg-gray-800 p-6 rounded-xl border border-gray-100 dark:border-gray-700 shadow-sm">
+                        <h4 className="font-bold text-lg text-indigo-600 dark:text-indigo-400 mb-3">17. Anizham (Anuradha)</h4>
+                        <p className="text-sm">Symbolized by a lotus flower. Ruled by Saturn, deity is Mitra (god of friendship). Represents devotion, success in foreign lands, and deep friendships. Very favorable for spiritual pursuits.</p>
+                    </div>
+                    <div className="bg-white dark:bg-gray-800 p-6 rounded-xl border border-gray-100 dark:border-gray-700 shadow-sm">
+                        <h4 className="font-bold text-lg text-indigo-600 dark:text-indigo-400 mb-3">18. Thrikketta (Jyeshtha)</h4>
+                        <p className="text-sm">Symbolized by an earring or umbrella. Ruled by Mercury, deity is Indra. Represents seniority, protection, and authority. The eldest or chief star, associated with responsibility and protective nature.</p>
+                    </div>
+                    <div className="bg-white dark:bg-gray-800 p-6 rounded-xl border border-gray-100 dark:border-gray-700 shadow-sm">
+                        <h4 className="font-bold text-lg text-indigo-600 dark:text-indigo-400 mb-3">19. Moolam (Moola)</h4>
+                        <p className="text-sm">Symbolized by a tied bunch of roots. Ruled by Ketu, deity is Nirriti (goddess of dissolution). Represents getting to the root of things, research, and investigation. A powerful star for transformation.</p>
+                    </div>
+                    <div className="bg-white dark:bg-gray-800 p-6 rounded-xl border border-gray-100 dark:border-gray-700 shadow-sm">
+                        <h4 className="font-bold text-lg text-indigo-600 dark:text-indigo-400 mb-3">20. Pooradam (Purva Ashadha)</h4>
+                        <p className="text-sm">Symbolized by an elephant tusk or fan. Ruled by Venus, deity is Apah (water deity). Represents invincibility, early victory, and purification. People born here are charismatic and persuasive.</p>
+                    </div>
+                    <div className="bg-white dark:bg-gray-800 p-6 rounded-xl border border-gray-100 dark:border-gray-700 shadow-sm">
+                        <h4 className="font-bold text-lg text-indigo-600 dark:text-indigo-400 mb-3">21. Uthradam (Uttara Ashadha)</h4>
+                        <p className="text-sm">Symbolized by an elephant tusk or small bed. Ruled by the Sun, deities are Vishvadevas. Represents final victory that cannot be reversed. Known for producing patient, enduring leaders.</p>
+                    </div>
+                    <div className="bg-white dark:bg-gray-800 p-6 rounded-xl border border-gray-100 dark:border-gray-700 shadow-sm">
+                        <h4 className="font-bold text-lg text-indigo-600 dark:text-indigo-400 mb-3">22. Thiruvonam (Shravana)</h4>
+                        <p className="text-sm">Symbolized by three footprints or an ear. Ruled by the Moon, deity is Vishnu. Represents listening, learning, and connection. The most celebrated star in Kerala — Onam's culmination day, Thiruvonam.</p>
+                    </div>
+                    <div className="bg-white dark:bg-gray-800 p-6 rounded-xl border border-gray-100 dark:border-gray-700 shadow-sm">
+                        <h4 className="font-bold text-lg text-indigo-600 dark:text-indigo-400 mb-3">23. Avittam (Dhanishta)</h4>
+                        <p className="text-sm">Symbolized by a drum (Mridanga). Ruled by Mars, deity is Ashta Vasus. Represents wealth, music, and symphony. People born here are often talented in music and enjoy material prosperity.</p>
+                    </div>
+                    <div className="bg-white dark:bg-gray-800 p-6 rounded-xl border border-gray-100 dark:border-gray-700 shadow-sm">
+                        <h4 className="font-bold text-lg text-indigo-600 dark:text-indigo-400 mb-3">24. Chathayam (Shatabhisha)</h4>
+                        <p className="text-sm">Symbolized by an empty circle or 100 physicians. Ruled by Rahu, deity is Varuna (god of oceans). Represents healing, secrecy, and mystery. Known as the healer's star, excellent for medical professionals.</p>
+                    </div>
+                    <div className="bg-white dark:bg-gray-800 p-6 rounded-xl border border-gray-100 dark:border-gray-700 shadow-sm">
+                        <h4 className="font-bold text-lg text-indigo-600 dark:text-indigo-400 mb-3">25. Pooruruttathi (Purva Bhadrapada)</h4>
+                        <p className="text-sm">Symbolized by the front legs of a funeral cot or a sword. Ruled by Jupiter, deity is Aja Ekapada. Represents intensity, penance, and purification through fire. A transformative and spiritually powerful star.</p>
+                    </div>
+                    <div className="bg-white dark:bg-gray-800 p-6 rounded-xl border border-gray-100 dark:border-gray-700 shadow-sm">
+                        <h4 className="font-bold text-lg text-indigo-600 dark:text-indigo-400 mb-3">26. Uthrattathi (Uttara Bhadrapada)</h4>
+                        <p className="text-sm">Symbolized by the back legs of a funeral cot or a twin. Ruled by Saturn, deity is Ahir Budhnya (serpent of the deep). Represents depth, wisdom, and cosmic consciousness. Very auspicious for spiritual growth.</p>
+                    </div>
+                    <div className="bg-white dark:bg-gray-800 p-6 rounded-xl border border-gray-100 dark:border-gray-700 shadow-sm">
+                        <h4 className="font-bold text-lg text-indigo-600 dark:text-indigo-400 mb-3">27. Revathi</h4>
+                        <p className="text-sm">The final star, symbolized by a fish or a drum. Ruled by Mercury, deity is Pushan (nurturer). Represents completion, journey's end, and safe passage. Known for producing compassionate, nurturing individuals.</p>
                     </div>
                 </div>
 
                 <p>
-                    <strong>...and the list continues through Punartham to Revathi.</strong>
-                    Each star has its own presiding deity, ruling planet, and specific animal totem (Yoni) used for compatibility matching.
+                    Each of the 27 Nakshatras has its own presiding deity, ruling planet, and specific animal totem (Yoni) used for compatibility matching in Kerala marriage traditions.
+                    Understanding these stars is fundamental to Malayalam astrology and daily Panchangam reading.
                 </p>
 
                 <h3>How We Validated Today's Star</h3>
                 <p>
                     Our calculation for <strong>{nakshatram}</strong> today is based on the position of the Moon at sunrise in Kerala.
                     However, stars change during the day. If the star changes after, say, 2:00 PM, a child born after that time will belong to the next Nakshatra.
-                    Always check the exact ending time of the star in our <Link href={`/date/${todayStr}`} className="text-indigo-600 underline">Daily View</Link>.
+                    Always check the exact ending time of the star in our <Link prefetch={false} href={`/date/${todayStr}`} className="text-indigo-600 underline">Daily View</Link>.
                 </p>
             </article>
 

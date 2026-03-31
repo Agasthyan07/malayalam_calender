@@ -13,7 +13,7 @@ export default function SiteSchema() {
         ],
         "url": [
             "https://www.malayalamcalendar.site/",
-            "https://www.malayalamcalendar.site/calendar-2026",
+            "https://www.malayalamcalendar.site/malayalam-calendar/2026",
             "https://www.malayalamcalendar.site/festivals",
 
             "https://www.malayalamcalendar.site/rahu-kalam-today"
