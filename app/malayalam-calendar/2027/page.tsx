@@ -2,9 +2,11 @@ import Link from 'next/link';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import CalendarGrid from '@/components/CalendarGrid';
 import FAQ from '@/components/FAQ';
+import NormalCalendarGrid from '@/components/NormalCalendarGrid';
 import TableOfContents from './TableOfContents';
-import MonthJump from './MonthJump';
+import { monthsInfo } from './monthsInfo';
 import { getYearData } from '@/lib/dateUtils';
+import MonthJump from './MonthJump';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -176,7 +178,7 @@ export default async function Calendar2027Page() {
                                     <div
                                         key={m.slug}
                                         id={monthNameLower}
-                                        className="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 overflow-hidden flex flex-col"
+                                        className="bg-white/30 dark:bg-gray-800/30 backdrop-blur-lg rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 overflow-hidden flex flex-col transition-transform duration-300 hover:scale-105 hover:shadow-xl"
                                     >
                                         <div className="bg-gray-50 dark:bg-gray-900/50 p-4 border-b border-gray-100 dark:border-gray-800 flex justify-between items-center">
                                             <h2 className="text-xl font-bold text-gray-800 dark:text-gray-100 uppercase tracking-wide">
@@ -191,7 +193,12 @@ export default async function Calendar2027Page() {
                                         </div>
                                         <div className="p-2 flex-grow">
                                             <CalendarGrid days={m.days} />
+                                            <NormalCalendarGrid year={2027} month={parseInt(m.slug, 10) - 1} />
                                         </div>
+                                        {/* Human‑written month description */}
+                                        <p className="p-4 text-sm text-gray-700 dark:text-gray-300">
+                                            {monthsInfo.find(info => info.slug === m.slug)?.description}
+                                        </p>
                                     </div>
                                 );
                             })}
