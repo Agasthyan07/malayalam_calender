@@ -9,8 +9,8 @@ export default function Footer() {
                         <h3 className="font-bold text-gray-900 mb-4">Quick Links</h3>
                         <div className="flex flex-col gap-2 text-sm text-gray-600">
                             <Link prefetch={false} href="/" className="hover:text-red-700">Today's Calendar</Link>
-                            <Link prefetch={false} href="/malayalam-calendar/2026" className="hover:text-red-700">Malayalam Calendar 2026</Link>
-                            <Link prefetch={false} href="/malayalam-calendar/2027" className="hover:text-red-700">2027 Calendar</Link>
+                            <Link prefetch={false} href="/2026" className="hover:text-red-700">Malayalam Calendar 2026</Link>
+                            <Link prefetch={false} href="/2027" className="hover:text-red-700">2027 Calendar</Link>
                             <Link prefetch={false} href="/festivals" className="hover:text-red-700">Kerala Festivals</Link>
                             <Link prefetch={false} href="/kollavarsham-malayalam-era" className="hover:text-red-700">Kollavarsham Era</Link>
                             <Link prefetch={false} href="/rahu-kalam-today" className="hover:text-red-700">Rahu Kalam Times</Link>

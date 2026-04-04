@@ -92,21 +92,21 @@ export default async function Home({ searchParams }: Props) {
   const monthData = await getMonthData(year, month);
 
   const currentMonthName = new Date(parseInt(year), parseInt(month) - 1).toLocaleString('default', { month: 'long' });
-  const currentMonthSlug = `/malayalam-calendar-${currentMonthName.toLowerCase()}-${year}`;
+  const currentMonthSlug = `/${year}/${currentMonthName.toLowerCase()}`;
 
   const MONTHS_2026 = [
-    { name: 'January', slug: 'malayalam-calendar-january-2026', ml: 'ജനുവരി' },
-    { name: 'February', slug: 'malayalam-calendar-february-2026', ml: 'ഫെബ്രുവരി' },
-    { name: 'March', slug: 'malayalam-calendar-march-2026', ml: 'മാർച്ച്' },
-    { name: 'April', slug: 'malayalam-calendar-april-2026', ml: 'ഏപ്രിൽ' },
-    { name: 'May', slug: 'malayalam-calendar-may-2026', ml: 'മേയ്' },
-    { name: 'June', slug: 'malayalam-calendar-june-2026', ml: 'ജൂൺ' },
-    { name: 'July', slug: 'malayalam-calendar-july-2026', ml: 'ജൂലൈ' },
-    { name: 'August', slug: 'malayalam-calendar-august-2026', ml: 'ഓഗസ്റ്റ്' },
-    { name: 'September', slug: 'malayalam-calendar-september-2026', ml: 'സെപ്തംബർ' },
-    { name: 'October', slug: 'malayalam-calendar-october-2026', ml: 'ഒക്ടോബർ' },
-    { name: 'November', slug: 'malayalam-calendar-november-2026', ml: 'നവംബർ' },
-    { name: 'December', slug: 'malayalam-calendar-december-2026', ml: 'ഡിസംബർ' },
+    { name: 'January', slug: '2026/january', ml: 'ജനുവരി' },
+    { name: 'February', slug: '2026/february', ml: 'ഫെബ്രുവരി' },
+    { name: 'March', slug: '2026/march', ml: 'മാർച്ച്' },
+    { name: 'April', slug: '2026/april', ml: 'ഏപ്രിൽ' },
+    { name: 'May', slug: '2026/may', ml: 'മേയ്' },
+    { name: 'June', slug: '2026/june', ml: 'ജൂൺ' },
+    { name: 'July', slug: '2026/july', ml: 'ജൂലൈ' },
+    { name: 'August', slug: '2026/august', ml: 'ഓഗസ്റ്റ്' },
+    { name: 'September', slug: '2026/september', ml: 'സെപ്തംബർ' },
+    { name: 'October', slug: '2026/october', ml: 'ഒക്ടോബർ' },
+    { name: 'November', slug: '2026/november', ml: 'നവംബർ' },
+    { name: 'December', slug: '2026/december', ml: 'ഡിസംബർ' },
   ];
 
   // Dynamic Date Info Logic
@@ -589,13 +589,12 @@ export default async function Home({ searchParams }: Props) {
         </h2>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3">
           {[
-            { label: 'Calendar 2025', href: '/malayalam-calendar/2025', icon: '📅' },
-            { label: 'Calendar 2027', href: '/malayalam-calendar/2027', icon: '📅' },
+            { label: 'Calendar 2026', href: '/2026', icon: '📅' },
+            { label: 'Calendar 2027', href: '/2027', icon: '📅' },
             { label: 'Panchangam Today', href: '/', icon: '🌟' },
             { label: 'Rahukalam Today', href: '/rahu-kalam-today', icon: '⏱️' },
-            { label: 'Wedding Muhurat', href: '/festivals', icon: '💍' },
-            { label: 'Ekadashi 2026', href: '/festivals', icon: '🌙' },
-            { label: 'Public Holidays', href: '/festivals', icon: '🎆' },
+            { label: 'Kerala Festivals', href: '/festivals', icon: '🎆' },
+            { label: 'Wedding Muhurat', href: '/marriage-muhurtham-2026', icon: '💍' },
           ].map((p) => (
             <Link prefetch={false}
               key={p.href + p.label}

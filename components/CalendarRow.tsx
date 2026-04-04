@@ -16,11 +16,9 @@ export default function CalendarRow({ day }: CalendarRowProps) {
     const isToday = day.date === todayStr;
 
     return (
-        <Link
-            href={isToday ? '/' : `/date/${formatDate(day.date)}`}
+        <div
             className={`
                 group relative flex flex-col sm:flex-row items-stretch border-b border-gray-100 dark:border-gray-800 
-                hover:bg-blue-50/50 dark:hover:bg-gray-800/50 transition-colors duration-200
                 ${isToday ? 'bg-indigo-50/60 dark:bg-indigo-900/10' : 'bg-white dark:bg-gray-900'}
             `}
         >
@@ -69,13 +67,6 @@ export default function CalendarRow({ day }: CalendarRowProps) {
                     </div>
                 </div>
             </div>
-
-            {/* View Details Arrow (Mobile Only mostly) */}
-            <div className="hidden sm:flex items-center justify-center w-12 text-gray-300 group-hover:text-indigo-500 transition-colors">
-                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-            </div>
-        </Link>
+        </div>
     );
 }

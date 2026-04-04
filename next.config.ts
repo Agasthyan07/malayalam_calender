@@ -77,7 +77,7 @@ const nextConfig: NextConfig = {
     ];
   },
 
-  // ── URL Redirects (unchanged) ────────────────────────────────────
+  // ── URL Redirects ────────────────────────────────────
   async redirects() {
     return [
       // Redirect plain (non-www) to canonical www domain
@@ -88,33 +88,35 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       { source: '/today', destination: '/', permanent: true },
-      { source: '/calendar/:year(\\d{4})', destination: '/malayalam-calendar/:year', permanent: true },
-      // 2026 Redirects
-      { source: '/calendar/2026/01', destination: '/malayalam-calendar-january-2026', permanent: true },
-      { source: '/calendar/2026/02', destination: '/malayalam-calendar-february-2026', permanent: true },
-      { source: '/calendar/2026/03', destination: '/malayalam-calendar-march-2026', permanent: true },
-      { source: '/calendar/2026/04', destination: '/malayalam-calendar-april-2026', permanent: true },
-      { source: '/calendar/2026/05', destination: '/malayalam-calendar-may-2026', permanent: true },
-      { source: '/calendar/2026/06', destination: '/malayalam-calendar-june-2026', permanent: true },
-      { source: '/calendar/2026/07', destination: '/malayalam-calendar-july-2026', permanent: true },
-      { source: '/calendar/2026/08', destination: '/malayalam-calendar-august-2026', permanent: true },
-      { source: '/calendar/2026/09', destination: '/malayalam-calendar-september-2026', permanent: true },
-      { source: '/calendar/2026/10', destination: '/malayalam-calendar-october-2026', permanent: true },
-      { source: '/calendar/2026/11', destination: '/malayalam-calendar-november-2026', permanent: true },
-      { source: '/calendar/2026/12', destination: '/malayalam-calendar-december-2026', permanent: true },
-      // 2027 Redirects
-      { source: '/calendar/2027/01', destination: '/malayalam-calendar-january-2027', permanent: true },
-      { source: '/calendar/2027/02', destination: '/malayalam-calendar-february-2027', permanent: true },
-      { source: '/calendar/2027/03', destination: '/malayalam-calendar-march-2027', permanent: true },
-      { source: '/calendar/2027/04', destination: '/malayalam-calendar-april-2027', permanent: true },
-      { source: '/calendar/2027/05', destination: '/malayalam-calendar-may-2027', permanent: true },
-      { source: '/calendar/2027/06', destination: '/malayalam-calendar-june-2027', permanent: true },
-      { source: '/calendar/2027/07', destination: '/malayalam-calendar-july-2027', permanent: true },
-      { source: '/calendar/2027/08', destination: '/malayalam-calendar-august-2027', permanent: true },
-      { source: '/calendar/2027/09', destination: '/malayalam-calendar-september-2027', permanent: true },
-      { source: '/calendar/2027/10', destination: '/malayalam-calendar-october-2027', permanent: true },
-      { source: '/calendar/2027/11', destination: '/malayalam-calendar-november-2027', permanent: true },
-      { source: '/calendar/2027/12', destination: '/malayalam-calendar-december-2027', permanent: true },
+
+      // New Hierarchical Redirects
+      { source: '/malayalam-calendar/:year(\\d{4})', destination: '/:year', permanent: true },
+      { source: '/calendar/:year(\\d{4})', destination: '/:year', permanent: true },
+      { source: '/calendar-2026', destination: '/2026', permanent: true },
+      { source: '/malayalam-calendar-2026', destination: '/2026', permanent: true },
+      { source: '/calendar-2027', destination: '/2027', permanent: true },
+      { source: '/malayalam-calendar-2027', destination: '/2027', permanent: true },
+
+      // Flexible Month Redirects (malayalam-calendar-january-2026 -> /2026/january)
+      {
+        source: '/malayalam-calendar-:month(january|february|march|april|may|june|july|august|september|october|november|december)-:year(\\d{4})',
+        destination: '/:year/:month',
+        permanent: true,
+      },
+
+      // Old numeric redirects (calendar/2026/01 -> /2026/january)
+      { source: '/calendar/:year/01', destination: '/:year/january', permanent: true },
+      { source: '/calendar/:year/02', destination: '/:year/february', permanent: true },
+      { source: '/calendar/:year/03', destination: '/:year/march', permanent: true },
+      { source: '/calendar/:year/04', destination: '/:year/april', permanent: true },
+      { source: '/calendar/:year/05', destination: '/:year/may', permanent: true },
+      { source: '/calendar/:year/06', destination: '/:year/june', permanent: true },
+      { source: '/calendar/:year/07', destination: '/:year/july', permanent: true },
+      { source: '/calendar/:year/08', destination: '/:year/august', permanent: true },
+      { source: '/calendar/:year/09', destination: '/:year/september', permanent: true },
+      { source: '/calendar/:year/10', destination: '/:year/october', permanent: true },
+      { source: '/calendar/:year/11', destination: '/:year/november', permanent: true },
+      { source: '/calendar/:year/12', destination: '/:year/december', permanent: true },
     ];
   },
 };

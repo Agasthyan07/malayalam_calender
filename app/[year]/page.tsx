@@ -5,8 +5,7 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 import CalendarGrid from '@/components/CalendarGrid';
 import FAQ from '@/components/FAQ';
 import { getYearData } from '@/lib/dateUtils';
-
-
+import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
 
 export async function generateStaticParams() {
@@ -19,16 +18,18 @@ type Props = {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const { year } = await params;
+    
+    if (year !== '2026' && year !== '2027') {
+        return { title: 'Not Found' };
+    }
+
     return {
         title: `Malayalam Calendar ${year} | Kollavarsham 1201 - 1202 | Daily Panchangam`,
         description: `View the accurate Malayalam Calendar ${year} with daily Panchangam, Nakshatram, Tithi, Rahu Kalam, and Nalla Samayam. Includes dates for Onam, Vishu, and all Kerala festivals.`,
         keywords: [
             `Malayalam Calendar ${year}`,
-            `2026 Malayalam Calendar`,
             `Malayalamcalnder ${year}`,
-            `Malayalamcalnder2026`,
             `Keralacalnder ${year}`,
-            `Malayalam Calendar Download`,
             `Kollavarsham ${year}`,
             `Kerala Calendar ${year}`,
             `Malayalam Panchangam ${year}`,
@@ -37,13 +38,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
             `Rahu Kalam ${year}`
         ],
         alternates: {
-            canonical: `https://www.malayalamcalendar.site/malayalam-calendar/${year}`,
+            canonical: `https://www.malayalamcalendar.site/${year}`,
         }
     };
 }
 
 export default async function YearPage({ params }: Props) {
     const { year } = await params;
+
+    if (year !== '2026' && year !== '2027') {
+        notFound();
+    }
 
     const yearData = await getYearData(year);
 
@@ -63,16 +68,16 @@ export default async function YearPage({ params }: Props) {
         '@type': 'CollectionPage',
         name: `${year} Malayalam Calendar`,
         description: `Complete Malayalam Calendar for the year ${year}.`,
-        url: `https://www.malayalamcalendar.site/malayalam-calendar/${year}`,
+        url: `https://www.malayalamcalendar.site/${year}`,
         hasPart: months.map(m => ({
             '@type': 'WebPage',
             name: `${m.name} ${year}`,
-            url: `https://www.malayalamcalendar.site/malayalam-calendar-${m.name.toLowerCase()}-${year}`
+            url: `https://www.malayalamcalendar.site/${year}/${m.name.toLowerCase()}`
         }))
     };
 
     const breadcrumbs = [
-        { label: `${year} Calendar`, href: `/calendar/${year}` },
+        { label: `${year} Calendar`, href: `/${year}` },
     ];
 
     return (
@@ -131,7 +136,7 @@ export default async function YearPage({ params }: Props) {
                                             {m.name} {year}
                                         </h2>
                                         <Link prefetch={false}
-                                            href={`/malayalam-calendar-${monthNameLower}-${year}`}
+                                            href={`/${year}/${monthNameLower}`}
                                             className="text-xs font-semibold text-indigo-600 dark:text-indigo-400 hover:underline"
                                         >
                                             View Details →
@@ -336,11 +341,11 @@ export default async function YearPage({ params }: Props) {
                                 <Link prefetch={false} href="/innathe-nakshatram" className="block bg-white dark:bg-gray-800 hover:bg-indigo-600 hover:text-white dark:hover:bg-indigo-600 text-gray-800 dark:text-gray-100 font-semibold px-4 py-3 rounded-xl shadow-sm transition-all text-sm text-center">
                                     Today's Nakshatra
                                 </Link>
-                                <Link prefetch={false} href={`/marriage-muhurtham-${year}`} className="block bg-white dark:bg-gray-800 hover:bg-indigo-600 hover:text-white dark:hover:bg-indigo-600 text-gray-800 dark:text-gray-100 font-semibold px-4 py-3 rounded-xl shadow-sm transition-all text-sm text-center">
-                                    Marriage Muhurtham
+                                <Link prefetch={false} href="/festivals" className="block bg-white dark:bg-gray-800 hover:bg-indigo-600 hover:text-white dark:hover:bg-indigo-600 text-gray-800 dark:text-gray-100 font-semibold px-4 py-3 rounded-xl shadow-sm transition-all text-sm text-center">
+                                    Kerala Festivals
                                 </Link>
-                                <Link prefetch={false} href={`/malayalam-calendar/${parseInt(year) - 1}`} className="block bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 font-medium px-4 py-3 rounded-xl shadow-sm transition-all text-sm text-center border border-gray-200 dark:border-gray-700">
-                                    Archive: {parseInt(year) - 1} Calendar
+                                <Link prefetch={false} href={`/${parseInt(year) === 2026 ? '2027' : '2026'}`} className="block bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 font-medium px-4 py-3 rounded-xl shadow-sm transition-all text-sm text-center border border-gray-200 dark:border-gray-700">
+                                    {parseInt(year) === 2026 ? '2027' : '2026'} Calendar
                                 </Link>
                             </div>
                         </div>
